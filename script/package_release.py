@@ -4,6 +4,7 @@ import argparse, pathlib, re, zipfile, shutil, os, stat, subprocess
 parser = argparse.ArgumentParser()
 parser.add_argument('stage')
 parser.add_argument('label')
+parser.add_argument('--app', type=pathlib.Path, help='Validated app source, for example an exported notarized app outside a synced Documents folder')
 args = parser.parse_args()
 root = pathlib.Path(__file__).resolve().parent.parent
 out = root.parent
@@ -12,7 +13,10 @@ release = out/'staende'/f'{args.stage}-{args.label}'
 release.mkdir(parents=True, exist_ok=True)
 app_zip = release/f'Shopdeck-{version}-macOS.zip'
 source_zip = release/f'Shopdeck-{version}-Quellcode.zip'
-subprocess.run(['/usr/bin/ditto','-c','-k','--sequesterRsrc','--keepParent',str(out/'Shopdeck.app'),str(app_zip)],check=True)
+app = args.app.resolve() if args.app else out/'Shopdeck.app'
+if app.name != 'Shopdeck.app': parser.error('The app source must be named Shopdeck.app')
+subprocess.run(['/usr/bin/codesign','--verify','--deep','--strict',str(app)],check=True)
+subprocess.run(['/usr/bin/ditto','-c','-k','--sequesterRsrc','--keepParent',str(app),str(app_zip)],check=True)
 with zipfile.ZipFile(source_zip, 'w', zipfile.ZIP_DEFLATED) as archive:
     if (root/'.git').exists():
         paths=[root/os.fsdecode(p) for p in subprocess.check_output(['git','-C',str(root),'ls-files','-z']).split(b'\0') if p]
