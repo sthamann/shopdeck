@@ -1,0 +1,22 @@
+name: ShopdeckWidgets
+options:
+  deploymentTarget:
+    macOS: '14.0'
+targets:
+  ShopdeckWidgets:
+    type: app-extension
+    platform: macOS
+    sources:
+      - ShopdeckWidgets.swift
+      - path: Resources
+        buildPhase: resources
+      - ../Sources/ShopdeckCore/WidgetSnapshot.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.shopdeck.mac.widgets
+        INFOPLIST_FILE: Info.plist
+        CODE_SIGN_ENTITLEMENTS: Widget.entitlements
+        SWIFT_VERSION: '5.0'
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+        ENABLE_APP_INTENTS_METADATA_EXTRACTION: YES

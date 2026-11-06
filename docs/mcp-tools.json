@@ -1,0 +1,817 @@
+{
+  "tools": [
+    {
+      "annotations": {
+        "idempotentHint": true,
+        "openWorldHint": true,
+        "destructiveHint": false,
+        "readOnlyHint": true
+      },
+      "description": "List shops explicitly enabled for MCP. Does not expose URLs or credentials.",
+      "name": "list_shops",
+      "inputSchema": {
+        "additionalProperties": false,
+        "required": [],
+        "properties": {},
+        "type": "object"
+      }
+    },
+    {
+      "annotations": {
+        "idempotentHint": true,
+        "destructiveHint": false,
+        "openWorldHint": true,
+        "readOnlyHint": true
+      },
+      "description": "Exact catalog, order, customer and low stock counts.",
+      "name": "shop_overview",
+      "inputSchema": {
+        "properties": {
+          "shop_id": {
+            "type": "string",
+            "description": "Shop UUID returned by list_shops"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "shop_id"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true,
+        "readOnlyHint": true
+      },
+      "description": "Search products on the server with pagination and sorting. Compact default fields avoid large responses; request extra fields explicitly. Customer sharing is required for personal data.",
+      "name": "search_products",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "shop_id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "fields": {
+            "type": "array",
+            "maxItems": 24,
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            },
+            "description": "Field paths to return. Defaults are compact summaries; request detail fields explicitly. Dotted paths are returned as dotted keys."
+          },
+          "sort": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "required": [
+                "field",
+                "order"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "order": {
+                  "type": "string",
+                  "enum": [
+                    "ASC",
+                    "DESC"
+                  ]
+                }
+              },
+              "type": "object",
+              "additionalProperties": false
+            }
+          },
+          "limit": {
+            "type": "integer",
+            "maximum": 100,
+            "minimum": 1
+          },
+          "low_stock": {
+            "type": "boolean"
+          },
+          "query": {
+            "type": "string"
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "shop_id": {
+            "type": "string",
+            "description": "Shop UUID returned by list_shops"
+          }
+        }
+      }
+    },
+    {
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      },
+      "description": "Search orders on the server with pagination and sorting. Compact default fields avoid large responses; request extra fields explicitly. Customer sharing is required for personal data.",
+      "name": "search_orders",
+      "inputSchema": {
+        "type": "object",
+        "required": [
+          "shop_id"
+        ],
+        "properties": {
+          "limit": {
+            "maximum": 100,
+            "type": "integer",
+            "minimum": 1
+          },
+          "query": {
+            "type": "string"
+          },
+          "shop_id": {
+            "description": "Shop UUID returned by list_shops",
+            "type": "string"
+          },
+          "sort": {
+            "items": {
+              "required": [
+                "field",
+                "order"
+              ],
+              "type": "object",
+              "properties": {
+                "order": {
+                  "enum": [
+                    "ASC",
+                    "DESC"
+                  ],
+                  "type": "string"
+                },
+                "field": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "maxItems": 3,
+            "type": "array"
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "low_stock": {
+            "type": "boolean"
+          },
+          "fields": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 24,
+            "description": "Field paths to return. Defaults are compact summaries; request detail fields explicitly. Dotted paths are returned as dotted keys.",
+            "type": "array",
+            "minItems": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    {
+      "annotations": {
+        "openWorldHint": true,
+        "idempotentHint": true,
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "description": "Search customers on the server with pagination and sorting. Compact default fields avoid large responses; request extra fields explicitly. Customer sharing is required for personal data.",
+      "name": "search_customers",
+      "inputSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "shop_id"
+        ],
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "fields": {
+            "description": "Field paths to return. Defaults are compact summaries; request detail fields explicitly. Dotted paths are returned as dotted keys.",
+            "minItems": 1,
+            "type": "array",
+            "maxItems": 24,
+            "items": {
+              "type": "string"
+            }
+          },
+          "low_stock": {
+            "type": "boolean"
+          },
+          "page": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "shop_id": {
+            "type": "string",
+            "description": "Shop UUID returned by list_shops"
+          },
+          "limit": {
+            "minimum": 1,
+            "type": "integer",
+            "maximum": 100
+          },
+          "sort": {
+            "type": "array",
+            "maxItems": 3,
+            "items": {
+              "additionalProperties": false,
+              "type": "object",
+              "required": [
+                "field",
+                "order"
+              ],
+              "properties": {
+                "field": {
+                  "type": "string"
+                },
+                "order": {
+                  "type": "string",
+                  "enum": [
+                    "ASC",
+                    "DESC"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "fields": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 24,
+            "description": "Field paths to return. Defaults are compact summaries; request detail fields explicitly. Dotted paths are returned as dotted keys."
+          },
+          "shop_id": {
+            "type": "string",
+            "description": "Shop UUID returned by list_shops"
+          }
+        },
+        "required": [
+          "shop_id",
+          "id"
+        ],
+        "type": "object"
+      },
+      "description": "Get one product by its Shopware ID.",
+      "name": "get_product",
+      "annotations": {
+        "idempotentHint": true,
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": true
+      }
+    },
+    {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "fields": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 24,
+            "description": "Field paths to return. Defaults are compact summaries; request detail fields explicitly. Dotted paths are returned as dotted keys.",
+            "type": "array",
+            "minItems": 1
+          },
+          "id": {
+            "type": "string"
+          },
+          "shop_id": {
+            "type": "string",
+            "description": "Shop UUID returned by list_shops"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "shop_id",
+          "id"
+        ]
+      },
+      "name": "get_order",
+      "description": "Get one order by its Shopware ID.",
+      "annotations": {
+        "openWorldHint": true,
+        "idempotentHint": true,
+        "readOnlyHint": true,
+        "destructiveHint": false
+      }
+    },
+    {
+      "inputSchema": {
+        "properties": {
+          "changes": {
+            "additionalProperties": false,
+            "properties": {
+              "active": {
+                "type": "boolean"
+              },
+              "stock": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "description": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "type": "object",
+            "minProperties": 1
+          },
+          "reason": {
+            "type": "string"
+          },
+          "shop_id": {
+            "description": "Shop UUID returned by list_shops",
+            "type": "string"
+          },
+          "product_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "shop_id",
+          "product_id",
+          "changes",
+          "reason"
+        ],
+        "type": "object",
+        "additionalProperties": false
+      },
+      "name": "propose_product_change",
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "readOnlyHint": false,
+        "openWorldHint": true
+      },
+      "description": "Queue a product edit for human approval in Shopdeck. Cannot apply or approve edits."
+    },
+    {
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "shop_id": {
+            "type": "string",
+            "description": "Shop UUID returned by list_shops"
+          }
+        },
+        "required": [
+          "shop_id"
+        ],
+        "additionalProperties": false
+      },
+      "name": "list_change_proposals",
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true
+      },
+      "description": "Read queued and resolved product edit proposals."
+    },
+    {
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "entity": {
+            "type": "string"
+          },
+          "shop_id": {
+            "description": "Shop UUID returned by list_shops",
+            "type": "string"
+          }
+        },
+        "type": "object",
+        "required": [
+          "shop_id"
+        ]
+      },
+      "name": "admin_api_schema",
+      "annotations": {
+        "idempotentHint": true,
+        "destructiveHint": false,
+        "openWorldHint": true,
+        "readOnlyHint": true
+      },
+      "description": "Discover every Admin API entity or retrieve one entity's fields. Available fields depend on the connected Shopware version."
+    },
+    {
+      "inputSchema": {
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "shop_id"
+        ],
+        "properties": {
+          "query": {
+            "type": "string"
+          },
+          "shop_id": {
+            "type": "string",
+            "description": "Shop UUID returned by list_shops"
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      },
+      "description": "Discover routes and request schemas advertised in the shop's OpenAPI document. Some extension lifecycle actions are omitted there; use propose_plugin_install for the explicit plugin workflow. Page size 50.",
+      "annotations": {
+        "openWorldHint": true,
+        "idempotentHint": true,
+        "readOnlyHint": true,
+        "destructiveHint": false
+      },
+      "name": "admin_api_routes"
+    },
+    {
+      "inputSchema": {
+        "required": [
+          "shop_id",
+          "method",
+          "path"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "method": {
+            "type": "string"
+          },
+          "fields": {
+            "maxItems": 24,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Field paths to return. Defaults are compact summaries; request detail fields explicitly. Dotted paths are returned as dotted keys.",
+            "minItems": 1
+          },
+          "path": {
+            "type": "string"
+          },
+          "body": {
+            "type": "object"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "query": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "shop_id": {
+            "type": "string",
+            "description": "Shop UUID returned by list_shops"
+          }
+        },
+        "type": "object"
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "openWorldHint": true,
+        "idempotentHint": true,
+        "destructiveHint": false
+      },
+      "description": "Read ANY Admin API endpoint via GET/HEAD, or DAL search/aggregate via POST. Relative paths only; integration ACL applies. Writes require propose_admin_api_request. Non-personal catalogue, CMS, media and sales channel reads do not require customer sharing. Personal entities and associations do. Secrets are always redacted. Keep search limit \u2264100 and paginate.",
+      "name": "admin_api_request"
+    },
+    {
+      "name": "propose_admin_api_request",
+      "description": "Queue ANY Admin API operation, including action endpoints, create/update/delete and system configuration. Requires human review in Shopdeck. This tool NEVER executes it.",
+      "annotations": {
+        "destructiveHint": false,
+        "readOnlyHint": false,
+        "openWorldHint": true,
+        "idempotentHint": false
+      },
+      "inputSchema": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "method": {
+            "type": "string"
+          },
+          "query": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "reason": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "body": {
+            "type": "object"
+          },
+          "shop_id": {
+            "description": "Shop UUID returned by list_shops",
+            "type": "string"
+          },
+          "fields": {
+            "description": "Field paths to return. Defaults are compact summaries; request detail fields explicitly. Dotted paths are returned as dotted keys.",
+            "type": "array",
+            "maxItems": 24,
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "shop_id",
+          "method",
+          "path",
+          "reason"
+        ]
+      }
+    },
+    {
+      "name": "list_admin_api_requests",
+      "description": "Read pending and resolved general Admin API requests for one explicit shop.",
+      "annotations": {
+        "destructiveHint": false,
+        "readOnlyHint": true,
+        "idempotentHint": true,
+        "openWorldHint": true
+      },
+      "inputSchema": {
+        "additionalProperties": false,
+        "properties": {
+          "shop_id": {
+            "type": "string",
+            "description": "Shop UUID returned by list_shops"
+          }
+        },
+        "required": [
+          "shop_id"
+        ],
+        "type": "object"
+      }
+    },
+    {
+      "name": "discover_shopware_tools",
+      "description": "Discover the official Shopware MCP capability catalog. Falls back to the advertised session tool list on older shops; permissions and progressive discovery can restrict that list.",
+      "annotations": {
+        "destructiveHint": false,
+        "openWorldHint": true,
+        "idempotentHint": true,
+        "readOnlyHint": true
+      },
+      "inputSchema": {
+        "additionalProperties": false,
+        "required": [
+          "shop_id"
+        ],
+        "properties": {
+          "shop_id": {
+            "description": "Shop UUID returned by list_shops",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      }
+    },
+    {
+      "name": "propose_media_upload",
+      "description": "Prepare a real local PNG/JPEG/WebP/GIF image for approval. Absolute local file path, \u226420 MB. Copies and hashes the file privately. After approval uploads binary data, verifies stored file size and returns media ID, filename and preview URL via list_operations. No remote mutation before approval.",
+      "annotations": {
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "readOnlyHint": false,
+        "openWorldHint": true
+      },
+      "inputSchema": {
+        "required": [
+          "shop_id",
+          "file_path",
+          "reason"
+        ],
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "shop_id": {
+            "description": "Shop UUID returned by list_shops",
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "file_path": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "inputSchema": {
+        "properties": {
+          "file_path": {
+            "type": "string"
+          },
+          "shop_id": {
+            "description": "Shop UUID returned by list_shops",
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "activate": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "shop_id",
+          "file_path",
+          "reason"
+        ],
+        "additionalProperties": false,
+        "type": "object"
+      },
+      "annotations": {
+        "destructiveHint": false,
+        "readOnlyHint": false,
+        "idempotentHint": false,
+        "openWorldHint": true
+      },
+      "description": "Prepare one local Shopware plugin ZIP \u2264100 MB. Checks package paths, symlinks, expansion limits and composer metadata. Review shows required Shopware version. Approval uploads, refreshes, installs and optionally activates through official extension actions, then verifies plugin status. Shopware performs dependency validation. Existing installed plugins are not updated by this operation.",
+      "name": "propose_plugin_install"
+    },
+    {
+      "inputSchema": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 10
+          },
+          "title": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "sales_channel_id": {
+            "type": "string"
+          },
+          "shop_id": {
+            "type": "string",
+            "description": "Shop UUID returned by list_shops"
+          },
+          "publish": {
+            "type": "boolean"
+          },
+          "sections": {
+            "items": {
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "text",
+                    "image",
+                    "product_slider"
+                  ]
+                },
+                "file_index": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "text": {
+                  "type": "string"
+                },
+                "product_ids": {
+                  "type": "array",
+                  "maxItems": 30,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "title": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            "minItems": 1,
+            "type": "array",
+            "maxItems": 20
+          }
+        },
+        "required": [
+          "shop_id",
+          "title",
+          "sales_channel_id",
+          "sections",
+          "reason"
+        ]
+      },
+      "annotations": {
+        "openWorldHint": true,
+        "destructiveHint": false,
+        "idempotentHint": false,
+        "readOnlyHint": false
+      },
+      "description": "Prepare one coherent CMS campaign with text, local images and existing product sliders. Files are staged locally and shown with the sections in Shopdeck. Approval uploads media, creates and reads back CMS slots and landing page. publish defaults false (draft). Explicit publish=true creates an active landing page and checks storefront reachability. list_operations returns saved IDs, admin URL, media URLs and separately verified reachable storefront URLs. This does not execute an older generic CMS proposal.",
+      "name": "propose_campaign"
+    },
+    {
+      "inputSchema": {
+        "additionalProperties": false,
+        "required": [
+          "shop_id"
+        ],
+        "properties": {
+          "shop_id": {
+            "description": "Shop UUID returned by list_shops",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "annotations": {
+        "idempotentHint": true,
+        "destructiveHint": false,
+        "openWorldHint": true,
+        "readOnlyHint": true
+      },
+      "name": "list_operations",
+      "description": "Read approval, execution checkpoints, errors and independently verified results for file, plugin, campaign and native MCP operations in one explicit shop."
+    },
+    {
+      "inputSchema": {
+        "additionalProperties": false,
+        "required": [
+          "shop_id",
+          "name",
+          "arguments"
+        ],
+        "type": "object",
+        "properties": {
+          "shop_id": {
+            "type": "string",
+            "description": "Shop UUID returned by list_shops"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "arguments": {
+            "type": "object"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "annotations": {
+        "destructiveHint": false,
+        "openWorldHint": true,
+        "readOnlyHint": false,
+        "idempotentHint": false
+      },
+      "name": "call_shopware_tool",
+      "description": "Invoke a native tool from discover_shopware_tools. Session availability is distinct from the capability catalogue. Safe non-personal entity reads run directly; all mutations, configuration reads and toolset changes become local approval requests. A catalogue-only tool can be unavailable on the shop and will return an explicit error. Arguments follow the native tool's schema."
+    }
+  ]
+}

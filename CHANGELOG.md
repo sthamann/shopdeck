@@ -1,0 +1,40 @@
+# Changelog
+
+## 0.9.1
+
+- Add an empty workspace setup assistant with automatic computer language selection and English fallback.
+- Suggest unique local shop names and available ports, check Docker containers and recheck ports after image download.
+- Add persistent Show all shops navigation and a direct return to the administrations overview.
+- Show cached, downsampled product thumbnails in native tables. Improve row density and long text clipping. Open the full Shopware product editor for complete editing.
+- Add selected bulk approval with current values, progress, stop handling, stable operation IDs and reverse order batch undo.
+- Extend history to general API requests, media, plugin, campaign and native MCP operations.
+- Replace blanket customer sharing requirements with entity specific read classification and compact, selectable MCP response fields.
+- Add staged local binary media uploads, validated plugin installation and activation, coherent CMS campaigns and native Shopware tool invocation. Keep remote writes behind app approval and report verified results separately from action responses.
+- Distinguish native Shopware capability catalogue entries from tools actually advertised by a session.
+- Prepare optimized Developer ID releases, GitHub download assets and the signed Sparkle update feed.
+
+## 0.8.1
+
+- Move record search, filters and sorting before server pagination, with cross shop merging and configurable result limits.
+- Preserve sales channel, currency and sort choices in saved views.
+- Add month and year revenue, per widget shop selection and Security Plugin checks.
+- Expand native macOS widgets to all 23 dashboard metrics.
+- Improve local Docker provisioning, administration login hints, client installation detection and AI usage examples.
+
+## 0.6.0
+
+- Add a visual widget gallery with live miniature previews, search, categories and persistent ordering.
+
+## 0.5.0
+
+- Add workspace tabs, side by side views, saved views within lists, menu bar statistics, Dock order counts and a WidgetKit extension.
+- Use a separate Keychain helper and a native AppKit table.
+
+## 0.4.0
+
+- Add custom filters and columns, embedded administration sessions, detailed records, reviewed bulk product changes and guarded undo.
+- Add light and dark appearance and expanded settings.
+
+## 0.1.0
+
+- Introduce a native Mac workspace for multiple Shopware shops, Admin API access, products, orders, customers, order notification rules, release notices, six languages, local Docker shops and AI setup.

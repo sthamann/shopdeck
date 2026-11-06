@@ -1,0 +1,703 @@
+Übersicht	Overview	Overzicht	Resumen	Vue d’ensemble	Panoramica
+Produkte	Products	Producten	Productos	Produits	Prodotti
+Bestellungen	Orders	Bestellingen	Pedidos	Commandes	Ordini
+Kunden	Customers	Klanten	Clientes	Clients	Clienti
+Änderungen	Changes	Wijzigingen	Cambios	Modifications	Modifiche
+Benachrichtigungen	Notifications	Meldingen	Notificaciones	Notifications	Notifiche
+Aktivität	Activity	Activiteit	Actividad	Activité	Attività
+Aktualisieren	Refresh	Vernieuwen	Actualizar	Actualiser	Aggiorna
+Shop hinzufügen	Add shop	Shop toevoegen	Añadir tienda	Ajouter une boutique	Aggiungi negozio
+Alle Shops	All shops	Alle shops	Todas las tiendas	Toutes les boutiques	Tutti i negozi
+Demodaten	Demo data	Demogegevens	Datos de demostración	Données de démonstration	Dati dimostrativi
+Demo	Demo	Demo	Demostración	Démo	Demo
+Neue Gruppe	New group	Nieuwe groep	Nuevo grupo	Nouveau groupe	Nuovo gruppo
+Name	Name	Naam	Nombre	Nom	Nome
+Abbrechen	Cancel	Annuleren	Cancelar	Annuler	Annulla
+Gruppe erstellen	Create group	Groep maken	Crear grupo	Créer un groupe	Crea gruppo
+DEINE SHOPS	YOUR SHOPS	JOUW SHOPS	TUS TIENDAS	VOS BOUTIQUES	I TUOI NEGOZI
+Shop verbinden	Connect shop	Shop verbinden	Conectar tienda	Connecter une boutique	Collega negozio
+Gruppe löschen	Delete group	Groep verwijderen	Eliminar grupo	Supprimer le groupe	Elimina gruppo
+Einstellungen	Settings	Instellingen	Ajustes	Réglages	Impostazioni
+Shop entfernen?	Remove shop?	Shop verwijderen?	¿Eliminar tienda?	Retirer la boutique ?	Rimuovere il negozio?
+Entfernen	Remove	Verwijderen	Eliminar	Retirer	Rimuovi
+Der Shop wird aus Shopdeck entfernt. Der Shop selbst und lokale Docker Container bleiben erhalten.	The shop is removed from Shopdeck. The shop itself and local Docker containers are kept.	De shop wordt uit Shopdeck verwijderd. De shop zelf en lokale Docker containers blijven behouden.	La tienda se elimina de Shopdeck. La tienda y los contenedores Docker locales se conservan.	La boutique est retirée de Shopdeck. La boutique et les conteneurs Docker locaux sont conservés.	Il negozio viene rimosso da Shopdeck. Il negozio e i container Docker locali vengono conservati.
+Shopeinstellungen	Shop settings	Shopinstellingen	Ajustes de la tienda	Réglages de la boutique	Impostazioni negozio
+In Gruppe verschieben	Move to group	Naar groep verplaatsen	Mover a grupo	Déplacer vers un groupe	Sposta nel gruppo
+Ohne Gruppe	Ungrouped	Zonder groep	Sin grupo	Sans groupe	Senza gruppo
+Nach oben	Move up	Omhoog verplaatsen	Subir	Monter	Sposta in alto
+Administration öffnen	Open administration	Beheer openen	Abrir administración	Ouvrir l’administration	Apri amministrazione
+Das hat nicht geklappt	That didn’t work	Dat is niet gelukt	No ha funcionado	L’opération a échoué	L’operazione non è riuscita
+Dein Commerce.\nEin Arbeitsplatz.	Your commerce.\nOne workspace.	Jouw commerce.\nEén werkplek.	Tu comercio.\nUn espacio de trabajo.	Votre commerce.\nUn seul espace.	Il tuo commercio.\nUn unico spazio.
+Alle Shops. Kurze Wege. Mehr Möglichkeiten.	All your shops. Less friction. More possibilities.	Al je shops. Kortere lijnen. Meer mogelijkheden.	Todas tus tiendas. Menos pasos. Más posibilidades.	Toutes vos boutiques. Moins d’étapes. Plus de possibilités.	Tutti i tuoi negozi. Meno passaggi. Più possibilità.
+Shops	Shops	Shops	Tiendas	Boutiques	Negozi
+für KI freigegeben	enabled for AI	vrijgegeven voor AI	habilitadas para IA	autorisées pour l’IA	abilitati per l’IA
+Deine Shops im Überblick	Your shops at a glance	Je shops in één oogopslag	Tus tiendas de un vistazo	Vos boutiques en un coup d’œil	I tuoi negozi a colpo d’occhio
+Shop	Shop	Shop	Tienda	Boutique	Negozio
+Bestand ≤ 5	Stock ≤ 5	Voorraad ≤ 5	Existencias ≤ 5	Stock ≤ 5	Scorte ≤ 5
+Verbindung	Connection	Verbinding	Conexión	Connexion	Connessione
+Gerade eingegangen	Just arrived	Net binnengekomen	Recién llegados	Dernières commandes	Appena arrivati
+Alle anzeigen	View all	Alles bekijken	Ver todo	Tout afficher	Mostra tutto
+Bestellungen werden geladen …	Loading orders …	Bestellingen laden …	Cargando pedidos …	Chargement des commandes …	Caricamento ordini …
+Noch keine Bestellungen vorhanden.	No orders yet.	Nog geen bestellingen.	Aún no hay pedidos.	Aucune commande pour le moment.	Nessun ordine per ora.
+Deine Shops können jetzt mitreden.	Bring your shops into the conversation.	Geef je shops een stem.	Tus tiendas ya pueden participar.	Vos boutiques entrent dans la conversation.	I tuoi negozi entrano nella conversazione.
+Verbinde Codex und Claude. Stelle Fragen, finde Produkte und prüfe Änderungen direkt hier.	Connect Codex and Claude. Ask questions, find products and review changes right here.	Verbind Codex en Claude. Stel vragen, vind producten en beoordeel wijzigingen hier.	Conecta Codex y Claude. Haz preguntas, busca productos y revisa cambios aquí.	Connectez Codex et Claude. Posez vos questions, trouvez des produits et vérifiez les modifications ici.	Collega Codex e Claude. Fai domande, trova prodotti e verifica le modifiche qui.
+KI Verbindung einrichten	Set up AI connection	AI verbinding instellen	Configurar conexión de IA	Configurer la connexion IA	Configura connessione IA
+Du gibst Änderungen frei.	You approve every change.	Jij keurt wijzigingen goed.	Tú apruebas los cambios.	Vous validez les modifications.	Sei tu ad approvare le modifiche.
+Lokal auf deinem Mac	Local on your Mac	Lokaal op je Mac	Local en tu Mac	En local sur votre Mac	In locale sul tuo Mac
+Alle angezeigten Shopdaten sind fiktiv.	All shop data shown is fictional.	Alle getoonde shopgegevens zijn fictief.	Todos los datos mostrados son ficticios.	Toutes les données affichées sont fictives.	Tutti i dati mostrati sono fittizi.
+Direkt mit der Shopware Admin API verbunden.	Connected directly to the Shopware Admin API.	Direct verbonden met de Shopware Admin API.	Conexión directa con la Admin API de Shopware.	Connexion directe à l’Admin API Shopware.	Collegamento diretto all’Admin API di Shopware.
+Dein erster Shop wartet.	Your first shop is waiting.	Je eerste shop wacht op je.	Tu primera tienda te espera.	Votre première boutique vous attend.	Il tuo primo negozio ti aspetta.
+Verbinde einen bestehenden Shop oder starte einen lokalen Testshop mit Docker.	Connect an existing shop or create a local test shop with Docker.	Verbind een bestaande shop of start een lokale testshop met Docker.	Conecta una tienda existente o crea una tienda local con Docker.	Connectez une boutique existante ou créez une boutique de test locale avec Docker.	Collega un negozio esistente o crea un negozio di prova locale con Docker.
+Mit Demodaten ausprobieren	Try demo data	Met demogegevens proberen	Probar con datos de demostración	Essayer avec des données de démonstration	Prova con dati dimostrativi
+Die Demo enthält drei fiktive Shops. Es werden keine echten Shops angelegt.	The demo contains three fictional shops. No real shops are created.	De demo bevat drie fictieve shops. Er worden geen echte shops aangemaakt.	La demostración contiene tres tiendas ficticias. No se crean tiendas reales.	La démo contient trois boutiques fictives. Aucune boutique réelle n’est créée.	La demo contiene tre negozi fittizi. Non vengono creati negozi reali.
+Prüfen	Check	Controleren	Revisar	Vérifier	Verifica
+Verbunden	Connected	Verbonden	Conectado	Connecté	Connesso
+Lädt	Loading	Laden	Cargando	Chargement	Caricamento
+Shopübergreifend suchen. Direkt weiterarbeiten.	Search across shops. Keep work moving.	Zoek in alle shops. Werk direct verder.	Busca en todas las tiendas. Sigue trabajando.	Recherchez dans toutes vos boutiques. Continuez à travailler.	Cerca in tutti i negozi. Continua a lavorare.
+CSV exportieren	Export CSV	CSV exporteren	Exportar CSV	Exporter en CSV	Esporta CSV
+Suchen …	Search …	Zoeken …	Buscar …	Rechercher …	Cerca …
+Ergebnisse	results	resultaten	resultados	résultats	risultati
+Noch keine Daten	No data yet	Nog geen gegevens	Aún no hay datos	Aucune donnée	Nessun dato
+Keine Treffer	No results	Geen resultaten	Sin resultados	Aucun résultat	Nessun risultato
+Wähle einen Shop oder passe die Suche an.	Choose a shop or adjust your search.	Kies een shop of pas je zoekopdracht aan.	Elige una tienda o ajusta la búsqueda.	Choisissez une boutique ou ajustez votre recherche.	Scegli un negozio o modifica la ricerca.
+Doppelklick öffnet Details.	Double click to open details.	Dubbelklik om details te openen.	Haz doble clic para abrir los detalles.	Double cliquez pour ouvrir les détails.	Fai doppio clic per aprire i dettagli.
+Seite	Page	Pagina	Página	Page	Pagina
+Produkt	Product	Product	Producto	Produit	Prodotto
+Bestellung	Order	Bestelling	Pedido	Commande	Ordine
+Bestand	Stock	Voorraad	Existencias	Stock	Scorte
+Gesamt	Total	Totaal	Total	Total	Totale
+Kundennummer	Customer number	Klantnummer	Número de cliente	Numéro client	Numero cliente
+Status	Status	Status	Estado	Statut	Stato
+Aktiv	Active	Actief	Activo	Actif	Attivo
+Inaktiv	Inactive	Inactief	Inactivo	Inactif	Inattivo
+Details öffnen	Open details	Details openen	Abrir detalles	Ouvrir les détails	Apri dettagli
+Die angezeigte Seite wurde exportiert.	The displayed page was exported.	De getoonde pagina is geëxporteerd.	Se ha exportado la página visible.	La page affichée a été exportée.	La pagina visualizzata è stata esportata.
+Ein neuer Shop. Alle Möglichkeiten.	A new shop. Every possibility.	Een nieuwe shop. Alle mogelijkheden.	Una nueva tienda. Todas las posibilidades.	Une nouvelle boutique. Toutes les possibilités.	Un nuovo negozio. Tutte le possibilità.
+Dein nächster Shop ist nur eine Verbindung entfernt.	Your next shop is one connection away.	Je volgende shop is slechts één verbinding weg.	Tu próxima tienda está a una conexión.	Votre prochaine boutique est à une connexion.	Il tuo prossimo negozio è a una connessione di distanza.
+Bestehenden Shop verbinden	Connect existing shop	Bestaande shop verbinden	Conectar tienda existente	Connecter une boutique existante	Collega negozio esistente
+Lokalen Testshop erstellen	Create local test shop	Lokale testshop maken	Crear tienda de prueba local	Créer une boutique de test locale	Crea negozio di prova locale
+Shopname	Shop name	Shopnaam	Nombre de la tienda	Nom de la boutique	Nome negozio
+Shopadresse	Shop URL	Shopadres	Dirección de la tienda	Adresse de la boutique	Indirizzo negozio
+Gruppe	Group	Groep	Grupo	Groupe	Gruppo
+Umgebung	Environment	Omgeving	Entorno	Environnement	Ambiente
+Shopfarbe	Shop color	Shopkleur	Color de la tienda	Couleur de la boutique	Colore negozio
+Favicon	Favicon	Favicon	Favicon	Favicon	Favicon
+Von Domain importieren	Import from domain	Van domein importeren	Importar del dominio	Importer depuis le domaine	Importa dal dominio
+Lokaler Port	Local port	Lokale poort	Puerto local	Port local	Porta locale
+Image Version	Image version	Imageversie	Versión de la imagen	Version de l’image	Versione immagine
+Docker Desktop muss laufen. Das Image wird geladen, ein Container nur auf localhost gestartet und eine eigene API Integration eingerichtet.	Docker Desktop must be running. The image is downloaded, a localhost only container is started and a dedicated API integration is created.	Docker Desktop moet actief zijn. De image wordt geladen, een container alleen op localhost gestart en een eigen API integratie aangemaakt.	Docker Desktop debe estar activo. Se descarga la imagen, se inicia un contenedor solo en localhost y se crea una integración API.	Docker Desktop doit être lancé. L’image est téléchargée, un conteneur est démarré sur localhost et une intégration API dédiée est créée.	Docker Desktop deve essere in esecuzione. Viene scaricata l’immagine, avviato un container su localhost e creata un’integrazione API dedicata.
+Adminzugang für den lokalen Testshop: admin / shopware. Die Daten bleiben im Container erhalten.	Local test shop admin login: admin / shopware. Data is kept in the container.	Beheerlogin voor de lokale testshop: admin / shopware. Gegevens blijven in de container.	Acceso de administración local: admin / shopware. Los datos se conservan en el contenedor.	Accès administrateur local : admin / shopware. Les données restent dans le conteneur.	Accesso amministratore locale: admin / shopware. I dati restano nel container.
+Docker Desktop herunterladen	Download Docker Desktop	Docker Desktop downloaden	Descargar Docker Desktop	Télécharger Docker Desktop	Scarica Docker Desktop
+Shopware lokal starten	Run Shopware locally	Shopware lokaal starten	Iniciar Shopware localmente	Démarrer Shopware en local	Avvia Shopware in locale
+Zugangs ID	Access key ID	Toegangs ID	ID de acceso	Identifiant d’accès	ID di accesso
+Sicherheitsschlüssel	Secret access key	Geheime toegangssleutel	Clave secreta	Clé d’accès secrète	Chiave segreta
+Neuer Sicherheitsschlüssel (optional)	New secret key (optional)	Nieuwe geheime sleutel (optioneel)	Nueva clave secreta (opcional)	Nouvelle clé secrète (facultatif)	Nuova chiave segreta (facoltativa)
+Shopware Administration → Einstellungen → System → Integrationen. Zugangsdaten werden im macOS Schlüsselbund gespeichert.	Shopware Administration → Settings → System → Integrations. Credentials are stored in macOS Keychain.	Shopware beheer → Instellingen → Systeem → Integraties. Toegangsgegevens worden in de macOS sleutelhanger bewaard.	Administración de Shopware → Ajustes → Sistema → Integraciones. Las credenciales se guardan en el llavero de macOS.	Administration Shopware → Réglages → Système → Intégrations. Les identifiants sont stockés dans le trousseau macOS.	Amministrazione Shopware → Impostazioni → Sistema → Integrazioni. Le credenziali sono salvate nel portachiavi macOS.
+Verbindung testen	Test connection	Verbinding testen	Probar conexión	Tester la connexion	Verifica connessione
+Admin API Verbindung	Admin API connection	Admin API verbinding	Conexión Admin API	Connexion Admin API	Connessione Admin API
+Für Codex und Claude freigeben	Enable for Codex and Claude	Vrijgeven voor Codex en Claude	Habilitar para Codex y Claude	Autoriser Codex et Claude	Abilita per Codex e Claude
+Kundendaten über MCP teilen	Share customer data over MCP	Klantgegevens via MCP delen	Compartir datos de clientes por MCP	Partager les données clients via MCP	Condividi dati clienti tramite MCP
+Ohne diese Freigabe bleiben Namen, E Mail Adressen und Adressen für KI Clients verborgen.	Without this permission, names, email addresses and addresses stay hidden from AI clients.	Zonder deze toestemming blijven namen, e mailadressen en adressen verborgen voor AI clients.	Sin este permiso, los nombres, correos y direcciones permanecen ocultos para los clientes de IA.	Sans cette autorisation, les noms, e mails et adresses restent masqués pour les clients IA.	Senza questo permesso, nomi, e mail e indirizzi restano nascosti ai client IA.
+KI Zugriff	AI access	AI toegang	Acceso de IA	Accès IA	Accesso IA
+Starten	Start	Starten	Iniciar	Démarrer	Avvia
+Stoppen	Stop	Stoppen	Detener	Arrêter	Ferma
+Lokaler Container	Local container	Lokale container	Contenedor local	Conteneur local	Container locale
+Container bleibt für die Diagnose erhalten:	Container kept for diagnosis:	Container bewaard voor diagnose:	Contenedor conservado para diagnóstico:	Conteneur conservé pour le diagnostic :	Container conservato per la diagnosi:
+Testshop erstellen	Create test shop	Testshop maken	Crear tienda de prueba	Créer la boutique de test	Crea negozio di prova
+Speichern	Save	Opslaan	Guardar	Enregistrer	Salva
+Bitte gib einen Shopnamen ein.	Please enter a shop name.	Vul een shopnaam in.	Introduce un nombre de tienda.	Saisissez un nom de boutique.	Inserisci un nome per il negozio.
+Bitte gib Zugangs ID und Sicherheitsschlüssel ein.	Enter the access key ID and secret key.	Vul de toegangs ID en geheime sleutel in.	Introduce el ID de acceso y la clave secreta.	Saisissez l’identifiant d’accès et la clé secrète.	Inserisci l’ID di accesso e la chiave segreta.
+Verbindung erfolgreich.	Connection successful.	Verbinding geslaagd.	Conexión correcta.	Connexion réussie.	Connessione riuscita.
+Kein lesbares Favicon unter /favicon.ico gefunden.	No readable favicon found at /favicon.ico.	Geen leesbaar favicon gevonden op /favicon.ico.	No se ha encontrado un favicon válido en /favicon.ico.	Aucun favicon lisible trouvé à /favicon.ico.	Nessuna favicon leggibile trovata in /favicon.ico.
+Favicon importiert.	Favicon imported.	Favicon geïmporteerd.	Favicon importado.	Favicon importé.	Favicon importata.
+Container aktualisiert.	Container updated.	Container bijgewerkt.	Contenedor actualizado.	Conteneur mis à jour.	Container aggiornato.
+Produkt bearbeiten	Edit product	Product bewerken	Editar producto	Modifier le produit	Modifica prodotto
+Bestelldetails	Order details	Besteldetails	Detalles del pedido	Détails de la commande	Dettagli ordine
+Kundendetails	Customer details	Klantdetails	Datos del cliente	Détails du client	Dettagli cliente
+ID kopiert	ID copied	ID gekopieerd	ID copiado	Identifiant copié	ID copiato
+ID kopieren	Copy ID	ID kopiëren	Copiar ID	Copier l’identifiant	Copia ID
+Produktnummer	Product number	Productnummer	Número de producto	Référence produit	Codice prodotto
+Die Beschreibung unterstützt Shopware HTML.	The description supports Shopware HTML.	De beschrijving ondersteunt Shopware HTML.	La descripción admite HTML de Shopware.	La description accepte le HTML Shopware.	La descrizione supporta l’HTML di Shopware.
+Beschreibung	Description	Beschrijving	Descripción	Description	Descrizione
+Datum	Date	Datum	Fecha	Date	Data
+Kunde	Customer	Klant	Cliente	Client	Cliente
+Positionen	Line items	Artikelen	Artículos	Articles	Articoli
+E Mail	Email	E mail	Correo	E mail	E mail
+Firma	Company	Bedrijf	Empresa	Entreprise	Azienda
+API Daten anzeigen	Show API data	API gegevens tonen	Mostrar datos API	Afficher les données API	Mostra dati API
+In Shopware öffnen	Open in Shopware	In Shopware openen	Abrir en Shopware	Ouvrir dans Shopware	Apri in Shopware
+Schließen	Close	Sluiten	Cerrar	Fermer	Chiudi
+Änderungen speichern	Save changes	Wijzigingen opslaan	Guardar cambios	Enregistrer les modifications	Salva modifiche
+Änderungen übernehmen?	Apply changes?	Wijzigingen toepassen?	¿Aplicar cambios?	Appliquer les modifications ?	Applicare le modifiche?
+Jetzt speichern	Save now	Nu opslaan	Guardar ahora	Enregistrer maintenant	Salva ora
+Dein Shop. Dein KI Team.	Your shop. Your AI team.	Jouw shop. Jouw AI team.	Tu tienda. Tu equipo de IA.	Votre boutique. Votre équipe IA.	Il tuo negozio. Il tuo team IA.
+Ein lokaler MCP Server verbindet deine Shops mit Codex und Claude.	A local MCP server connects your shops to Codex and Claude.	Een lokale MCP server verbindt je shops met Codex en Claude.	Un servidor MCP local conecta tus tiendas con Codex y Claude.	Un serveur MCP local connecte vos boutiques à Codex et Claude.	Un server MCP locale collega i tuoi negozi a Codex e Claude.
+In wenigen Klicks verbunden.	Connected in a few clicks.	Verbonden in een paar klikken.	Conexión en unos pocos clics.	Connecté en quelques clics.	Connesso in pochi clic.
+Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund.	The assistant sets up MCP and skills. Credentials stay in Keychain.	De assistent stelt MCP en skills in. Toegangsgegevens blijven in de sleutelhanger.	El asistente configura MCP y skills. Las credenciales permanecen en el llavero.	L’assistant configure MCP et les skills. Les identifiants restent dans le trousseau.	L’assistente configura MCP e skill. Le credenziali restano nel portachiavi.
+MCP automatisch einrichten. Skill als ZIP für den Desktop Import.	Automatic MCP setup. Skill ZIP for Desktop import.	MCP automatisch instellen. Skill ZIP voor Desktop import.	Configurar MCP automáticamente. Skill en ZIP para importar en Desktop.	Configuration automatique de MCP. Skill ZIP à importer dans Desktop.	Configurazione MCP automatica. Skill ZIP per l’importazione in Desktop.
+MCP Verbindung und Shopdeck Skill automatisch installieren.	Automatically install MCP connection and Shopdeck skill.	MCP verbinding en Shopdeck skill automatisch installeren.	Instalar automáticamente la conexión MCP y el skill de Shopdeck.	Installer automatiquement la connexion MCP et le skill Shopdeck.	Installa automaticamente la connessione MCP e la skill Shopdeck.
+Erneut einrichten	Set up again	Opnieuw instellen	Configurar de nuevo	Configurer à nouveau	Configura di nuovo
+Einrichten	Set up	Instellen	Configurar	Configurer	Configura
+MCP Verbindung prüfen	Test MCP connection	MCP verbinding testen	Probar conexión MCP	Tester la connexion MCP	Verifica connessione MCP
+Claude Desktop Skill exportieren	Export Claude Desktop skill	Claude Desktop skill exporteren	Exportar skill para Claude Desktop	Exporter le skill Claude Desktop	Esporta skill per Claude Desktop
+Bestehende Konfigurationen werden gesichert. Starte den jeweiligen Client nach der Einrichtung neu. In Claude Desktop importierst du den Skill unter Einstellungen → Fähigkeiten → Skills.	Existing configurations are backed up. Restart the client after setup. In Claude Desktop import the skill in Settings → Capabilities → Skills.	Bestaande configuraties worden geback upt. Start de client na de installatie opnieuw. Importeer de skill in Claude Desktop via Instellingen → Mogelijkheden → Skills.	Se guardan copias de las configuraciones existentes. Reinicia el cliente tras la instalación. En Claude Desktop importa el skill en Ajustes → Capacidades → Skills.	Les configurations existantes sont sauvegardées. Redémarrez le client après la configuration. Dans Claude Desktop, importez le skill via Réglages → Capacités → Skills.	Le configurazioni esistenti vengono salvate. Riavvia il client dopo la configurazione. In Claude Desktop importa la skill da Impostazioni → Capacità → Skills.
+Welche Shops darf die KI sehen?	Which shops can AI access?	Welke shops mag AI zien?	¿A qué tiendas puede acceder la IA?	Quelles boutiques l’IA peut elle voir ?	A quali negozi può accedere l’IA?
+MCP Zugriff	MCP access	MCP toegang	Acceso MCP	Accès MCP	Accesso MCP
+Manuelle Konfiguration	Manual configuration	Handmatige configuratie	Configuración manual	Configuration manuelle	Configurazione manuale
+Kopieren	Copy	Kopiëren	Copiar	Copier	Copia
+Eingerichtet. Bitte starte den Client neu.	Setup complete. Please restart the client.	Ingesteld. Start de client opnieuw.	Configuración completada. Reinicia el cliente.	Configuration terminée. Redémarrez le client.	Configurazione completata. Riavvia il client.
+Der MCP Server hat nicht korrekt geantwortet.	The MCP server did not respond correctly.	De MCP server heeft niet correct geantwoord.	El servidor MCP no respondió correctamente.	Le serveur MCP n’a pas répondu correctement.	Il server MCP non ha risposto correttamente.
+MCP Server antwortet.	MCP server is responding.	MCP server reageert.	El servidor MCP responde.	Le serveur MCP répond.	Il server MCP risponde.
+Werkzeuge verfügbar.	tools available.	tools beschikbaar.	herramientas disponibles.	outils disponibles.	strumenti disponibili.
+Skill exportiert. Importiere die ZIP Datei in Claude Desktop.	Skill exported. Import the ZIP file in Claude Desktop.	Skill geëxporteerd. Importeer het ZIP bestand in Claude Desktop.	Skill exportado. Importa el archivo ZIP en Claude Desktop.	Skill exporté. Importez le fichier ZIP dans Claude Desktop.	Skill esportata. Importa il file ZIP in Claude Desktop.
+Du hast das letzte Wort.	You have the final say.	Jij hebt het laatste woord.	Tú tienes la última palabra.	Vous avez le dernier mot.	L’ultima parola spetta a te.
+Prüfe KI Vorschläge und übernimm Änderungen gezielt in deinen Shop.	Review AI proposals and apply selected changes to your shop.	Beoordeel AI voorstellen en pas wijzigingen gericht toe in je shop.	Revisa las propuestas de IA y aplica los cambios elegidos en tu tienda.	Vérifiez les propositions IA et appliquez les modifications choisies.	Esamina le proposte IA e applica le modifiche selezionate al negozio.
+Alles erledigt	All done	Alles afgehandeld	Todo listo	Tout est fait	Tutto completato
+Neue Vorschläge aus Codex und Claude erscheinen hier.	New proposals from Codex and Claude appear here.	Nieuwe voorstellen van Codex en Claude verschijnen hier.	Las nuevas propuestas de Codex y Claude aparecen aquí.	Les nouvelles propositions de Codex et Claude apparaissent ici.	Le nuove proposte di Codex e Claude appaiono qui.
+Shop entfernt	Shop removed	Shop verwijderd	Tienda eliminada	Boutique retirée	Negozio rimosso
+Ablehnen	Reject	Afwijzen	Rechazar	Refuser	Rifiuta
+Prüfen und übernehmen	Review and apply	Beoordelen en toepassen	Revisar y aplicar	Vérifier et appliquer	Verifica e applica
+Übernahme wurde unterbrochen. Prüfe den aktuellen Produktstand.	Application was interrupted. Check the current product state.	Het toepassen is onderbroken. Controleer de huidige productstatus.	La aplicación se interrumpió. Revisa el estado actual del producto.	L’application a été interrompue. Vérifiez l’état actuel du produit.	L’applicazione è stata interrotta. Verifica lo stato attuale del prodotto.
+Erneut zur Prüfung vorlegen	Submit for review again	Opnieuw ter beoordeling indienen	Enviar de nuevo a revisión	Soumettre à nouveau	Invia nuovamente alla verifica
+Jetzt übernehmen	Apply now	Nu toepassen	Aplicar ahora	Appliquer maintenant	Applica ora
+Bleib auf dem neuesten Stand.	Stay up to date.	Blijf op de hoogte.	Mantente al día.	Restez à jour.	Resta aggiornato.
+Shopware Releases direkt von GitHub. Verglichen mit deinen verbundenen Shops.	Shopware releases straight from GitHub. Compared with your connected shops.	Shopware releases direct van GitHub. Vergeleken met je verbonden shops.	Versiones de Shopware desde GitHub. Comparadas con tus tiendas conectadas.	Versions Shopware depuis GitHub. Comparées à vos boutiques connectées.	Versioni Shopware da GitHub. Confrontate con i tuoi negozi collegati.
+Updates prüfen	Check for updates	Updates controleren	Buscar actualizaciones	Rechercher des mises à jour	Cerca aggiornamenti
+Versionen werden geprüft …	Checking versions …	Versies controleren …	Comprobando versiones …	Vérification des versions …	Verifica versioni …
+Aktuelle stabile Version	Latest stable version	Nieuwste stabiele versie	Última versión estable	Dernière version stable	Ultima versione stabile
+Geprüft:	Checked:	Gecontroleerd:	Comprobado:	Vérifié :	Verificato:
+Release Notes öffnen	Open release notes	Release notes openen	Abrir notas de la versión	Ouvrir les notes de version	Apri note di rilascio
+Beispielversion im Demomodus	Example version in demo mode	Voorbeeldversie in demomodus	Versión de ejemplo en modo demo	Version d’exemple en mode démo	Versione di esempio in modalità demo
+Update verfügbar	Update available	Update beschikbaar	Actualización disponible	Mise à jour disponible	Aggiornamento disponibile
+Aktuell	Up to date	Actueel	Actualizado	À jour	Aggiornato
+Noch nicht geprüft	Not checked yet	Nog niet gecontroleerd	Aún sin comprobar	Pas encore vérifié	Non ancora verificato
+Was ist neu?	What’s new?	Wat is er nieuw?	¿Qué hay de nuevo?	Quoi de neuf ?	Cosa c’è di nuovo?
+Shopware Update Anleitung	Shopware update guide	Shopware updatehandleiding	Guía de actualización de Shopware	Guide de mise à jour Shopware	Guida agli aggiornamenti Shopware
+Shopdeck zeigt neue Versionen an. Updates installierst du über den vorgesehenen Weg deines Shops.	Shopdeck shows new releases. Install updates through your shop’s usual update process.	Shopdeck toont nieuwe versies. Installeer updates via de gebruikelijke weg van je shop.	Shopdeck muestra las nuevas versiones. Instala actualizaciones mediante el proceso habitual de tu tienda.	Shopdeck affiche les nouvelles versions. Installez les mises à jour via le processus habituel de votre boutique.	Shopdeck mostra le nuove versioni. Installa gli aggiornamenti tramite la procedura abituale del negozio.
+Was sich getan hat.	What’s been happening.	Wat er is gebeurd.	Lo que ha pasado.	Ce qui s’est passé.	Cosa è successo.
+Verbindungen, Änderungen und Benachrichtigungen an einem Ort.	Connections, changes and notifications in one place.	Verbindingen, wijzigingen en meldingen op één plek.	Conexiones, cambios y notificaciones en un solo lugar.	Connexions, modifications et notifications au même endroit.	Connessioni, modifiche e notifiche in un unico posto.
+Noch keine Aktivität	No activity yet	Nog geen activiteit	Aún no hay actividad	Aucune activité	Nessuna attività
+Sprache	Language	Taal	Idioma	Langue	Lingua
+Die Sprache wird sofort übernommen.	The language changes immediately.	De taal wordt direct toegepast.	El idioma cambia al instante.	La langue change immédiatement.	La lingua cambia subito.
+Version	Version	Versie	Versión	Version	Versione
+Native macOS App für deine Shopware Shops.	Native macOS app for your Shopware shops.	Native macOS app voor je Shopware shops.	App nativa de macOS para tus tiendas Shopware.	App macOS native pour vos boutiques Shopware.	App macOS nativa per i tuoi negozi Shopware.
+Nur das, was dich interessiert.	Only what matters to you.	Alleen wat jou interesseert.	Solo lo que te interesa.	Seulement ce qui vous intéresse.	Solo quello che ti interessa.
+Erfahre von neuen Bestellungen, die zu deinen Regeln passen.	Hear about new orders that match your rules.	Ontvang meldingen over nieuwe bestellingen die aan je regels voldoen.	Recibe avisos de nuevos pedidos que cumplan tus reglas.	Recevez les nouvelles commandes qui correspondent à vos règles.	Ricevi avvisi sui nuovi ordini che corrispondono alle tue regole.
+Neue Regel	New rule	Nieuwe regel	Nueva regla	Nouvelle règle	Nuova regola
+Mitteilungen auf deinem Mac	Notifications on your Mac	Meldingen op je Mac	Notificaciones en tu Mac	Notifications sur votre Mac	Notifiche sul tuo Mac
+Prüfung jede Minute, solange Shopdeck läuft. Beim ersten Start werden bestehende Bestellungen als Ausgangspunkt gespeichert.	Checked every minute while Shopdeck is running. Existing orders are saved as the starting point on first use.	Controle elke minuut zolang Shopdeck actief is. Bestaande bestellingen worden bij de eerste start als uitgangspunt opgeslagen.	Comprobación cada minuto mientras Shopdeck está abierto. Al iniciar se guardan los pedidos existentes como punto de partida.	Vérification chaque minute tant que Shopdeck est ouvert. Les commandes existantes sont enregistrées comme point de départ.	Verifica ogni minuto mentre Shopdeck è aperto. Gli ordini esistenti vengono salvati come punto di partenza al primo avvio.
+Mitteilungen erlauben	Allow notifications	Meldingen toestaan	Permitir notificaciones	Autoriser les notifications	Consenti notifiche
+Alle neuen Bestellungen	All new orders	Alle nieuwe bestellingen	Todos los pedidos nuevos	Toutes les nouvelles commandes	Tutti i nuovi ordini
+Bearbeiten	Edit	Bewerken	Editar	Modifier	Modifica
+Regel löschen	Delete rule	Regel verwijderen	Eliminar regla	Supprimer la règle	Elimina regola
+Deine erste Regel	Your first rule	Je eerste regel	Tu primera regla	Votre première règle	La tua prima regola
+Alle Bestellungen oder nur bestimmte Beträge, Währungen, Status und Kundeneigenschaften.	All orders, or just specific amounts, currencies, statuses and customer properties.	Alle bestellingen of alleen bepaalde bedragen, valuta’s, statussen en klanteigenschappen.	Todos los pedidos o solo importes, divisas, estados y características de clientes específicos.	Toutes les commandes ou certains montants, devises, statuts et caractéristiques clients.	Tutti gli ordini o solo importi, valute, stati e proprietà dei clienti specifici.
+Jetzt prüfen	Check now	Nu controleren	Comprobar ahora	Vérifier maintenant	Verifica ora
+Bestellungen geprüft.	Orders checked.	Bestellingen gecontroleerd.	Pedidos comprobados.	Commandes vérifiées.	Ordini verificati.
+Testmitteilung senden	Send test notification	Testmelding sturen	Enviar notificación de prueba	Envoyer une notification de test	Invia notifica di prova
+Deine Bestellbenachrichtigungen sind bereit.	Your order notifications are ready.	Je bestelmeldingen zijn klaar.	Tus notificaciones de pedidos están listas.	Vos notifications de commande sont prêtes.	Le notifiche degli ordini sono pronte.
+Eine Regel für deine Bestellungen.	A rule for your orders.	Een regel voor je bestellingen.	Una regla para tus pedidos.	Une règle pour vos commandes.	Una regola per i tuoi ordini.
+Regel bearbeiten	Edit rule	Regel bewerken	Editar regla	Modifier la règle	Modifica regola
+Name der Regel	Rule name	Naam van de regel	Nombre de la regla	Nom de la règle	Nome regola
+Verknüpfung	Match mode	Combinatie	Combinación	Combinaison	Combinazione
+Alle Bedingungen	All conditions	Alle voorwaarden	Todas las condiciones	Toutes les conditions	Tutte le condizioni
+Mindestens eine Bedingung	At least one condition	Minstens één voorwaarde	Al menos una condición	Au moins une condition	Almeno una condizione
+Ohne Bedingungen gilt die Regel für alle neuen Bestellungen.	Without conditions, the rule matches every new order.	Zonder voorwaarden geldt de regel voor alle nieuwe bestellingen.	Sin condiciones, la regla se aplica a todos los pedidos nuevos.	Sans condition, la règle s’applique à toutes les nouvelles commandes.	Senza condizioni la regola si applica a tutti i nuovi ordini.
+enthält	contains	bevat	contiene	contient	contiene
+Wert	Value	Waarde	Valor	Valeur	Valore
+Bedingung entfernen	Remove condition	Voorwaarde verwijderen	Eliminar condición	Retirer la condition	Rimuovi condizione
+Bedingung hinzufügen	Add condition	Voorwaarde toevoegen	Añadir condición	Ajouter une condition	Aggiungi condizione
+Währungswerte wie EUR, USD oder GBP. Statuswerte: open, in_progress, completed, cancelled. Beträge werden in der Währung der Bestellung verglichen.	Currencies such as EUR, USD or GBP. Status values: open, in_progress, completed, cancelled. Amounts are compared in the order’s currency.	Valuta’s zoals EUR, USD of GBP. Statuswaarden: open, in_progress, completed, cancelled. Bedragen worden vergeleken in de valuta van de bestelling.	Divisas como EUR, USD o GBP. Estados: open, in_progress, completed, cancelled. Los importes se comparan en la divisa del pedido.	Devises : EUR, USD ou GBP. Statuts : open, in_progress, completed, cancelled. Les montants sont comparés dans la devise de la commande.	Valute come EUR, USD o GBP. Stati: open, in_progress, completed, cancelled. Gli importi vengono confrontati nella valuta dell’ordine.
+Mit letzter Bestellung testen	Test with latest order	Met laatste bestelling testen	Probar con el último pedido	Tester avec la dernière commande	Prova con l’ultimo ordine
+aktuelle Bestellungen passen zur Regel.	current orders match the rule.	actuele bestellingen voldoen aan de regel.	pedidos actuales cumplen la regla.	commandes actuelles correspondent à la règle.	ordini attuali corrispondono alla regola.
+Mitteilungen erlaubt	Notifications allowed	Meldingen toegestaan	Notificaciones permitidas	Notifications autorisées	Notifiche consentite
+Mitteilungen nicht erlaubt	Notifications not allowed	Meldingen niet toegestaan	Notificaciones no permitidas	Notifications non autorisées	Notifiche non consentite
+Neue Bestellung	New order	Nieuwe bestelling	Nuevo pedido	Nouvelle commande	Nuovo ordine
+Zu viele neue Bestellungen. Bitte prüfe den Shop direkt.	Too many new orders. Please check the shop directly.	Te veel nieuwe bestellingen. Controleer de shop rechtstreeks.	Demasiados pedidos nuevos. Revisa la tienda directamente.	Trop de nouvelles commandes. Vérifiez la boutique directement.	Troppi nuovi ordini. Controlla direttamente il negozio.
+Shop gespeichert	Shop saved	Shop opgeslagen	Tienda guardada	Boutique enregistrée	Negozio salvato
+Produkt aktualisiert	Product updated	Product bijgewerkt	Producto actualizado	Produit mis à jour	Prodotto aggiornato
+Shop nicht gefunden	Shop not found	Shop niet gevonden	Tienda no encontrada	Boutique introuvable	Negozio non trovato
+Dieser Vorschlag wurde bereits bearbeitet.	This proposal has already been handled.	Dit voorstel is al verwerkt.	Esta propuesta ya se ha procesado.	Cette proposition a déjà été traitée.	Questa proposta è già stata gestita.
+Änderung übernommen	Change applied	Wijziging toegepast	Cambio aplicado	Modification appliquée	Modifica applicata
+Release Informationen konnten nicht geladen werden.	Release information could not be loaded.	Release informatie kon niet worden geladen.	No se ha podido cargar la información de versiones.	Impossible de charger les informations de version.	Impossibile caricare le informazioni sulle versioni.
+Keine stabile Version gefunden.	No stable release found.	Geen stabiele versie gevonden.	No se ha encontrado una versión estable.	Aucune version stable trouvée.	Nessuna versione stabile trovata.
+Docker fehlt. Installiere Docker Desktop und starte es.	Docker is missing. Install and launch Docker Desktop.	Docker ontbreekt. Installeer en start Docker Desktop.	Falta Docker. Instala e inicia Docker Desktop.	Docker est absent. Installez et lancez Docker Desktop.	Docker non è presente. Installa e avvia Docker Desktop.
+Prüfe Port und Image Version.	Check the port and image version.	Controleer de poort en imageversie.	Comprueba el puerto y la versión de la imagen.	Vérifiez le port et la version de l’image.	Controlla la porta e la versione dell’immagine.
+Docker wird geprüft …	Checking Docker …	Docker controleren …	Comprobando Docker …	Vérification de Docker …	Verifica Docker …
+Shopware Image wird geladen …	Downloading Shopware image …	Shopware image downloaden …	Descargando imagen de Shopware …	Téléchargement de l’image Shopware …	Download immagine Shopware …
+Testshop wird gestartet …	Starting test shop …	Testshop starten …	Iniciando tienda de prueba …	Démarrage de la boutique de test …	Avvio negozio di prova …
+Lokaler Testshop	Local test shop	Lokale testshop	Tienda de prueba local	Boutique de test locale	Negozio di prova locale
+Shopware startet. Das kann einige Minuten dauern …	Shopware is starting. This may take a few minutes …	Shopware start. Dit kan enkele minuten duren …	Shopware se está iniciando. Puede tardar unos minutos …	Shopware démarre. Cela peut prendre quelques minutes …	Shopware si sta avviando. Potrebbero servire alcuni minuti …
+Shopware ist noch nicht bereit.	Shopware is not ready yet.	Shopware is nog niet klaar.	Shopware aún no está listo.	Shopware n’est pas encore prêt.	Shopware non è ancora pronto.
+API Verbindung wird gespeichert …	Saving API connection …	API verbinding opslaan …	Guardando conexión API …	Enregistrement de la connexion API …	Salvataggio connessione API …
+Dein lokaler Shop ist bereit.	Your local shop is ready.	Je lokale shop is klaar.	Tu tienda local está lista.	Votre boutique locale est prête.	Il tuo negozio locale è pronto.
+Produktion	Production	Productie	Producción	Production	Produzione
+Staging	Staging	Staging	Preproducción	Préproduction	Staging
+Lokal	Local	Lokaal	Local	Local	Locale
+Bestellwert	Order value	Bestelwaarde	Importe del pedido	Montant de la commande	Valore ordine
+Versandkosten	Shipping cost	Verzendkosten	Gastos de envío	Frais de livraison	Spese di spedizione
+Währung	Currency	Valuta	Divisa	Devise	Valuta
+Bestellstatus	Order status	Bestelstatus	Estado del pedido	Statut de la commande	Stato ordine
+Bestellnummer	Order number	Bestelnummer	Número de pedido	Numéro de commande	Numero ordine
+Kunden E Mail	Customer email	E mail klant	Correo del cliente	E mail du client	E mail cliente
+Bedingungen, alle müssen passen	conditions, all must match	voorwaarden, alle moeten voldoen	condiciones, deben cumplirse todas	conditions, toutes requises	condizioni, tutte devono corrispondere
+Bedingungen, eine muss passen	conditions, one must match	voorwaarden, één moet voldoen	condiciones, debe cumplirse una	conditions, une seule requise	condizioni, ne basta una
+open	Open	Open	Abierto	Ouvert	Aperto
+in_progress	In progress	In behandeling	En proceso	En cours	In corso
+completed	Completed	Voltooid	Completado	Terminé	Completato
+cancelled	Cancelled	Geannuleerd	Cancelado	Annulé	Annullato
+pending	Pending	In afwachting	Pendiente	En attente	In attesa
+applying	Applying	Toepassen	Aplicando	Application	Applicazione
+applied	Applied	Toegepast	Aplicado	Appliqué	Applicato
+rejected	Rejected	Afgewezen	Rechazado	Refusé	Rifiutato
+name	Name	Naam	Nombre	Nom	Nome
+description	Description	Beschrijving	Descripción	Description	Descrizione
+stock	Stock	Voorraad	Existencias	Stock	Scorte
+active	Active	Actief	Activo	Actif	Attivo
+Shopware Updates täglich prüfen	Check Shopware updates daily	Dagelijks Shopware updates controleren	Buscar actualizaciones de Shopware a diario	Vérifier les mises à jour Shopware chaque jour	Controlla gli aggiornamenti Shopware ogni giorno
+Gib der Ansicht einen Namen.	Give this view a name.	Geef deze weergave een naam.	Dale un nombre a la vista.	Donnez un nom à cette vue.	Dai un nome a questa vista.
+Ansicht gespeichert.	View saved.	Weergave opgeslagen.	Vista guardada.	Vue enregistrée.	Vista salvata.
+Diese Ansicht wird nicht unterstützt.	This view is not supported.	Deze weergave wordt niet ondersteund.	Esta vista no es compatible.	Cette vue n’est pas prise en charge.	Questa vista non è supportata.
+Der Shop dieser Ansicht wurde entfernt.	The shop for this view has been removed.	De shop van deze weergave is verwijderd.	La tienda de esta vista se ha eliminado.	La boutique de cette vue a été retirée.	Il negozio di questa vista è stato rimosso.
+Gespeicherte Ansicht	Saved view	Opgeslagen weergave	Vista guardada	Vue enregistrée	Vista salvata
+Gemeinsame Übersicht	Combined overview	Gezamenlijk overzicht	Resumen conjunto	Vue d’ensemble commune	Panoramica generale
+Arbeitsbereich öffnen	Open workspace	Werkplek openen	Abrir espacio de trabajo	Ouvrir l’espace de travail	Apri spazio di lavoro
+Verbinden oder lokal mit Docker starten	Connect or run locally with Docker	Verbinden of lokaal met Docker starten	Conectar o iniciar localmente con Docker	Connecter ou démarrer en local avec Docker	Collega o avvia in locale con Docker
+Knappe Bestände prüfen	Check low stock	Lage voorraad controleren	Revisar existencias bajas	Vérifier les stocks faibles	Verifica scorte basse
+Produkte mit höchstens fünf Stück Bestand	Products with at most five units in stock	Producten met maximaal vijf stuks op voorraad	Productos con cinco unidades o menos	Produits avec cinq unités en stock au maximum	Prodotti con al massimo cinque unità in magazzino
+Daten der gewählten Shops neu laden	Reload selected shops’ data	Gegevens van de gekozen shops vernieuwen	Recargar datos de las tiendas seleccionadas	Actualiser les données des boutiques choisies	Ricarica i dati dei negozi selezionati
+Wohin möchtest du?	Where would you like to go?	Waar wil je naartoe?	¿Adónde quieres ir?	Où souhaitez vous aller ?	Dove vuoi andare?
+Tippen zum Suchen	Type to search	Typ om te zoeken	Escribe para buscar	Saisissez pour rechercher	Digita per cercare
+Auswählen	Select	Selecteren	Seleccionar	Sélectionner	Seleziona
+Öffnen	Open	Openen	Abrir	Ouvrir	Apri
+Diese Ansicht behalten	Keep this view	Deze weergave bewaren	Guardar esta vista	Conserver cette vue	Conserva questa vista
+Shopauswahl, Suche und Filter werden zusammen gespeichert.	Shop selection, search and filters are saved together.	Shopselectie, zoekopdracht en filters worden samen opgeslagen.	La selección de tiendas, la búsqueda y los filtros se guardan juntos.	La sélection des boutiques, la recherche et les filtres sont enregistrés ensemble.	La selezione dei negozi, la ricerca e i filtri vengono salvati insieme.
+Name der Ansicht	View name	Naam van de weergave	Nombre de la vista	Nom de la vue	Nome della vista
+Ansicht speichern	Save view	Weergave opslaan	Guardar vista	Enregistrer la vue	Salva vista
+Alle Status	All statuses	Alle statussen	Todos los estados	Tous les statuts	Tutti gli stati
+Schnellsuche	Quick search	Snel zoeken	Búsqueda rápida	Recherche rapide	Ricerca rapida
+Ansicht entfernen	Remove view	Weergave verwijderen	Eliminar vista	Retirer la vue	Rimuovi vista
+Abweichende Werte. Bitte prüfe das Produkt.	Values differ. Please check the product.	Waarden verschillen. Controleer het product.	Los valores son distintos. Revisa el producto.	Les valeurs diffèrent. Vérifiez le produit.	I valori sono diversi. Controlla il prodotto.
+Administration	Administration	Beheer	Administración	Administration	Amministrazione
+Administration in Shopdeck öffnen	Open administration in Shopdeck	Beheer in Shopdeck openen	Abrir administración en Shopdeck	Ouvrir l’administration dans Shopdeck	Apri amministrazione in Shopdeck
+Administration konnte nicht geöffnet werden	Could not open administration	Beheer kon niet worden geopend	No se pudo abrir la administración	Impossible d’ouvrir l’administration	Impossibile aprire l’amministrazione
+Aktion	Action	Actie	Acción	Action	Azione
+Aktivstatus	Active status	Actieve status	Estado de activación	Statut actif	Stato attivo
+Aktueller Shopstand abgeglichen.	Current shop values checked.	Huidige shopwaarden gecontroleerd.	Valores actuales de la tienda comprobados.	Valeurs actuelles de la boutique vérifiées.	Valori attuali del negozio verificati.
+Alle aktivieren	Activate all	Alles activeren	Activar todos	Tout activer	Attiva tutti
+Alle deaktivieren	Deactivate all	Alles deactiveren	Desactivar todos	Tout désactiver	Disattiva tutti
+Auf Wert setzen	Set to value	Op waarde instellen	Establecer valor	Définir une valeur	Imposta valore
+Auswahl aufheben	Clear selection	Selectie opheffen	Borrar selección	Effacer la sélection	Deseleziona
+Beibehalten	Keep unchanged	Ongewijzigd laten	Mantener	Conserver	Mantieni
+Bestand ändern	Change stock	Voorraad wijzigen	Cambiar existencias	Modifier le stock	Modifica scorte
+Deine Shopware Administration. Direkt hier.	Your Shopware administration. Right here.	Je Shopware beheer. Direct hier.	Tu administración de Shopware. Aquí mismo.	Votre administration Shopware. Ici même.	La tua amministrazione Shopware. Proprio qui.
+Demoprofil ohne echte Administration	Demo profile without a real administration	Demoprofiel zonder echt beheer	Perfil de demostración sin administración real	Profil de démo sans administration réelle	Profilo demo senza amministrazione reale
+Die Webseite wurde beendet. Lade die Administration erneut.	The web page stopped. Reload the administration.	De webpagina is gestopt. Laad het beheer opnieuw.	La página se ha detenido. Recarga la administración.	La page s’est arrêtée. Rechargez l’administration.	La pagina si è arrestata. Ricarica l’amministrazione.
+Die echte Administration gehört zum echten Shop.	A real administration needs a real shop.	Echt beheer hoort bij een echte shop.	La administración real necesita una tienda real.	Une administration réelle nécessite une vraie boutique.	L’amministrazione reale richiede un negozio reale.
+Die Änderung muss im Änderungsverlauf geprüft werden.	Review this change in the change history.	Controleer deze wijziging in de wijzigingsgeschiedenis.	Revisa este cambio en el historial.	Vérifiez cette modification dans l’historique.	Verifica questa modifica nella cronologia.
+Dieses Demoprofil enthält fiktive Daten und keine Shopware Installation. Verbinde einen eigenen Shop oder starte einen lokalen Docker Testshop.	This demo profile contains fictional data, without a Shopware installation. Connect your own shop or start a local Docker test shop.	Dit demoprofiel bevat fictieve gegevens zonder Shopware installatie. Verbind je eigen shop of start een lokale Docker testshop.	Este perfil contiene datos ficticios sin una instalación de Shopware. Conecta tu tienda o crea una tienda local con Docker.	Ce profil contient des données fictives sans installation Shopware. Connectez votre boutique ou créez une boutique locale avec Docker.	Questo profilo contiene dati fittizi senza un’installazione Shopware. Collega il tuo negozio o crea un negozio locale con Docker.
+Ein Durchgang. Mehrere Produkte.	One pass. Multiple products.	Eén ronde. Meerdere producten.	Una operación. Varios productos.	Une opération. Plusieurs produits.	Un’operazione. Più prodotti.
+Ein negativer Betrag verringert den Bestand. Vor dem Schreiben liest Shopdeck alle betroffenen Produkte neu und zeigt die konkreten Änderungen.	A negative amount reduces stock. Before writing, Shopdeck reloads the selected products and previews the exact changes.	Een negatief getal verlaagt de voorraad. Voor het opslaan leest Shopdeck de producten opnieuw en toont de wijzigingen.	Un importe negativo reduce las existencias. Antes de guardar, Shopdeck vuelve a leer los productos y muestra los cambios exactos.	Une valeur négative réduit le stock. Avant d’écrire, Shopdeck recharge les produits et affiche les modifications exactes.	Un valore negativo riduce le scorte. Prima di salvare, Shopdeck rilegge i prodotti e mostra le modifiche esatte.
+Einstellungen anpassen	Adjust settings	Instellingen aanpassen	Ajustar opciones	Ajuster les réglages	Modifica impostazioni
+Erneut laden	Reload	Opnieuw laden	Recargar	Recharger	Ricarica
+Fehlgeschlagen	Failed	Mislukt	Error	Échec	Non riuscito
+Gemeinsam bearbeiten	Edit together	Samen bewerken	Editar en conjunto	Modifier ensemble	Modifica insieme
+Gemeinsam bearbeitet	Bulk edit	Samen bewerkt	Edición conjunta	Modification groupée	Modifica collettiva
+Im Browser öffnen	Open in browser	In browser openen	Abrir en navegador	Ouvrir dans le navigateur	Apri nel browser
+Jede Änderung nachvollziehbar.	Every change accounted for.	Elke wijziging inzichtelijk.	Cada cambio queda registrado.	Chaque modification est traçable.	Ogni modifica è tracciata.
+Jedes erfolgreich geänderte Produkt erhält einen eigenen Eintrag zum Rückgängigmachen. Produkte mit Fehlern bleiben einzeln erkennbar.	Each successfully changed product gets its own undo entry. Products with errors stay individually visible.	Elk gewijzigd product krijgt een eigen herstelitem. Producten met fouten blijven afzonderlijk zichtbaar.	Cada producto modificado tiene su propia entrada para deshacer. Los errores se muestran por producto.	Chaque produit modifié possède sa propre entrée d’annulation. Les erreurs restent visibles individuellement.	Ogni prodotto modificato ha una propria voce di annullamento. Gli errori restano visibili singolarmente.
+KI Vorschlag	AI proposal	AI voorstel	Propuesta de IA	Proposition IA	Proposta IA
+Leer	Empty	Leeg	Vacío	Vide	Vuoto
+Mit Shop abgleichen	Check against shop	Met shop vergelijken	Comparar con la tienda	Vérifier dans la boutique	Confronta con il negozio
+Nach diesem Produkt stoppen	Stop after this product	Na dit product stoppen	Detener tras este producto	Arrêter après ce produit	Ferma dopo questo prodotto
+Nicht ausgeführt	Not run	Niet uitgevoerd	No ejecutado	Non exécuté	Non eseguito
+Nicht übernommen	Not applied	Niet toegepast	No aplicado	Non appliqué	Non applicato
+Noch keine Änderungen	No changes yet	Nog geen wijzigingen	Aún no hay cambios	Aucune modification	Nessuna modifica
+Nur offene Prüfungen	Only unresolved changes	Alleen openstaande controles	Solo cambios pendientes	Vérifications en attente	Solo verifiche aperte
+Produkte ausgewählt	products selected	producten geselecteerd	productos seleccionados	produits sélectionnés	prodotti selezionati
+Produkte jetzt ändern	Change products now	Producten nu wijzigen	Cambiar productos ahora	Modifier les produits maintenant	Modifica prodotti ora
+Produkteditor	Product editor	Producteditor	Editor de productos	Éditeur de produit	Editor prodotti
+Produkteditor, Sammelbearbeitung und freigegebene KI Vorschläge schreiben ab jetzt in diesen Verlauf.	Product edits, bulk edits and approved AI proposals now appear in this history.	Productbewerkingen, groepsbewerkingen en goedgekeurde AI voorstellen verschijnen voortaan hier.	Las ediciones de productos, los cambios conjuntos y las propuestas de IA aprobadas aparecen aquí.	Les modifications de produits, groupées ou proposées par l’IA apparaissent désormais ici.	Le modifiche dei prodotti, collettive e le proposte IA approvate appaiono qui.
+Rückgängig machen	Undo	Ongedaan maken	Deshacer	Annuler	Annulla modifica
+Rücknahme	Undo operation	Herstelactie	Anulación	Annulation	Annullamento
+Seite neu laden	Reload page	Pagina opnieuw laden	Recargar página	Recharger la page	Ricarica pagina
+Shopdeck prüft zuerst die aktuellen Werte. Neuere Änderungen werden nicht überschrieben.	Shopdeck checks current values first. It refuses to overwrite values that changed again.	Shopdeck controleert eerst de huidige waarden en weigert nieuwere wijzigingen te overschrijven.	Shopdeck comprueba los valores actuales y rechaza sobrescribir valores modificados después.	Shopdeck vérifie les valeurs actuelles et refuse d’écraser celles modifiées ensuite.	Shopdeck verifica i valori attuali e rifiuta di sovrascrivere quelli modificati in seguito.
+Um Betrag ändern	Adjust by amount	Met aantal aanpassen	Ajustar por cantidad	Ajuster d’un montant	Varia di una quantità
+Unverändert	Unchanged	Ongewijzigd	Sin cambios	Inchangé	Invariato
+Ursprüngliche Werte wiederherstellen	Restore original values	Oorspronkelijke waarden herstellen	Restaurar valores originales	Restaurer les valeurs initiales	Ripristina valori originali
+Vererbt oder leer	Inherited or empty	Overgeërfd of leeg	Heredado o vacío	Hérité ou vide	Ereditato o vuoto
+Vorher und Nachher bleiben erhalten. Du kannst bestätigte Änderungen gezielt zurücknehmen.	Before and after values are kept. You can undo confirmed changes individually.	Waarden voor en na blijven bewaard. Je kunt bevestigde wijzigingen afzonderlijk terugdraaien.	Se conservan los valores anteriores y posteriores. Puedes deshacer cambios confirmados por separado.	Les valeurs avant et après sont conservées. Vous pouvez annuler les modifications confirmées individuellement.	I valori prima e dopo vengono conservati. Puoi annullare singolarmente le modifiche confermate.
+Vorschau laden	Load preview	Voorbeeld laden	Cargar vista previa	Charger l’aperçu	Carica anteprima
+Vorschau wird aus dem Shop geladen …	Loading preview from shop …	Voorbeeld uit shop laden …	Cargando vista previa de la tienda …	Chargement de l’aperçu …	Caricamento anteprima dal negozio …
+Weiter	Forward	Vooruit	Adelante	Suivant	Avanti
+Wird übernommen	Applying	Wordt toegepast	Aplicando	Application en cours	Applicazione in corso
+Wähle einen Shop. Jede Administration behält ihren eigenen Anmeldestatus.	Choose a shop. Each administration keeps its own sign in session.	Kies een shop. Elk beheer houdt een eigen aanmeldsessie.	Elige una tienda. Cada administración conserva su propia sesión.	Choisissez une boutique. Chaque administration conserve sa propre session.	Scegli un negozio. Ogni amministrazione mantiene la propria sessione.
+Zu prüfen	Needs review	Te controleren	Requiere revisión	À vérifier	Da verificare
+Zur Administration	Administration home	Naar beheer	Inicio de administración	Accueil de l’administration	Home amministrazione
+Zurück	Back	Terug	Atrás	Retour	Indietro
+Zurückgenommen	Undone	Teruggedraaid	Deshecho	Annulé	Annullato
+ausgewählte Produkte	selected products	geselecteerde producten	productos seleccionados	produits sélectionnés	prodotti selezionati
+zu prüfen	need review	te controleren	por revisar	à vérifier	da verificare
+Änderung rückgängig gemacht.	Change undone.	Wijziging ongedaan gemaakt.	Cambio deshecho.	Modification annulée.	Modifica annullata.
+Änderung rückgängig machen?	Undo this change?	Deze wijziging ongedaan maken?	¿Deshacer este cambio?	Annuler cette modification ?	Annullare questa modifica?
+Änderungen werden übernommen …	Applying changes …	Wijzigingen toepassen …	Aplicando cambios …	Application des modifications …	Applicazione modifiche …
+Änderungsverlauf	Change history	Wijzigingsgeschiedenis	Historial de cambios	Historique des modifications	Cronologia modifiche
+Änderungsverlauf öffnen	Open change history	Wijzigingsgeschiedenis openen	Abrir historial	Ouvrir l’historique	Apri cronologia
+Übernommen	Applied	Toegepast	Aplicado	Appliqué	Applicato
+übernommen	applied	toegepast	aplicados	appliquées	applicati
+needs_review	Needs review	Te controleren	Requiere revisión	À vérifier	Da verificare
+API Schlüssel liegen im macOS Schlüsselbund. Listen, Regeln und der Änderungsverlauf bleiben lokal auf diesem Mac.	API keys are stored in macOS Keychain. Lists, rules and change history stay on this Mac.	API sleutels staan in de macOS sleutelhanger. Lijsten, regels en wijzigingsgeschiedenis blijven op deze Mac.	Las claves API se guardan en el Llavero de macOS. Las listas, reglas y el historial permanecen en este Mac.	Les clés API sont dans le trousseau macOS. Les listes, règles et l’historique restent sur ce Mac.	Le chiavi API sono nel Portachiavi macOS. Elenchi, regole e cronologia restano su questo Mac.
+Abnahmeschritte	Purchase steps	Aankoopstappen	Incremento de compra	Incréments d’achat	Incrementi di acquisto
+Adressbuch	Address book	Adresboek	Libreta de direcciones	Carnet d’adresses	Rubrica indirizzi
+Aktualisiert am	Updated at	Bijgewerkt op	Actualizado el	Mis à jour le	Aggiornato il
+Alle 15 Minuten	Every 15 minutes	Elke 15 minuten	Cada 15 minutos	Toutes les 15 minutes	Ogni 15 minuti
+Alle 30 Sekunden	Every 30 seconds	Elke 30 seconden	Cada 30 segundos	Toutes les 30 secondes	Ogni 30 secondi
+Alle 5 Minuten	Every 5 minutes	Elke 5 minuten	Cada 5 minutos	Toutes les 5 minutes	Ogni 5 minuti
+Alle Felder	All fields	Alle velden	Todos los campos	Tous les champs	Tutti i campi
+Alle vom Shop gelieferten Felder einschließlich Zusatzfeldern und geladenen Verknüpfungen. Aufklappen zeigt auch verschachtelte Werte.	All fields returned by the shop, including custom fields and loaded associations. Expand to see nested values.	Alle velden van de shop, inclusief aangepaste velden en geladen koppelingen. Klap open voor geneste waarden.	Todos los campos devueltos por la tienda, incluidos campos personalizados y relaciones cargadas. Despliega para ver valores anidados.	Tous les champs renvoyés par la boutique, y compris les champs personnalisés et les relations chargées. Dépliez pour voir les valeurs imbriquées.	Tutti i campi restituiti dal negozio, inclusi campi personalizzati e relazioni caricate. Espandi per vedere i valori annidati.
+Anzahl	Quantity	Aantal	Cantidad	Quantité	Quantità
+Benachrichtigungen und Updates	Notifications and updates	Meldingen en updates	Notificaciones y actualizaciones	Notifications et mises à jour	Notifiche e aggiornamenti
+Bruttopreis	Gross price	Brutoprijs	Precio bruto	Prix TTC	Prezzo lordo
+Darstellung und Sprache	Appearance and language	Weergave en taal	Apariencia e idioma	Apparence et langue	Aspetto e lingua
+Daten konnten nicht geladen werden	Could not load data	Gegevens konden niet worden geladen	No se pudieron cargar los datos	Impossible de charger les données	Impossibile caricare i dati
+Datensätze je Shop und Seite	Records per shop and page	Records per shop en pagina	Registros por tienda y página	Enregistrements par boutique et page	Record per negozio e pagina
+Deine Liste. Deine Arbeitsweise.	Your list. Your workflow.	Jouw lijst. Jouw werkwijze.	Tu lista. Tu forma de trabajar.	Votre liste. Votre façon de travailler.	Il tuo elenco. Il tuo modo di lavorare.
+Dunkel	Dark	Donker	Oscuro	Sombre	Scuro
+EAN	EAN	EAN	EAN	EAN	EAN
+Eigene Felder sind über ihren API Pfad erreichbar, zum Beispiel customFields.mein_feld. Leere Werte erscheinen als –.	Access custom fields by API path, for example customFields.my_field. Empty values appear as –.	Gebruik het API pad voor aangepaste velden, zoals customFields.my_field. Lege waarden verschijnen als –.	Usa la ruta API para campos personalizados, por ejemplo customFields.my_field. Los valores vacíos aparecen como –.	Utilisez le chemin API pour les champs personnalisés, par exemple customFields.my_field. Les valeurs vides apparaissent sous la forme –.	Usa il percorso API per i campi personalizzati, ad esempio customFields.my_field. I valori vuoti appaiono come –.
+Eigenschaften	Properties	Eigenschappen	Propiedades	Propriétés	Proprietà
+Enthält	Contains	Bevat	Contiene	Contient	Contiene
+Erscheinungsbild	Appearance	Weergave	Apariencia	Apparence	Aspetto
+Erstellt am	Created at	Aangemaakt op	Creado el	Créé le	Creato il
+Feld	Field	Veld	Campo	Champ	Campo
+Feld auswählen	Choose a field	Kies een veld	Elegir campo	Choisir un champ	Scegli un campo
+Feld hinzufügen	Add field	Veld toevoegen	Añadir campo	Ajouter un champ	Aggiungi campo
+Feld oder Inhalt suchen	Search fields or values	Zoek velden of inhoud	Buscar campo o contenido	Rechercher un champ ou une valeur	Cerca campo o contenuto
+Feldpfad	Field path	Veldpad	Ruta del campo	Chemin du champ	Percorso del campo
+Filter aus gespeicherter Ansicht	Saved view filter	Filter uit opgeslagen weergave	Filtro de vista guardada	Filtre de vue enregistrée	Filtro della vista salvata
+Filter hinzufügen	Add filter	Filter toevoegen	Añadir filtro	Ajouter un filtre	Aggiungi filtro
+Filter zurücksetzen	Reset filters	Filters wissen	Restablecer filtros	Réinitialiser les filtres	Reimposta filtri
+Filtername	Filter name	Filternaam	Nombre del filtro	Nom du filtre	Nome del filtro
+Für Ja oder Nein true oder false eingeben. Datumswerte im ISO Format verwenden.	Use true or false for yes or no. Enter dates in ISO format.	Gebruik true of false voor ja of nee. Voer datums in ISO formaat in.	Usa true o false para sí o no. Introduce fechas en formato ISO.	Utilisez true ou false pour oui ou non. Saisissez les dates au format ISO.	Usa true o false per sì o no. Inserisci le date in formato ISO.
+Gast	Guest	Gast	Invitado	Invité	Ospite
+Gewicht	Weight	Gewicht	Peso	Poids	Peso
+Hell	Light	Licht	Claro	Clair	Chiaro
+Hersteller	Manufacturer	Fabrikant	Fabricante	Fabricant	Produttore
+Herstellernummer	Manufacturer number	Fabrikantnummer	Referencia del fabricante	Référence fabricant	Codice produttore
+Hinzufügen	Add	Toevoegen	Añadir	Ajouter	Aggiungi
+In Administration öffnen	Open in administration	Openen in administratie	Abrir en administración	Ouvrir dans l’administration	Apri nell’amministrazione
+JSON kopieren	Copy JSON	JSON kopiëren	Copiar JSON	Copier le JSON	Copia JSON
+Ja	Yes	Ja	Sí	Oui	Sì
+Jede Minute	Every minute	Elke minuut	Cada minuto	Chaque minute	Ogni minuto
+Kompakte Tabellenzeilen	Compact table rows	Compacte tabelrijen	Filas compactas	Lignes de tableau compactes	Righe compatte
+Kundengruppe	Customer group	Klantgroep	Grupo de clientes	Groupe de clients	Gruppo clienti
+Land	Country	Land	País	Pays	Paese
+Lege Schnellfilter an. Mehrere eingeschaltete Filter gelten gemeinsam für die gesamte Suche, auch über mehrere Seiten.	Create quick filters. Enabled filters apply together to the entire search, across all pages.	Maak snelfilters. Actieve filters gelden samen voor de hele zoekopdracht, over alle pagina’s.	Crea filtros rápidos. Los filtros activos se aplican juntos a toda la búsqueda, en todas las páginas.	Créez des filtres rapides. Les filtres actifs s’appliquent ensemble à toute la recherche, sur toutes les pages.	Crea filtri rapidi. I filtri attivi si applicano insieme all’intera ricerca, su tutte le pagine.
+Lieferadresse	Shipping address	Verzendadres	Dirección de envío	Adresse de livraison	Indirizzo di spedizione
+Lieferung	Delivery	Levering	Envío	Livraison	Consegna
+Liste anpassen	Customize list	Lijst aanpassen	Personalizar lista	Personnaliser la liste	Personalizza elenco
+Listen und Daten	Lists and data	Lijsten en gegevens	Listas y datos	Listes et données	Elenchi e dati
+Lokalen Datenordner öffnen	Open local data folder	Lokale gegevensmap openen	Abrir carpeta de datos local	Ouvrir le dossier de données local	Apri cartella dati locale
+Mindestabnahme	Minimum purchase	Minimale afname	Compra mínima	Quantité minimale	Acquisto minimo
+Mitteilungston	Notification sound	Meldingsgeluid	Sonido de notificación	Son de notification	Suono di notifica
+Nachname	Last name	Achternaam	Apellidos	Nom	Cognome
+Nein	No	Nee	No	Non	No
+Nettobetrag	Net amount	Nettobedrag	Importe neto	Montant HT	Importo netto
+Nettopreis	Net price	Nettoprijs	Precio neto	Prix HT	Prezzo netto
+Neue Bestellungen prüfen	Check for new orders	Nieuwe bestellingen controleren	Comprobar nuevos pedidos	Vérifier les nouvelles commandes	Controlla nuovi ordini
+Oder eigener Feldpfad	Or a custom field path	Of een eigen veldpad	O una ruta de campo propia	Ou un chemin de champ personnalisé	O un percorso di campo personalizzato
+Ort	City	Plaats	Ciudad	Ville	Città
+Preise je Währung	Prices by currency	Prijzen per valuta	Precios por moneda	Prix par devise	Prezzi per valuta
+Produktdetails	Product details	Productdetails	Detalles del producto	Détails du produit	Dettagli prodotto
+Rechnungsadresse	Billing address	Factuuradres	Dirección de facturación	Adresse de facturation	Indirizzo di fatturazione
+Regeln verwalten	Manage rules	Regels beheren	Gestionar reglas	Gérer les règles	Gestisci regole
+Schnellfilter	Quick filters	Snelfilters	Filtros rápidos	Filtres rapides	Filtri rapidi
+Shopware ID	Shopware ID	Shopware ID	ID de Shopware	ID Shopware	ID Shopware
+Spalten	Columns	Kolommen	Columnas	Colonnes	Colonne
+Spalten und Schnellfilter legst du direkt in jeder Liste unter Liste anpassen fest.	Configure columns and quick filters using Customize list in each list.	Stel kolommen en snelfilters in via Lijst aanpassen in elke lijst.	Configura columnas y filtros rápidos en Personalizar lista en cada lista.	Configurez les colonnes et filtres rapides avec Personnaliser la liste dans chaque liste.	Configura colonne e filtri rapidi con Personalizza elenco in ogni elenco.
+Spaltenname	Column name	Kolomnaam	Nombre de columna	Nom de colonne	Nome colonna
+Standardspalten	Default columns	Standaardkolommen	Columnas predeterminadas	Colonnes par défaut	Colonne predefinite
+System	System	Systeem	Sistema	Système	Sistema
+Verfügbarer Bestand	Available stock	Beschikbare voorraad	Stock disponible	Stock disponible	Scorte disponibili
+Vergleich	Comparison	Vergelijking	Comparación	Comparaison	Confronto
+Verkaufskanal	Sales channel	Verkoopkanaal	Canal de venta	Canal de vente	Canale di vendita
+Versandart	Shipping method	Verzendmethode	Método de envío	Mode de livraison	Metodo di spedizione
+Vorname	First name	Voornaam	Nombre	Prénom	Nome
+Währungs ID	Currency ID	Valuta ID	ID de moneda	ID de devise	ID valuta
+Zahlung	Payment	Betaling	Pago	Paiement	Pagamento
+Zahlungsart	Payment method	Betaalmethode	Método de pago	Mode de paiement	Metodo di pagamento
+Ziehe die Spaltenköpfe in der Liste an die gewünschte Position. Hier kannst du Felder hinzufügen und entfernen.	Drag column headers to reorder them in the list. Add and remove fields here.	Versleep kolomkoppen om de volgorde te wijzigen. Voeg hier velden toe of verwijder ze.	Arrastra las cabeceras para cambiar el orden. Añade y elimina campos aquí.	Faites glisser les en-têtes pour réorganiser les colonnes. Ajoutez et retirez les champs ici.	Trascina le intestazioni per riordinare le colonne. Aggiungi e rimuovi i campi qui.
+20 Widgets. Wähle deine Favoriten und ihre Reihenfolge.	20 widgets. Choose your favorites and their order.	20 widgets. Kies je favorieten en hun volgorde.	20 widgets. Elige tus favoritos y su orden.	20 widgets. Choisissez vos favoris et leur ordre.	20 widget. Scegli i preferiti e il loro ordine.
+API	API	API	API	API	API
+Aktualisiert	Updated	Bijgewerkt	Actualizado	Mis à jour	Aggiornato
+Alle Widgets	All widgets	Alle widgets	Todos los widgets	Tous les widgets	Tutti i widget
+Alle ausgewählten Shops	All selected shops	Alle geselecteerde shops	Todas las tiendas seleccionadas	Toutes les boutiques sélectionnées	Tutti i negozi selezionati
+Alles im Blick. Dein Commerce.	Your commerce, in view.	Jouw commerce in beeld.	Tu comercio, a la vista.	Votre commerce en un regard.	Il tuo commercio, a colpo d’occhio.
+Ansichten	Views	Weergaven	Vistas	Vues	Viste
+Aus den letzten 30 Tagen	From the last 30 days	Uit de afgelopen 30 dagen	De los últimos 30 días	Sur les 30 derniers jours	Degli ultimi 30 giorni
+Bestand im Blick	Stock watch	Voorraad in beeld	Control de stock	Suivi du stock	Scorte sotto controllo
+Bestellumsatz inklusive Steuern, ohne stornierte Bestellungen. Keine Währungsumrechnung. Bestellungen und Umsatz nach gewählter Währung.	Order value including tax, excluding cancelled orders. No currency conversion. Orders and revenue use the selected currency.	Bestelwaarde inclusief btw, zonder geannuleerde bestellingen. Geen valutaomrekening. Bestellingen en omzet in de gekozen valuta.	Importe de pedidos con impuestos, sin pedidos cancelados. Sin conversión de moneda. Pedidos e ingresos en la moneda elegida.	Valeur des commandes TTC, hors commandes annulées. Aucune conversion de devise. Commandes et chiffre d’affaires dans la devise choisie.	Valore ordini incluse imposte, esclusi gli annullati. Nessuna conversione di valuta. Ordini e ricavi nella valuta scelta.
+Bestellungen heute	Orders today	Bestellingen vandaag	Pedidos de hoy	Commandes du jour	Ordini di oggi
+Bestellungen heute am Dock Icon anzeigen	Show today’s order count on the Dock icon	Toon bestellingen van vandaag op het Dock pictogram	Mostrar pedidos de hoy en el icono del Dock	Afficher les commandes du jour sur l’icône du Dock	Mostra gli ordini di oggi sull’icona Dock
+Bestellungen im Verlauf	Order trend	Bestelverloop	Evolución de pedidos	Évolution des commandes	Andamento ordini
+Bestellungen · 30 Tage	Orders · 30 days	Bestellingen · 30 dagen	Pedidos · 30 días	Commandes · 30 jours	Ordini · 30 giorni
+Bestellungen · 7 Tage	Orders · 7 days	Bestellingen · 7 dagen	Pedidos · 7 días	Commandes · 7 jours	Ordini · 7 giorni
+Bestellungen öffnen	Open orders	Bestellingen openen	Abrir pedidos	Ouvrir les commandes	Apri ordini
+Dashboard anpassen	Customize dashboard	Dashboard aanpassen	Personalizar panel	Personnaliser le tableau de bord	Personalizza dashboard
+Dashboard öffnen	Open dashboard	Dashboard openen	Abrir panel	Ouvrir le tableau de bord	Apri dashboard
+Dashboard öffnen, um Daten zu laden.	Open the dashboard to load data.	Open het dashboard om gegevens te laden.	Abre el panel para cargar datos.	Ouvrez le tableau de bord pour charger les données.	Apri la dashboard per caricare i dati.
+Dein Dashboard zusammenstellen	Build your dashboard	Stel je dashboard samen	Configura tu panel	Composez votre tableau de bord	Componi la tua dashboard
+Deine umsatzstärksten Shops	Your top shops by revenue	Je shops met de hoogste omzet	Tus tiendas con más ingresos	Vos boutiques au meilleur chiffre d’affaires	I negozi con più ricavi
+Desktop Widgets konnten nicht aktualisiert werden.	Desktop widgets could not be updated.	Bureaubladwidgets konden niet worden bijgewerkt.	No se pudieron actualizar los widgets del escritorio.	Impossible de mettre à jour les widgets du bureau.	Impossibile aggiornare i widget della scrivania.
+Desktop Widgets: Auf dem Schreibtisch Widgets bearbeiten öffnen und Shopdeck wählen. Shop, Statistik und Währung lassen sich je Widget festlegen.	Desktop widgets: open Edit Widgets on the desktop and choose Shopdeck. Choose the shop, metric and currency for each widget.	Bureaubladwidgets: open Wijzig widgets op het bureaublad en kies Shopdeck. Kies per widget de shop, statistiek en valuta.	Widgets del escritorio: abre Editar widgets y elige Shopdeck. Elige tienda, métrica y moneda para cada widget.	Widgets du bureau : ouvrez Modifier les widgets sur le bureau et choisissez Shopdeck. Choisissez la boutique, la statistique et la devise par widget.	Widget della scrivania: apri Modifica widget e scegli Shopdeck. Scegli negozio, statistica e valuta per ogni widget.
+Ein Arbeitsplatz für alle Shops. Mit den Zahlen, die für dich zählen.	One workspace for every shop. With the numbers that matter to you.	Eén werkplek voor alle shops. Met de cijfers die voor jou tellen.	Un espacio para todas tus tiendas. Con las cifras que te importan.	Un espace pour toutes vos boutiques. Avec les chiffres qui comptent.	Uno spazio per tutti i negozi. Con i numeri che contano per te.
+Erfolgreich geladen	Loaded successfully	Succesvol geladen	Cargado correctamente	Chargé avec succès	Caricato correttamente
+Heute	Today	Vandaag	Hoy	Aujourd’hui	Oggi
+Heute eingegangen	Received today	Vandaag ontvangen	Recibidos hoy	Reçues aujourd’hui	Ricevuti oggi
+In neuem Tab öffnen	Open in new tab	Openen in nieuw tabblad	Abrir en nueva pestaña	Ouvrir dans un nouvel onglet	Apri in nuova scheda
+Kunden insgesamt	Total customers	Totaal klanten	Total de clientes	Total des clients	Totale clienti
+Kunden öffnen	Open customers	Klanten openen	Abrir clientes	Ouvrir les clients	Apri clienti
+Letzte 30 Kalendertage	Last 30 calendar days	Laatste 30 kalenderdagen	Últimos 30 días naturales	30 derniers jours calendaires	Ultimi 30 giorni di calendario
+Letzte 7 Kalendertage	Last 7 calendar days	Laatste 7 kalenderdagen	Últimos 7 días naturales	7 derniers jours calendaires	Ultimi 7 giorni di calendario
+Lieferstatus	Delivery status	Leverstatus	Estado del envío	Statut de livraison	Stato consegna
+Nebeneinander anzeigen	Show side by side	Naast elkaar tonen	Mostrar en paralelo	Afficher côte à côte	Mostra affiancati
+Nebeneinander öffnen	Open side by side	Naast elkaar openen	Abrir en paralelo	Ouvrir côte à côte	Apri affiancati
+Neuer Tab	New tab	Nieuw tabblad	Nueva pestaña	Nouvel onglet	Nuova scheda
+Noch keine Daten in diesem Zeitraum.	No data for this period yet.	Nog geen gegevens voor deze periode.	Aún no hay datos para este período.	Pas encore de données sur cette période.	Nessun dato per questo periodo.
+Offene Bestellungen	Open orders	Openstaande bestellingen	Pedidos abiertos	Commandes ouvertes	Ordini aperti
+Ohne stornierte Bestellungen	Excluding cancelled orders	Zonder geannuleerde bestellingen	Sin pedidos cancelados	Hors commandes annulées	Esclusi gli ordini annullati
+Produkte insgesamt	Total products	Totaal producten	Total de productos	Total des produits	Totale prodotti
+Produkte prüfen	Review products	Producten controleren	Revisar productos	Vérifier les produits	Controlla prodotti
+Produkte öffnen	Open products	Producten openen	Abrir productos	Ouvrir les produits	Apri prodotti
+Shopdeck in der Menüleiste	Shopdeck in the menu bar	Shopdeck in de menubalk	Shopdeck en la barra de menús	Shopdeck dans la barre des menus	Shopdeck nella barra dei menu
+Standardansicht	Default view	Standaardweergave	Vista predeterminada	Vue par défaut	Vista predefinita
+Statistiken werden geladen …	Loading statistics …	Statistieken laden …	Cargando estadísticas …	Chargement des statistiques …	Caricamento statistiche …
+Stornierte Bestellungen	Cancelled orders	Geannuleerde bestellingen	Pedidos cancelados	Commandes annulées	Ordini annullati
+Tab schließen	Close tab	Tabblad sluiten	Cerrar pestaña	Fermer l’onglet	Chiudi scheda
+Tag	Day	Dag	Día	Jour	Giorno
+Umsatz	Revenue	Omzet	Ingresos	Chiffre d’affaires	Ricavi
+Umsatz heute	Revenue today	Omzet vandaag	Ingresos de hoy	Chiffre d’affaires du jour	Ricavi di oggi
+Umsatz · 30 Tage	Revenue · 30 days	Omzet · 30 dagen	Ingresos · 30 días	Chiffre d’affaires · 30 jours	Ricavi · 30 giorni
+Umsatz · 7 Tage	Revenue · 7 days	Omzet · 7 dagen	Ingresos · 7 días	Chiffre d’affaires · 7 jours	Ricavi · 7 giorni
+Umsatzverlauf	Revenue trend	Omzetverloop	Evolución de ingresos	Évolution du chiffre d’affaires	Andamento ricavi
+Unvollständige Statistik: mehr als 10.000 Bestellungen in 30 Tagen.	Incomplete statistics: more than 10,000 orders in 30 days.	Onvolledige statistiek: meer dan 10.000 bestellingen in 30 dagen.	Estadísticas incompletas: más de 10.000 pedidos en 30 días.	Statistiques incomplètes : plus de 10 000 commandes en 30 jours.	Statistiche incomplete: oltre 10.000 ordini in 30 giorni.
+Verbundene Shops	Connected shops	Verbonden shops	Tiendas conectadas	Boutiques connectées	Negozi collegati
+Versanderlöse	Shipping revenue	Verzendopbrengsten	Ingresos por envío	Recettes de livraison	Ricavi di spedizione
+Widget entfernen	Remove widget	Widget verwijderen	Eliminar widget	Retirer le widget	Rimuovi widget
+Widget hinzufügen	Add widget	Widget toevoegen	Añadir widget	Ajouter un widget	Aggiungi widget
+Widgets auswählen	Choose widgets	Widgets kiezen	Elegir widgets	Choisir les widgets	Scegli widget
+Widgets zeigen den zuletzt in der App geladenen Stand mit Uhrzeit. Sie enthalten keine API Schlüssel.	Widgets show the last data loaded in the app with its update time. They contain no API keys.	Widgets tonen de laatst geladen gegevens met tijdstip. Ze bevatten geen API sleutels.	Los widgets muestran los últimos datos cargados con su hora. No contienen claves API.	Les widgets affichent les dernières données chargées avec leur heure. Ils ne contiennent aucune clé API.	I widget mostrano gli ultimi dati caricati con l’orario. Non contengono chiavi API.
+Zahlungsstatus	Payment status	Betaalstatus	Estado del pago	Statut de paiement	Stato pagamento
+Ø Warenkorb · 7 Tage	Average order · 7 days	Gem. bestelwaarde · 7 dagen	Pedido medio · 7 días	Panier moyen · 7 jours	Ordine medio · 7 giorni
+Demoprofile einbeziehen	Include demo profiles	Demoprofielen meenemen	Incluir perfiles de demostración	Inclure les profils de démonstration	Includi profili demo
+Schlüsselbundzugriff freigeben	Authorize Keychain access	Sleutelhanger toegang toestaan	Autorizar acceso al Llavero	Autoriser l’accès au trousseau	Autorizza accesso al Portachiavi
+Die WidgetKit Erweiterung ist enthalten. Für den Datenaustausch mit macOS Widgets braucht diese lokale Version noch eine Apple Entwicklungssignierung mit App Group.	The WidgetKit extension is included. Sharing data with macOS widgets requires Apple development signing with an App Group for this local build.	De WidgetKit extensie is inbegrepen. Voor gegevensuitwisseling met macOS widgets heeft deze lokale versie nog een Apple ontwikkelondertekening met App Group nodig.	La extensión WidgetKit está incluida. Esta versión local requiere firma de desarrollo de Apple con un App Group para compartir datos con los widgets de macOS.	L’extension WidgetKit est incluse. Cette version locale nécessite une signature de développement Apple avec App Group pour partager les données avec les widgets macOS.	L’estensione WidgetKit è inclusa. Questa versione locale richiede una firma di sviluppo Apple con App Group per condividere dati con i widget macOS.
+Wähle mit einem Klick. Ziehe ausgewählte Widgets in die gewünschte Reihenfolge.	Click to choose. Drag selected widgets into your preferred order.	Klik om te kiezen. Sleep geselecteerde widgets in de gewenste volgorde.	Haz clic para elegir. Arrastra los widgets elegidos al orden que prefieras.	Cliquez pour choisir. Faites glisser les widgets sélectionnés dans l’ordre souhaité.	Fai clic per scegliere. Trascina i widget selezionati nell’ordine desiderato.
+Widget suchen …	Search widgets …	Widgets zoeken …	Buscar widgets …	Rechercher un widget …	Cerca widget …
+Bereich	Category	Categorie	Categoría	Catégorie	Categoria
+Shops und Bestand	Shops and stock	Shops en voorraad	Tiendas y stock	Boutiques et stock	Negozi e scorte
+Die Vorschauen zeigen den aktuellen Datenstand deiner Shopauswahl.	Previews show the current data for your selected shops.	Voorbeelden tonen de huidige gegevens van je shopselectie.	Las vistas previas muestran los datos actuales de tus tiendas seleccionadas.	Les aperçus affichent les données actuelles des boutiques sélectionnées.	Le anteprime mostrano i dati attuali dei negozi selezionati.
+Ausgewählt	Selected	Geselecteerd	Seleccionado	Sélectionné	Selezionato
+Nicht ausgewählt	Not selected	Niet geselecteerd	No seleccionado	Non sélectionné	Non selezionato
+Nach unten	Move later	Naar achteren	Mover después	Déplacer après	Sposta dopo
+API Aktion ausgeführt.	API action completed.	API actie uitgevoerd.	Acción de API completada.	Action API exécutée.	Azione API eseguita.
+API Aktion freigeben	Approve API action	API actie goedkeuren	Aprobar acción de API	Approuver l’action API	Approva azione API
+Allgemeine Admin API Aktionen	General Admin API actions	Algemene Admin API acties	Acciones generales de Admin API	Actions générales de l’Admin API	Azioni generali Admin API
+Anfrage anzeigen	Show request	Verzoek bekijken	Mostrar solicitud	Afficher la requête	Mostra richiesta
+App gefunden	App found	App gevonden	Aplicación encontrada	Application trouvée	App trovata
+Automatische App Updates sind vorbereitet.	Automatic app updates are ready to configure.	Automatische app updates zijn voorbereid.	Las actualizaciones automáticas están preparadas.	Les mises à jour automatiques sont préparées.	Gli aggiornamenti automatici sono predisposti.
+Bestehende Konfiguration vorher sichern	Back up existing configuration first	Eerst bestaande configuratie bewaren	Guardar primero la configuración actual	Sauvegarder d’abord la configuration existante	Salva prima la configurazione esistente
+Client	Client	Client	Cliente	Client	Client
+Client herunterladen	Download client	Client downloaden	Descargar cliente	Télécharger le client	Scarica client
+Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills.	Import the skill in Claude Desktop under Settings → Capabilities → Skills.	Importeer de skill in Claude Desktop via Instellingen → Mogelijkheden → Skills.	Importa la skill en Claude Desktop en Ajustes → Capacidades → Skills.	Importez le skill dans Claude Desktop via Paramètres → Capacités → Skills.	Importa la skill in Claude Desktop da Impostazioni → Capacità → Skills.
+Der Shop wird nur aus Shopdeck entfernt. Die Daten im Shop und ein lokaler Container bleiben erhalten.	The shop is removed from Shopdeck. Shop data and the local container are kept.	De shop wordt uit Shopdeck verwijderd. Shopgegevens en de lokale container blijven bewaard.	La tienda se elimina de Shopdeck. Los datos y el contenedor local se conservan.	La boutique est retirée de Shopdeck. Les données et le conteneur local sont conservés.	Il negozio viene rimosso da Shopdeck. I dati e il contenitore locale vengono conservati.
+Der Shopname braucht 1 bis 80 Zeichen.	The shop name must have 1 to 80 characters.	De shopnaam moet 1 tot 80 tekens bevatten.	El nombre debe tener entre 1 y 80 caracteres.	Le nom doit contenir entre 1 et 80 caractères.	Il nome deve contenere da 1 a 80 caratteri.
+Details anzeigen	Show details	Details tonen	Mostrar detalles	Afficher les détails	Mostra dettagli
+Die Einrichtung konnte nicht vollständig bestätigt werden.	Setup could not be fully verified.	De installatie kon niet volledig worden bevestigd.	No se pudo verificar toda la configuración.	La configuration n’a pas pu être entièrement vérifiée.	Non è stato possibile verificare tutta la configurazione.
+Die allgemeine Admin API erreicht alle Datenarten und Endpunkte des Shops. Schreibaktionen werden unter Änderungen zur Freigabe vorgelegt.	The general Admin API covers all shop entities and endpoints. Writes are submitted for approval under Changes.	De algemene Admin API bereikt alle gegevenstypen en endpoints. Schrijfacties worden bij Wijzigingen ter goedkeuring ingediend.	La Admin API general accede a todas las entidades y endpoints. Las escrituras se envían a Cambios para su aprobación.	L’Admin API générale couvre toutes les entités et tous les points d’accès. Les écritures sont soumises dans Modifications.	L’Admin API generale copre tutte le entità e gli endpoint. Le scritture vengono inviate in Modifiche per l’approvazione.
+Diese Aktion wird mit den Rechten der Integration im ausgewählten Shop ausgeführt.	This action uses the integration permissions in the selected shop.	Deze actie gebruikt de integratierechten in de geselecteerde shop.	Esta acción usa los permisos de la integración en la tienda seleccionada.	Cette action utilise les droits de l’intégration dans la boutique sélectionnée.	Questa azione usa i permessi dell’integrazione nel negozio selezionato.
+Erneut prüfen	Check again	Opnieuw controleren	Volver a comprobar	Vérifier à nouveau	Verifica di nuovo
+Freigabe	Approval	Goedkeuring	Aprobación	Approbation	Approvazione
+Freigegebene Shops	Enabled shops	Vrijgegeven shops	Tiendas habilitadas	Boutiques autorisées	Negozi abilitati
+Für die Veröffentlichung wird noch die Adresse des Update Feeds hinterlegt. Diese Version lädt keine App Updates.	A release feed address is still needed before publishing. This build does not download app updates.	Voor publicatie is nog een updatefeed nodig. Deze versie downloadt geen app updates.	Falta la dirección del feed para publicar. Esta versión no descarga actualizaciones de la aplicación.	L’adresse du flux reste à définir avant publication. Cette version ne télécharge pas de mises à jour de l’application.	Prima della pubblicazione serve l’indirizzo del feed. Questa versione non scarica aggiornamenti dell’app.
+Installation wird geprüft …	Checking installation …	Installatie controleren …	Comprobando instalación …	Vérification de l’installation …	Verifica installazione …
+Installiert	Installed	Geïnstalleerd	Instalado	Installé	Installato
+Installierte Clients erneut prüfen	Check installed clients again	Geïnstalleerde clients opnieuw controleren	Volver a comprobar los clientes instalados	Vérifier à nouveau les clients installés	Verifica di nuovo i client installati
+Jeder Aufruf wählt einen Shop über seine ID. Mehrere Shops bleiben eindeutig getrennt.	Each call selects a shop by ID. Multiple shops remain clearly separated.	Elke aanroep kiest een shop via de ID. Meerdere shops blijven duidelijk gescheiden.	Cada llamada selecciona una tienda por su ID. Las tiendas permanecen separadas.	Chaque appel sélectionne une boutique par son identifiant. Les boutiques restent distinctes.	Ogni chiamata seleziona un negozio tramite ID. I negozi restano distinti.
+Jetzt ausführen	Execute now	Nu uitvoeren	Ejecutar ahora	Exécuter maintenant	Esegui ora
+Lesen	Read	Lezen	Lectura	Lecture	Lettura
+Lokal auf diesem Mac	Local on this Mac	Lokaal op deze Mac	Local en este Mac	En local sur ce Mac	Locale su questo Mac
+Lokal ausprobieren	Try locally	Lokaal proberen	Probar en local	Essayer en local	Prova in locale
+MCP Verbindung	MCP connection	MCP verbinding	Conexión MCP	Connexion MCP	Connessione MCP
+MCP Verbindung automatisch eintragen	Configure the MCP connection automatically	MCP verbinding automatisch instellen	Configurar la conexión MCP automáticamente	Configurer automatiquement la connexion MCP	Configura automaticamente la connessione MCP
+Nach Shopdeck Updates suchen …	Check for Shopdeck updates …	Naar Shopdeck updates zoeken …	Buscar actualizaciones de Shopdeck …	Rechercher des mises à jour de Shopdeck …	Cerca aggiornamenti di Shopdeck …
+Neue App Versionen automatisch suchen	Automatically check for new app versions	Automatisch zoeken naar nieuwe appversies	Buscar nuevas versiones automáticamente	Rechercher automatiquement les nouvelles versions	Cerca automaticamente nuove versioni
+Nicht installiert	Not installed	Niet geïnstalleerd	No instalado	Non installé	Non installato
+Offizieller Shopware MCP	Official Shopware MCP	Officiële Shopware MCP	MCP oficial de Shopware	MCP officiel Shopware	MCP ufficiale Shopware
+Programm konnte nicht gestartet werden	Could not launch the program	Programma kon niet starten	No se pudo iniciar el programa	Impossible de lancer le programme	Impossibile avviare il programma
+Prüfe den lokalen Server, bevor du einen Client verbindest.	Check the local server before connecting a client.	Controleer de lokale server voordat je een client verbindt.	Comprueba el servidor local antes de conectar un cliente.	Vérifiez le serveur local avant de connecter un client.	Verifica il server locale prima di collegare un client.
+Shop auswählen	Choose shop	Shop kiezen	Seleccionar tienda	Choisir une boutique	Scegli negozio
+Shop umbenannt.	Shop renamed.	Shop hernoemd.	Tienda renombrada.	Boutique renommée.	Negozio rinominato.
+Shopdeck Skill automatisch installieren	Install the Shopdeck skill automatically	Shopdeck skill automatisch installeren	Instalar la skill de Shopdeck automáticamente	Installer automatiquement le skill Shopdeck	Installa automaticamente la skill Shopdeck
+Shopdeck Updates	Shopdeck updates	Shopdeck updates	Actualizaciones de Shopdeck	Mises à jour de Shopdeck	Aggiornamenti Shopdeck
+Shops hierher ziehen	Drag shops here	Sleep shops hierheen	Arrastra tiendas aquí	Glissez les boutiques ici	Trascina qui i negozi
+Shopware lädt Werkzeuge je Sitzung nach. Die sichtbare Auswahl hängt zusätzlich von Version, Integration und Berechtigungen ab.	Shopware discovers tools per session. The visible selection also depends on version, integration and permissions.	Shopware laadt tools per sessie. De zichtbare selectie hangt ook af van versie, integratie en rechten.	Shopware descubre herramientas por sesión. La selección depende también de la versión, integración y permisos.	Shopware découvre les outils par session. La sélection dépend aussi de la version, de l’intégration et des droits.	Shopware rileva gli strumenti per sessione. La selezione dipende anche da versione, integrazione e permessi.
+Shopware prüfen	Check Shopware	Shopware controleren	Comprobar Shopware	Vérifier Shopware	Verifica Shopware
+Shopware. Kostenlos und Open Source.	Shopware. Free and open source.	Shopware. Gratis en open source.	Shopware. Gratis y de código abierto.	Shopware. Gratuit et open source.	Shopware. Gratuito e open source.
+Skill als ZIP für Claude Desktop exportieren	Export skill as ZIP for Claude Desktop	Skill als ZIP voor Claude Desktop exporteren	Exportar skill como ZIP para Claude Desktop	Exporter le skill en ZIP pour Claude Desktop	Esporta la skill in ZIP per Claude Desktop
+Umbenennen	Rename	Hernoemen	Renombrar	Renommer	Rinomina
+Verbinde deine KI mit allen freigegebenen Shops.	Connect your AI to all enabled shops.	Verbind je AI met alle vrijgegeven shops.	Conecta tu IA a todas las tiendas habilitadas.	Connectez votre IA à toutes les boutiques autorisées.	Collega la tua IA a tutti i negozi abilitati.
+Verbindung wird geprüft …	Checking connection …	Verbinding controleren …	Comprobando conexión …	Vérification de la connexion …	Verifica connessione …
+Verfügbare Werkzeuge	Available tools	Beschikbare tools	Herramientas disponibles	Outils disponibles	Strumenti disponibili
+Werkzeuge direkt vom Shop gemeldet	tools reported directly by the shop	tools rechtstreeks door de shop gemeld	herramientas comunicadas por la tienda	outils signalés directement par la boutique	strumenti comunicati dal negozio
+Werkzeuge durchsuchen …	Search tools …	Tools zoeken …	Buscar herramientas …	Rechercher des outils …	Cerca strumenti …
+Werkzeuge vom Server bestätigt	tools confirmed by the server	tools bevestigd door de server	herramientas confirmadas por el servidor	outils confirmés par le serveur	strumenti confermati dal server
+aktualisieren	update	bijwerken	actualizar	mettre à jour	aggiorna
+einrichten	set up	instellen	configurar	configurer	configura
+ist eingerichtet. Starte den Client neu.	is configured. Restart the client.	is ingesteld. Start de client opnieuw.	está configurado. Reinicia el cliente.	est configuré. Redémarrez le client.	è configurato. Riavvia il client.
+Widgets warten auf Statistikdaten.	Widgets are waiting for statistics.	Widgets wachten op statistieken.	Los widgets esperan estadísticas.	Les widgets attendent les statistiques.	I widget attendono le statistiche.
+Desktop Widgets sind verbunden.	Desktop widgets are connected.	Desktopwidgets zijn verbonden.	Los widgets del escritorio están conectados.	Les widgets de bureau sont connectés.	I widget della scrivania sono collegati.
+Shopansichten verfügbar.	shop views available.	shopweergaven beschikbaar.	vistas de tienda disponibles.	vues de boutique disponibles.	viste negozio disponibili.
+Aktuell kompatibel	Latest compatible version	Nieuwste compatibele versie	Última versión compatible	Dernière version compatible	Ultima versione compatibile
+Alle Domains, Verkaufskanäle, Sprachen und Währungen deiner Shops.	Every domain, sales channel, language and currency across your shops.	Alle domeinen, verkoopkanalen, talen en valuta van je shops.	Todos los dominios, canales de venta, idiomas y monedas de tus tiendas.	Tous les domaines, canaux de vente, langues et devises de vos boutiques.	Tutti i domini, canali di vendita, lingue e valute dei tuoi negozi.
+Alle Storefronts	All storefronts	Alle storefronts	Todas las tiendas	Toutes les vitrines	Tutte le vetrine
+Alle Verkaufskanäle	All sales channels	Alle verkoopkanalen	Todos los canales de venta	Tous les canaux de vente	Tutti i canali di vendita
+Alle Währungen	All currencies	Alle valuta	Todas las monedas	Toutes les devises	Tutte le valute
+Beende Codex oder Claude vollständig, öffne die App erneut und starte einen neuen Chat. In Claude Code startest du eine neue Sitzung.	Quit Codex or Claude completely, reopen the app and start a new chat. In Claude Code, start a new session.	Sluit Codex of Claude volledig af, open de app opnieuw en start een nieuwe chat. Start in Claude Code een nieuwe sessie.	Cierra Codex o Claude por completo, vuelve a abrir la app e inicia un chat nuevo. En Claude Code, inicia una sesión nueva.	Quittez complètement Codex ou Claude, rouvrez l’application et lancez une nouvelle conversation. Dans Claude Code, démarrez une nouvelle session.	Chiudi completamente Codex o Claude, riapri l’app e avvia una nuova chat. In Claude Code avvia una nuova sessione.
+Benutzername	Username	Gebruikersnaam	Usuario	Identifiant	Nome utente
+Benutzername kopieren	Copy username	Gebruikersnaam kopiëren	Copiar usuario	Copier l’identifiant	Copia nome utente
+Client neu starten	Restart your client	Client opnieuw starten	Reiniciar el cliente	Redémarrer le client	Riavvia il client
+Deine Storefronts	Your storefronts	Je storefronts	Tus tiendas	Vos vitrines	Le tue vetrine
+Details	Details	Details	Detalles	Détails	Dettagli
+Die Docker Signatur konnte nicht bestätigt werden.	The Docker signature could not be verified.	De Docker handtekening kon niet worden bevestigd.	No se pudo verificar la firma de Docker.	La signature de Docker n’a pas pu être vérifiée.	Impossibile verificare la firma di Docker.
+Die aktuelle kompatible Version konnte nicht geprüft werden.	The latest compatible version could not be verified.	De nieuwste compatibele versie kon niet worden gecontroleerd.	No se pudo comprobar la última versión compatible.	La dernière version compatible n’a pas pu être vérifiée.	Impossibile verificare l’ultima versione compatibile.
+Dieser Verkaufskanal hat keine Storefront Domain.	This sales channel has no storefront domain.	Dit verkoopkanaal heeft geen storefrontdomein.	Este canal de venta no tiene dominio de tienda.	Ce canal de vente n’a pas de domaine de vitrine.	Questo canale di vendita non ha un dominio vetrina.
+Docker Desktop wird im Programme Ordner installiert …	Installing Docker Desktop in your Applications folder …	Docker Desktop wordt in je map Programma’s geïnstalleerd …	Instalando Docker Desktop en Aplicaciones …	Installation de Docker Desktop dans Applications …	Installazione di Docker Desktop in Applicazioni …
+Docker Desktop wird von docker.com geladen …	Downloading Docker Desktop from docker.com …	Docker Desktop wordt van docker.com gedownload …	Descargando Docker Desktop desde docker.com …	Téléchargement de Docker Desktop depuis docker.com …	Download di Docker Desktop da docker.com …
+Docker Installer wird geprüft …	Verifying the Docker installer …	Docker installatieprogramma wordt gecontroleerd …	Verificando el instalador de Docker …	Vérification du programme d’installation Docker …	Verifica del programma di installazione Docker …
+Docker ist bereits vorhanden. Starte die Einrichtung erneut.	Docker is already installed. Start setup again.	Docker is al aanwezig. Start de installatie opnieuw.	Docker ya está instalado. Inicia la configuración de nuevo.	Docker est déjà installé. Relancez la configuration.	Docker è già installato. Riavvia la configurazione.
+Docker ist noch nicht bereit. Schließe die Ersteinrichtung ab und versuche es erneut.	Docker is not ready yet. Complete its first setup and try again.	Docker is nog niet klaar. Voltooi de eerste configuratie en probeer opnieuw.	Docker aún no está listo. Completa la configuración inicial e inténtalo de nuevo.	Docker n’est pas encore prêt. Terminez sa configuration initiale et réessayez.	Docker non è ancora pronto. Completa la configurazione iniziale e riprova.
+Docker konnte nicht gefunden werden.	Docker could not be found.	Docker kon niet worden gevonden.	No se encontró Docker.	Docker est introuvable.	Docker non trovato.
+Docker wird gestartet. Schließe die Ersteinrichtung im Docker Fenster ab.	Starting Docker. Complete the first setup in the Docker window.	Docker wordt gestart. Voltooi de eerste configuratie in het Docker venster.	Iniciando Docker. Completa la configuración inicial en la ventana de Docker.	Démarrage de Docker. Terminez la configuration initiale dans la fenêtre Docker.	Avvio di Docker. Completa la configurazione iniziale nella finestra Docker.
+Duplizieren	Duplicate	Dupliceren	Duplicar	Dupliquer	Duplica
+Einrichten und freigeben	Set up and enable shops	Instellen en shops vrijgeven	Configurar y habilitar tiendas	Configurer et autoriser les boutiques	Configura e abilita i negozi
+Globale Shopauswahl verwenden	Follow the dashboard shop selection	Shopselectie van het dashboard gebruiken	Usar la selección de tiendas del panel	Utiliser la sélection du tableau de bord	Usa la selezione negozi del pannello
+Globale Verkaufskanäle verwenden	Follow the dashboard sales channel	Verkoopkanaal van het dashboard gebruiken	Usar el canal de venta del panel	Utiliser le canal de vente du tableau de bord	Usa il canale di vendita del pannello
+Globale Währung	Dashboard currency	Valuta van het dashboard	Moneda del panel	Devise du tableau de bord	Valuta del pannello
+Installiere und aktiviere SwagPlatformSecurity in diesem Shop.	Install and activate SwagPlatformSecurity in this shop.	Installeer en activeer SwagPlatformSecurity in deze shop.	Instala y activa SwagPlatformSecurity en esta tienda.	Installez et activez SwagPlatformSecurity dans cette boutique.	Installa e attiva SwagPlatformSecurity in questo negozio.
+Kalendermonat	Calendar month	Kalendermaand	Mes natural	Mois civil	Mese di calendario
+Kopiere ein Beispiel in deinen Chat. Die Antwort soll die freigegebenen Shops oder echte Daten aus dem ausgewählten Shop enthalten.	Copy an example into your chat. The reply should include your enabled shops or real data from the selected shop.	Kopieer een voorbeeld naar je chat. Het antwoord moet je vrijgegeven shops of echte shopgegevens bevatten.	Copia un ejemplo en tu chat. La respuesta debe incluir las tiendas habilitadas o datos reales de la tienda elegida.	Copiez un exemple dans votre conversation. La réponse doit contenir les boutiques autorisées ou les données réelles de la boutique choisie.	Copia un esempio nella chat. La risposta deve includere i negozi abilitati o dati reali del negozio selezionato.
+Lesen funktioniert direkt. Änderungen erscheinen in Shopdeck unter Änderungen und werden erst nach deiner Freigabe ausgeführt. Nenne bei mehreren Shops immer den Shopnamen oder die Shop ID.	Reads work immediately. Changes appear in Shopdeck under Changes and run after your approval. When working with several shops, always name the shop or its ID.	Lezen werkt direct. Wijzigingen verschijnen in Shopdeck onder Wijzigingen en worden na je goedkeuring uitgevoerd. Noem bij meerdere shops altijd de naam of ID.	Las lecturas funcionan directamente. Los cambios aparecen en Cambios y se ejecutan tras tu aprobación. Si tienes varias tiendas, indica siempre el nombre o ID.	La lecture fonctionne immédiatement. Les modifications apparaissent dans Modifications et sont exécutées après votre accord. Précisez toujours le nom ou l’identifiant de la boutique.	La lettura funziona subito. Le modifiche appaiono in Modifiche e vengono eseguite dopo la tua approvazione. Indica sempre il nome o l’ID del negozio.
+Mehrere Shops vergleichen	Compare multiple shops	Meerdere shops vergelijken	Comparar varias tiendas	Comparer plusieurs boutiques	Confronta più negozi
+Mit einem Prompt testen	Try an example prompt	Een voorbeeldprompt proberen	Probar un ejemplo	Tester un exemple de demande	Prova una richiesta di esempio
+Monat	Month	Maand	Mes	Mois	Mese
+Nicht verbunden	Not connected	Niet verbonden	Sin conexión	Non connecté	Non connesso
+Nutze Shopdeck und liste meine freigegebenen Shops mit Namen und Shop ID auf. Ändere keine Daten.	Use Shopdeck to list my enabled shops with their names and shop IDs. Do not change any data.	Gebruik Shopdeck om mijn vrijgegeven shops met naam en shop ID te tonen. Wijzig geen gegevens.	Usa Shopdeck para listar mis tiendas habilitadas con sus nombres e IDs. No cambies ningún dato.	Utilise Shopdeck pour lister mes boutiques autorisées avec leurs noms et identifiants. Ne modifie aucune donnée.	Usa Shopdeck per elencare i miei negozi abilitati con nomi e ID. Non modificare alcun dato.
+Offizielle Security Plugin Anleitung	Official security plugin guide	Officiële handleiding beveiligingsplugin	Guía oficial del plugin de seguridad	Guide officiel du plugin de sécurité	Guida ufficiale del plugin di sicurezza
+Passwort	Password	Wachtwoord	Contraseña	Mot de passe	Password
+Passwort kopieren	Copy password	Wachtwoord kopiëren	Copiar contraseña	Copier le mot de passe	Copia password
+Richte deinen Client oben ein und aktiviere MCP Zugriff für die gewünschten Shops.	Set up your client above and enable MCP access for the shops you want to use.	Stel hierboven je client in en activeer MCP toegang voor de gewenste shops.	Configura tu cliente arriba y habilita el acceso MCP para las tiendas deseadas.	Configurez votre client ci dessus et autorisez l’accès MCP aux boutiques souhaitées.	Configura il client qui sopra e abilita l’accesso MCP per i negozi desiderati.
+Shopdeck installiert fehlendes Docker Desktop, startet das Image und richtet Storefront sowie API Zugang automatisch ein.	Shopdeck installs Docker Desktop if needed, starts the image and automatically configures the storefront and API access.	Shopdeck installeert zo nodig Docker Desktop, start het image en configureert de storefront en API toegang automatisch.	Shopdeck instala Docker Desktop si hace falta, inicia la imagen y configura automáticamente la tienda y el acceso API.	Shopdeck installe Docker Desktop si nécessaire, démarre l’image et configure automatiquement la vitrine et l’accès API.	Shopdeck installa Docker Desktop se necessario, avvia l’immagine e configura automaticamente vetrina e accesso API.
+Shops einzeln im Widget anzeigen	Show each shop in this widget	Elke shop in dit widget tonen	Mostrar cada tienda en el widget	Afficher chaque boutique dans le widget	Mostra ogni negozio nel widget
+Shopware Security Plugin	Shopware Security Plugin	Shopware Security Plugin	Plugin de seguridad Shopware	Plugin de sécurité Shopware	Plugin di sicurezza Shopware
+Sicherheit prüfen	Check security	Beveiliging controleren	Comprobar seguridad	Vérifier la sécurité	Verifica sicurezza
+So probierst du es aus	Try it in your next chat	Probeer het in je volgende chat	Pruébalo en tu próximo chat	Essayez dans votre prochaine conversation	Provalo nella tua prossima chat
+Standardzugang für deinen lokalen Testshop	Default login for your local test shop	Standaardlogin voor je lokale testshop	Acceso predeterminado a tu tienda local	Accès par défaut à votre boutique locale	Accesso predefinito al negozio di prova locale
+Storefront öffnen	Open storefront	Storefront openen	Abrir tienda	Ouvrir la vitrine	Apri vetrina
+Storefronts	Storefronts	Storefronts	Tiendas	Vitrines	Vetrine
+Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor.	Use Shopdeck to find product [product number] in shop [shop name] and suggest a new description. Submit the proposal for approval in Shopdeck.	Zoek met Shopdeck product [productnummer] in shop [shopnaam] en stel een nieuwe beschrijving voor. Dien het voorstel in voor goedkeuring in Shopdeck.	Busca con Shopdeck el producto [número] en la tienda [nombre] y propón una descripción nueva. Envía la propuesta para su aprobación en Shopdeck.	Avec Shopdeck, trouve le produit [numéro] dans la boutique [nom] et propose une nouvelle description. Soumets la proposition pour validation dans Shopdeck.	Usa Shopdeck per trovare il prodotto [numero] nel negozio [nome] e proponi una nuova descrizione. Invia la proposta per l’approvazione in Shopdeck.
+Vergleiche mit Shopdeck die Bestellungen meiner freigegebenen Shops aus den letzten 7 Tagen. Gruppiere nach Shop, Verkaufskanal und Währung. Nutze die Admin API, falls nötig.	Use Shopdeck to compare orders across my enabled shops over the last 7 days. Group by shop, sales channel and currency. Use the Admin API when needed.	Vergelijk met Shopdeck bestellingen van mijn vrijgegeven shops in de afgelopen 7 dagen. Groepeer op shop, verkoopkanaal en valuta. Gebruik waar nodig de Admin API.	Compara con Shopdeck los pedidos de mis tiendas habilitadas de los últimos 7 días. Agrupa por tienda, canal de venta y moneda. Usa la Admin API si hace falta.	Avec Shopdeck, compare les commandes de mes boutiques autorisées sur les 7 derniers jours. Regroupe par boutique, canal de vente et devise. Utilise l’Admin API si nécessaire.	Usa Shopdeck per confrontare gli ordini dei miei negozi abilitati negli ultimi 7 giorni. Raggruppa per negozio, canale e valuta. Usa l’Admin API quando necessario.
+Widget konfigurieren	Configure widget	Widget instellen	Configurar widget	Configurer le widget	Configura widget
+Änderung ausprobieren	Try a proposed change	Een wijzigingsvoorstel proberen	Probar un cambio propuesto	Tester une modification proposée	Prova una modifica proposta
+Beim ersten Start bestätigst du die Docker Lizenzbedingungen direkt in Docker. Shopdeck wartet anschließend auf die Bereitschaft.	On first launch, accept Docker’s terms in Docker. Shopdeck waits until Docker is ready.	Accepteer bij de eerste start de voorwaarden in Docker. Shopdeck wacht totdat Docker klaar is.	En el primer inicio, acepta las condiciones en Docker. Shopdeck espera hasta que esté listo.	Au premier lancement, acceptez les conditions dans Docker. Shopdeck attend ensuite qu’il soit prêt.	Al primo avvio, accetta le condizioni in Docker. Shopdeck attende che Docker sia pronto.
+Umsatz diesen Monat	Revenue this month	Omzet deze maand	Ingresos de este mes	Chiffre d’affaires ce mois	Fatturato questo mese
+Umsatz dieses Jahr	Revenue this year	Omzet dit jaar	Ingresos de este año	Chiffre d’affaires cette année	Fatturato quest’anno
+Monatsumsätze	Monthly revenue	Maandelijkse omzet	Ingresos mensuales	Chiffre d’affaires mensuel	Fatturato mensile
+Security Plugin prüfen	Check security plugins	Beveiligingsplugins controleren	Revisar plugins de seguridad	Vérifier les plugins de sécurité	Verifica i plugin di sicurezza
+Security Plugin aktuell	Security plugin up to date	Beveiligingsplugin actueel	Plugin de seguridad actualizado	Plugin de sécurité à jour	Plugin di sicurezza aggiornato
+Security Plugin fehlt	Security plugin missing	Beveiligingsplugin ontbreekt	Falta el plugin de seguridad	Plugin de sécurité absent	Plugin di sicurezza mancante
+Security Plugin inaktiv	Security plugin inactive	Beveiligingsplugin inactief	Plugin de seguridad inactivo	Plugin de sécurité inactif	Plugin di sicurezza inattivo
+Security Plugin Update verfügbar	Security plugin update available	Update beveiligingsplugin beschikbaar	Actualización del plugin disponible	Mise à jour du plugin disponible	Aggiornamento del plugin disponibile
+Security Status nicht bestätigt	Security status not verified	Beveiligingsstatus niet bevestigd	Estado de seguridad sin verificar	État de sécurité non vérifié	Stato di sicurezza non verificato
+Datensätze pro Seite	Rows per page	Rijen per pagina	Filas por página	Lignes par page	Righe per pagina
+Maximal geladene Datensätze je Shop	Maximum rows loaded per shop	Maximaal geladen rijen per shop	Máximo de filas por tienda	Nombre maximal de lignes par boutique	Numero massimo di righe per negozio
+Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl.	Search, filters and sorting run in each shop before pagination. Sorted results from multiple shops are merged into one list. The result limit also caps the combined pages you can browse.	Zoeken, filters en sortering gebeuren in de shop vóór paginering. Gesorteerde resultaten worden samengevoegd. De resultaatlimiet begrenst ook het aantal doorbladerbare resultaten.	La búsqueda, los filtros y la ordenación se aplican en cada tienda antes de paginar. Los resultados se combinan en una lista. El límite también restringe los resultados navegables.	La recherche, les filtres et le tri sont appliqués dans chaque boutique avant la pagination. Les résultats triés sont réunis dans une liste. La limite borne aussi les résultats consultables.	Ricerca, filtri e ordinamento avvengono in ogni negozio prima della paginazione. I risultati ordinati vengono uniti in un elenco. Il limite vale anche per i risultati consultabili.
+Serverseitig sortiert und gefiltert	Sorted and filtered by Shopware	Gesorteerd en gefilterd door Shopware	Ordenado y filtrado por Shopware	Trié et filtré par Shopware	Ordinato e filtrato da Shopware
+Eingabetaste öffnet Details	Press Return for details	Druk op Return voor details	Pulsa Intro para ver detalles	Entrée pour les détails	Premi Invio per i dettagli
+Ergebnisgrenze erreicht	Result limit reached	Resultaatlimiet bereikt	Límite de resultados alcanzado	Limite de résultats atteinte	Limite dei risultati raggiunto
+Erhöhe die Ladegrenze in den Einstellungen oder grenze die Suche ein.	Increase the load limit in Settings or narrow your search.	Verhoog de laadlimiet in Instellingen of verfijn je zoekopdracht.	Aumenta el límite en Ajustes o acota la búsqueda.	Augmentez la limite dans Réglages ou affinez votre recherche.	Aumenta il limite nelle Impostazioni o restringi la ricerca.
+Dieses strukturierte Preisfeld bietet keine direkte API Sortierung.	This structured price field has no direct API sorting.	Dit gestructureerde prijsveld heeft geen directe API sortering.	Este campo de precio no ofrece ordenación directa por API.	Ce champ de prix structuré ne propose pas de tri direct par API.	Questo campo prezzo strutturato non offre ordinamento diretto tramite API.
+Steuersatz	Tax rate	Belastingtarief	Tipo impositivo	Taux de taxe	Aliquota fiscale
+API, Medien, Plugins und Kampagnen	API, media, plugins and campaigns	API, media, plugins en campagnes	API, medios, plugins y campañas	API, médias, plugins et campagnes	API, media, plugin e campagne
+Aktuelle Produktwerte werden geladen …	Loading current product values…	Huidige productwaarden laden…	Cargando valores actuales…	Chargement des valeurs actuelles…	Caricamento dei valori attuali…
+Alle Shops anzeigen	Show all shops	Alle shops tonen	Mostrar todas las tiendas	Afficher toutes les boutiques	Mostra tutti i negozi
+Alle Shops anzeigen setzt den Shopfilter in jeder Ansicht zurück.	Show all shops clears the shop filter in every view.	Alle shops tonen wist het shopfilter in elke weergave.	Mostrar todas las tiendas elimina el filtro de tienda en cada vista.	Afficher toutes les boutiques efface le filtre dans chaque vue.	Mostra tutti i negozi rimuove il filtro in ogni vista.
+Alle Änderungen anzeigen	Show all changes	Alle wijzigingen tonen	Mostrar todos los cambios	Afficher toutes les modifications	Mostra tutte le modifiche
+Alle übernehmen …	Apply all…	Alles toepassen…	Aplicar todo…	Tout appliquer…	Applica tutto…
+Als Entwurf speichern	Save as draft	Als concept opslaan	Guardar como borrador	Enregistrer comme brouillon	Salva come bozza
+Angehalten. Nicht übernommene Vorschläge bleiben offen.	Stopped. Unapplied proposals remain pending.	Gestopt. Niet toegepaste voorstellen blijven open.	Detenido. Las propuestas sin aplicar siguen pendientes.	Arrêté. Les propositions non appliquées restent en attente.	Interrotto. Le proposte non applicate restano in attesa.
+Anschließend Codex und Claude einrichten	Set up Codex and Claude next	Daarna Codex en Claude instellen	Configurar Codex y Claude después	Configurer ensuite Codex et Claude	Configura poi Codex e Claude
+Auswahl übernehmen	Apply selection	Selectie toepassen	Aplicar selección	Appliquer la sélection	Applica selezione
+Bestand und Status	Stock and status	Voorraad en status	Stock y estado	Stock et statut	Scorte e stato
+Bestätigte Änderungen zurücknehmen	Undo confirmed changes	Bevestigde wijzigingen terugdraaien	Deshacer cambios confirmados	Annuler les modifications confirmées	Annulla le modifiche confermate
+Bild	Image	Afbeelding	Imagen	Image	Immagine
+Charge zurückgenommen.	Batch undone.	Batch teruggedraaid.	Lote deshecho.	Lot annulé.	Gruppo annullato.
+Charge zurücknehmen	Undo batch	Batch terugdraaien	Deshacer lote	Annuler le lot	Annulla gruppo
+Charge zurücknehmen?	Undo this batch?	Deze batch terugdraaien?	¿Deshacer este lote?	Annuler ce lot ?	Annullare questo gruppo?
+Codex und Claude können deine freigegebenen Shops lesen und Änderungen zur Prüfung vorschlagen.	Codex and Claude can read enabled shops and propose changes for your review.	Codex en Claude kunnen toegestane shops lezen en wijzigingen voorstellen.	Codex y Claude pueden leer las tiendas autorizadas y proponer cambios.	Codex et Claude peuvent lire les boutiques autorisées et proposer des modifications.	Codex e Claude possono leggere i negozi autorizzati e proporre modifiche.
+Das Plugin führt nach Installation Code im Shop aus. Shopware prüft Abhängigkeiten bei der Installation.	The plugin runs code in your shop after installation. Shopware checks dependencies during installation.	De plugin voert na installatie code uit in je shop. Shopware controleert afhankelijkheden.	El plugin ejecuta código en tu tienda. Shopware comprueba las dependencias al instalar.	Le plugin exécute du code dans votre boutique. Shopware vérifie les dépendances à l’installation.	Il plugin esegue codice nel negozio. Shopware verifica le dipendenze durante l’installazione.
+Das Produkt wurde seit dem Vorschlag geändert. Bitte einzeln prüfen.	This product changed after the proposal. Review it individually.	Dit product is na het voorstel gewijzigd. Controleer het afzonderlijk.	El producto cambió después de la propuesta. Revísalo individualmente.	Ce produit a changé depuis la proposition. Vérifiez le séparément.	Il prodotto è cambiato dopo la proposta. Verificalo singolarmente.
+Die Charge wird in umgekehrter Reihenfolge zurückgenommen. Bei einem Konflikt hält Shopdeck an und schützt neuere Werte.	Changes are undone in reverse order. Shopdeck stops on a conflict and protects newer values.	Wijzigingen worden in omgekeerde volgorde teruggedraaid. Shopdeck stopt bij conflicten en beschermt nieuwere waarden.	Los cambios se deshacen en orden inverso. Shopdeck se detiene ante conflictos y protege los valores recientes.	Les modifications sont annulées en ordre inverse. Shopdeck s’arrête en cas de conflit et protège les valeurs récentes.	Le modifiche vengono annullate in ordine inverso. Shopdeck si ferma in caso di conflitto e protegge i valori recenti.
+Die Computersprache ist vorausgewählt. Nicht verfügbare Sprachen verwenden Englisch.	Your computer’s language is selected automatically. Unsupported languages fall back to English.	De taal van je computer is automatisch geselecteerd. Niet ondersteunde talen gebruiken Engels.	El idioma del equipo se selecciona automáticamente. Los idiomas no disponibles usan inglés.	La langue de votre ordinateur est sélectionnée automatiquement. L’anglais sert de langue de secours.	La lingua del computer viene selezionata automaticamente. Per le lingue non disponibili si usa l’inglese.
+Die Dateien und Aktionen werden gemeinsam freigegeben. Jeder Schritt wird protokolliert. Bei einem Fehler bleiben Teilstände sichtbar.	Files and actions are approved together. Every step is recorded, including partial results if a step fails.	Bestanden en acties worden samen goedgekeurd. Elke stap wordt vastgelegd, ook gedeeltelijke resultaten bij fouten.	Los archivos y acciones se aprueban juntos. Cada paso se registra, incluidos los resultados parciales si falla.	Les fichiers et actions sont approuvés ensemble. Chaque étape est enregistrée, y compris les résultats partiels en cas d’échec.	File e azioni vengono approvati insieme. Ogni passaggio viene registrato, inclusi i risultati parziali in caso di errore.
+Dieser Port ist bereits belegt. Wähle einen freien Port oder die automatische Auswahl.	This port is in use. Choose a free port or automatic selection.	Deze poort is bezet. Kies een vrije poort of automatische selectie.	Este puerto está ocupado. Elige otro o la selección automática.	Ce port est occupé. Choisissez un port libre ou la sélection automatique.	Questa porta è occupata. Scegli una porta libera o la selezione automatica.
+Dieser Port ist inzwischen belegt. Wähle einen freien Port.	This port has become occupied. Choose a free port.	Deze poort is inmiddels bezet. Kies een vrije poort.	Este puerto acaba de ocuparse. Elige otro.	Ce port vient d’être occupé. Choisissez un port libre.	Questa porta è stata occupata. Scegli una porta libera.
+Ein paar Schritte, dann sind deine Shops und Werkzeuge an einem Ort.	A few steps to bring your shops and tools together.	Een paar stappen om je shops en tools samen te brengen.	Unos pasos para reunir tus tiendas y herramientas.	Quelques étapes pour réunir vos boutiques et vos outils.	Pochi passaggi per riunire negozi e strumenti.
+Einrichtungsassistent öffnen	Open setup assistant	Installatieassistent openen	Abrir asistente de configuración	Ouvrir l’assistant de configuration	Apri assistente di configurazione
+Ergebnis und Nachweis	Result and verification	Resultaat en verificatie	Resultado y verificación	Résultat et vérification	Risultato e verifica
+Erstelle mit Shopdeck für [Shopname] eine Kampagne aus Text, dem lokalen Bild [Dateipfad] und vier vorhandenen Produkten. Nutze propose_campaign, speichere einen Entwurf und zeige mir den Antrag zur Freigabe.	Use Shopdeck to prepare a campaign for [shop name] with text, the local image [file path] and four existing products. Use propose_campaign, save a draft and show me the approval request.	Maak met Shopdeck een campagne voor [shopnaam] met tekst, de lokale afbeelding [bestandspad] en vier bestaande producten. Gebruik propose_campaign, sla een concept op en toon het verzoek ter goedkeuring.	Prepara con Shopdeck una campaña para [tienda] con texto, la imagen local [ruta] y cuatro productos existentes. Usa propose_campaign, guarda un borrador y muéstrame la solicitud de aprobación.	Prépare avec Shopdeck une campagne pour [boutique] avec du texte, l’image locale [chemin] et quatre produits existants. Utilise propose_campaign, enregistre un brouillon et montre moi la demande d’approbation.	Prepara con Shopdeck una campagna per [negozio] con testo, l’immagine locale [percorso] e quattro prodotti esistenti. Usa propose_campaign, salva una bozza e mostrami la richiesta di approvazione.
+Freien Port automatisch wählen	Choose a free port automatically	Automatisch een vrije poort kiezen	Elegir puerto libre automáticamente	Choisir automatiquement un port libre	Scegli automaticamente una porta libera
+Im Verlauf suchen	Search history	Geschiedenis doorzoeken	Buscar en el historial	Rechercher dans l’historique	Cerca nella cronologia
+In dieser Sitzung verfügbar	Available in this session	Beschikbaar in deze sessie	Disponible en esta sesión	Disponible dans cette session	Disponibile in questa sessione
+Installieren und aktivieren	Install and activate	Installeren en activeren	Instalar y activar	Installer et activer	Installa e attiva
+KI Sammeländerung	AI batch change	AI batchwijziging	Cambio de lote con IA	Modification groupée par IA	Modifica di gruppo IA
+Kampagne mit Bild vorbereiten	Prepare a campaign with an image	Campagne met afbeelding voorbereiden	Preparar campaña con imagen	Préparer une campagne avec image	Prepara una campagna con immagine
+Kein freier lokaler Port gefunden.	No free local port found.	Geen vrije lokale poort gevonden.	No se encontró un puerto local libre.	Aucun port local libre trouvé.	Nessuna porta locale libera trovata.
+Keine Änderungen für diesen Shop	No changes for this shop	Geen wijzigingen voor deze shop	Sin cambios para esta tienda	Aucune modification pour cette boutique	Nessuna modifica per questo negozio
+Kundendaten bleiben ohne separate Freigabe verborgen. Du kannst den KI Zugang später ändern.	Customer data stays hidden without separate permission. You can change AI access later.	Klantgegevens blijven verborgen zonder aparte toestemming. Je kunt AI toegang later wijzigen.	Los datos de clientes quedan ocultos sin permiso específico. Puedes cambiar el acceso de IA después.	Les données clients restent masquées sans autorisation distincte. Vous pouvez modifier l’accès IA plus tard.	I dati dei clienti restano nascosti senza un’autorizzazione separata. Puoi modificare l’accesso IA in seguito.
+Mit Demodaten erkunden	Explore demo data	Demogegevens verkennen	Explorar datos de demostración	Explorer les données de démonstration	Esplora dati dimostrativi
+Mit deiner Shopadresse und einer Shopware Integration.	With your shop URL and a Shopware integration.	Met je shopadres en een Shopware integratie.	Con la URL de tu tienda y una integración Shopware.	Avec l’adresse de votre boutique et une intégration Shopware.	Con l’indirizzo del negozio e un’integrazione Shopware.
+Nach Freigabe veröffentlichen	Publish after approval	Publiceren na goedkeuring	Publicar tras aprobar	Publier après approbation	Pubblica dopo l’approvazione
+Nach aktuellem Vorgang stoppen	Stop after current operation	Stoppen na huidige bewerking	Detener tras la operación actual	Arrêter après l’opération en cours	Interrompi dopo l’operazione attuale
+Nur im Katalog gemeldet	Listed in catalogue only	Alleen vermeld in catalogus	Solo en el catálogo	Présent dans le catalogue uniquement	Presente solo nel catalogo
+Nur installieren	Install only	Alleen installeren	Solo instalar	Installer uniquement	Installa soltanto
+Passe dein Dashboard an, richte Bestellregeln ein und wähle deine Desktop Widgets.	Customize your dashboard, create order rules and choose your desktop widgets.	Pas je dashboard aan, maak bestelregels en kies je bureaubladwidgets.	Personaliza el panel, crea reglas de pedidos y elige widgets de escritorio.	Personnalisez le tableau de bord, créez des règles de commande et choisissez vos widgets de bureau.	Personalizza la dashboard, crea regole per gli ordini e scegli i widget desktop.
+Preise, Varianten, Medien und alle weiteren Produktfelder bearbeitest du in der vollständigen Shopware Maske.	Edit prices, variants, media and every other product field in the full Shopware editor.	Bewerk prijzen, varianten, media en alle andere productvelden in de volledige Shopware editor.	Edita precios, variantes, medios y el resto de campos en el editor completo de Shopware.	Modifiez les prix, variantes, médias et tous les autres champs dans l’éditeur complet de Shopware.	Modifica prezzi, varianti, media e tutti gli altri campi nell’editor completo di Shopware.
+Produktbild	Product image	Productafbeelding	Imagen del producto	Image du produit	Immagine prodotto
+Produktvorschaubilder anzeigen	Show product thumbnails	Productminiaturen tonen	Mostrar miniaturas de productos	Afficher les miniatures des produits	Mostra miniature dei prodotti
+Prüfe Auswahl, Zielshops und Werte. Jeder Vorgang wird einzeln protokolliert. Bei einem Fehler hält die Übernahme an.	Review the selection, target shops and values. Each operation is recorded separately. Processing stops on an error.	Controleer selectie, doelshops en waarden. Elke bewerking wordt apart vastgelegd. De verwerking stopt bij een fout.	Revisa la selección, tiendas y valores. Cada operación se registra por separado. El proceso se detiene si hay un error.	Vérifiez la sélection, les boutiques et les valeurs. Chaque opération est enregistrée séparément. Le traitement s’arrête en cas d’erreur.	Verifica selezione, negozi e valori. Ogni operazione viene registrata separatamente. Il processo si interrompe in caso di errore.
+Shopdeck öffnen	Open Shopdeck	Shopdeck openen	Abrir Shopdeck	Ouvrir Shopdeck	Apri Shopdeck
+Shopdeck übernimmt Docker, freien Port und API Einrichtung.	Shopdeck handles Docker, a free port and API setup.	Shopdeck regelt Docker, een vrije poort en de API configuratie.	Shopdeck configura Docker, un puerto libre y la API.	Shopdeck gère Docker, un port libre et la configuration API.	Shopdeck gestisce Docker, una porta libera e la configurazione API.
+Shops verbunden	Shops connected	Shops verbonden	Tiendas conectadas	Boutiques connectées	Negozi collegati
+Shopware Lokal	Shopware Local	Shopware Lokaal	Shopware Local	Shopware Local	Shopware Locale
+Später einrichten	Set up later	Later instellen	Configurar después	Configurer plus tard	Configura più tardi
+Technischen Plan anzeigen	Show technical plan	Technisch plan tonen	Mostrar plan técnico	Afficher le plan technique	Mostra piano tecnico
+Verbinde deinen Shop oder starte einen lokalen Shop zum Ausprobieren.	Connect your shop or launch a local shop to try it out.	Verbind je shop of start een lokale shop om te testen.	Conecta tu tienda o inicia una tienda local para probar.	Connectez votre boutique ou lancez une boutique locale pour essayer.	Collega il tuo negozio o avvia un negozio locale per provare.
+Vollständig in Shopware bearbeiten	Open full Shopware editor	Volledige Shopware editor openen	Abrir editor completo de Shopware	Ouvrir l’éditeur complet Shopware	Apri editor completo di Shopware
+Vorgang ausgeführt und geprüft.	Operation completed and checked.	Bewerking uitgevoerd en gecontroleerd.	Operación completada y comprobada.	Opération terminée et vérifiée.	Operazione completata e verificata.
+Vorhandene Testshops werden geprüft …	Checking existing test shops…	Bestaande testshops controleren…	Comprobando tiendas de prueba existentes…	Vérification des boutiques de test existantes…	Verifica dei negozi di prova esistenti…
+Weitere Einträge laden	Load more entries	Meer items laden	Cargar más entradas	Charger plus d’entrées	Carica altre voci
+Wähle in Docker einen lokalen Kontext für diesen Testshop.	Select a local Docker context for this test shop.	Selecteer een lokale Docker context voor deze testshop.	Selecciona un contexto local de Docker para esta tienda.	Sélectionnez un contexte Docker local pour cette boutique de test.	Seleziona un contesto Docker locale per questo negozio di prova.
+Zur Administrationsübersicht	Back to administrations	Terug naar administraties	Volver a administraciones	Retour aux administrations	Torna alle amministrazioni
+ausgewählt	selected	geselecteerd	seleccionados	sélectionnés	selezionati
+offene Änderungen in anderen Shops	pending changes in other shops	open wijzigingen in andere shops	cambios pendientes en otras tiendas	modifications en attente dans d’autres boutiques	modifiche in attesa in altri negozi
+Änderungen gemeinsam freigeben	Review and approve changes	Wijzigingen controleren en goedkeuren	Revisar y aprobar cambios	Vérifier et approuver les modifications	Verifica e approva le modifiche
+Änderungen werden vor der Übernahme in Shopdeck geprüft.	Review changes in Shopdeck before applying them.	Controleer wijzigingen in Shopdeck voordat je ze toepast.	Revisa los cambios en Shopdeck antes de aplicarlos.	Vérifiez les modifications dans Shopdeck avant de les appliquer.	Verifica le modifiche in Shopdeck prima di applicarle.
+Übernahme angehalten.	Processing stopped.	Verwerking gestopt.	Proceso detenido.	Traitement arrêté.	Elaborazione interrotta.
+Willkommen bei Shopdeck	Welcome to Shopdeck	Welkom bij Shopdeck	Te damos la bienvenida a Shopdeck	Bienvenue dans Shopdeck	Benvenuto in Shopdeck
+Dein erster Shop	Your first shop	Je eerste shop	Tu primera tienda	Votre première boutique	Il tuo primo negozio
+Dein KI Zugang	Your AI connection	Je AI verbinding	Tu conexión de IA	Votre connexion IA	La tua connessione IA
+Dein Arbeitsplatz ist bereit	Your workspace is ready	Je werkruimte is klaar	Tu espacio de trabajo está listo	Votre espace de travail est prêt	Il tuo spazio di lavoro è pronto
+executing	Running	Bezig	En ejecución	En cours	In esecuzione
+uncertain	Needs verification	Te controleren	Necesita verificación	À vérifier	Da verificare
+failed	Failed	Mislukt	Fallido	Échec	Non riuscito
