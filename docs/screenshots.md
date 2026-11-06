@@ -32,6 +32,7 @@ English interface captures from development builds, using built in demo profiles
 
 ![Codex and Claude setup with a real MCP connection check](screenshots/14-ai-setup.png)
 ![Usage examples and tool catalogue](screenshots/15-ai-guide-tools.png)
+![Native tools: session availability and catalogue entries](screenshots/31-native-mcp-availability.png)
 ![Changes from multiple shops](screenshots/23-changes.png)
 ![Review and approve a selection together](screenshots/24-bulk-approval.png)
 ![Verified product history and batch undo](screenshots/25-change-history.png)
@@ -49,3 +50,4 @@ English interface captures from development builds, using built in demo profiles
 
 ![Light appearance](screenshots/29-light-appearance.png)
 ![Settings and the connected native widget data](screenshots/30-settings.png)
+![Multiple workspace tabs](screenshots/32-workspace-tabs.png)
