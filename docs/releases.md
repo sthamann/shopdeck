@@ -1,6 +1,6 @@
 # Signed releases and updates
 
-Version **0.12.0 (12000)** ships an optimized Apple silicon application signed with Developer ID Application. Apple notarization succeeded; the app carries a stapled ticket and passes Gatekeeper assessment as `Notarized Developer ID`. The disk image is Developer ID signed and contains that notarized app. Sparkle verifies its download with a separate Ed25519 signature.
+Version **0.12.0 (12000)** ships an optimized Apple silicon application signed with Developer ID Application. Apple notarization succeeded; the app carries a stapled ticket and passes Gatekeeper assessment as `Notarized Developer ID`. The disk image is Developer ID signed and contains that notarized app. Sparkle verifies its download with a separate Ed25519 signature. The final mounted DMG app passed signature, staple and Gatekeeper checks. Public download and feed matched the signed originals byte for byte. The actual Sparkle upgrade from 0.11.0 to 0.12.0 was installed and relaunched successfully, preserving the shops, workbench, desktop session and pending approvals. Both local shop credential reads succeeded afterwards.
 
 Official downloads are published in this repository’s GitHub Releases. Shopdeck checks:
 
