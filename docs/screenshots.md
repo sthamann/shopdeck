@@ -8,6 +8,8 @@ English interface captures from development builds, using built in demo profiles
 ![Record bookmarks grouped by shop in the top toolbar](screenshots/45-record-bookmarks.png)
 ![A saved view with a relative Today filter](screenshots/46-dynamic-order-period.png)
 ![Find a bookmarked order from the command palette](screenshots/47-bookmark-command-search.png)
+![The final picking list in light appearance](screenshots/48-picking-list-light.png)
+![First page of an actual PDF export, marked as demo data](screenshots/49-printable-picking-list.png)
 
 ## Documents, reminders and workspaces in 0.11
 

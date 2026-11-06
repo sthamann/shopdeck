@@ -140,7 +140,7 @@ For direct public distribution, sign all executable components with Developer ID
 - `Tests`: API, pagination, sorting, scope, persistence and change approval regressions.
 - `script`: build, archive, signing and release tools.
 
-The test suite includes a separate live integration test for an isolated local Dockware shop. It is opt in because it creates an integration and verifies a reversible stock change.
+Live integration tests are opt in and use the isolated local Dockware verification shop. They cover reversible product changes and disposable document and picking fixtures. Fixtures are removed and original records are checked afterwards.
 
 ## Languages
 
