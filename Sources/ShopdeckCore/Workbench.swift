@@ -5,6 +5,7 @@ public struct SavedView: Codable, Identifiable, Sendable, Equatable {
     public var name: String
     public var destination: String
     public var shopID: UUID?
+    public var shopIDs: Set<UUID>?
     public var query: String
     public var lowStock: Bool
     public var filters: [RecordFilter]?
@@ -20,6 +21,7 @@ public struct Workbench: Codable, Sendable {
     public var savedViews: [SavedView] = []
     public var lists: [String: ListConfiguration]?
     public var dashboard: DashboardConfiguration?
+    public var followUps: [RecordFollowUp]?
     public init() {}
 }
 

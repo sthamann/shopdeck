@@ -701,3 +701,70 @@ Dein Arbeitsplatz ist bereit	Your workspace is ready	Je werkruimte is klaar	Tu e
 executing	Running	Bezig	En ejecución	En cours	In esecuzione
 uncertain	Needs verification	Te controleren	Necesita verificación	À vérifier	Da verificare
 failed	Failed	Mislukt	Fallido	Échec	Non riuscito
+
+Lange offene Bestellungen	Orders waiting too long	Lang openstaande bestellingen	Pedidos abiertos desde hace tiempo	Commandes en attente prolongée	Ordini aperti da troppo tempo
+Bestellungen in Bearbeitung	Orders in progress	Bestellingen in behandeling	Pedidos en curso	Commandes en cours	Ordini in elaborazione
+Bestand nachbestellen	Stock to replenish	Voorraad aanvullen	Reponer existencias	Stock à réapprovisionner	Scorte da riordinare
+Aktiv und ausverkauft	Active but sold out	Actief maar uitverkocht	Activos sin existencias	Actifs mais épuisés	Attivi ma esauriti
+Produktbild fehlt	Missing product image	Productafbeelding ontbreekt	Falta imagen del producto	Image produit manquante	Immagine prodotto mancante
+Beschreibung fehlt	Missing description	Beschrijving ontbreekt	Falta descripción	Description manquante	Descrizione mancante
+Jetzt angehen	Needs your attention	Nu aanpakken	Requiere tu atención	À traiter maintenant	Da gestire ora
+fällige Wiedervorlagen	follow ups due	opvolgingen verschuldigd	seguimientos pendientes	suivis à échéance	attività in scadenza
+Arbeitsvorrat konfigurieren	Configure attention list	Werklijst instellen	Configurar lista de tareas	Configurer la liste de travail	Configura elenco attività
+Nachbestellen bei Bestand bis	Replenish when stock is at most	Aanvullen bij voorraad tot	Reponer si el stock es como máximo	Réapprovisionner si le stock est au plus	Riordina con scorte fino a
+Offen seit mindestens Stunden	Open for at least hours	Minimaal zoveel uur open	Abierto durante al menos horas	Ouvert depuis au moins heures	Aperto da almeno ore
+Produktinhalte werden nur bei aktiven Hauptprodukten geprüft. Varianten erben Inhalte.	Content checks cover active parent products only. Variants inherit content.	Inhoudscontroles gelden alleen voor actieve hoofdproducten. Varianten erven inhoud.	Se revisan solo los productos principales activos. Las variantes heredan el contenido.	Les contrôles concernent les produits parents actifs. Les variantes héritent du contenu.	I controlli riguardano solo i prodotti principali attivi. Le varianti ereditano i contenuti.
+Arbeitsvorrat aktualisieren	Refresh attention list	Werklijst vernieuwen	Actualizar lista de tareas	Actualiser la liste de travail	Aggiorna elenco attività
+Live im Shop gezählt. Ein Klick öffnet die passenden Datensätze.	Counted live in your shops. Click to open the matching records.	Live geteld in je shops. Klik om de bijbehorende records te openen.	Contado en tus tiendas. Haz clic para abrir los registros correspondientes.	Compté en direct dans vos boutiques. Cliquez pour ouvrir les données correspondantes.	Conteggiato nei tuoi shop. Fai clic per aprire i record corrispondenti.
+Betroffene Datensätze öffnen	Open matching records	Bijbehorende records openen	Abrir registros correspondientes	Ouvrir les données correspondantes	Apri record corrispondenti
+Nicht alle Shops erreichbar	Some shops are unavailable	Niet alle shops bereikbaar	Algunas tiendas no están disponibles	Certaines boutiques sont indisponibles	Alcuni shop non sono disponibili
+Wiedervorlagen	Follow ups	Opvolgingen	Seguimientos	Suivis	Attività da seguire
+Wiedervorlage	Follow up	Opvolging	Seguimiento	Suivi	Attività da seguire
+Notizen behalten. Termine setzen. Nichts liegen lassen.	Keep notes. Set a date. Follow through.	Bewaar notities. Plan een datum. Rond het af.	Guarda notas. Fija una fecha. Haz seguimiento.	Gardez vos notes. Fixez une date. Assurez le suivi.	Conserva le note. Fissa una data. Completa le attività.
+offene Aufgaben	open tasks	open taken	tareas abiertas	tâches ouvertes	attività aperte
+Bis heute fällig	Due by today	Uiterlijk vandaag	Vence hoy o antes	Échéance aujourd’hui ou avant	In scadenza entro oggi
+Erledigt	Done	Afgerond	Completado	Terminé	Completato
+Notiz, Nummer oder Shop suchen	Search notes, numbers or shops	Zoek notities, nummers of shops	Buscar notas, números o tiendas	Rechercher notes, numéros ou boutiques	Cerca note, numeri o shop
+Hier bleibt nichts vergessen	Keep the next step in sight	Houd de volgende stap in beeld	Ten presente el siguiente paso	Gardez la prochaine étape en vue	Tieni a mente il prossimo passo
+Öffne ein Produkt, eine Bestellung oder einen Kunden. Unter Notizen und Wiedervorlage kannst du den nächsten Schritt festhalten.	Open a product, order or customer. Use Notes and follow up to capture the next step.	Open een product, bestelling of klant. Leg de volgende stap vast onder Notities en opvolging.	Abre un producto, pedido o cliente. En Notas y seguimiento puedes anotar el siguiente paso.	Ouvrez un produit, une commande ou un client. Notez la prochaine étape dans Notes et suivi.	Apri un prodotto, ordine o cliente. Annota il prossimo passo in Note e attività.
+Privat auf diesem Mac gespeichert. Keine Änderung im Shop und keine Freigabe über MCP.	Stored privately on this Mac. No shop changes or sharing through MCP.	Privé opgeslagen op deze Mac. Geen wijzigingen in de shop of delen via MCP.	Guardado de forma privada en este Mac. Sin cambios en la tienda ni acceso mediante MCP.	Enregistré sur ce Mac uniquement. Aucune modification de boutique ni partage via MCP.	Salvato privatamente su questo Mac. Nessuna modifica allo shop o condivisione tramite MCP.
+Notizen und Wiedervorlage	Notes and follow up	Notities en opvolging	Notas y seguimiento	Notes et suivi	Note e attività
+Als erledigt markieren	Mark as done	Markeren als afgerond	Marcar como completado	Marquer comme terminé	Segna come completato
+Wieder öffnen	Reopen	Heropenen	Reabrir	Rouvrir	Riapri
+Shop nicht verbunden	Shop not connected	Shop niet verbonden	Tienda no conectada	Boutique non connectée	Shop non collegato
+Notiz bearbeiten	Edit note	Notitie bewerken	Editar nota	Modifier la note	Modifica nota
+Morgen erinnern	Follow up tomorrow	Morgen opvolgen	Recordar mañana	Reprendre demain	Ricorda domani
+In einer Woche erinnern	Follow up in a week	Over een week opvolgen	Recordar en una semana	Reprendre dans une semaine	Ricorda tra una settimana
+Datensatz öffnen	Open record	Record openen	Abrir registro	Ouvrir la fiche	Apri record
+Was ist der nächste Schritt?	What is the next step?	Wat is de volgende stap?	¿Cuál es el siguiente paso?	Quelle est la prochaine étape ?	Qual è il prossimo passo?
+Notiz	Note	Notitie	Nota	Note	Nota
+Termin setzen	Set a date	Datum instellen	Fijar fecha	Fixer une date	Imposta una data
+Erinnern am	Follow up on	Opvolgen op	Recordar el	Suivre le	Ricorda il
+Morgen	Tomorrow	Morgen	Mañana	Demain	Domani
+In einer Woche	In a week	Over een week	En una semana	Dans une semaine	Tra una settimana
+Nur auf diesem Mac. Nicht im Shop oder für KI sichtbar.	Only on this Mac. Not visible in the shop or to AI.	Alleen op deze Mac. Niet zichtbaar in de shop of voor AI.	Solo en este Mac. No es visible en la tienda ni para la IA.	Sur ce Mac uniquement. Invisible dans la boutique et pour l’IA.	Solo su questo Mac. Non visibile nello shop o all’IA.
+Wiedervorlage speichern	Save follow up	Opvolging opslaan	Guardar seguimiento	Enregistrer le suivi	Salva attività
+Die Notiz darf höchstens 4.000 Zeichen enthalten.	Notes can contain up to 4,000 characters.	Notities mogen maximaal 4.000 tekens bevatten.	Las notas admiten hasta 4.000 caracteres.	Les notes peuvent contenir 4 000 caractères au maximum.	Le note possono contenere fino a 4.000 caratteri.
+Wiedervorlage gespeichert	Follow up saved	Opvolging opgeslagen	Seguimiento guardado	Suivi enregistré	Attività salvata
+Dieser Shop ist nicht mehr verbunden.	This shop is no longer connected.	Deze shop is niet meer verbonden.	Esta tienda ya no está conectada.	Cette boutique n’est plus connectée.	Questo shop non è più collegato.
+Arbeitsvorrat öffnen	Open attention list	Werklijst openen	Abrir lista de tareas	Ouvrir la liste de travail	Apri elenco attività
+Angezeigte Seite exportieren	Export current page	Huidige pagina exporteren	Exportar página actual	Exporter la page actuelle	Esporta pagina corrente
+Gefilterte Treffer exportieren	Export filtered results	Gefilterde resultaten exporteren	Exportar resultados filtrados	Exporter les résultats filtrés	Esporta risultati filtrati
+maximal	up to	maximaal	hasta	jusqu’à	fino a
+Export wird mit deinen Filtern und Spalten vorbereitet …	Preparing export with your filters and columns …	Export voorbereiden met je filters en kolommen …	Preparando la exportación con tus filtros y columnas …	Préparation de l’export avec vos filtres et colonnes …	Preparazione esportazione con i tuoi filtri e colonne …
+Datensätze exportiert	records exported	records geëxporteerd	registros exportados	fiches exportées	record esportati
+Ladegrenze erreicht. Für weitere Treffer Filter eingrenzen oder die Grenze erhöhen.	Result limit reached. Narrow the filters or raise the limit to export more.	Resultaatlimiet bereikt. Verfijn de filters of verhoog de limiet om meer te exporteren.	Límite alcanzado. Ajusta los filtros o aumenta el límite para exportar más.	Limite atteinte. Affinez les filtres ou augmentez la limite pour exporter davantage.	Limite raggiunto. Restringi i filtri o aumenta il limite per esportare di più.
+Shops ausgewählt	shops selected	shops geselecteerd	tiendas seleccionadas	boutiques sélectionnées	shop selezionati
+Fehlt (null)	Missing (null)	Ontbreekt (null)	Falta (null)	Manquant (null)	Mancante (null)
+Leer oder fehlt	Empty or missing	Leeg of ontbreekt	Vacío o ausente	Vide ou manquant	Vuoto o mancante
+Hauptprodukte	Parent products	Hoofdproducten	Productos principales	Produits parents	Prodotti principali
+fehlt	missing	ontbreekt	falta	manquant	mancante
+leer	empty	leeg	vacío	vide	vuoto
+Fällig am	Due on	Uiterlijk op	Vence el	Échéance le	Scadenza il
+Auf morgen verschieben	Move to tomorrow	Verplaatsen naar morgen	Mover a mañana	Reporter à demain	Sposta a domani
+Um eine Woche verschieben	Move forward one week	Een week verplaatsen	Posponer una semana	Reporter d’une semaine	Rimanda di una settimana
+Offen	Open	Open	Abierto	Ouvert	Aperto
+Anzeigen	Show	Tonen	Mostrar	Afficher	Mostra
+Weitere	More	Meer	Más	Plus	Altro
+Noch nichts erledigt	No completed tasks yet	Nog geen afgeronde taken	Aún no hay tareas completadas	Aucune tâche terminée	Nessuna attività completata
+Heute ist nichts fällig	Nothing due today	Vandaag niets te doen	Nada vence hoy	Aucune échéance aujourd’hui	Nessuna scadenza oggi

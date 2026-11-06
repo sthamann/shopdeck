@@ -18,9 +18,9 @@ struct DashboardView: View {
     private var month: [AnalyticsOrder] { analytics.period(days: 30, currency: currency) }
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
+            VStack(alignment: .leading, spacing: 18) {
                 HStack(alignment: .top) {
-                    VStack(alignment: .leading, spacing: 8) { Text(T("Alles im Blick. Dein Commerce.")).font(.system(size: 34, weight: .bold, design: .rounded)); Text(T("Ein Arbeitsplatz für alle Shops. Mit den Zahlen, die für dich zählen.")).font(.system(size: 13)).foregroundStyle(.secondary) }
+                    VStack(alignment: .leading, spacing: 8) { Text(T("Alles im Blick. Dein Commerce.")).font(.system(size: 28, weight: .bold, design: .rounded)); Text(T("Ein Arbeitsplatz für alle Shops. Mit den Zahlen, die für dich zählen.")).font(.system(size: 13)).foregroundStyle(.secondary) }
                     Spacer()
                     Button { configuring = true } label: { Label(T("Dashboard anpassen"), systemImage: "slider.horizontal.3") }.controlSize(.large)
                 }
@@ -37,6 +37,7 @@ struct DashboardView: View {
                 if !analytics.truncatedShops.isEmpty { Text(T("Unvollständige Statistik: mehr als 10.000 Bestellungen in 30 Tagen.") + " " + analytics.truncatedShops.joined(separator: ", ")).font(.caption).foregroundStyle(.orange) }
                 Text(T("Bestellumsatz inklusive Steuern, ohne stornierte Bestellungen. Keine Währungsumrechnung. Bestellungen und Umsatz nach gewählter Währung.")).font(.caption).foregroundStyle(.secondary)
                 SecurityStatusView(model:model,compact:true)
+                MerchantFocusView(model: model)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 285), spacing: 18)], alignment: .leading, spacing: 18) {
                     ForEach(configuration.effectiveTiles) { item in
                         let widget=item.widget

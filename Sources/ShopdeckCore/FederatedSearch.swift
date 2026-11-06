@@ -10,7 +10,7 @@ public struct RecordSort:Codable,Equatable,Sendable {
         return .object(["field":.string(field),"order":.string(ascending ? "ASC":"DESC"),"naturalSorting":.bool(false)])
     }
 }
-public struct FederatedRecord:Sendable {public let shop:Shop;public let data:JSONValue;public var id:String{shop.id.uuidString+data["id"].displayString}}
+public struct FederatedRecord:Sendable {public let shop:Shop;public let data:JSONValue;public init(shop:Shop,data:JSONValue){self.shop=shop;self.data=data};public var id:String{shop.id.uuidString+data["id"].displayString}}
 public struct FederatedSearchPage:Sendable {public var rows:[FederatedRecord];public var total:Int;public var hasNext:Bool;public var capped:Bool;public var failures:[String];public var fetched:Int}
 extension ShopwareClient {
     /// Each shop sorts its entire matching data set before pagination. A prefix of N

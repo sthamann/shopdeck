@@ -21,6 +21,7 @@ struct ContentView: View {
                     case .frontends:StorefrontsView(model:model)
                     case .products, .orders, .customers: RecordsView(model: model)
                     case .ai: AISetupView(model: model)
+                    case .followups: FollowUpsView(model: model)
                     case .changes: ChangesView(model: model)
                     case .history: ProductHistoryView(model: model)
                     case .notifications: NotificationRulesView(model: model)
@@ -45,7 +46,7 @@ struct ContentView: View {
             Image(systemName: model.destination.icon).foregroundStyle(Theme.blue)
             Text(model.destination.title).fontWeight(.semibold)
             Image(systemName: "chevron.right").font(.system(size: 9)).foregroundStyle(.tertiary)
-            Menu{Button(T("Alle Shops anzeigen")){model.selectedShopID=nil};Divider();ForEach(model.workspace.shops){shop in Button(shop.name){model.selectedShopID=shop.id}}}label:{Text(model.selectedShop?.name ?? T("Alle Shops")).lineLimit(1)}.menuStyle(.borderlessButton).fixedSize()
+            Menu{Button(T("Alle Shops anzeigen")){model.selectedShopID=nil;model.listShopIDs=nil};Divider();ForEach(model.workspace.shops){shop in Button(shop.name){model.selectedShopID=shop.id}}}label:{Text(model.selectedShop?.name ?? T("Alle Shops")).lineLimit(1)}.menuStyle(.borderlessButton).fixedSize()
             Spacer()
             if model.isDemo { StatusPill(text: T("Demodaten"), color: .orange) }
             if let shop = model.selectedShop, model.destination != .admin { Button { model.openAdministration(shop) } label: { Label(T("Administration"), systemImage: "macwindow") }.buttonStyle(.bordered) }

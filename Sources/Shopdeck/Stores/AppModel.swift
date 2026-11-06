@@ -4,10 +4,10 @@ import ShopdeckCore
 import UserNotifications
 
 enum Destination: String, CaseIterable, Identifiable {
-    case overview, admin, frontends, products, orders, customers, changes, history, notifications, updates, ai, activity
+    case overview, admin, frontends, products, orders, customers, followups, changes, history, notifications, updates, ai, activity
     var id: String { rawValue }
-    var title: String { switch self { case .overview: return T("Übersicht"); case .admin: return T("Administration"); case .frontends:return T("Storefronts");case .products: return T("Produkte"); case .orders: return T("Bestellungen"); case .customers: return T("Kunden"); case .changes: return T("Änderungen"); case .history: return T("Änderungsverlauf"); case .notifications: return T("Benachrichtigungen"); case .updates: return "Shopware Updates"; case .ai: return "Codex & Claude"; case .activity: return T("Aktivität") } }
-    var icon: String { switch self { case .overview: return "square.grid.2x2"; case .admin: return "macwindow"; case .frontends:return "globe";case .products: return "shippingbox"; case .orders: return "bag"; case .customers: return "person.2"; case .changes: return "checkmark.seal"; case .history: return "arrow.uturn.backward.circle"; case .notifications: return "bell.badge"; case .updates: return "arrow.down.circle"; case .ai: return "sparkles"; case .activity: return "clock.arrow.circlepath" } }
+    var title: String { switch self { case .overview: return T("Übersicht"); case .admin: return T("Administration"); case .frontends:return T("Storefronts");case .products: return T("Produkte"); case .orders: return T("Bestellungen"); case .customers: return T("Kunden"); case .followups: return T("Wiedervorlagen"); case .changes: return T("Änderungen"); case .history: return T("Änderungsverlauf"); case .notifications: return T("Benachrichtigungen"); case .updates: return "Shopware Updates"; case .ai: return "Codex & Claude"; case .activity: return T("Aktivität") } }
+    var icon: String { switch self { case .overview: return "square.grid.2x2"; case .admin: return "macwindow"; case .frontends:return "globe";case .products: return "shippingbox"; case .orders: return "bag"; case .customers: return "person.2"; case .followups: return "bookmark.circle"; case .changes: return "checkmark.seal"; case .history: return "arrow.uturn.backward.circle"; case .notifications: return "bell.badge"; case .updates: return "arrow.down.circle"; case .ai: return "sparkles"; case .activity: return "clock.arrow.circlepath" } }
     var entity: String { switch self { case .orders: return "order"; case .customers: return "customer"; default: return "product" } }
 }
 struct ShopRecord: Identifiable, Equatable {
@@ -35,9 +35,9 @@ struct ShopRecord: Identifiable, Equatable {
     var isChangingProducts = false
     var changeFailure:String?
     var destination: Destination = .overview {
-        didSet { if oldValue != destination { query = ""; lowStockOnly = false; statusFilter = "all"; activeFilters = [];recordSort=RecordSort.defaults(destination.entity);listCurrency=nil;listChannelKey=nil; page = 1 } }
+        didSet { if oldValue != destination { query = ""; lowStockOnly = false; statusFilter = "all"; activeFilters = [];recordSort=RecordSort.defaults(destination.entity);listShopIDs=nil;listCurrency=nil;listChannelKey=nil; page = 1 } }
     }
-    var selectedShopID: UUID? {didSet{if oldValue != selectedShopID{listChannelKey=nil;dashboardChannelKey=nil;page=1}}}
+    var selectedShopID: UUID? {didSet{if oldValue != selectedShopID{listShopIDs=nil;listChannelKey=nil;dashboardChannelKey=nil;page=1}}}
     var snapshots: [UUID: ShopSnapshot] = [:]
     var connectionErrors: [UUID: String] = [:]
     var analytics = CommerceAnalytics()
@@ -45,10 +45,16 @@ struct ShopRecord: Identifiable, Equatable {
     var channelLoadedAt:[UUID:Date]=[:]
     var salesChannelErrors:[UUID:String] = [:]
     var dashboardChannelKey:String?
+    var listShopIDs:Set<UUID>?
     var listChannelKey:String?
     var listCurrency:String?
     var frontendURL:URL?
     var securityStatus:[UUID:SecurityPluginStatus] = [:]
+    var focusSnapshot = MerchantFocusSnapshot(key: "")
+    var loadingFocus = false
+    var focusLoadingKey = ""
+    var focusGeneration = UUID()
+    var focusLoadTask: Task<MerchantFocusSnapshot, Never>?
     var loadingAnalytics = false
     var dashboardCurrency = "EUR"
     var isRefreshing = false
@@ -135,7 +141,7 @@ struct ShopRecord: Identifiable, Equatable {
             for await (id, snapshot, error) in group { snapshots[id] = snapshot; connectionErrors[id] = error }
         }
         if [.products, .orders, .customers].contains(destination) { await loadRecords() }
-        if destination == .overview { await loadAnalytics() }
+        if destination == .overview { async let stats: () = loadAnalytics(); async let focus: () = loadMerchantFocus(force: true); _ = await (stats, focus) }
     }
     func loadRecords() async {
         guard [.products,.orders,.customers].contains(destination)else{return}
@@ -145,7 +151,7 @@ struct ShopRecord: Identifiable, Equatable {
         let configured=UserDefaults.standard.integer(forKey:"pageSize"),limit=UserDefaults.standard.integer(forKey:"maxServerRecords")
         let size=configured==0 ? 50:configured,maximum=limit==0 ? 1000:limit
         let channel=listChannelKey.flatMap{key in availableChannels.first{$0.key==key}}
-        let shops=scopedShops.filter{channel==nil || $0.id==channel!.shopID}
+        let shops=scopedShops.filter{(listShopIDs?.contains($0.id) ?? true) && (channel==nil || $0.id==channel!.shopID)}
         var filters:[UUID:[RecordFilter]]=[:]
         for shop in shops {var values=activeFilters;if let channel{values.append(.init(name:"Sales channel",field:entity=="product" ? "visibilities.salesChannelId":"salesChannelId",value:channel.id))};if entity=="order",let code=listCurrency{values.append(.init(name:"Currency",field:"currency.isoCode",value:code))};filters[shop.id]=values}
         let task=Task{[client,filters] in try await client.searchAcrossShops(shops,entity:entity,term:term,page:requestedPage,pageSize:size,maximum:maximum,sort:sort,lowStock:low,status:status,filters:filters)};recordLoadTask=task

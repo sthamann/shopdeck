@@ -8,6 +8,8 @@ struct RecordsView: View {
     @AppStorage("maxServerRecords") private var maximumRecords=1000
     @FocusState private var searchFocused: Bool
     @LocalState<String?> private var exportError: String?
+    @LocalState<Bool> private var exporting = false
+    @LocalState<Task<Void, Never>?> private var exportTask = nil
     @LocalState<Bool> private var savingView = false
     @LocalState<BulkSelection?> private var bulkSelection = nil
     @LocalState<Bool> private var configuring = false
@@ -18,10 +20,16 @@ struct RecordsView: View {
             HStack(alignment: .top) {
                 PageTitle(title: model.currentSavedView?.name ?? model.destination.title, subtitle: T("Shopübergreifend suchen. Direkt weiterarbeiten."))
                 Spacer()
-                Menu { Button(T("Standardansicht")) { model.query="";model.activeFilters=[];model.lowStockOnly=false;model.statusFilter="all" }; ForEach(model.workbench.savedViews.filter { $0.destination == model.destination.rawValue }) { preset in Button(preset.name) { model.openSavedView(preset) } }; Divider(); Menu(T("Ansicht entfernen")) { ForEach(model.workbench.savedViews.filter { $0.destination == model.destination.rawValue }) { preset in Button(preset.name) { model.removeSavedView(preset) } } } } label: { Label(T("Ansichten"),systemImage:"rectangle.stack") }
+                Menu { Button(T("Standardansicht")) { model.query="";model.activeFilters=[];model.lowStockOnly=false;model.statusFilter="all";model.listShopIDs=nil;model.listChannelKey=nil;model.listCurrency=nil;model.recordSort=RecordSort.defaults(model.destination.entity) }; ForEach(model.workbench.savedViews.filter { $0.destination == model.destination.rawValue }) { preset in Button(preset.name) { model.openSavedView(preset) } }; Divider(); Menu(T("Ansicht entfernen")) { ForEach(model.workbench.savedViews.filter { $0.destination == model.destination.rawValue }) { preset in Button(preset.name) { model.removeSavedView(preset) } } } } label: { Label(T("Ansichten"),systemImage:"rectangle.stack") }
                 Button { savingView.toggle() } label: { Label(T("Ansicht speichern"), systemImage: "bookmark") }
                 Button { configuring = true } label: { Label(T("Liste anpassen"), systemImage: "slider.horizontal.3") }
-                Button { exportCSV() } label: { Label(T("CSV exportieren"), systemImage: "square.and.arrow.up") }.disabled(model.records.isEmpty)
+                Menu {
+                    Button(T("Angezeigte Seite exportieren")) { exportCSV(all: false) }
+                    Button(T("Gefilterte Treffer exportieren") + " · " + T("maximal") + " \(maximumRecords)") { exportCSV(all: true) }
+                } label: { Label(T("CSV exportieren"), systemImage: "square.and.arrow.up") }.disabled(model.records.isEmpty || exporting || model.isLoading)
+            }
+            if exporting {
+                HStack { ProgressView().controlSize(.small); Text(T("Export wird mit deinen Filtern und Spalten vorbereitet …")).font(.caption); Spacer(); Button(T("Abbrechen")) { exportTask?.cancel() } }.padding(12).background(Theme.blue.opacity(0.06), in: RoundedRectangle(cornerRadius: 8))
             }
             if savingView { SaveViewEditor(model: model, onClose: { savingView = false }) }
             if model.destination == .products && !selection.isEmpty {
@@ -34,7 +42,14 @@ struct RecordsView: View {
             }
             HStack {
                 HStack { Image(systemName: "magnifyingglass").foregroundStyle(.secondary); TextField(T("Suchen …"), text: $model.query).textFieldStyle(.plain).focused($searchFocused); if !model.query.isEmpty { Button { model.query = "" } label: { Image(systemName: "xmark.circle.fill") }.buttonStyle(.plain).foregroundStyle(.secondary) } }.padding(10).background(.quaternary.opacity(0.35), in: RoundedRectangle(cornerRadius: 8))
-                Picker(T("Shop"), selection: $model.selectedShopID) { Text(T("Alle Shops")).tag(nil as UUID?); ForEach(model.workspace.shops) { Text($0.name).tag(Optional($0.id)) } }.frame(width: 230)
+                Menu {
+                    Button(T("Alle Shops anzeigen")) { model.selectedShopID = nil; model.listShopIDs = nil }
+                    Divider()
+                    ForEach(model.workspace.shops) { shop in
+                        Toggle(shop.name, isOn: Binding(get: { model.listShopIDs?.contains(shop.id) ?? (model.selectedShopID == nil || model.selectedShopID == shop.id) }, set: { _ in model.toggleListShop(shop.id) }))
+                    }
+                } label: { Label(model.listShopSelectionTitle, systemImage: "storefront") }.frame(width: 190)
+
                 Picker(T("Verkaufskanal"),selection:$model.listChannelKey){Text(T("Alle Verkaufskanäle")).tag(nil as String?);ForEach(model.availableChannels.filter{model.selectedShopID==nil || $0.shopID==model.selectedShopID},id:\.key){channel in Text((model.selectedShopID==nil ? (model.workspace.shops.first{$0.id==channel.shopID}?.name ?? "")+" · ":"")+channel.name).tag(Optional(channel.key))}}.frame(maxWidth:190)
                 if model.destination == .orders{Picker(T("Währung"),selection:$model.listCurrency){Text(T("Alle Währungen")).tag(nil as String?);ForEach(Array(Set(model.availableChannels.flatMap(\.currencies))).sorted(),id:\.self){Text($0).tag(Optional($0))}}.frame(width:150)}
                 Text("\(model.recordTotal) \(T("Ergebnisse"))").font(.system(size: 12)).foregroundStyle(.secondary).frame(minWidth: 100)
@@ -61,6 +76,7 @@ struct RecordsView: View {
         .onChange(of: model.lowStockOnly) { _, _ in model.page = 1; Task { await model.loadRecords() } }
         .onChange(of: model.statusFilter) { _, _ in model.page = 1; Task { await model.loadRecords() } }
         .onChange(of: model.selectedShopID) { _, _ in selection = [];model.page=1 }
+        .onChange(of: model.listShopIDs) { _, _ in selection = []; model.page = 1; Task { await model.loadRecords() } }
         .onChange(of:model.listChannelKey){_,_ in model.page=1;Task{await model.loadRecords()}}
         .onChange(of:model.listCurrency){_,_ in model.page=1;Task{await model.loadRecords()}}
         .task{await model.loadSalesChannels()}
@@ -69,6 +85,7 @@ struct RecordsView: View {
         .onChange(of:maximumRecords){_,_ in model.page=1;Task{await model.loadRecords()}}
         .onChange(of: pageSize) { _, _ in model.page = 1; Task { await model.loadRecords() } }
         .onChange(of: model.activeFilters) { _, _ in model.page = 1; Task { await model.loadRecords() } }
+        .onDisappear { exportTask?.cancel() }
         .sheet(item: $bulkSelection) { frozen in BulkProductEditView(model: model, records: frozen.records) }
         .sheet(isPresented: $configuring) { ListConfigurationView(model: model, entity: model.destination.entity) }
         .background(Button("") { searchFocused = true }.keyboardShortcut("f").hidden())
@@ -82,12 +99,43 @@ struct RecordsView: View {
     }
     private func primary(_ r: ShopRecord) -> String { switch model.destination { case .orders: return "#" + (r.data["orderNumber"].string ?? ""); case .customers: return (r.data["firstName"].string ?? "") + " " + (r.data["lastName"].string ?? ""); default: return r.data.at("name").string ?? "–" } }
     private func secondary(_ r: ShopRecord) -> String { switch model.destination { case .orders: return dateLabel(r.data["orderDateTime"]); case .customers: return r.data["email"].string ?? ""; default: return r.data["productNumber"].string ?? "" } }
-    private func exportCSV() {
-        let panel = NSSavePanel(); panel.allowedContentTypes = [.commaSeparatedText]; panel.nameFieldStringValue = "shopdeck-\(model.destination.entity)-page-\(model.page).csv"
+    private func exportCSV(all: Bool) {
+        let entity = model.destination.entity, term = model.query, sort = model.recordSort
+        let status = model.statusFilter, low = model.lowStockOnly, limit = min(max(maximumRecords, 1), 10000)
+        let channel = model.listChannelKey.flatMap { key in model.availableChannels.first { $0.key == key } }
+        let shops = model.scopedShops.filter { (model.listShopIDs?.contains($0.id) ?? true) && (channel == nil || $0.id == channel!.shopID) }
+        let currency = model.listCurrency
+        var filters: [UUID: [RecordFilter]] = [:]
+        for shop in shops {
+            var values = model.activeFilters
+            if let channel { values.append(.init(name: "Channel", field: entity == "product" ? "visibilities.salesChannelId" : "salesChannelId", value: channel.id)) }
+            if entity == "order", let currency { values.append(.init(name: "Currency", field: "currency.isoCode", value: currency)) }
+            filters[shop.id] = values
+        }
+        let columns = model.listConfiguration.columns.map { RecordColumn($0.field, T($0.title), width: $0.width) }
+        let visible = model.records.map { FederatedRecord(shop: $0.shop, data: $0.data) }
+        let panel = NSSavePanel(); panel.allowedContentTypes = [.commaSeparatedText]
+        panel.nameFieldStringValue = "shopdeck-\(entity)-" + (all ? "filtered" : "page-\(model.page)") + ".csv"
         guard panel.runModal() == .OK, let url = panel.url else { return }
-        func quoted(_ s: String) -> String { let safe = ["=", "+", "-", "@", "\t", "\r"].contains(where: { s.hasPrefix($0) }) ? "'" + s : s; return "\"" + safe.replacingOccurrences(of: "\"", with: "\"\"") + "\"" }
-        let lines = ["shop,id,title,detail"] + model.records.map { [ $0.shop.name, $0.data["id"].string ?? "", primary($0), secondary($0) ].map(quoted).joined(separator: ",") }
-        do { try lines.joined(separator: "\r\n").write(to: url, atomically: true, encoding: .utf8); model.notice = T("Die angezeigte Seite wurde exportiert.") } catch { model.error = error.localizedDescription }
+        exporting = true
+        exportTask = Task { @MainActor in
+            defer { exporting = false; exportTask = nil }
+            do {
+                var rows = visible, capped = false
+                if all {
+                    let result = try await model.client.searchAcrossShops(shops, entity: entity, term: term, page: 1, pageSize: limit, maximum: limit, sort: sort, lowStock: low, status: status, filters: filters)
+                    guard result.failures.isEmpty else { throw ShopdeckError.message(result.failures.joined(separator: "\n")) }
+                    rows = result.rows; capped = result.capped
+                }
+                try Task.checkCancellation()
+                let frozen = rows
+                let data = await Task.detached { RecordCSV.encode(rows: frozen, columns: columns) }.value
+                try Task.checkCancellation()
+                try data.write(to: url, options: .atomic)
+                model.notice = "\(rows.count) " + T("Datensätze exportiert") + (capped ? " · " + T("Ladegrenze erreicht. Für weitere Treffer Filter eingrenzen oder die Grenze erhöhen.") : "")
+            } catch is CancellationError { }
+            catch { model.error = error.localizedDescription }
+        }
     }
 }
 

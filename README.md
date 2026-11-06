@@ -6,7 +6,7 @@
 
 [![Watch the 30 second Shopdeck tour](docs/screenshots/intro-poster.png)](https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck-Intro-English.mp4)
 
-![Shopdeck dashboard](docs/screenshots/01-dashboard.png)
+![Shopdeck dashboard and merchant attention list](docs/screenshots/33-merchant-attention.png)
 
 Shopdeck brings multiple Shopware 6 shops into one native macOS workspace. Move between products, orders, customers, administrations and storefronts, with a local MCP server that makes those same shops available to your AI tools.
 
@@ -16,6 +16,7 @@ Shopdeck brings multiple Shopware 6 shops into one native macOS workspace. Move 
 | --- | --- |
 | Manage shops | Groups, drag and drop ordering, inline renaming, imported favicons, separate tabs and side by side administrations. |
 | Browse your data | Products, orders and customers with server search, server filters, server sorting, keyboard navigation, CSV export, product thumbnails, custom columns and saved views. Open the full Shopware product editor for prices, variants and media. |
+| Follow through | A live attention list for ageing orders, replenishment, sold out products and missing content. Private notes and dated follow ups on products, orders and customers. |
 | Understand performance | 23 dashboard widgets, calendar month and year revenue, sales channel filters and separate currencies. Configure each widget for selected shops, duplicate it, move it or remove it. |
 | Stay informed | Configurable rules for new order notifications, Shopware release notes rendered as Markdown and compatible Security Plugin version checks. |
 | Use your AI | Guided Codex, Claude Desktop and Claude Code setup, installation detection, an MCP connection test, a tool catalogue and copyable example prompts. |
@@ -28,7 +29,15 @@ Search terms, filters and sorting go to Shopware before pagination. The applicat
 
 Settings provide rows per page and a maximum number of rows to load per shop. The configured result limit also bounds the combined pages you can browse. A visible message explains when the limit is reached. Shop names are local workspace metadata; sorting that column groups the remotely sorted records by shop. Structured JSON price array columns do not offer a misleading local sort button when Shopware has no direct field sort.
 
-Saved views retain search, shop, filters, sales channel, currency and sorting. Each entity has its own configurable columns and quick filters.
+Select any combination of shops in each list. Saved views retain search, the selected shops, filters, sales channel, currency and sorting. Each entity has its own configurable columns and quick filters. CSV export follows the visible columns and their order. Export the current page or fetch the filtered result set, up to the configured limit, with cancellation and an explicit notice if the limit is reached. Spreadsheet formulas in text are neutralized.
+
+### Know what to work on next
+
+The dashboard attention list counts matching records directly in Shopware before pagination. It covers orders that have remained open too long, orders in progress, active products to replenish, sold out active products and parent products missing an image or description. Configure the stock threshold and the age of open orders. Click a count to open the matching list with the same shops, sales channel and order currency.
+
+Content checks cover active parent products so inherited variant content is not mistaken for missing content. Counts respect the integration permissions. An unavailable shop produces an explicit error state rather than an invented zero. Queries run with bounded concurrency and a short cache to avoid unnecessary reloads.
+
+Use **Notes and follow up** in any product, order or customer detail to keep a next step and an optional due date. **Follow ups** collects those tasks across shops, with search, due filters, completion, reopening and postponement. Open tasks are also reachable from the command palette. Notes stay private to this Mac and are not exposed by the MCP server or written to Shopware. Due dates are shown in the app; they do not schedule macOS notifications.
 
 ### Your numbers, your way
 

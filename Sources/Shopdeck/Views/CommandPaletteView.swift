@@ -16,13 +16,19 @@ struct CommandPaletteView: View {
     @FocusState private var focused: Bool
     private var actions: [PaletteAction] {
         var all: [PaletteAction] = []
+        for item in model.followUps.filter({ $0.completedAt == nil }).sorted(by: { ($0.dueAt ?? .distantFuture) < ($1.dueAt ?? .distantFuture) }).prefix(20) {
+            all.append(PaletteAction(id: "followup-\(item.id)", title: item.title, detail: T("Wiedervorlage") + " · " + (model.workspace.shops.first { $0.id == item.shopID }?.name ?? ""), icon: "bookmark", run: { model.openFollowUp(item) }))
+        }
+        for focus in MerchantFocus.allCases {
+            all.append(PaletteAction(id: "focus-" + focus.rawValue, title: T(focus.title), detail: T("Arbeitsvorrat öffnen"), icon: focus.icon, run: { model.openFocus(focus) }))
+        }
         for preset in model.workbench.savedViews {
             all.append(PaletteAction(id: "view-\(preset.id)", title: preset.name, detail: T("Gespeicherte Ansicht"), icon: "bookmark", run: { model.openSavedView(preset) }))
         }
         for shop in model.workspace.shops {
             all.append(PaletteAction(id: "shop-\(shop.id)", title: shop.name, detail: shop.isDemo ? T("Demodaten") : shop.host, icon: "storefront", run: { model.selectedShopID = shop.id; model.destination = .overview }))
         }
-        all.append(PaletteAction(id: "all-shops", title: T("Alle Shops"), detail: T("Gemeinsame Übersicht"), icon: "square.stack", run: { model.selectedShopID = nil; model.destination = .overview }))
+        all.append(PaletteAction(id: "all-shops", title: T("Alle Shops"), detail: T("Gemeinsame Übersicht"), icon: "square.stack", run: { model.selectedShopID = nil; model.listShopIDs = nil; model.destination = .overview }))
         for destination in Destination.allCases {
             all.append(PaletteAction(id: "destination-\(destination.rawValue)", title: destination.title, detail: T("Arbeitsbereich öffnen"), icon: destination.icon, run: { model.destination = destination }))
         }

@@ -2,6 +2,15 @@
 
 English interface captures from development builds, using built in demo profiles and an isolated local Shopware test fixture. The amounts and customers shown are test data.
 
+## Merchant work in 0.10
+
+![Live merchant attention list](screenshots/33-merchant-attention.png)
+![Private notes and a dated product follow up](screenshots/34-product-follow-up.png)
+![Cross shop follow ups](screenshots/35-follow-ups.png)
+![Select multiple shops in a list](screenshots/36-multiple-shop-selection.png)
+![Export the filtered result set](screenshots/37-filtered-export.png)
+![The merchant workspace in light appearance](screenshots/38-merchant-light.png)
+
 ## Your workspace
 
 ![Dashboard with calendar revenue and shop statistics](screenshots/01-dashboard.png)

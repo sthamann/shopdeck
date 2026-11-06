@@ -20,6 +20,8 @@ public struct RecordFilter: Codable, Identifiable, Equatable, Sendable {
         let numeric = ["stock", "availableStock", "amountTotal", "amountNet", "shippingTotal", "gross", "net", "weight", "minPurchase", "purchaseSteps", "orderCount", "orderTotalAmount"]
         let typed: JSONValue = ["active", "guest"].contains(leaf) && ["true", "false"].contains(value) ? .bool(value == "true") : numeric.contains(leaf) ? Double(value).map(JSONValue.number) ?? .string(value) : .string(value)
         switch operation {
+        case "isNull": return .object(["type": .string("equals"), "field": .string(field), "value": .null])
+        case "empty": return .object(["type": .string("multi"), "operator": .string("OR"), "queries": .array([.object(["type": .string("equals"), "field": .string(field), "value": .null]), .object(["type": .string("equals"), "field": .string(field), "value": .string("")])])])
         case "equals", "contains": return .object(["type": .string(operation), "field": .string(field), "value": operation == "contains" ? .string(value) : typed])
         case "lte", "gte", "lt", "gt": return .object(["type": .string("range"), "field": .string(field), "parameters": .object([operation: typed])])
         default: throw ShopdeckError.message("Unbekannter Vergleich.")
@@ -30,6 +32,8 @@ public struct RecordFilter: Codable, Identifiable, Equatable, Sendable {
         return values(row,field.split(separator:".")).contains{matchesValue($0)}
     }
     private func matchesValue(_ current:JSONValue)->Bool {
+        if operation == "isNull" { return current == .null }
+        if operation == "empty" { return current == .null || current.string == "" }
         if operation == "contains" { return current.displayString.localizedCaseInsensitiveContains(value) }
         if operation == "equals" { if let b = current.bool { return String(b) == value }; if let n = current.number, let target = Double(value) { return n == target }; return current.string == value }
         let order: ComparisonResult

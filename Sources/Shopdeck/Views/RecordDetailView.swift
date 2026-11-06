@@ -39,6 +39,9 @@ struct RecordDetailView: View {
             else {
                 TabView {
                     ScrollView { VStack(alignment: .leading, spacing: 20) { overview }.padding(26).frame(maxWidth: .infinity, alignment: .leading) }.tabItem { Text(T("Übersicht")) }
+                    if let item = model.followUpDraft(ShopRecord(shop: record.shop, data: data, entity: entity)) {
+                        FollowUpEditor(model: model, item: item).padding(26).tabItem { Label(T("Notizen und Wiedervorlage"), systemImage: "bookmark") }
+                    }
                     if entity == "product" {
                         Form {
                             Section {TextField(T("Bestand"),text:$stock);Toggle(T("Aktiv"),isOn:$active)}
