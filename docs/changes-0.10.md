@@ -13,3 +13,5 @@ A daily workspace that takes you from the numbers to the next action.
 Validation: existing core suite and new merchant feature tests, read only checks of all six queries against an isolated Shopware 6.7 shop, and a UI export of 72 demo products across three shops while only the first 50 were visible. Follow up creation, completion, reopening and persisted multi shop views were checked in the native app.
 
 Follow up dates are in app due dates. They do not schedule macOS notifications. Product content checks cover active parent products. The export respects the configured maximum and reports truncation explicitly.
+
+Distribution verified: Developer ID signature, Apple notarization and stapled ticket, the app inside the final disk image, public download checksum and Ed25519 signature. The in app Sparkle upgrade from 0.9.1 to 0.10.0 completed on the test Mac and preserved shop ordering, credentials and pending approvals. The [macOS CI build](https://github.com/sthamann/shopdeck/actions/runs/42253012616) passed.

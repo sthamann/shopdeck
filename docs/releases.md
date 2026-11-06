@@ -1,6 +1,6 @@
 # Signed releases and updates
 
-Version **0.9.1 (9001)** ships an optimized Apple silicon application signed with Developer ID Application. Apple notarization succeeded; the app carries a stapled ticket and passes Gatekeeper assessment as `Notarized Developer ID`. The disk image is Developer ID signed and contains that notarized application. Opening a quarantined copy of the disk image was checked in Finder. The Sparkle enclosure has a separate Ed25519 signature.
+Version **0.10.0 (10000)** ships an optimized Apple silicon application signed with Developer ID Application. Apple notarization succeeded; the app carries a stapled ticket and passes Gatekeeper assessment as `Notarized Developer ID`. The disk image is Developer ID signed and contains that notarized application. The app inside the final mounted disk image was independently checked. The public download, its checksum and update signature were verified again after publication. The actual Sparkle upgrade from 0.9.1 to 0.10.0 was installed and relaunched successfully, preserving the existing shops and pending approvals. The Sparkle enclosure has a separate Ed25519 signature.
 
 Official downloads are published in this repository’s GitHub Releases. Shopdeck checks:
 
@@ -19,8 +19,8 @@ The feed points to a versioned release asset. Sparkle verifies the Ed25519 signa
 5. Sign the final download with the private Sparkle key:
 
 ```sh
-python3 script/prepare_appcast.py Shopdeck-0.9.1-arm64.dmg \
-  --download-url https://github.com/sthamann/shopdeck/releases/download/v0.9.1/Shopdeck-0.9.1-arm64.dmg \
+python3 script/prepare_appcast.py Shopdeck-0.10.0-arm64.dmg \
+  --download-url https://github.com/sthamann/shopdeck/releases/download/v0.10.0/Shopdeck-0.10.0-arm64.dmg \
   --key /secure/local/path/sparkle-ed25519.key \
   --output appcast.xml \
   --notes "Release notes for this version"

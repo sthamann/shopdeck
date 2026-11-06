@@ -55,7 +55,7 @@ Native macOS widgets offer all 23 metrics. The gallery includes dedicated starti
 4. Local Docker shops show the default administration login, **admin / shopware**, directly above the embedded login page, with copy buttons. These are the image defaults; a password you change yourself takes precedence.
 5. Open **Codex & Claude** when you want AI access. Enable only the shops you want to share, configure your client and try the included prompts.
 
-Version 0.9.1 ships an optimized Developer ID signed app with Apple notarization and a stapled ticket, inside a Developer ID signed disk image. Read the [release notes](docs/releases.md) for the distribution checks.
+Version 0.10.0 ships an optimized Developer ID signed app with Apple notarization and a stapled ticket, inside a Developer ID signed disk image. Read the [release notes](docs/releases.md) for the distribution checks.
 
 ## Connect Codex and Claude
 
