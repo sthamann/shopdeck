@@ -14,6 +14,7 @@ struct RecordDetailView: View {
     @LocalState<Bool> private var loading = true
     @LocalState<String?> private var message: String?
     @LocalState<Bool> private var confirm = false
+    @LocalState<Bool> private var documents = false
     @LocalState<String> private var fieldSearch = ""
     private var entity: String { record.entity }
     private var currency: String? { data["currency"]["isoCode"].string }
@@ -30,7 +31,9 @@ struct RecordDetailView: View {
             HStack(spacing: 14) {
                 ShopIcon(shop: record.shop, size: 40)
                 VStack(alignment: .leading, spacing: 5) { Text(entity == "product" ? T("Produktdetails") : entity == "order" ? T("Bestelldetails") : T("Kundendetails")).font(.title2.bold()); Text(record.shop.name + (record.shop.isDemo ? " · " + T("Demodaten") : "")).font(.caption).foregroundStyle(.secondary) }
-                Spacer(); Button { copyText(record.data["id"].string ?? ""); model.notice = T("ID kopiert") } label: { Image(systemName: "doc.on.doc") }.help(T("ID kopieren"))
+                Spacer()
+                if entity == "order" { Button { documents = true } label: { Label(T("Dokumente"), systemImage: "doc.richtext") } }
+                Button { copyText(record.data["id"].string ?? ""); model.notice = T("ID kopiert") } label: { Image(systemName: "doc.on.doc") }.help(T("ID kopieren"))
                 Button { Task { await load() } } label: { Image(systemName: "arrow.clockwise") }.disabled(loading || busy).help(T("Aktualisieren"))
             }.padding(24)
             Divider()
@@ -63,6 +66,7 @@ struct RecordDetailView: View {
                 if entity == "product" { Button(T("Änderungen speichern")) { confirm = true }.buttonStyle(.borderedProminent).disabled(busy || loading || data == .null || changes.isEmpty || Int(stock) == nil || (Int(stock) ?? -1) < 0) }
             }.padding(20)
         }.frame(width: 820, height: 740).task { await load() }
+        .sheet(isPresented: $documents) { OrderDocumentsView(model: model, orders: [record]) }
         .confirmationDialog(T("Änderungen übernehmen?"), isPresented: $confirm) { Button(T("Jetzt speichern")) { Task { busy = true; defer { busy = false }; do { _ = try Validation.productChanges(changes); try await model.saveProduct(record, changes: changes); dismiss() } catch { message = error.localizedDescription } } } } message: { Text(changes.keys.sorted().map { T($0) }.joined(separator: ", ") + " · " + record.shop.name) }
     }
     @ViewBuilder private var overview: some View {

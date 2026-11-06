@@ -9,6 +9,16 @@ public struct CommerceSalesChannel:Codable,Identifiable,Sendable,Equatable {
     public var key:String{shopID.uuidString+":"+id}
     public init(shopID:UUID,data:JSONValue){id=data["id"].string ?? "";self.shopID=shopID;name=data.at("name").string ?? id;active=data["active"].bool ?? false;type=data["type"]["name"].string ?? "";currencies=data["currencies"].array.compactMap{$0["isoCode"].string}.sorted();domains=data["domains"].array.compactMap{row in guard let id=row["id"].string,let url=row["url"].string else{return nil};return .init(id:id,url:url,currency:row["currency"]["isoCode"].string ?? "",language:row["language"]["locale"]["code"].string ?? "")}}
 }
+public struct CommerceChannelReference: Equatable, Sendable {
+    public let shopID: UUID
+    public let id: String
+    public init(key: String) throws {
+        let parts = key.split(separator: ":", omittingEmptySubsequences: false)
+        guard parts.count == 2, let shop = UUID(uuidString: String(parts[0])) else { throw ShopdeckError.message("Invalid sales channel reference.") }
+        shopID = shop; id = try Validation.entityID(String(parts[1]))
+    }
+    public static func resolve(_ key: String?) throws -> Self? { try key.map { try Self(key: $0) } }
+}
 public struct RevenueMonth:Codable,Sendable,Equatable {
     public var shopID:UUID;public var salesChannelID:String;public var currency:String;public var month:String;public var revenue:Double;public var orders:Int
     public init(shopID:UUID,salesChannelID:String,currency:String,month:String,revenue:Double,orders:Int){self.shopID=shopID;self.salesChannelID=salesChannelID;self.currency=currency;self.month=month;self.revenue=revenue;self.orders=orders}

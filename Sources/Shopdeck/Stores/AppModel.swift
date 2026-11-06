@@ -89,6 +89,10 @@ struct ShopRecord: Identifiable, Equatable {
     var lastUpdateCheck: Date?
     var lastUpdateAttempt: Date?
     var updateError: String?
+    var clock = Date()
+    var reminderIssue: String?
+    var preservingRestoredPage = false
+    var restoredQuery: String?
     var notificationPermission = ""
     private var preparedLocalTest = false
     private var reloadStamp = ""
@@ -150,7 +154,9 @@ struct ShopRecord: Identifiable, Equatable {
         let entity=destination.entity,term=query,requestedPage=page,low=lowStockOnly && destination == .products,status=statusFilter,sort=recordSort
         let configured=UserDefaults.standard.integer(forKey:"pageSize"),limit=UserDefaults.standard.integer(forKey:"maxServerRecords")
         let size=configured==0 ? 50:configured,maximum=limit==0 ? 1000:limit
-        let channel=listChannelKey.flatMap{key in availableChannels.first{$0.key==key}}
+        let channel: CommerceChannelReference?
+        do { channel = try CommerceChannelReference.resolve(listChannelKey) }
+        catch { records=[]; recordTotal=0; recordHasNext=false; isLoading=false; self.error=error.localizedDescription; return }
         let shops=scopedShops.filter{(listShopIDs?.contains($0.id) ?? true) && (channel==nil || $0.id==channel!.shopID)}
         var filters:[UUID:[RecordFilter]]=[:]
         for shop in shops {var values=activeFilters;if let channel{values.append(.init(name:"Sales channel",field:entity=="product" ? "visibilities.salesChannelId":"salesChannelId",value:channel.id))};if entity=="order",let code=listCurrency{values.append(.init(name:"Currency",field:"currency.isoCode",value:code))};filters[shop.id]=values}

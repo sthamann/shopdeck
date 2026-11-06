@@ -52,6 +52,7 @@ public struct RecordFollowUp: Codable, Identifiable, Equatable, Sendable {
     public var dueAt: Date?
     public var createdAt: Date
     public var completedAt: Date?
+    public var reminderEnabled: Bool?
     public init(id: UUID = UUID(), shopID: UUID, entity: String, recordID: String, title: String, reference: String = "", note: String = "", dueAt: Date? = nil, createdAt: Date = Date()) throws {
         guard ["product", "order", "customer"].contains(entity) else { throw ShopdeckError.message("Unbekannte Datenart.") }
         self.id = id; self.shopID = shopID; self.entity = entity; self.recordID = try Validation.entityID(recordID).lowercased()
@@ -62,9 +63,9 @@ public struct RecordFollowUp: Codable, Identifiable, Equatable, Sendable {
 
 extension WorkspaceStore {
     public func saveFollowUp(_ item: RecordFollowUp) throws {
-        let completed = item.completedAt
+        let completed = item.completedAt, reminder = item.reminderEnabled
         var item = try RecordFollowUp(id: item.id, shopID: item.shopID, entity: item.entity, recordID: item.recordID, title: item.title, reference: item.reference, note: item.note, dueAt: item.dueAt, createdAt: item.createdAt)
-        item.completedAt = completed
+        item.completedAt = completed; item.reminderEnabled = reminder
         try updateWorkbench { state in
             var values = state.followUps ?? []
             if let index = values.firstIndex(where: { $0.shopID == item.shopID && $0.entity == item.entity && $0.recordID.lowercased() == item.recordID.lowercased() }) {

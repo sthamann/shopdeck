@@ -11,6 +11,7 @@ struct RecordsView: View {
     @LocalState<Bool> private var exporting = false
     @LocalState<Task<Void, Never>?> private var exportTask = nil
     @LocalState<Bool> private var savingView = false
+    @LocalState<OrderDocumentSelection?> private var documentSelection = nil
     @LocalState<BulkSelection?> private var bulkSelection = nil
     @LocalState<Bool> private var configuring = false
     @LocalState<Set<String>> private var selection: Set<String> = []
@@ -32,6 +33,9 @@ struct RecordsView: View {
                     Button(T("Auswahl aufheben")) { selection = [] }
                     Button { bulkSelection = BulkSelection(records: selectedRecords) } label: { Label(T("Gemeinsam bearbeiten"), systemImage: "square.stack.3d.up") }.buttonStyle(.borderedProminent).disabled(selectedRecords.isEmpty || model.isLoading)
                 }.font(.system(size: 12)).padding(14).background(Theme.blue.opacity(0.08), in: RoundedRectangle(cornerRadius: 10))
+            }
+            if model.destination == .orders && !selection.isEmpty {
+                HStack { Text("\(selectedRecords.count) " + T("Bestellungen ausgewählt")).foregroundStyle(Theme.blue); Spacer(); Button(T("Auswahl aufheben")) { selection = [] }; Button { documentSelection = .init(orders: selectedRecords) } label: { Label(T("Dokumente öffnen"), systemImage: "doc.richtext") }.buttonStyle(.borderedProminent).disabled(selectedRecords.count > 200 || model.isLoading) }.font(.system(size: 12)).padding(14).background(Theme.blue.opacity(0.08), in: RoundedRectangle(cornerRadius: 10))
             }
             ViewThatFits(in: .horizontal) {
                 HStack(spacing: 12) { searchBox.frame(width: 230); shopSelector.frame(width: 190); channelSelector.frame(width: 180); currencySelector; resultCount }.fixedSize(horizontal: true, vertical: false)
@@ -59,7 +63,7 @@ struct RecordsView: View {
             }
             if model.recordCapped{HStack{Text(T("Ergebnisgrenze erreicht")+": \(maximumRecords). "+T("Erhöhe die Ladegrenze in den Einstellungen oder grenze die Suche ein.")).font(.caption).foregroundStyle(.secondary);Spacer()}}
         }.padding(24)
-        .task(id: model.query) { try? await Task.sleep(for: .milliseconds(300)); if !Task.isCancelled { model.page = 1; await model.loadRecords() } }
+        .task(id: model.query) { try? await Task.sleep(for: .milliseconds(300)); if !Task.isCancelled { if !model.preservingRestoredPage || model.restoredQuery != model.query { model.page = 1 }; model.preservingRestoredPage = false; model.restoredQuery = nil; await model.loadRecords() } }
         .onChange(of: model.lowStockOnly) { _, _ in model.page = 1; Task { await model.loadRecords() } }
         .onChange(of: model.statusFilter) { _, _ in model.page = 1; Task { await model.loadRecords() } }
         .onChange(of: model.selectedShopID) { _, _ in selection = [];model.page=1 }
@@ -73,6 +77,7 @@ struct RecordsView: View {
         .onChange(of: pageSize) { _, _ in model.page = 1; Task { await model.loadRecords() } }
         .onChange(of: model.activeFilters) { _, _ in model.page = 1; Task { await model.loadRecords() } }
         .onDisappear { exportTask?.cancel() }
+        .sheet(item: $documentSelection) { OrderDocumentsView(model: model, orders: $0.orders) }
         .sheet(item: $bulkSelection) { frozen in BulkProductEditView(model: model, records: frozen.records) }
         .sheet(isPresented: $configuring) { ListConfigurationView(model: model, entity: model.destination.entity) }
         .background(Button("") { searchFocused = true }.keyboardShortcut("f").hidden())
@@ -134,7 +139,9 @@ struct RecordsView: View {
     private func exportCSV(all: Bool) {
         let entity = model.destination.entity, term = model.query, sort = model.recordSort
         let status = model.statusFilter, low = model.lowStockOnly, limit = min(max(maximumRecords, 1), 10000)
-        let channel = model.listChannelKey.flatMap { key in model.availableChannels.first { $0.key == key } }
+        let channel: CommerceChannelReference?
+        do { channel = try CommerceChannelReference.resolve(model.listChannelKey) }
+        catch { model.error = error.localizedDescription; return }
         let shops = model.scopedShops.filter { (model.listShopIDs?.contains($0.id) ?? true) && (channel == nil || $0.id == channel!.shopID) }
         let currency = model.listCurrency
         var filters: [UUID: [RecordFilter]] = [:]

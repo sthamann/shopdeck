@@ -2,6 +2,13 @@
 
 English interface captures from development builds, using built in demo profiles and an isolated local Shopware test fixture. The amounts and customers shown are test data.
 
+## Documents, reminders and workspaces in 0.11
+
+![Existing order PDF preview, shown here with explicitly marked demo documents](screenshots/40-order-documents.png)
+![Named workspaces with independent tab filters](screenshots/41-saved-workspaces.png)
+![Opt in macOS reminder in the follow up editor](screenshots/42-follow-up-reminders.png)
+![Restored product and order searches side by side in light appearance](screenshots/43-restored-split-workspace-light.png)
+
 ## Merchant work in 0.10
 
 ![Live merchant attention list](screenshots/33-merchant-attention.png)

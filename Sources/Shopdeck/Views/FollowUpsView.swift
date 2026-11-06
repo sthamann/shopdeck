@@ -8,7 +8,7 @@ struct FollowUpsView: View {
     @LocalState<RecordFollowUp?> private var editing = nil
     private var scoped: [RecordFollowUp] { model.followUps.filter { model.selectedShopID == nil || $0.shopID == model.selectedShopID } }
     private var items: [RecordFollowUp] {
-        let end = Calendar.current.date(byAdding: .day, value: 1, to: Calendar.current.startOfDay(for: Date()))!
+        let end = Calendar.current.date(byAdding: .day, value: 1, to: Calendar.current.startOfDay(for: model.clock))!
         return scoped.filter { item in
             let status = scope == "done" ? item.completedAt != nil : item.completedAt == nil && (scope != "due" || item.dueAt.map { $0 < end } == true)
             let shop = model.workspace.shops.first { $0.id == item.shopID }?.name ?? ""
@@ -30,6 +30,7 @@ struct FollowUpsView: View {
                 Spacer()
                 TextField(T("Notiz, Nummer oder Shop suchen"), text: $search).textFieldStyle(.roundedBorder).frame(maxWidth: 310)
             }
+            if let issue = model.reminderIssue { Label(issue, systemImage: "bell.slash").font(.callout).foregroundStyle(.orange) }
             if items.isEmpty {
                 ContentUnavailableView(T(!search.isEmpty ? "Keine Treffer" : scope == "done" ? "Noch nichts erledigt" : scope == "due" ? "Heute ist nichts fällig" : "Hier bleibt nichts vergessen"), systemImage: scope == "due" ? "checkmark.circle" : "bookmark.circle", description: Text(T("Öffne ein Produkt, eine Bestellung oder einen Kunden. Unter Notizen und Wiedervorlage kannst du den nächsten Schritt festhalten."))).frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
@@ -46,7 +47,7 @@ struct FollowUpsView: View {
                     HStack { Text(T("Notizen und Wiedervorlage")).font(.title2.bold()); Spacer(); Button(T("Schließen")) { editing = nil }.keyboardShortcut(.cancelAction) }.padding(24)
                     Divider()
                     FollowUpEditor(model: model, item: item, saved: { editing = nil }).padding(24)
-                }.frame(width: 620, height: 500)
+                }.frame(width: 640, height: 650)
             }
     }
     private func row(_ item: RecordFollowUp) -> some View {
@@ -69,8 +70,9 @@ struct FollowUpsView: View {
                     }.frame(maxWidth: .infinity, alignment: .leading)
                 }.contentShape(Rectangle())
             }.buttonStyle(.plain)
+            if item.reminderEnabled == true && item.completedAt == nil && item.dueAt.map({ $0 > model.clock }) == true { Image(systemName: "bell.badge").foregroundStyle(Theme.blue).help(T("macOS Mitteilung geplant")) }
             if let due = item.dueAt {
-                Label(localizedDate(due), systemImage: item.isDue() ? "clock.badge.exclamationmark" : "calendar").font(.system(size: 11, weight: .medium)).foregroundStyle(item.isDue() ? Color.orange : Color.secondary)
+                Label(localizedDate(due), systemImage: item.isDue(at: model.clock) ? "clock.badge.exclamationmark" : "calendar").font(.system(size: 11, weight: .medium)).foregroundStyle(item.isDue(at: model.clock) ? Color.orange : Color.secondary)
             }
             Menu {
                 Button(T("Notiz bearbeiten")) { editing = item }
@@ -91,11 +93,15 @@ struct FollowUpEditor: View {
     @LocalState<Bool> private var scheduled: Bool
     @LocalState<Date> private var due: Date
     @LocalState<Bool> private var completed: Bool
+    @LocalState<Bool> private var reminder: Bool
+    @LocalState<Bool> private var saving = false
+    @LocalState<String?> private var error = nil
     init(model: AppModel, item: RecordFollowUp, saved: @escaping () -> Void = {}) {
         self.model = model; self.item = item; self.saved = saved
         _note = LocalState(initialValue: item.note); _scheduled = LocalState(initialValue: item.dueAt != nil)
         _due = LocalState(initialValue: item.dueAt ?? Calendar.current.date(byAdding: .day, value: 1, to: Date())!)
         _completed = LocalState(initialValue: item.completedAt != nil)
+        _reminder = LocalState(initialValue: item.reminderEnabled == true)
     }
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
@@ -104,16 +110,27 @@ struct FollowUpEditor: View {
             TextEditor(text: $note).font(.system(size: 14)).frame(minHeight: 100, maxHeight: 200).padding(8).background(Theme.surface, in: RoundedRectangle(cornerRadius: 8)).overlay(RoundedRectangle(cornerRadius: 8).strokeBorder(.quaternary)).accessibilityLabel(T("Notiz"))
             Toggle(T("Termin setzen"), isOn: $scheduled)
             if scheduled { DatePicker(T("Fällig am"), selection: $due).datePickerStyle(.compact); HStack { Button(T("Morgen")) { due = Calendar.current.date(byAdding: .day, value: 1, to: Date())! }; Button(T("In einer Woche")) { due = Calendar.current.date(byAdding: .day, value: 7, to: Date())! } }.controlSize(.small) }
+            if scheduled {
+                Toggle(T("Als macOS Mitteilung erinnern"), isOn: $reminder)
+                if reminder { Text(T("Erscheint auch bei geschlossener App. Die Mitteilung enthält deine Notiz nicht.")).font(.caption).foregroundStyle(.secondary) }
+            }
             Toggle(T("Erledigt"), isOn: $completed)
             Spacer(minLength: 0)
             HStack(alignment: .center) {
                 Text(T("Nur auf diesem Mac. Nicht im Shop oder für KI sichtbar.")).font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                 Spacer()
                 Button(T("Wiedervorlage speichern")) {
-                    var next = item; next.note = note; next.dueAt = scheduled ? due : nil; next.completedAt = completed ? (item.completedAt ?? Date()) : nil
-                    if model.saveFollowUp(next) { saved() }
-                }.buttonStyle(.borderedProminent).disabled(note.count > 4000)
+                    Task { @MainActor in
+                        saving = true; error = nil; defer { saving = false }
+                        var next = item; next.note = note; next.dueAt = scheduled ? due : nil; next.completedAt = completed ? (item.completedAt ?? Date()) : nil; next.reminderEnabled = scheduled && reminder
+                        do { try await model.authorizeReminder(next); if model.saveFollowUp(next) { saved() } }
+                        catch { self.error = error.localizedDescription }
+                    }
+                }.buttonStyle(.borderedProminent).disabled(note.count > 4000 || saving)
             }
+            if saving { ProgressView().controlSize(.small) }
+            if let error { Text(error).font(.caption).foregroundStyle(.orange) }
+            else if let issue = model.reminderIssue { Text(issue).font(.caption).foregroundStyle(.orange) }
             if note.count > 4000 { Text(T("Die Notiz darf höchstens 4.000 Zeichen enthalten.")).font(.caption).foregroundStyle(.orange) }
         }
     }

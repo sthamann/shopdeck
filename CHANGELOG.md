@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.11.0
+
+- Preview existing order PDFs in a native PDFKit view. Download individual originals or ZIP packages from selected orders across shops, with cancellation and explicit size limits.
+- Add optional macOS notifications to private follow ups, including a direct return to the record, rescheduling and completion cleanup.
+- Restore tabs, split views, search, shop selection, filters, sort, page, sales channels and currencies. Save named workspaces, duplicate tabs and reopen a closed tab with ⌘⇧T.
+- Resolve restored channel filters before the channel catalogue arrives, preventing an unfiltered request during startup. Load restored tab data only when visible.
+- Translate the new workflows into all six supported languages and expand the English screenshot tour.
+
+## 0.10.0
+
+- Add live merchant attention counts for ageing orders, replenishment and missing product content, with matching server filters.
+- Add private notes and dated follow ups for products, orders and customers.
+- Add multiple shop selection and export of the complete filtered result set within the configured limit.
+- Improve adaptive split layouts and deliver a notarized app through the signed GitHub update channel.
+
 ## 0.9.1
 
 - Add an empty workspace setup assistant with automatic computer language selection and English fallback.

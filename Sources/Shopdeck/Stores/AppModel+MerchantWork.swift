@@ -1,5 +1,6 @@
 import SwiftUI
 import ShopdeckCore
+import UserNotifications
 
 struct MerchantFocusSnapshot {
     var key: String
@@ -39,7 +40,9 @@ extension AppModel {
         focusLoadTask?.cancel()
         let generation = UUID(); focusGeneration = generation; focusLoadingKey = key; loadingFocus = true
         focusSnapshot = MerchantFocusSnapshot(key: key)
-        let channel = dashboardChannelKey.flatMap { key in availableChannels.first { $0.key == key } }
+        let channel: CommerceChannelReference?
+        do { channel = try CommerceChannelReference.resolve(dashboardChannelKey) }
+        catch { loadingFocus = false; for focus in MerchantFocus.allCases { focusSnapshot.failures[focus] = [error.localizedDescription] }; return }
         let shops = dashboardShops.filter { channel == nil || channel!.shopID == $0.id }
         let currency = dashboardCurrency, now = Date(), threshold = focusStockThreshold, hours = focusOverdueHours
         let work = MerchantFocus.allCases.flatMap { focus in shops.map { (focus, $0) } }
@@ -88,7 +91,7 @@ extension AppModel {
         listShopIDs = ids.count == workspace.shops.count ? nil : ids
     }
     var followUps: [RecordFollowUp] { workbench.followUps ?? [] }
-    var dueFollowUpCount: Int { followUps.filter { item in item.isDue() && workspace.shops.contains(where: { $0.id == item.shopID }) }.count }
+    var dueFollowUpCount: Int { followUps.filter { item in item.isDue(at: clock) && workspace.shops.contains(where: { $0.id == item.shopID }) }.count }
     func followUpDraft(_ record: ShopRecord) -> RecordFollowUp? {
         if let item = followUp(for: record) { return item }
         let title = record.entity == "order" ? "#" + (record.data["orderNumber"].string ?? record.data["id"].displayString) : record.entity == "customer" ? [record.data["firstName"].string, record.data["lastName"].string].compactMap { $0 }.joined(separator: " ") : record.data.at("name").string ?? record.data["id"].displayString
@@ -98,7 +101,19 @@ extension AppModel {
         followUps.first { $0.shopID == record.shop.id && $0.entity == record.entity && $0.recordID == record.data["id"].string?.lowercased() }
     }
     @discardableResult func saveFollowUp(_ item: RecordFollowUp) -> Bool {
-        do { try store.saveFollowUp(item); reload(); notice = T("Wiedervorlage gespeichert"); return true } catch { self.error = error.localizedDescription; return false }
+        do { try store.saveFollowUp(item); reload(); notice = T("Wiedervorlage gespeichert"); Task { await reconcileReminders() }; return true } catch { self.error = error.localizedDescription; return false }
+    }
+    func authorizeReminder(_ item: RecordFollowUp) async throws {
+        guard item.reminderEnabled == true, item.completedAt == nil else { return }
+        guard let date = item.dueAt, date > Date() else { throw ShopdeckError.message(T("Wähle einen zukünftigen Termin für die Mitteilung.")) }
+        let center = UNUserNotificationCenter.current()
+        let settings = await center.notificationSettings()
+        if settings.authorizationStatus == .notDetermined {
+            guard try await center.requestAuthorization(options: [.alert, .sound, .badge]) else { throw ShopdeckError.message(T("Erlaube Shopdeck Mitteilungen in den macOS Systemeinstellungen.")) }
+        } else if settings.authorizationStatus != .authorized && settings.authorizationStatus != .provisional { throw ShopdeckError.message(T("Erlaube Shopdeck Mitteilungen in den macOS Systemeinstellungen.")) }
+    }
+    func reconcileReminders() async {
+        if let issue = await FollowUpNotifications.shared.synchronize(items: followUps, shops: workspace.shops) { reminderIssue = issue } else { reminderIssue = nil }
     }
     func completeFollowUp(_ item: RecordFollowUp, completed: Bool) {
         var next = item; next.completedAt = completed ? Date() : nil; saveFollowUp(next)

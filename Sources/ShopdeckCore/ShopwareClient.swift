@@ -228,6 +228,46 @@ extension ShopwareClient {
         guard result["isError"].bool != true else{throw ShopdeckError.message("The native tool is not usable in this shop session: "+String(result["content"].array.compactMap{$0["text"].string}.joined(separator:" ").prefix(800)))}
         return result
     }
+    public func orderDocuments(_ shop: Shop, orderIDs: [String]) async throws -> OrderDocumentPage {
+        let ids = try Array(Set(orderIDs)).sorted().map(Validation.entityID)
+        guard !ids.isEmpty, ids.count <= 200 else { throw ShopdeckError.message("Wähle zwischen einer und 200 Bestellungen.") }
+        if shop.isDemo {
+            let rows = try ids.map { id in try OrderDocument(shop: shop, data: .object(["id": .string(id), "orderId": .string(id), "documentType": .object(["technicalName": .string("invoice")]), "config": .object(["documentNumber": .string("DEMO-" + String(id.suffix(4)))]), "deepLinkCode": .string(String(repeating: "d", count: 32))])) }
+            return .init(documents: rows, total: rows.count)
+        }
+        var rows: [OrderDocument] = [], total = 0
+        for page in 1...10 {
+            try Task.checkCancellation()
+            let body: JSONValue = .object(["page": .number(Double(page)), "limit": .number(100), "total-count-mode": .number(1), "filter": .array([.object(["type": .string("equalsAny"), "field": .string("orderId"), "value": .array(ids.map(JSONValue.string))])]), "sort": .array([.object(["field": .string("createdAt"), "order": .string("DESC")]), .object(["field": .string("id"), "order": .string("ASC")])]), "associations": .object(["documentType": .object([:])])])
+            let response = try await adminRequest(shop, request: .init(method: "POST", path: "search/document", body: body))
+            let values = response["data"].array; total = Int(response["total"].number ?? Double(values.count))
+            rows += try values.map { try OrderDocument(shop: shop, data: $0) }
+            if values.isEmpty || rows.count >= total { break }
+        }
+        return .init(documents: rows, total: total)
+    }
+    public func downloadDocument(_ document: OrderDocument) async throws -> Data {
+        if document.shop.isDemo { return OrderDocument.demoPDF(number: document.number) }
+        let path = try document.downloadPath(), shop = document.shop
+        for attempt in 0...1 {
+            let delegate = DocumentDownloadDelegate()
+            var request = URLRequest(url: try endpoint(shop, path)); request.httpMethod = "GET"; request.timeoutInterval = 90
+            request.setValue("Bearer " + (try await token(shop)), forHTTPHeaderField: "Authorization"); request.setValue("application/pdf", forHTTPHeaderField: "Accept")
+            do {
+                let (file, response) = try await session.download(for: request, delegate: delegate)
+                defer { try? FileManager.default.removeItem(at: file) }
+                guard let http = response as? HTTPURLResponse else { throw ShopdeckError.message("Ungültige Antwort beim Dokumentdownload.") }
+                if http.statusCode == 401 && attempt == 0 { tokens[shop.id] = nil; continue }
+                guard http.statusCode == 200 else { throw ShopdeckError.message("Das Dokument konnte nicht geladen werden. HTTP " + String(http.statusCode) + (http.statusCode == 403 ? " · Der Integration fehlt document:read." : "")) }
+                let size = try file.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0
+                guard size <= delegate.maximum else { throw ShopdeckError.message("Das Dokument überschreitet 32 MB.") }
+                let data = try Data(contentsOf: file, options: .mappedIfSafe)
+                guard data.starts(with: Data("%PDF-".utf8)) else { throw ShopdeckError.message("Der Shop hat kein PDF Dokument geliefert.") }
+                return data
+            } catch { if delegate.tooLarge { throw ShopdeckError.message("Das Dokument überschreitet 32 MB.") }; throw error }
+        }
+        throw ShopdeckError.message("Der Dokumentzugriff ist nicht autorisiert.")
+    }
     public func uploadBinary(_ shop:Shop,path:String,data:Data,contentType:String,query:[String:String]=[:])async throws->JSONValue {
         guard !shop.isDemo else{throw ShopdeckError.message("File upload needs a real shop.")}
         let clean=try AdminAPIRequest(method:"POST",path:path).validated()

@@ -14,9 +14,10 @@ Shopdeck brings multiple Shopware 6 shops into one native macOS workspace. Move 
 
 | Work | What you get |
 | --- | --- |
-| Manage shops | Groups, drag and drop ordering, inline renaming, imported favicons, separate tabs and side by side administrations. |
+| Manage shops | Groups, drag and drop ordering, inline renaming, imported favicons, persistent tabs, named workspaces and side by side administrations. |
 | Browse your data | Products, orders and customers with server search, server filters, server sorting, keyboard navigation, CSV export, product thumbnails, custom columns and saved views. Open the full Shopware product editor for prices, variants and media. |
-| Follow through | A live attention list for ageing orders, replenishment, sold out products and missing content. Private notes and dated follow ups on products, orders and customers. |
+| Follow through | A live attention list for ageing orders, replenishment, sold out products and missing content. Private notes and dated follow ups on products, orders and customers, with optional macOS reminders. |
+| Work with documents | Preview existing invoices, delivery notes and credit notes in PDFKit. Download originals or ZIP packages from selected orders across shops. |
 | Understand performance | 23 dashboard widgets, calendar month and year revenue, sales channel filters and separate currencies. Configure each widget for selected shops, duplicate it, move it or remove it. |
 | Stay informed | Configurable rules for new order notifications, Shopware release notes rendered as Markdown and compatible Security Plugin version checks. |
 | Use your AI | Guided Codex, Claude Desktop and Claude Code setup, installation detection, an MCP connection test, a tool catalogue and copyable example prompts. |
@@ -37,7 +38,17 @@ The dashboard attention list counts matching records directly in Shopware before
 
 Content checks cover active parent products so inherited variant content is not mistaken for missing content. Counts respect the integration permissions. An unavailable shop produces an explicit error state rather than an invented zero. Queries run with bounded concurrency and a short cache to avoid unnecessary reloads.
 
-Use **Notes and follow up** in any product, order or customer detail to keep a next step and an optional due date. **Follow ups** collects those tasks across shops, with search, due filters, completion, reopening and postponement. Open tasks are also reachable from the command palette. Notes stay private to this Mac and are not exposed by the MCP server or written to Shopware. Due dates are shown in the app; they do not schedule macOS notifications.
+Use **Notes and follow up** in any product, order or customer detail to keep a next step and an optional due date. **Follow ups** collects those tasks across shops, with search, due filters, completion, reopening and postponement. Open tasks are also reachable from the command palette. Notes stay private to this Mac and are not exposed by the MCP server or written to Shopware. Enable a macOS reminder for a future due date to receive a notification even when the app is closed. Clicking it opens the linked record. Your note is excluded from the notification. Completion and postponement update the scheduled reminder. Notification permission is requested only when you choose to enable a reminder.
+
+### Pick up where you left off
+
+Tabs reopen with their selected shops, search, filters, sorting, page, sales channel and currency. Save a named workspace for a recurring routine, such as morning order checks beside your replenishment list. Duplicate tabs, close other tabs, or reopen the last closed tab with **⌘⇧T**. Only visible restored tabs load their data. Turn automatic restoration off in the **Workspaces** menu if you prefer a fresh start.
+
+### Keep your order documents together
+
+Select orders in the grid and choose **Open documents**, or open documents from an order detail. Preview existing invoices, delivery notes and credit notes without leaving the app. Search the document list and select several PDFs with **⌘** or **⇧**. Exports preserve the original bytes, including existing signatures, and group files by shop in a ZIP package. Creating or correcting accounting documents remains in the original Shopware administration.
+
+The integration needs `document:read` and access to the selected orders. Each PDF is limited to 32 MB and an export package to 256 MB. Up to 200 selected orders per shop and 1,000 documents per shop are loaded; incomplete lists are disclosed. Binary downloads stay on the selected shop origin and do not follow redirects.
 
 ### Your numbers, your way
 
