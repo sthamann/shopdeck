@@ -15,7 +15,8 @@ Shopdeck brings multiple Shopware 6 shops into one native macOS workspace. Move 
 | Work | What you get |
 | --- | --- |
 | Manage shops | Groups, drag and drop ordering, inline renaming, imported favicons, persistent tabs, named workspaces and side by side administrations. |
-| Browse your data | Products, orders and customers with server search, server filters, server sorting, keyboard navigation, CSV export, product thumbnails, custom columns and saved views. Open the full Shopware product editor for prices, variants and media. |
+| Browse your data | Products, orders and customers with server search, server filters, server sorting, keyboard navigation, CSV export, product thumbnails, custom columns, dynamic date periods and saved views. Open the full Shopware product editor for prices, variants and media. |
+| Pick and pack | Build a picking list from selected orders across shops. Check items with the keyboard, open their orders and export a printable PDF or CSV. Physical quantities stay separate by shop and variant. |
 | Follow through | A live attention list for ageing orders, replenishment, sold out products and missing content. Private notes and dated follow ups on products, orders and customers, with optional macOS reminders. |
 | Work with documents | Preview existing invoices, delivery notes and credit notes in PDFKit. Download originals or ZIP packages from selected orders across shops. |
 | Understand performance | 23 dashboard widgets, calendar month and year revenue, sales channel filters and separate currencies. Configure each widget for selected shops, duplicate it, move it or remove it. |
@@ -49,6 +50,18 @@ Tabs reopen with their selected shops, search, filters, sorting, page, sales cha
 Select orders in the grid and choose **Open documents**, or open documents from an order detail. Preview existing invoices, delivery notes and credit notes without leaving the app. Search the document list and select several PDFs with **⌘** or **⇧**. Exports preserve the original bytes, including existing signatures, and group files by shop in a ZIP package. Creating or correcting accounting documents remains in the original Shopware administration.
 
 The integration needs `document:read` and access to the selected orders. Each PDF is limited to 32 MB and an export package to 256 MB. Up to 200 selected orders per shop and 1,000 documents per shop are loaded; incomplete lists are disclosed. Binary downloads stay on the selected shop origin and do not follow redirects.
+
+### Pick once, know where every item belongs
+
+Select up to 200 orders and choose **Picking list**. Shopdeck reloads the order status and all line items with server pagination, then combines matching physical product positions by shop, product identity and historical SKU. Variants and different shops remain separate. Cancelled orders, digital products and non product positions are excluded with visible counts. A failed or incomplete shop blocks the list rather than quietly returning partial quantities.
+
+Check a row with **Space**, use **Return** to open its order and follow each allocation back to an order number. Search the list, filter by shop or show only unchecked items. Export the visible rows as CSV or a printable PDF, including quantities, check marks and order allocations. Markings belong to the current picking list and never change stock or order status. Each shop can load up to 10,000 positions per selected batch. Orders deliberately selected after completion remain included; the list is a picking aid, not an automatic shipment action.
+
+### Save the records you return to
+
+Click the star in a product, order or customer detail. Bookmarks are grouped by shop in the top toolbar and are also searchable with **⌘K**. They reopen fresh record details and survive restarting the app. Bookmarks stay on this Mac.
+
+**Today**, **Yesterday**, **Last 7 days**, **Last 30 days**, **This month**, **Last month** and **This year** filter the order date or the creation date of products and customers before server pagination. Saved views retain the relative period, so “Today” means today when you next open it. Calendar boundaries use the Mac’s time zone, including daylight saving changes. A single federated load freezes its time window across shops and pages.
 
 ### Your numbers, your way
 

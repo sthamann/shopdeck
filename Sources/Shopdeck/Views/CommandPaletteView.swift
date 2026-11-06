@@ -16,6 +16,11 @@ struct CommandPaletteView: View {
     @FocusState private var focused: Bool
     private var actions: [PaletteAction] {
         var all: [PaletteAction] = []
+        let saved = query.isEmpty ? Array(model.bookmarks.prefix(20)) : model.bookmarks
+        for item in saved where model.workspace.shops.contains(where: { $0.id == item.shopID }) {
+            let detail = T("Lesezeichen") + " · " + (model.workspace.shops.first { $0.id == item.shopID }?.name ?? "") + " · " + item.reference
+            all.append(PaletteAction(id: "bookmark-" + item.id, title: item.title, detail: detail, icon: "star", run: { model.openBookmark(item) }))
+        }
         for item in model.followUps.filter({ $0.completedAt == nil }).sorted(by: { ($0.dueAt ?? .distantFuture) < ($1.dueAt ?? .distantFuture) }).prefix(20) {
             all.append(PaletteAction(id: "followup-\(item.id)", title: item.title, detail: T("Wiedervorlage") + " · " + (model.workspace.shops.first { $0.id == item.shopID }?.name ?? ""), icon: "bookmark", run: { model.openFollowUp(item) }))
         }
@@ -33,7 +38,7 @@ struct CommandPaletteView: View {
             all.append(PaletteAction(id: "destination-\(destination.rawValue)", title: destination.title, detail: T("Arbeitsbereich öffnen"), icon: destination.icon, run: { model.destination = destination }))
         }
         all.append(PaletteAction(id: "add-shop", title: T("Shop hinzufügen"), detail: T("Verbinden oder lokal mit Docker starten"), icon: "plus.circle", run: { model.showingAddShop = true }))
-        all.append(PaletteAction(id: "low-stock", title: T("Knappe Bestände prüfen"), detail: T("Produkte mit höchstens fünf Stück Bestand"), icon: "shippingbox", run: { model.destination = .products; model.lowStockOnly = true; model.page = 1; Task { await model.loadRecords() } }))
+        all.append(PaletteAction(id: "low-stock", title: T("Knappe Bestände prüfen"), detail: T("Arbeitsvorrat öffnen"), icon: "shippingbox", run: { model.openFocus(.lowStock) }))
         all.append(PaletteAction(id: "refresh", title: T("Aktualisieren"), detail: T("Daten der gewählten Shops neu laden"), icon: "arrow.clockwise", run: { Task { await model.refresh() } }))
         let clean = query.trimmingCharacters(in: .whitespacesAndNewlines)
         if clean.isEmpty { return all }

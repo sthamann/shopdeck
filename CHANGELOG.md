@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.12.0
+
+- Add picking lists for selected orders across shops, with freshly paginated line items, physical product quantities, keyboard checks, order allocations and printable PDF and CSV exports.
+- Exclude cancelled orders, digital products and non product positions. Refuse incomplete results and keep shops, variants and historical SKUs separate.
+- Add dynamic calendar periods to all record lists. Preserve relative periods in saved views and freeze their resolved boundaries during a federated load.
+- Add private record bookmarks in the top toolbar and command palette, with fresh details on opening and persistence across restarts.
+- Use the configured replenishment threshold from the command palette. Show the rejected field name for unexpected API write fields without echoing submitted values.
+- Keep the list toolbar compact at normal window widths and adapt order actions to split views.
+
 ## 0.11.0
 
 - Preview existing order PDFs in a native PDFKit view. Download individual originals or ZIP packages from selected orders across shops, with cancellation and explicit size limits.

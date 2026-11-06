@@ -16,6 +16,8 @@ extension ShopwareClient {
     /// Each shop sorts its entire matching data set before pagination. A prefix of N
     /// rows from every shop contains the global top N. No page is sorted in isolation.
     public func searchAcrossShops(_ shops:[Shop],entity:String,term:String="",page:Int=1,pageSize:Int=50,maximum:Int=1000,sort:[RecordSort]=[],lowStock:Bool=false,status:String="all",filters:[UUID:[RecordFilter]]=[:])async throws->FederatedSearchPage {
+        let now = Date()
+        let filters = try filters.mapValues { values in try values.flatMap { try $0.freezingDateRange(now: now) } }
         let cap=min(max(maximum,1),10000),size=min(max(pageSize,1),cap),number=max(page,1),prefix=min(number*size,cap)
         var sorting=sort.isEmpty ? RecordSort.defaults(entity):sort
         if !sorting.contains(where:{$0.field=="id"}){sorting.append(.init("id"))}

@@ -21,6 +21,7 @@ public struct Workbench: Codable, Sendable {
     public var savedViews: [SavedView] = []
     public var lists: [String: ListConfiguration]?
     public var dashboard: DashboardConfiguration?
+    public var bookmarks: [RecordBookmark]?
     public var followUps: [RecordFollowUp]?
     public init() {}
 }

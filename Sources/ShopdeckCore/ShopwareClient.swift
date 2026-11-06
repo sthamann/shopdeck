@@ -44,7 +44,12 @@ public actor ShopwareClient {
         guard (200..<300).contains(http.statusCode) else {
             let json = try? JSONDecoder().decode(JSONValue.self, from: data)
             let code = json?["errors"].array.first?["code"].string ?? ""
-            let pointer = json?["errors"].array.first?["source"]["pointer"].string ?? ""
+            let first = json?["errors"].array.first ?? .null
+            var pointer = first["source"]["pointer"].string ?? ""
+            if pointer.isEmpty, code == "FRAMEWORK__WRITE_UNEXPECTED_FIELD_ERROR" {
+                let field = first["meta"]["parameters"]["field"].string ?? first["parameters"]["field"].string ?? ""
+                if field.range(of: "^[A-Za-z][A-Za-z0-9_.]{0,149}$", options: .regularExpression) != nil { pointer = field }
+            }
             let explanation: String
             switch http.statusCode {
             case 301...399: explanation = "Die Shopadresse leitet weiter. Trage die endgültige HTTPS Adresse ein."

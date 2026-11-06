@@ -11,6 +11,7 @@ struct RecordsView: View {
     @LocalState<Bool> private var exporting = false
     @LocalState<Task<Void, Never>?> private var exportTask = nil
     @LocalState<Bool> private var savingView = false
+    @LocalState<PickingSelection?> private var pickingSelection = nil
     @LocalState<OrderDocumentSelection?> private var documentSelection = nil
     @LocalState<BulkSelection?> private var bulkSelection = nil
     @LocalState<Bool> private var configuring = false
@@ -35,13 +36,16 @@ struct RecordsView: View {
                 }.font(.system(size: 12)).padding(14).background(Theme.blue.opacity(0.08), in: RoundedRectangle(cornerRadius: 10))
             }
             if model.destination == .orders && !selection.isEmpty {
-                HStack { Text("\(selectedRecords.count) " + T("Bestellungen ausgewählt")).foregroundStyle(Theme.blue); Spacer(); Button(T("Auswahl aufheben")) { selection = [] }; Button { documentSelection = .init(orders: selectedRecords) } label: { Label(T("Dokumente öffnen"), systemImage: "doc.richtext") }.buttonStyle(.borderedProminent).disabled(selectedRecords.count > 200 || model.isLoading) }.font(.system(size: 12)).padding(14).background(Theme.blue.opacity(0.08), in: RoundedRectangle(cornerRadius: 10))
+                ViewThatFits(in: .horizontal) {
+                    HStack { Text("\(selectedRecords.count) " + T("Bestellungen ausgewählt")); Spacer(); orderActions }.fixedSize(horizontal: true, vertical: false)
+                    VStack(alignment: .leading, spacing: 10) { Text("\(selectedRecords.count) " + T("Bestellungen ausgewählt")); orderActions }
+                }.font(.system(size: 12)).padding(14).frame(maxWidth: .infinity, alignment: .leading).background(Theme.blue.opacity(0.08), in: RoundedRectangle(cornerRadius: 10))
             }
             ViewThatFits(in: .horizontal) {
-                HStack(spacing: 12) { searchBox.frame(width: 230); shopSelector.frame(width: 190); channelSelector.frame(width: 180); currencySelector; resultCount }.fixedSize(horizontal: true, vertical: false)
+                HStack(spacing: 12) { searchBox.frame(width: 210); shopSelector.frame(width: 160); channelSelector.frame(width: 150); currencySelector; dateSelector.frame(width: 150); resultCount }.fixedSize(horizontal: true, vertical: false)
                 VStack(alignment: .leading, spacing: 10) {
                     HStack { searchBox; shopSelector.frame(maxWidth: 190) }
-                    HStack { channelSelector; currencySelector; Spacer(minLength: 0) }
+                    HStack { channelSelector; currencySelector; Spacer(minLength: 0) }; dateSelector.frame(maxWidth: 240)
                     resultCount
                 }
             }.frame(maxWidth: .infinity, alignment: .leading)
@@ -77,10 +81,18 @@ struct RecordsView: View {
         .onChange(of: pageSize) { _, _ in model.page = 1; Task { await model.loadRecords() } }
         .onChange(of: model.activeFilters) { _, _ in model.page = 1; Task { await model.loadRecords() } }
         .onDisappear { exportTask?.cancel() }
+        .sheet(item: $pickingSelection) { PickingListView(model: model, orders: $0.orders) }
         .sheet(item: $documentSelection) { OrderDocumentsView(model: model, orders: $0.orders) }
         .sheet(item: $bulkSelection) { frozen in BulkProductEditView(model: model, records: frozen.records) }
         .sheet(isPresented: $configuring) { ListConfigurationView(model: model, entity: model.destination.entity) }
         .background(Button("") { searchFocused = true }.keyboardShortcut("f").hidden())
+    }
+    private var orderActions: some View {
+        HStack {
+            Button(T("Auswahl aufheben")) { selection = [] }
+            Button { pickingSelection = .init(orders: selectedRecords) } label: { Label(T("Pickliste"), systemImage: "checklist") }.disabled(selectedRecords.count > 200 || model.isLoading).help(T("Bis zu 200 ausgewählte Bestellungen"))
+            Button { documentSelection = .init(orders: selectedRecords) } label: { Label(T("Dokumente öffnen"), systemImage: "doc.richtext") }.disabled(selectedRecords.count > 200 || model.isLoading).help(T("Bis zu 200 ausgewählte Bestellungen"))
+        }
     }
     private var recordHeading: some View { PageTitle(title: model.currentSavedView?.name ?? model.destination.title, subtitle: T("Shopübergreifend suchen. Direkt weiterarbeiten.")) }
     private var listActions: some View {
@@ -123,11 +135,17 @@ struct RecordsView: View {
             Picker(T("Währung"), selection: $model.listCurrency) {
                 Text(T("Alle Währungen")).tag(nil as String?)
                 ForEach(Array(Set(model.availableChannels.flatMap(\.currencies))).sorted(), id: \.self) { Text($0).tag(Optional($0)) }
-            }.labelsHidden().frame(width: 130).help(T("Währung")).accessibilityLabel(T("Währung"))
+            }.labelsHidden().frame(width: 110).help(T("Währung")).accessibilityLabel(T("Währung"))
         }
     }
+    private var dateSelector: some View {
+        Picker(T(model.destination == .orders ? "Bestellzeitraum" : "Erstellt im Zeitraum"), selection: Binding(get: { model.recordDateRange }, set: { model.setRecordDateRange($0) })) {
+            Text(T("Alle Zeiträume")).tag(nil as RecordDateRange?)
+            ForEach(RecordDateRange.allCases) { Text(T($0.title)).tag(Optional($0)) }
+        }.labelsHidden().accessibilityLabel(T("Zeitraum")).help(T(model.destination == .orders ? "Bestellzeitraum" : "Erstellt im Zeitraum"))
+    }
     private var resultCount: some View { Text("\(model.recordTotal) " + T("Ergebnisse")).font(.system(size: 12)).foregroundStyle(.secondary).fixedSize() }
-    private var quickFilters:[RecordFilter] {model.listConfiguration.filters + model.activeFilters.filter {active in !model.listConfiguration.filters.contains{$0.id==active.id}}}
+    private var quickFilters:[RecordFilter] {model.listConfiguration.filters + model.activeFilters.filter {active in active.operation != "dateRange" && !model.listConfiguration.filters.contains{$0.id==active.id}}}
     private var selectedRecords: [ShopRecord] { model.records.filter { selection.contains($0.id) } }
     private var dataTable: some View {
         let entity = model.destination.entity

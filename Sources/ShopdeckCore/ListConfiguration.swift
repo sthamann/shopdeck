@@ -14,12 +14,16 @@ public struct RecordFilter: Codable, Identifiable, Equatable, Sendable {
     public var operation: String
     public var value: String
     public init(name: String, field: String, operation: String = "equals", value: String) { self.name = name; self.field = field; self.operation = operation; self.value = value }
-    public func criteria() throws -> JSONValue {
+    public func criteria(now: Date = Date(), calendar: Calendar = .current) throws -> JSONValue {
         guard field.range(of: "^[A-Za-z][A-Za-z0-9_.]*$", options: .regularExpression) != nil, field.count <= 150 else { throw ShopdeckError.message("Ungültiger Feldname.") }
         let leaf = field.split(separator: ".").last.map(String.init) ?? field
         let numeric = ["stock", "availableStock", "amountTotal", "amountNet", "shippingTotal", "gross", "net", "weight", "minPurchase", "purchaseSteps", "orderCount", "orderTotalAmount"]
         let typed: JSONValue = ["active", "guest"].contains(leaf) && ["true", "false"].contains(value) ? .bool(value == "true") : numeric.contains(leaf) ? Double(value).map(JSONValue.number) ?? .string(value) : .string(value)
         switch operation {
+        case "dateRange":
+            guard ["createdAt", "updatedAt", "orderDateTime"].contains(field), let range = RecordDateRange(rawValue: value) else { throw ShopdeckError.message("Ungültiger Zeitraum.") }
+            let interval = range.interval(now: now, calendar: calendar), formatter = ISO8601DateFormatter()
+            return .object(["type": .string("range"), "field": .string(field), "parameters": .object(["gte": .string(formatter.string(from: interval.start)), "lt": .string(formatter.string(from: interval.end))])])
         case "isNull": return .object(["type": .string("equals"), "field": .string(field), "value": .null])
         case "empty": return .object(["type": .string("multi"), "operator": .string("OR"), "queries": .array([.object(["type": .string("equals"), "field": .string(field), "value": .null]), .object(["type": .string("equals"), "field": .string(field), "value": .string("")])])])
         case "equals", "contains": return .object(["type": .string(operation), "field": .string(field), "value": operation == "contains" ? .string(value) : typed])
@@ -27,11 +31,17 @@ public struct RecordFilter: Codable, Identifiable, Equatable, Sendable {
         default: throw ShopdeckError.message("Unbekannter Vergleich.")
         }
     }
-    public func matches(_ row: JSONValue) -> Bool {
+    public func matches(_ row: JSONValue, now: Date = Date(), calendar: Calendar = .current) -> Bool {
         func values(_ node:JSONValue,_ path:[Substring])->[JSONValue]{guard let first=path.first else{return [node]};if case .array(let array)=node,Int(first)==nil{return array.flatMap{values($0,path)}};return values(node.at(String(first)),Array(path.dropFirst()))}
-        return values(row,field.split(separator:".")).contains{matchesValue($0)}
+        return values(row,field.split(separator:".")).contains{matchesValue($0, now: now, calendar: calendar)}
     }
-    private func matchesValue(_ current:JSONValue)->Bool {
+    private func matchesValue(_ current:JSONValue, now: Date, calendar: Calendar)->Bool {
+        if operation == "dateRange" {
+            guard let range = RecordDateRange(rawValue: value), let text = current.string else { return false }
+            let formatter = ISO8601DateFormatter(); formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+            guard let date = formatter.date(from: text) ?? ISO8601DateFormatter().date(from: text) else { return false }
+            let interval = range.interval(now: now, calendar: calendar); return date >= interval.start && date < interval.end
+        }
         if operation == "isNull" { return current == .null }
         if operation == "empty" { return current == .null || current.string == "" }
         if operation == "contains" { return current.displayString.localizedCaseInsensitiveContains(value) }

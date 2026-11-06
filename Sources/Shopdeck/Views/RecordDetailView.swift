@@ -32,6 +32,7 @@ struct RecordDetailView: View {
                 ShopIcon(shop: record.shop, size: 40)
                 VStack(alignment: .leading, spacing: 5) { Text(entity == "product" ? T("Produktdetails") : entity == "order" ? T("Bestelldetails") : T("Kundendetails")).font(.title2.bold()); Text(record.shop.name + (record.shop.isDemo ? " · " + T("Demodaten") : "")).font(.caption).foregroundStyle(.secondary) }
                 Spacer()
+                Button { model.toggleBookmark(ShopRecord(shop: record.shop, data: data, entity: entity)) } label: { Image(systemName: model.isBookmarked(record) ? "star.fill" : "star") }.disabled(loading || data == .null).help(T(model.isBookmarked(record) ? "Lesezeichen entfernen" : "Lesezeichen setzen"))
                 if entity == "order" { Button { documents = true } label: { Label(T("Dokumente"), systemImage: "doc.richtext") } }
                 Button { copyText(record.data["id"].string ?? ""); model.notice = T("ID kopiert") } label: { Image(systemName: "doc.on.doc") }.help(T("ID kopieren"))
                 Button { Task { await load() } } label: { Image(systemName: "arrow.clockwise") }.disabled(loading || busy).help(T("Aktualisieren"))

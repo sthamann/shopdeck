@@ -31,6 +31,7 @@ struct WorkspaceShell: View {
         VStack(spacing: 0) {
             HStack(spacing: 9) {
                 ScrollView(.horizontal) { HStack(spacing: 6) { ForEach(tabs) { tab in tabButton(tab) } } }.scrollIndicators(.hidden)
+                if let active { BookmarkMenu(model: active.model) }
                 workspaceMenu
                 Button { open(nil, split: false) } label: { Image(systemName: "plus") }.buttonStyle(.borderless).help(T("Neuer Tab") + " · ⌘T")
                 Button { toggleSplit() } label: { Image(systemName: "rectangle.split.2x1") }.buttonStyle(.borderless).help(T("Nebeneinander anzeigen"))

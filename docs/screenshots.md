@@ -2,6 +2,13 @@
 
 English interface captures from development builds, using built in demo profiles and an isolated local Shopware test fixture. The amounts and customers shown are test data.
 
+## Picking lists and daily shortcuts in 0.12
+
+![Picking quantities across three shops with keyboard checks and order allocations](screenshots/44-picking-list.png)
+![Record bookmarks grouped by shop in the top toolbar](screenshots/45-record-bookmarks.png)
+![A saved view with a relative Today filter](screenshots/46-dynamic-order-period.png)
+![Find a bookmarked order from the command palette](screenshots/47-bookmark-command-search.png)
+
 ## Documents, reminders and workspaces in 0.11
 
 ![Existing order PDF preview, shown here with explicitly marked demo documents](screenshots/40-order-documents.png)

@@ -812,3 +812,42 @@ Rechnung	Invoice	Factuur	Factura	Facture	Fattura
 Lieferschein	Delivery note	Pakbon	Albarán	Bon de livraison	Documento di trasporto
 Gutschrift	Credit note	Creditnota	Abono	Avoir	Nota di credito
 Stornorechnung	Cancellation invoice	Annuleringsfactuur	Factura de anulación	Facture d’annulation	Fattura di storno
+Alle Zeiträume	Any time	Alle periodes	Cualquier periodo	Toutes les périodes	Qualsiasi periodo
+Artikel	Items	Artikelen	Artículos	Articles	Articoli
+Artikel aus ausgewählten Bestellungen gesammelt bereitstellen.	Pick the items from your selected orders in one pass.	Verzamel de artikelen uit je geselecteerde bestellingen in één ronde.	Prepara los artículos de tus pedidos seleccionados en una sola ronda.	Préparez les articles des commandes sélectionnées en un seul passage.	Prepara gli articoli degli ordini selezionati in un solo passaggio.
+Ausgewählte Bestellungen	Selected orders	Geselecteerde bestellingen	Pedidos seleccionados	Commandes sélectionnées	Ordini selezionati
+Bestellungen und Positionen werden vollständig geladen …	Loading complete orders and line items…	Volledige bestellingen en orderregels laden…	Cargando pedidos y posiciones completos…	Chargement complet des commandes et des lignes…	Caricamento completo di ordini e righe…
+Bis zu 200 ausgewählte Bestellungen	Up to 200 selected orders	Tot 200 geselecteerde bestellingen	Hasta 200 pedidos seleccionados	Jusqu’à 200 commandes sélectionnées	Fino a 200 ordini selezionati
+Frisch aus Shopware laden	Reload from Shopware	Opnieuw laden uit Shopware	Recargar desde Shopware	Recharger depuis Shopware	Ricarica da Shopware
+Geladen	Loaded	Geladen	Cargado	Chargé	Caricato
+Geprüft	Checked	Gecontroleerd	Revisado	Vérifié	Verificato
+In der Pickliste suchen	Search this picking list	Zoek in deze picklijst	Buscar en esta lista de preparación	Rechercher dans cette liste de préparation	Cerca nella lista di prelievo
+Keine passenden Artikel in dieser Pickliste.	No matching items in this picking list.	Geen overeenkomende artikelen in deze picklijst.	No hay artículos coincidentes en esta lista.	Aucun article correspondant dans cette liste.	Nessun articolo corrispondente in questa lista.
+Leerzeichen markiert. Eingabetaste öffnet die zugehörige Bestellung.	Space toggles a check. Return opens the linked order.	Spatie vinkt af. Enter opent de gekoppelde bestelling.	Espacio marca la fila. Intro abre el pedido relacionado.	Espace coche la ligne. Entrée ouvre la commande liée.	Spazio cambia la spunta. Invio apre l’ordine collegato.
+Lesezeichen	Bookmarks	Bladwijzers	Marcadores	Favoris	Preferiti
+Markierungen gelten für diese Pickliste. Bestellstatus und Bestand bleiben unverändert.	Checks apply to this picking list. Order status and stock stay unchanged.	Vinkjes gelden voor deze picklijst. Bestelstatus en voorraad blijven ongewijzigd.	Las marcas se aplican a esta lista. El estado y el stock no cambian.	Les coches concernent cette liste. Le statut et le stock restent inchangés.	Le spunte valgono per questa lista. Stato e scorte restano invariati.
+Nur ungeprüfte Artikel	Unchecked items only	Alleen ongecontroleerde artikelen	Solo artículos sin revisar	Articles non vérifiés uniquement	Solo articoli non verificati
+Ohne Artikelnummer	No SKU	Geen artikelnummer	Sin referencia	Sans référence	Senza codice articolo
+Pickliste	Picking list	Picklijst	Lista de preparación	Liste de préparation	Lista di prelievo
+Pickliste gespeichert	Picking list saved	Picklijst opgeslagen	Lista de preparación guardada	Liste de préparation enregistrée	Lista di prelievo salvata
+Pickliste konnte nicht erstellt werden	Could not create the picking list	Picklijst kon niet worden gemaakt	No se pudo crear la lista de preparación	Impossible de créer la liste de préparation	Impossibile creare la lista di prelievo
+Prüfmarkierungen zurücksetzen	Reset checks	Vinkjes wissen	Restablecer marcas	Réinitialiser les coches	Reimposta spunte
+Stück	units	stuks	unidades	unités	unità
+Zeitraum	Date range	Periode	Periodo	Période	Periodo
+digitale oder sonstige Positionen ausgelassen	digital or other line items excluded	digitale of andere orderregels overgeslagen	posiciones digitales u otras excluidas	lignes numériques ou autres exclues	righe digitali o di altro tipo escluse
+geprüft	checked	gecontroleerd	revisado	vérifié	verificato
+sichtbare Artikel exportieren	visible items to export	zichtbare artikelen exporteren	artículos visibles para exportar	articles visibles à exporter	articoli visibili da esportare
+stornierte Bestellungen ausgelassen	cancelled orders excluded	geannuleerde bestellingen overgeslagen	pedidos cancelados excluidos	commandes annulées exclues	ordini annullati esclusi
+Öffne einen Datensatz und klicke auf den Stern.	Open a record and click the star to bookmark it.	Open een record en klik op de ster om het op te slaan.	Abre un registro y pulsa la estrella para guardarlo.	Ouvrez une fiche et cliquez sur l’étoile pour l’ajouter aux favoris.	Apri una scheda e clicca sulla stella per salvarla.
+Lesezeichen entfernt	Bookmark removed	Bladwijzer verwijderd	Marcador eliminado	Favori supprimé	Preferito rimosso
+Lesezeichen gespeichert	Bookmark saved	Bladwijzer opgeslagen	Marcador guardado	Favori enregistré	Preferito salvato
+Lesezeichen entfernen	Remove bookmark	Bladwijzer verwijderen	Eliminar marcador	Retirer des favoris	Rimuovi preferito
+Lesezeichen setzen	Bookmark this record	Record opslaan als bladwijzer	Guardar este registro	Ajouter cette fiche aux favoris	Aggiungi ai preferiti
+Bestellzeitraum	Order date range	Bestelperiode	Periodo del pedido	Période des commandes	Periodo degli ordini
+Erstellt im Zeitraum	Created during	Aangemaakt in	Creado durante	Créé pendant	Creato durante
+Gestern	Yesterday	Gisteren	Ayer	Hier	Ieri
+Letzte 7 Tage	Last 7 days	Afgelopen 7 dagen	Últimos 7 días	7 derniers jours	Ultimi 7 giorni
+Letzte 30 Tage	Last 30 days	Afgelopen 30 dagen	Últimos 30 días	30 derniers jours	Ultimi 30 giorni
+Dieser Monat	This month	Deze maand	Este mes	Ce mois	Questo mese
+Letzter Monat	Last month	Vorige maand	Mes pasado	Mois dernier	Mese scorso
+Dieses Jahr	This year	Dit jaar	Este año	Cette année	Quest’anno
