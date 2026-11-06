@@ -17,17 +17,10 @@ struct RecordsView: View {
     @LocalState<[KeyPathComparator<ShopRecord>]> private var sortOrder = [KeyPathComparator(\ShopRecord.sortTitle)]
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            HStack(alignment: .top) {
-                PageTitle(title: model.currentSavedView?.name ?? model.destination.title, subtitle: T("Shopübergreifend suchen. Direkt weiterarbeiten."))
-                Spacer()
-                Menu { Button(T("Standardansicht")) { model.query="";model.activeFilters=[];model.lowStockOnly=false;model.statusFilter="all";model.listShopIDs=nil;model.listChannelKey=nil;model.listCurrency=nil;model.recordSort=RecordSort.defaults(model.destination.entity) }; ForEach(model.workbench.savedViews.filter { $0.destination == model.destination.rawValue }) { preset in Button(preset.name) { model.openSavedView(preset) } }; Divider(); Menu(T("Ansicht entfernen")) { ForEach(model.workbench.savedViews.filter { $0.destination == model.destination.rawValue }) { preset in Button(preset.name) { model.removeSavedView(preset) } } } } label: { Label(T("Ansichten"),systemImage:"rectangle.stack") }
-                Button { savingView.toggle() } label: { Label(T("Ansicht speichern"), systemImage: "bookmark") }
-                Button { configuring = true } label: { Label(T("Liste anpassen"), systemImage: "slider.horizontal.3") }
-                Menu {
-                    Button(T("Angezeigte Seite exportieren")) { exportCSV(all: false) }
-                    Button(T("Gefilterte Treffer exportieren") + " · " + T("maximal") + " \(maximumRecords)") { exportCSV(all: true) }
-                } label: { Label(T("CSV exportieren"), systemImage: "square.and.arrow.up") }.disabled(model.records.isEmpty || exporting || model.isLoading)
-            }
+            ViewThatFits(in: .horizontal) {
+                HStack(alignment: .top, spacing: 20) { recordHeading.fixedSize(); Spacer(minLength: 12); listActions.fixedSize() }.fixedSize(horizontal: true, vertical: false)
+                VStack(alignment: .leading, spacing: 12) { recordHeading; listActions.labelStyle(.iconOnly).fixedSize() }.frame(maxWidth: .infinity, alignment: .leading)
+            }.frame(maxWidth: .infinity, alignment: .leading)
             if exporting {
                 HStack { ProgressView().controlSize(.small); Text(T("Export wird mit deinen Filtern und Spalten vorbereitet …")).font(.caption); Spacer(); Button(T("Abbrechen")) { exportTask?.cancel() } }.padding(12).background(Theme.blue.opacity(0.06), in: RoundedRectangle(cornerRadius: 8))
             }
@@ -40,20 +33,14 @@ struct RecordsView: View {
                     Button { bulkSelection = BulkSelection(records: selectedRecords) } label: { Label(T("Gemeinsam bearbeiten"), systemImage: "square.stack.3d.up") }.buttonStyle(.borderedProminent).disabled(selectedRecords.isEmpty || model.isLoading)
                 }.font(.system(size: 12)).padding(14).background(Theme.blue.opacity(0.08), in: RoundedRectangle(cornerRadius: 10))
             }
-            HStack {
-                HStack { Image(systemName: "magnifyingglass").foregroundStyle(.secondary); TextField(T("Suchen …"), text: $model.query).textFieldStyle(.plain).focused($searchFocused); if !model.query.isEmpty { Button { model.query = "" } label: { Image(systemName: "xmark.circle.fill") }.buttonStyle(.plain).foregroundStyle(.secondary) } }.padding(10).background(.quaternary.opacity(0.35), in: RoundedRectangle(cornerRadius: 8))
-                Menu {
-                    Button(T("Alle Shops anzeigen")) { model.selectedShopID = nil; model.listShopIDs = nil }
-                    Divider()
-                    ForEach(model.workspace.shops) { shop in
-                        Toggle(shop.name, isOn: Binding(get: { model.listShopIDs?.contains(shop.id) ?? (model.selectedShopID == nil || model.selectedShopID == shop.id) }, set: { _ in model.toggleListShop(shop.id) }))
-                    }
-                } label: { Label(model.listShopSelectionTitle, systemImage: "storefront") }.frame(width: 190)
-
-                Picker(T("Verkaufskanal"),selection:$model.listChannelKey){Text(T("Alle Verkaufskanäle")).tag(nil as String?);ForEach(model.availableChannels.filter{model.selectedShopID==nil || $0.shopID==model.selectedShopID},id:\.key){channel in Text((model.selectedShopID==nil ? (model.workspace.shops.first{$0.id==channel.shopID}?.name ?? "")+" · ":"")+channel.name).tag(Optional(channel.key))}}.frame(maxWidth:190)
-                if model.destination == .orders{Picker(T("Währung"),selection:$model.listCurrency){Text(T("Alle Währungen")).tag(nil as String?);ForEach(Array(Set(model.availableChannels.flatMap(\.currencies))).sorted(),id:\.self){Text($0).tag(Optional($0))}}.frame(width:150)}
-                Text("\(model.recordTotal) \(T("Ergebnisse"))").font(.system(size: 12)).foregroundStyle(.secondary).frame(minWidth: 100)
-            }
+            ViewThatFits(in: .horizontal) {
+                HStack(spacing: 12) { searchBox.frame(width: 230); shopSelector.frame(width: 190); channelSelector.frame(width: 180); currencySelector; resultCount }.fixedSize(horizontal: true, vertical: false)
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack { searchBox; shopSelector.frame(maxWidth: 190) }
+                    HStack { channelSelector; currencySelector; Spacer(minLength: 0) }
+                    resultCount
+                }
+            }.frame(maxWidth: .infinity, alignment: .leading)
             if !quickFilters.isEmpty {
                 ScrollView(.horizontal) { HStack { ForEach(quickFilters) { filter in Toggle(filter.name, isOn: Binding(get: { model.activeFilters.contains { $0.id == filter.id } }, set: { enabled in if enabled { model.activeFilters.append(filter) } else { model.activeFilters.removeAll { $0.id == filter.id } } })).toggleStyle(.button) }; if !model.activeFilters.isEmpty { Button(T("Filter zurücksetzen")) { model.activeFilters = []; model.lowStockOnly = false; model.statusFilter = "all" } } } }
             }
@@ -90,6 +77,51 @@ struct RecordsView: View {
         .sheet(isPresented: $configuring) { ListConfigurationView(model: model, entity: model.destination.entity) }
         .background(Button("") { searchFocused = true }.keyboardShortcut("f").hidden())
     }
+    private var recordHeading: some View { PageTitle(title: model.currentSavedView?.name ?? model.destination.title, subtitle: T("Shopübergreifend suchen. Direkt weiterarbeiten.")) }
+    private var listActions: some View {
+        HStack(spacing: 10) {
+                Menu { Button(T("Standardansicht")) { model.query="";model.activeFilters=[];model.lowStockOnly=false;model.statusFilter="all";model.listShopIDs=nil;model.listChannelKey=nil;model.listCurrency=nil;model.recordSort=RecordSort.defaults(model.destination.entity) }; ForEach(model.workbench.savedViews.filter { $0.destination == model.destination.rawValue }) { preset in Button(preset.name) { model.openSavedView(preset) } }; Divider(); Menu(T("Ansicht entfernen")) { ForEach(model.workbench.savedViews.filter { $0.destination == model.destination.rawValue }) { preset in Button(preset.name) { model.removeSavedView(preset) } } } } label: { Label(T("Ansichten"),systemImage:"rectangle.stack") }
+                Button { savingView.toggle() } label: { Label(T("Ansicht speichern"), systemImage: "bookmark") }
+                Button { configuring = true } label: { Label(T("Liste anpassen"), systemImage: "slider.horizontal.3") }
+                Menu {
+                    Button(T("Angezeigte Seite exportieren")) { exportCSV(all: false) }
+                    Button(T("Gefilterte Treffer exportieren") + " · " + T("maximal") + " \(maximumRecords)") { exportCSV(all: true) }
+                } label: { Label(T("CSV exportieren"), systemImage: "square.and.arrow.up") }.disabled(model.records.isEmpty || exporting || model.isLoading)
+        }
+    }
+    private var searchBox: some View {
+        HStack {
+            Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
+            TextField(T("Suchen …"), text: $model.query).textFieldStyle(.plain).focused($searchFocused)
+            if !model.query.isEmpty { Button { model.query = "" } label: { Image(systemName: "xmark.circle.fill") }.buttonStyle(.plain).foregroundStyle(.secondary) }
+        }.padding(10).background(.quaternary.opacity(0.35), in: RoundedRectangle(cornerRadius: 8))
+    }
+    private var shopSelector: some View {
+        Menu {
+            Button(T("Alle Shops anzeigen")) { model.selectedShopID = nil; model.listShopIDs = nil }
+            Divider()
+            ForEach(model.workspace.shops) { shop in
+                Toggle(shop.name, isOn: Binding(get: { model.listShopIDs?.contains(shop.id) ?? (model.selectedShopID == nil || model.selectedShopID == shop.id) }, set: { _ in model.toggleListShop(shop.id) }))
+            }
+        } label: { Label(model.listShopSelectionTitle, systemImage: "storefront").lineLimit(1) }.help(T("Shop"))
+    }
+    private var channelSelector: some View {
+        Picker(T("Verkaufskanal"), selection: $model.listChannelKey) {
+            Text(T("Alle Verkaufskanäle")).tag(nil as String?)
+            ForEach(model.availableChannels.filter { (model.selectedShopID == nil || $0.shopID == model.selectedShopID) && (model.listShopIDs?.contains($0.shopID) ?? true) }, id: \.key) { channel in
+                Text((model.selectedShopID == nil ? (model.workspace.shops.first { $0.id == channel.shopID }?.name ?? "") + " · " : "") + channel.name).tag(Optional(channel.key))
+            }
+        }.labelsHidden().help(T("Verkaufskanal")).accessibilityLabel(T("Verkaufskanal"))
+    }
+    @ViewBuilder private var currencySelector: some View {
+        if model.destination == .orders {
+            Picker(T("Währung"), selection: $model.listCurrency) {
+                Text(T("Alle Währungen")).tag(nil as String?)
+                ForEach(Array(Set(model.availableChannels.flatMap(\.currencies))).sorted(), id: \.self) { Text($0).tag(Optional($0)) }
+            }.labelsHidden().frame(width: 130).help(T("Währung")).accessibilityLabel(T("Währung"))
+        }
+    }
+    private var resultCount: some View { Text("\(model.recordTotal) " + T("Ergebnisse")).font(.system(size: 12)).foregroundStyle(.secondary).fixedSize() }
     private var quickFilters:[RecordFilter] {model.listConfiguration.filters + model.activeFilters.filter {active in !model.listConfiguration.filters.contains{$0.id==active.id}}}
     private var selectedRecords: [ShopRecord] { model.records.filter { selection.contains($0.id) } }
     private var dataTable: some View {

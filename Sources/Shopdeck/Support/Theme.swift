@@ -25,7 +25,7 @@ struct ShopIcon: View {
 struct StatusPill: View {
     let text: String
     var color: Color = .green
-    var body: some View { HStack(spacing: 5) { Circle().fill(color).frame(width: 5, height: 5); Text(text).font(.system(size: 11, weight: .medium)) }.padding(.horizontal, 9).padding(.vertical, 5).foregroundStyle(color).background(color.opacity(0.1), in: Capsule()) }
+    var body: some View { HStack(spacing: 5) { Circle().fill(color).frame(width: 5, height: 5); Text(text).font(.system(size: 11, weight: .medium)).lineLimit(1).fixedSize() }.padding(.horizontal, 9).padding(.vertical, 5).foregroundStyle(color).background(color.opacity(0.1), in: Capsule()) }
 }
 struct Panel<Content: View>: View {
     @ViewBuilder let content: Content

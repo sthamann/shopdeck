@@ -10,6 +10,7 @@ English interface captures from development builds, using built in demo profiles
 ![Select multiple shops in a list](screenshots/36-multiple-shop-selection.png)
 ![Export the filtered result set](screenshots/37-filtered-export.png)
 ![The merchant workspace in light appearance](screenshots/38-merchant-light.png)
+![Adaptive dashboard and product list side by side](screenshots/39-adaptive-split-workspace.png)
 
 ## Your workspace
 

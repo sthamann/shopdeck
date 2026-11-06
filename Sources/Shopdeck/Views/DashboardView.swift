@@ -19,23 +19,17 @@ struct DashboardView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading, spacing: 8) { Text(T("Alles im Blick. Dein Commerce.")).font(.system(size: 28, weight: .bold, design: .rounded)); Text(T("Ein Arbeitsplatz für alle Shops. Mit den Zahlen, die für dich zählen.")).font(.system(size: 13)).foregroundStyle(.secondary) }
-                    Spacer()
-                    Button { configuring = true } label: { Label(T("Dashboard anpassen"), systemImage: "slider.horizontal.3") }.controlSize(.large)
-                }
-                HStack(spacing: 18) {
-                    HStack(spacing: 8) { Circle().fill(analytics.failures.isEmpty ? .green : .orange).frame(width: 7,height: 7); Text("\(model.dashboardShops.count) " + (model.dashboardShops.count == 1 ? T("Shop") : T("Shops"))); if model.dashboardShops.allSatisfy(\.isDemo) { Text(T("Demodaten")).foregroundStyle(.orange) } }.font(.system(size: 12, weight: .medium))
-                    if model.loadingAnalytics { ProgressView().controlSize(.small); Text(T("Statistiken werden geladen …")).font(.caption).foregroundStyle(.secondary) }
-                    else if let date = analytics.loadedAt { Text(T("Aktualisiert") + " " + localizedDate(date,date:.omitted,time:.shortened)).font(.caption).foregroundStyle(.secondary) }
-                    Spacer()
-                    if model.scopedShops.contains(where: \.isDemo) && model.scopedShops.contains(where:{!$0.isDemo}) { Toggle(T("Demoprofile einbeziehen"),isOn:$includeDemo).toggleStyle(.checkbox).font(.caption) }
-                    Picker(T("Verkaufskanal"),selection:$model.dashboardChannelKey){Text(T("Alle Verkaufskanäle")).tag(nil as String?);ForEach(model.availableChannels.filter{channel in model.dashboardShops.contains{$0.id==channel.shopID}},id:\.key){channel in Text((model.workspace.shops.first{$0.id==channel.shopID}?.name ?? "")+" · "+channel.name).tag(Optional(channel.key))}}.frame(maxWidth:250)
-                    Picker(T("Währung"), selection: $model.dashboardCurrency) { ForEach(Array(Set(analytics.currencies+[currency])).sorted(), id: \.self) { Text($0).tag($0) } }.frame(width: 130)
-                }
+                ViewThatFits(in: .horizontal) {
+                    HStack(alignment: .top, spacing: 20) { dashboardHeading.fixedSize(); Spacer(minLength: 12); customizeButton.fixedSize() }.fixedSize(horizontal: true, vertical: false)
+                    VStack(alignment: .leading, spacing: 12) { dashboardHeading; customizeButton }.frame(maxWidth: .infinity, alignment: .leading)
+                }.frame(maxWidth: .infinity, alignment: .leading)
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 18) { dashboardStatus.fixedSize(); Spacer(minLength: 10); demoToggle; dashboardChannel.frame(width: 220); dashboardCurrencyPicker }.fixedSize(horizontal: true, vertical: false)
+                    VStack(alignment: .leading, spacing: 10) { dashboardStatus; demoToggle; HStack { dashboardChannel; dashboardCurrencyPicker } }.frame(maxWidth: .infinity, alignment: .leading)
+                }.frame(maxWidth: .infinity, alignment: .leading)
+                Text(T("Bestellumsatz inklusive Steuern, ohne stornierte Bestellungen. Keine Währungsumrechnung. Bestellungen und Umsatz nach gewählter Währung.")).font(.system(size: 11)).foregroundStyle(.secondary)
                 if !analytics.failures.isEmpty { Text(analytics.failures.joined(separator: "\n")).font(.caption).foregroundStyle(.orange) }
                 if !analytics.truncatedShops.isEmpty { Text(T("Unvollständige Statistik: mehr als 10.000 Bestellungen in 30 Tagen.") + " " + analytics.truncatedShops.joined(separator: ", ")).font(.caption).foregroundStyle(.orange) }
-                Text(T("Bestellumsatz inklusive Steuern, ohne stornierte Bestellungen. Keine Währungsumrechnung. Bestellungen und Umsatz nach gewählter Währung.")).font(.caption).foregroundStyle(.secondary)
                 SecurityStatusView(model:model,compact:true)
                 MerchantFocusView(model: model)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 285), spacing: 18)], alignment: .leading, spacing: 18) {
@@ -56,6 +50,31 @@ struct DashboardView: View {
         .onChange(of:includeDemo) {_,_ in Task{await model.loadAnalytics()}}
         .sheet(item:$editingTile){DashboardTileEditor(model:model,tile:$0)}
         .sheet(isPresented: $configuring) { DashboardConfigurationView(model: model) }
+    }
+    private var dashboardHeading: some View {
+        VStack(alignment: .leading, spacing: 8) { Text(T("Alles im Blick. Dein Commerce.")).font(.system(size: 28, weight: .bold, design: .rounded)); Text(T("Ein Arbeitsplatz für alle Shops. Mit den Zahlen, die für dich zählen.")).font(.system(size: 13)).foregroundStyle(.secondary) }
+    }
+    private var customizeButton: some View { Button { configuring = true } label: { Label(T("Dashboard anpassen"), systemImage: "slider.horizontal.3") }.controlSize(.large) }
+    private var dashboardStatus: some View {
+        HStack(spacing: 8) {
+            Circle().fill(analytics.failures.isEmpty ? .green : .orange).frame(width: 7, height: 7)
+            Text("\(model.dashboardShops.count) " + (model.dashboardShops.count == 1 ? T("Shop") : T("Shops"))).lineLimit(1).fixedSize()
+            if model.dashboardShops.allSatisfy(\.isDemo) { Text(T("Demodaten")).foregroundStyle(.orange).fixedSize() }
+            if model.loadingAnalytics { ProgressView().controlSize(.small) }
+            else if let date = analytics.loadedAt { Text(T("Aktualisiert") + " " + localizedDate(date, date: .omitted, time: .shortened)).font(.caption).foregroundStyle(.secondary).lineLimit(1) }
+        }.font(.system(size: 12, weight: .medium))
+    }
+    @ViewBuilder private var demoToggle: some View {
+        if model.scopedShops.contains(where: \.isDemo) && model.scopedShops.contains(where: { !$0.isDemo }) { Toggle(T("Demoprofile einbeziehen"), isOn: $includeDemo).toggleStyle(.checkbox).font(.caption) }
+    }
+    private var dashboardChannel: some View {
+        Picker(T("Verkaufskanal"), selection: $model.dashboardChannelKey) {
+            Text(T("Alle Verkaufskanäle")).tag(nil as String?)
+            ForEach(model.availableChannels.filter { channel in model.dashboardShops.contains { $0.id == channel.shopID } }, id: \.key) { channel in Text((model.workspace.shops.first { $0.id == channel.shopID }?.name ?? "") + " · " + channel.name).tag(Optional(channel.key)) }
+        }.labelsHidden().help(T("Verkaufskanal")).accessibilityLabel(T("Verkaufskanal"))
+    }
+    private var dashboardCurrencyPicker: some View {
+        Picker(T("Währung"), selection: $model.dashboardCurrency) { ForEach(Array(Set(analytics.currencies + [currency])).sorted(), id: \.self) { Text($0).tag($0) } }.labelsHidden().frame(width: 100).help(T("Währung")).accessibilityLabel(T("Währung"))
     }
     @ViewBuilder func widgetView(_ widget: DashboardWidget) -> some View {
         VStack(alignment: .leading, spacing: 16) {

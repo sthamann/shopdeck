@@ -44,7 +44,7 @@ struct ContentView: View {
         HStack(spacing: 12) {
             if model.selectedShopID != nil {Button{model.selectedShopID=nil}label:{Label(T("Alle Shops anzeigen"),systemImage:"chevron.backward")}.buttonStyle(.borderless).font(.system(size:12,weight:.medium))}
             Image(systemName: model.destination.icon).foregroundStyle(Theme.blue)
-            Text(model.destination.title).fontWeight(.semibold)
+            Text(model.destination.title).fontWeight(.semibold).lineLimit(1).layoutPriority(1)
             Image(systemName: "chevron.right").font(.system(size: 9)).foregroundStyle(.tertiary)
             Menu{Button(T("Alle Shops anzeigen")){model.selectedShopID=nil;model.listShopIDs=nil};Divider();ForEach(model.workspace.shops){shop in Button(shop.name){model.selectedShopID=shop.id}}}label:{Text(model.selectedShop?.name ?? T("Alle Shops")).lineLimit(1)}.menuStyle(.borderlessButton).fixedSize()
             Spacer()
@@ -52,7 +52,7 @@ struct ContentView: View {
             if let shop = model.selectedShop, model.destination != .admin { Button { model.openAdministration(shop) } label: { Label(T("Administration"), systemImage: "macwindow") }.buttonStyle(.bordered) }
             Button { model.showingCommandPalette = true } label: { Image(systemName: "magnifyingglass") }.buttonStyle(.borderless).help(T("Schnellsuche") + " · ⌘K")
             Button { Task { await model.refresh() } } label: { Image(systemName: "arrow.clockwise").symbolEffect(.pulse, options: .repeating, isActive: model.isRefreshing) }.buttonStyle(.borderless).help(T("Aktualisieren")).disabled(model.isRefreshing)
-            Button { model.showingAddShop = true } label: { Label(T("Shop hinzufügen"), systemImage: "plus") }.buttonStyle(.borderedProminent).controlSize(.regular)
+            Button { model.showingAddShop = true } label: { ViewThatFits(in: .horizontal) { Label(T("Shop hinzufügen"), systemImage: "plus").fixedSize(); Image(systemName: "plus") }.accessibilityLabel(T("Shop hinzufügen")) }.buttonStyle(.borderedProminent).controlSize(.regular)
         }.padding(.horizontal, 28).frame(height: 62)
     }
 }
