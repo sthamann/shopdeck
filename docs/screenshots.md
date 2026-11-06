@@ -44,3 +44,8 @@ English interface captures from development builds, using built in demo profiles
 ![Shopware releases and Security Plugin status](screenshots/13-updates-security.png)
 ![Automatic local shop setup](screenshots/20-local-shop.png)
 ![First launch assistant](screenshots/21-onboarding.png)
+
+## Appearance and preferences
+
+![Light appearance](screenshots/29-light-appearance.png)
+![Settings and the connected native widget data](screenshots/30-settings.png)

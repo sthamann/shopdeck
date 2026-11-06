@@ -4,6 +4,8 @@
 <p align="center">Manage your shops, understand your numbers and connect your commerce to Codex and Claude.</p>
 <p align="center"><a href="https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck.dmg">Download for macOS</a> · <a href="docs/screenshots.md">Explore the app</a> · <a href="docs/ai-guide.md">Connect your AI</a> · <a href="https://www.shopware.com/en/community/community-edition/">Shopware Community Edition</a></p>
 
+[![Watch the 30 second Shopdeck tour](docs/screenshots/intro-poster.png)](https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck-Intro-English.mp4)
+
 ![Shopdeck dashboard](docs/screenshots/01-dashboard.png)
 
 Shopdeck brings multiple Shopware 6 shops into one native macOS workspace. Move between products, orders, customers, administrations and storefronts, with a local MCP server that makes those same shops available to your AI tools.
@@ -44,7 +46,7 @@ Native macOS widgets offer all 23 metrics. The gallery includes dedicated starti
 4. Local Docker shops show the default administration login, **admin / shopware**, directly above the embedded login page, with copy buttons. These are the image defaults; a password you change yourself takes precedence.
 5. Open **Codex & Claude** when you want AI access. Enable only the shops you want to share, configure your client and try the included prompts.
 
-Read the release notes for the exact signing and notarization status of each downloadable build.
+Version 0.9.1 ships an optimized Developer ID signed app with Apple notarization and a stapled ticket, inside a Developer ID signed disk image. Read the [release notes](docs/releases.md) for the distribution checks.
 
 ## Connect Codex and Claude
 

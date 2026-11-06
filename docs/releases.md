@@ -1,5 +1,7 @@
 # Signed releases and updates
 
+Version **0.9.1 (9001)** ships an optimized Apple silicon application signed with Developer ID Application. Apple notarization succeeded; the app carries a stapled ticket and passes Gatekeeper assessment as `Notarized Developer ID`. The disk image is Developer ID signed and contains that notarized application. Opening a quarantined copy of the disk image was checked in Finder. The Sparkle enclosure has a separate Ed25519 signature.
+
 Official downloads are published in this repository’s GitHub Releases. Shopdeck checks:
 
 ```
