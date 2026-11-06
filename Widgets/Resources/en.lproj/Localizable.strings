@@ -50,6 +50,7 @@
 "Alle angezeigten Shopdaten sind fiktiv." = "All shop data shown is fictional.";
 "Alle anzeigen" = "View all";
 "Alle ausgewählten Shops" = "All selected shops";
+"Alle auswählen" = "Select all";
 "Alle deaktivieren" = "Deactivate all";
 "Alle neuen Bestellungen" = "All new orders";
 "Alle vom Shop gelieferten Felder einschließlich Zusatzfeldern und geladenen Verknüpfungen. Aufklappen zeigt auch verschachtelte Werte." = "All fields returned by the shop, including custom fields and loaded associations. Expand to see nested values.";
@@ -60,6 +61,8 @@
 "Allgemeine Admin API Aktionen" = "General Admin API actions";
 "Als Entwurf speichern" = "Save as draft";
 "Als erledigt markieren" = "Mark as done";
+"Als macOS Mitteilung erinnern" = "Remind me with a macOS notification";
+"Andere Tabs schließen" = "Close other tabs";
 "Anfrage anzeigen" = "Show request";
 "Angehalten. Nicht übernommene Vorschläge bleiben offen." = "Stopped. Unapplied proposals remain pending.";
 "Angezeigte Seite exportieren" = "Export current page";
@@ -72,6 +75,12 @@
 "Anzeigen" = "Show";
 "App gefunden" = "App found";
 "Arbeitsbereich öffnen" = "Open workspace";
+"Arbeitsplatz entfernen" = "Remove workspace";
+"Arbeitsplatz gespeichert" = "Workspace saved";
+"Arbeitsplatz speichern" = "Save workspace";
+"Arbeitsplatz speichern …" = "Save workspace…";
+"Arbeitsplätze" = "Workspaces";
+"Arbeitsplätze und Tabs" = "Workspaces and tabs";
 "Arbeitsvorrat aktualisieren" = "Refresh attention list";
 "Arbeitsvorrat konfigurieren" = "Configure attention list";
 "Arbeitsvorrat öffnen" = "Open attention list";
@@ -109,11 +118,13 @@
 "Bestehende Konfigurationen werden gesichert. Starte den jeweiligen Client nach der Einrichtung neu. In Claude Desktop importierst du den Skill unter Einstellungen → Fähigkeiten → Skills." = "Existing configurations are backed up. Restart the client after setup. In Claude Desktop import the skill in Settings → Capabilities → Skills.";
 "Bestehenden Shop verbinden" = "Connect existing shop";
 "Bestelldetails" = "Order details";
+"Bestelldokumente" = "Order documents";
 "Bestellnummer" = "Order number";
 "Bestellstatus" = "Order status";
 "Bestellumsatz inklusive Steuern, ohne stornierte Bestellungen. Keine Währungsumrechnung. Bestellungen und Umsatz nach gewählter Währung." = "Order value including tax, excluding cancelled orders. No currency conversion. Orders and revenue use the selected currency.";
 "Bestellung" = "Order";
 "Bestellungen" = "Orders";
+"Bestellungen ausgewählt" = "orders selected";
 "Bestellungen geprüft." = "Orders checked.";
 "Bestellungen heute" = "Orders today";
 "Bestellungen heute am Dock Icon anzeigen" = "Show today’s order count on the Dock icon";
@@ -145,6 +156,7 @@
 "Container bleibt für die Diagnose erhalten:" = "Container kept for diagnosis:";
 "DEINE SHOPS" = "YOUR SHOPS";
 "Darstellung und Sprache" = "Appearance and language";
+"Das Paket überschreitet 256 MB. Wähle weniger Dokumente." = "The package exceeds 256 MB. Select fewer documents.";
 "Das Plugin führt nach Installation Code im Shop aus. Shopware prüft Abhängigkeiten bei der Installation." = "The plugin runs code in your shop after installation. Shopware checks dependencies during installation.";
 "Das Produkt wurde seit dem Vorschlag geändert. Bitte einzeln prüfen." = "This product changed after the proposal. Review it individually.";
 "Das hat nicht geklappt" = "That didn’t work";
@@ -177,15 +189,18 @@
 "Deine umsatzstärksten Shops" = "Your top shops by revenue";
 "Demo" = "Demo";
 "Demodaten" = "Demo data";
+"Demodokument. Keine echte Rechnung." = "Sample document. Not a real invoice.";
 "Demoprofil ohne echte Administration" = "Demo profile without a real administration";
 "Demoprofile einbeziehen" = "Include demo profiles";
 "Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills." = "Import the skill in Claude Desktop under Settings → Capabilities → Skills.";
+"Der Arbeitsplatz konnte nicht gespeichert werden." = "The workspace could not be saved.";
 "Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund." = "The assistant sets up MCP and skills. Credentials stay in Keychain.";
 "Der MCP Server hat nicht korrekt geantwortet." = "The MCP server did not respond correctly.";
 "Der Shop dieser Ansicht wurde entfernt." = "The shop for this view has been removed.";
 "Der Shop wird aus Shopdeck entfernt. Der Shop selbst und lokale Docker Container bleiben erhalten." = "The shop is removed from Shopdeck. The shop itself and local Docker containers are kept.";
 "Der Shop wird nur aus Shopdeck entfernt. Die Daten im Shop und ein lokaler Container bleiben erhalten." = "The shop is removed from Shopdeck. Shop data and the local container are kept.";
 "Der Shopname braucht 1 bis 80 Zeichen." = "The shop name must have 1 to 80 characters.";
+"Der letzte Arbeitsplatz konnte nicht geladen werden. Deine Shops sind weiterhin verfügbar." = "Your last workspace could not be loaded. Your shops are still available.";
 "Desktop Widgets konnten nicht aktualisiert werden." = "Desktop widgets could not be updated.";
 "Desktop Widgets sind verbunden." = "Desktop widgets are connected.";
 "Desktop Widgets: Auf dem Schreibtisch Widgets bearbeiten öffnen und Shopdeck wählen. Shop, Statistik und Währung lassen sich je Widget festlegen." = "Desktop widgets: open Edit Widgets on the desktop and choose Shopdeck. Choose the shop, metric and currency for each widget.";
@@ -199,6 +214,7 @@
 "Die Demo enthält drei fiktive Shops. Es werden keine echten Shops angelegt." = "The demo contains three fictional shops. No real shops are created.";
 "Die Docker Signatur konnte nicht bestätigt werden." = "The Docker signature could not be verified.";
 "Die Einrichtung konnte nicht vollständig bestätigt werden." = "Setup could not be fully verified.";
+"Die Erinnerung konnte nicht geplant werden." = "The reminder could not be scheduled.";
 "Die Notiz darf höchstens 4.000 Zeichen enthalten." = "Notes can contain up to 4,000 characters.";
 "Die Sprache wird sofort übernommen." = "The language changes immediately.";
 "Die Vorschauen zeigen den aktuellen Datenstand deiner Shopauswahl." = "Previews show the current data for your selected shops.";
@@ -218,6 +234,7 @@
 "Dieser Verkaufskanal hat keine Storefront Domain." = "This sales channel has no storefront domain.";
 "Dieser Vorschlag wurde bereits bearbeitet." = "This proposal has already been handled.";
 "Dieses Demoprofil enthält fiktive Daten und keine Shopware Installation. Verbinde einen eigenen Shop oder starte einen lokalen Docker Testshop." = "This demo profile contains fictional data, without a Shopware installation. Connect your own shop or start a local Docker test shop.";
+"Dieses PDF konnte nicht gelesen werden." = "This PDF could not be opened.";
 "Dieses strukturierte Preisfeld bietet keine direkte API Sortierung." = "This structured price field has no direct API sorting.";
 "Direkt mit der Shopware Admin API verbunden." = "Connected directly to the Shopware Admin API.";
 "Docker Desktop herunterladen" = "Download Docker Desktop";
@@ -231,6 +248,11 @@
 "Docker konnte nicht gefunden werden." = "Docker could not be found.";
 "Docker wird geprüft …" = "Checking Docker …";
 "Docker wird gestartet. Schließe die Ersteinrichtung im Docker Fenster ab." = "Starting Docker. Complete the first setup in the Docker window.";
+"Dokumente" = "Documents";
+"Dokumente gespeichert" = "documents saved";
+"Dokumente öffnen" = "Open documents";
+"Dokumentenpaket speichern" = "Save document package";
+"Dokumentvorschau" = "Document preview";
 "Doppelklick öffnet Details." = "Double click to open details.";
 "Du gibst Änderungen frei." = "You approve every change.";
 "Du hast das letzte Wort." = "You have the final say.";
@@ -263,11 +285,13 @@
 "Ergebnisse" = "results";
 "Erhöhe die Ladegrenze in den Einstellungen oder grenze die Suche ein." = "Increase the load limit in Settings or narrow your search.";
 "Erinnern am" = "Follow up on";
+"Erlaube Shopdeck Mitteilungen in den macOS Systemeinstellungen." = "Allow Shopdeck notifications in macOS System Settings.";
 "Erledigt" = "Done";
 "Erneut einrichten" = "Set up again";
 "Erneut laden" = "Reload";
 "Erneut prüfen" = "Check again";
 "Erneut zur Prüfung vorlegen" = "Submit for review again";
+"Erscheint auch bei geschlossener App. Die Mitteilung enthält deine Notiz nicht." = "Delivered even when the app is closed. Your note is not included in the notification.";
 "Erscheinungsbild" = "Appearance";
 "Erstelle mit Shopdeck für [Shopname] eine Kampagne aus Text, dem lokalen Bild [Dateipfad] und vier vorhandenen Produkten. Nutze propose_campaign, speichere einen Entwurf und zeige mir den Antrag zur Freigabe." = "Use Shopdeck to prepare a campaign for [shop name] with text, the local image [file path] and four existing products. Use propose_campaign, save a draft and show me the approval request.";
 "Erstellt am" = "Created at";
@@ -301,6 +325,7 @@
 "Geprüft:" = "Checked:";
 "Gerade eingegangen" = "Just arrived";
 "Gesamt" = "Total";
+"Geschlossenen Tab wieder öffnen" = "Reopen closed tab";
 "Gespeicherte Ansicht" = "Saved view";
 "Gewicht" = "Weight";
 "Gib der Ansicht einen Namen." = "Give this view a name.";
@@ -310,6 +335,7 @@
 "Gruppe" = "Group";
 "Gruppe erstellen" = "Create group";
 "Gruppe löschen" = "Delete group";
+"Gutschrift" = "Credit note";
 "Hauptprodukte" = "Parent products";
 "Hell" = "Light";
 "Hersteller" = "Manufacturer";
@@ -385,6 +411,7 @@
 "Letzte 30 Kalendertage" = "Last 30 calendar days";
 "Letzte 7 Kalendertage" = "Last 7 calendar days";
 "Lieferadresse" = "Shipping address";
+"Lieferschein" = "Delivery note";
 "Lieferstatus" = "Delivery status";
 "Lieferung" = "Delivery";
 "Liste anpassen" = "Customize list";
@@ -409,6 +436,7 @@
 "MCP automatisch einrichten. Skill als ZIP für den Desktop Import." = "Automatic MCP setup. Skill ZIP for Desktop import.";
 "Manuelle Konfiguration" = "Manual configuration";
 "Maximal geladene Datensätze je Shop" = "Maximum rows loaded per shop";
+"Mehr als 1.000 Dokumente. Wähle weniger Bestellungen für ein vollständiges Paket." = "More than 1,000 documents. Select fewer orders for a complete package.";
 "Mehrere Shops vergleichen" = "Compare multiple shops";
 "Mindestabnahme" = "Minimum purchase";
 "Mindestens eine Bedingung" = "At least one condition";
@@ -418,6 +446,7 @@
 "Mit deiner Shopadresse und einer Shopware Integration." = "With your shop URL and a Shopware integration.";
 "Mit einem Prompt testen" = "Try an example prompt";
 "Mit letzter Bestellung testen" = "Test with latest order";
+"Mit ⌘ oder ⇧ mehrere Dokumente für ein Paket auswählen." = "Use ⌘ or ⇧ to select multiple documents for a package.";
 "Mitteilungen auf deinem Mac" = "Notifications on your Mac";
 "Mitteilungen erlauben" = "Allow notifications";
 "Mitteilungen erlaubt" = "Notifications allowed";
@@ -462,6 +491,7 @@
 "Noch keine Bestellungen vorhanden." = "No orders yet.";
 "Noch keine Daten" = "No data yet";
 "Noch keine Daten in diesem Zeitraum." = "No data for this period yet.";
+"Noch keine Dokumente" = "No documents yet";
 "Noch keine Änderungen" = "No changes yet";
 "Noch nicht geprüft" = "Not checked yet";
 "Noch nichts erledigt" = "No completed tasks yet";
@@ -470,6 +500,7 @@
 "Notiz, Nummer oder Shop suchen" = "Search notes, numbers or shops";
 "Notizen behalten. Termine setzen. Nichts liegen lassen." = "Keep notes. Set a date. Follow through.";
 "Notizen und Wiedervorlage" = "Notes and follow up";
+"Nummer, Dokumenttyp oder Shop suchen" = "Search number, document type or shop";
 "Nur auf diesem Mac. Nicht im Shop oder für KI sichtbar." = "Only on this Mac. Not visible in the shop or to AI.";
 "Nur das, was dich interessiert." = "Only what matters to you.";
 "Nur im Katalog gemeldet" = "Listed in catalogue only";
@@ -486,7 +517,9 @@
 "Ohne Gruppe" = "Ungrouped";
 "Ohne diese Freigabe bleiben Namen, E Mail Adressen und Adressen für KI Clients verborgen." = "Without this permission, names, email addresses and addresses stay hidden from AI clients.";
 "Ohne stornierte Bestellungen" = "Excluding cancelled orders";
+"Originale bleiben unverändert. Mehrere PDFs werden als ZIP Paket gespeichert." = "Originals stay unchanged. Multiple PDFs are saved as a ZIP package.";
 "Ort" = "City";
+"PDF speichern" = "Save PDF";
 "Passe dein Dashboard an, richte Bestellregeln ein und wähle deine Desktop Widgets." = "Customize your dashboard, create order rules and choose your desktop widgets.";
 "Passwort" = "Password";
 "Passwort kopieren" = "Copy password";
@@ -521,6 +554,7 @@
 "Prüfen" = "Check";
 "Prüfen und übernehmen" = "Review and apply";
 "Prüfung jede Minute, solange Shopdeck läuft. Beim ersten Start werden bestehende Bestellungen als Ausgangspunkt gespeichert." = "Checked every minute while Shopdeck is running. Existing orders are saved as the starting point on first use.";
+"Rechnung" = "Invoice";
 "Rechnungsadresse" = "Billing address";
 "Regel bearbeiten" = "Edit rule";
 "Regel löschen" = "Delete rule";
@@ -611,11 +645,16 @@
 "Storefront öffnen" = "Open storefront";
 "Storefronts" = "Storefronts";
 "Stornierte Bestellungen" = "Cancelled orders";
+"Stornorechnung" = "Cancellation invoice";
 "Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor." = "Use Shopdeck to find product [product number] in shop [shop name] and suggest a new description. Submit the proposal for approval in Shopdeck.";
 "Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl." = "Search, filters and sorting run in each shop before pagination. Sorted results from multiple shops are merged into one list. The result limit also caps the combined pages you can browse.";
 "Suchen …" = "Search …";
 "System" = "System";
+"Tab duplizieren" = "Duplicate tab";
 "Tab schließen" = "Close tab";
+"Tabs" = "Tabs";
+"Tabs beim Start wiederherstellen" = "Restore tabs on launch";
+"Tabs, Shopauswahl, Suche, Filter und Sortierung gemeinsam wieder öffnen." = "Reopen your tabs, shops, search, filters and sort order together.";
 "Tag" = "Day";
 "Technischen Plan anzeigen" = "Show technical plan";
 "Termin setzen" = "Set a date";
@@ -666,6 +705,7 @@
 "Vollständig in Shopware bearbeiten" = "Open full Shopware editor";
 "Von Domain importieren" = "Import from domain";
 "Vorgang ausgeführt und geprüft." = "Operation completed and checked.";
+"Vorhandene Rechnungen, Lieferscheine und Gutschriften erscheinen hier. Neue Dokumente erstellst du in Shopware." = "Existing invoices, delivery notes and credit notes appear here. Create new documents in Shopware.";
 "Vorhandene Testshops werden geprüft …" = "Checking existing test shops…";
 "Vorher und Nachher bleiben erhalten. Du kannst bestätigte Änderungen gezielt zurücknehmen." = "Before and after values are kept. You can undo confirmed changes individually.";
 "Vorname" = "First name";
@@ -692,14 +732,17 @@
 "Widgets zeigen den zuletzt in der App geladenen Stand mit Uhrzeit. Sie enthalten keine API Schlüssel." = "Widgets show the last data loaded in the app with its update time. They contain no API keys.";
 "Wieder öffnen" = "Reopen";
 "Wiedervorlage" = "Follow up";
+"Wiedervorlage fällig" = "Follow-up due";
 "Wiedervorlage gespeichert" = "Follow up saved";
 "Wiedervorlage speichern" = "Save follow up";
 "Wiedervorlagen" = "Follow ups";
 "Willkommen bei Shopdeck" = "Welcome to Shopdeck";
 "Wird übernommen" = "Applying";
 "Wohin möchtest du?" = "Where would you like to go?";
+"Wähle ein Dokument aus der Liste." = "Select a document from the list.";
 "Wähle einen Shop oder passe die Suche an." = "Choose a shop or adjust your search.";
 "Wähle einen Shop. Jede Administration behält ihren eigenen Anmeldestatus." = "Choose a shop. Each administration keeps its own sign in session.";
+"Wähle einen zukünftigen Termin für die Mitteilung." = "Choose a future date for the notification.";
 "Wähle in Docker einen lokalen Kontext für diesen Testshop." = "Select a local Docker context for this test shop.";
 "Wähle mit einem Klick. Ziehe ausgewählte Widgets in die gewünschte Reihenfolge." = "Click to choose. Drag selected widgets into your preferred order.";
 "Währung" = "Currency";
@@ -736,6 +779,7 @@
 "in_progress" = "In progress";
 "ist eingerichtet. Starte den Client neu." = "is configured. Restart the client.";
 "leer" = "empty";
+"macOS Mitteilung geplant" = "macOS notification scheduled";
 "maximal" = "up to";
 "name" = "Name";
 "needs_review" = "Needs review";

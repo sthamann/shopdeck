@@ -50,6 +50,7 @@
 "Alle angezeigten Shopdaten sind fiktiv." = "Alle angezeigten Shopdaten sind fiktiv.";
 "Alle anzeigen" = "Alle anzeigen";
 "Alle ausgewählten Shops" = "Alle ausgewählten Shops";
+"Alle auswählen" = "Alle auswählen";
 "Alle deaktivieren" = "Alle deaktivieren";
 "Alle neuen Bestellungen" = "Alle neuen Bestellungen";
 "Alle vom Shop gelieferten Felder einschließlich Zusatzfeldern und geladenen Verknüpfungen. Aufklappen zeigt auch verschachtelte Werte." = "Alle vom Shop gelieferten Felder einschließlich Zusatzfeldern und geladenen Verknüpfungen. Aufklappen zeigt auch verschachtelte Werte.";
@@ -60,6 +61,8 @@
 "Allgemeine Admin API Aktionen" = "Allgemeine Admin API Aktionen";
 "Als Entwurf speichern" = "Als Entwurf speichern";
 "Als erledigt markieren" = "Als erledigt markieren";
+"Als macOS Mitteilung erinnern" = "Als macOS Mitteilung erinnern";
+"Andere Tabs schließen" = "Andere Tabs schließen";
 "Anfrage anzeigen" = "Anfrage anzeigen";
 "Angehalten. Nicht übernommene Vorschläge bleiben offen." = "Angehalten. Nicht übernommene Vorschläge bleiben offen.";
 "Angezeigte Seite exportieren" = "Angezeigte Seite exportieren";
@@ -72,6 +75,12 @@
 "Anzeigen" = "Anzeigen";
 "App gefunden" = "App gefunden";
 "Arbeitsbereich öffnen" = "Arbeitsbereich öffnen";
+"Arbeitsplatz entfernen" = "Arbeitsplatz entfernen";
+"Arbeitsplatz gespeichert" = "Arbeitsplatz gespeichert";
+"Arbeitsplatz speichern" = "Arbeitsplatz speichern";
+"Arbeitsplatz speichern …" = "Arbeitsplatz speichern …";
+"Arbeitsplätze" = "Arbeitsplätze";
+"Arbeitsplätze und Tabs" = "Arbeitsplätze und Tabs";
 "Arbeitsvorrat aktualisieren" = "Arbeitsvorrat aktualisieren";
 "Arbeitsvorrat konfigurieren" = "Arbeitsvorrat konfigurieren";
 "Arbeitsvorrat öffnen" = "Arbeitsvorrat öffnen";
@@ -109,11 +118,13 @@
 "Bestehende Konfigurationen werden gesichert. Starte den jeweiligen Client nach der Einrichtung neu. In Claude Desktop importierst du den Skill unter Einstellungen → Fähigkeiten → Skills." = "Bestehende Konfigurationen werden gesichert. Starte den jeweiligen Client nach der Einrichtung neu. In Claude Desktop importierst du den Skill unter Einstellungen → Fähigkeiten → Skills.";
 "Bestehenden Shop verbinden" = "Bestehenden Shop verbinden";
 "Bestelldetails" = "Bestelldetails";
+"Bestelldokumente" = "Bestelldokumente";
 "Bestellnummer" = "Bestellnummer";
 "Bestellstatus" = "Bestellstatus";
 "Bestellumsatz inklusive Steuern, ohne stornierte Bestellungen. Keine Währungsumrechnung. Bestellungen und Umsatz nach gewählter Währung." = "Bestellumsatz inklusive Steuern, ohne stornierte Bestellungen. Keine Währungsumrechnung. Bestellungen und Umsatz nach gewählter Währung.";
 "Bestellung" = "Bestellung";
 "Bestellungen" = "Bestellungen";
+"Bestellungen ausgewählt" = "Bestellungen ausgewählt";
 "Bestellungen geprüft." = "Bestellungen geprüft.";
 "Bestellungen heute" = "Bestellungen heute";
 "Bestellungen heute am Dock Icon anzeigen" = "Bestellungen heute am Dock Icon anzeigen";
@@ -145,6 +156,7 @@
 "Container bleibt für die Diagnose erhalten:" = "Container bleibt für die Diagnose erhalten:";
 "DEINE SHOPS" = "DEINE SHOPS";
 "Darstellung und Sprache" = "Darstellung und Sprache";
+"Das Paket überschreitet 256 MB. Wähle weniger Dokumente." = "Das Paket überschreitet 256 MB. Wähle weniger Dokumente.";
 "Das Plugin führt nach Installation Code im Shop aus. Shopware prüft Abhängigkeiten bei der Installation." = "Das Plugin führt nach Installation Code im Shop aus. Shopware prüft Abhängigkeiten bei der Installation.";
 "Das Produkt wurde seit dem Vorschlag geändert. Bitte einzeln prüfen." = "Das Produkt wurde seit dem Vorschlag geändert. Bitte einzeln prüfen.";
 "Das hat nicht geklappt" = "Das hat nicht geklappt";
@@ -177,15 +189,18 @@
 "Deine umsatzstärksten Shops" = "Deine umsatzstärksten Shops";
 "Demo" = "Demo";
 "Demodaten" = "Demodaten";
+"Demodokument. Keine echte Rechnung." = "Demodokument. Keine echte Rechnung.";
 "Demoprofil ohne echte Administration" = "Demoprofil ohne echte Administration";
 "Demoprofile einbeziehen" = "Demoprofile einbeziehen";
 "Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills." = "Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills.";
+"Der Arbeitsplatz konnte nicht gespeichert werden." = "Der Arbeitsplatz konnte nicht gespeichert werden.";
 "Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund." = "Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund.";
 "Der MCP Server hat nicht korrekt geantwortet." = "Der MCP Server hat nicht korrekt geantwortet.";
 "Der Shop dieser Ansicht wurde entfernt." = "Der Shop dieser Ansicht wurde entfernt.";
 "Der Shop wird aus Shopdeck entfernt. Der Shop selbst und lokale Docker Container bleiben erhalten." = "Der Shop wird aus Shopdeck entfernt. Der Shop selbst und lokale Docker Container bleiben erhalten.";
 "Der Shop wird nur aus Shopdeck entfernt. Die Daten im Shop und ein lokaler Container bleiben erhalten." = "Der Shop wird nur aus Shopdeck entfernt. Die Daten im Shop und ein lokaler Container bleiben erhalten.";
 "Der Shopname braucht 1 bis 80 Zeichen." = "Der Shopname braucht 1 bis 80 Zeichen.";
+"Der letzte Arbeitsplatz konnte nicht geladen werden. Deine Shops sind weiterhin verfügbar." = "Der letzte Arbeitsplatz konnte nicht geladen werden. Deine Shops sind weiterhin verfügbar.";
 "Desktop Widgets konnten nicht aktualisiert werden." = "Desktop Widgets konnten nicht aktualisiert werden.";
 "Desktop Widgets sind verbunden." = "Desktop Widgets sind verbunden.";
 "Desktop Widgets: Auf dem Schreibtisch Widgets bearbeiten öffnen und Shopdeck wählen. Shop, Statistik und Währung lassen sich je Widget festlegen." = "Desktop Widgets: Auf dem Schreibtisch Widgets bearbeiten öffnen und Shopdeck wählen. Shop, Statistik und Währung lassen sich je Widget festlegen.";
@@ -199,6 +214,7 @@
 "Die Demo enthält drei fiktive Shops. Es werden keine echten Shops angelegt." = "Die Demo enthält drei fiktive Shops. Es werden keine echten Shops angelegt.";
 "Die Docker Signatur konnte nicht bestätigt werden." = "Die Docker Signatur konnte nicht bestätigt werden.";
 "Die Einrichtung konnte nicht vollständig bestätigt werden." = "Die Einrichtung konnte nicht vollständig bestätigt werden.";
+"Die Erinnerung konnte nicht geplant werden." = "Die Erinnerung konnte nicht geplant werden.";
 "Die Notiz darf höchstens 4.000 Zeichen enthalten." = "Die Notiz darf höchstens 4.000 Zeichen enthalten.";
 "Die Sprache wird sofort übernommen." = "Die Sprache wird sofort übernommen.";
 "Die Vorschauen zeigen den aktuellen Datenstand deiner Shopauswahl." = "Die Vorschauen zeigen den aktuellen Datenstand deiner Shopauswahl.";
@@ -218,6 +234,7 @@
 "Dieser Verkaufskanal hat keine Storefront Domain." = "Dieser Verkaufskanal hat keine Storefront Domain.";
 "Dieser Vorschlag wurde bereits bearbeitet." = "Dieser Vorschlag wurde bereits bearbeitet.";
 "Dieses Demoprofil enthält fiktive Daten und keine Shopware Installation. Verbinde einen eigenen Shop oder starte einen lokalen Docker Testshop." = "Dieses Demoprofil enthält fiktive Daten und keine Shopware Installation. Verbinde einen eigenen Shop oder starte einen lokalen Docker Testshop.";
+"Dieses PDF konnte nicht gelesen werden." = "Dieses PDF konnte nicht gelesen werden.";
 "Dieses strukturierte Preisfeld bietet keine direkte API Sortierung." = "Dieses strukturierte Preisfeld bietet keine direkte API Sortierung.";
 "Direkt mit der Shopware Admin API verbunden." = "Direkt mit der Shopware Admin API verbunden.";
 "Docker Desktop herunterladen" = "Docker Desktop herunterladen";
@@ -231,6 +248,11 @@
 "Docker konnte nicht gefunden werden." = "Docker konnte nicht gefunden werden.";
 "Docker wird geprüft …" = "Docker wird geprüft …";
 "Docker wird gestartet. Schließe die Ersteinrichtung im Docker Fenster ab." = "Docker wird gestartet. Schließe die Ersteinrichtung im Docker Fenster ab.";
+"Dokumente" = "Dokumente";
+"Dokumente gespeichert" = "Dokumente gespeichert";
+"Dokumente öffnen" = "Dokumente öffnen";
+"Dokumentenpaket speichern" = "Dokumentenpaket speichern";
+"Dokumentvorschau" = "Dokumentvorschau";
 "Doppelklick öffnet Details." = "Doppelklick öffnet Details.";
 "Du gibst Änderungen frei." = "Du gibst Änderungen frei.";
 "Du hast das letzte Wort." = "Du hast das letzte Wort.";
@@ -263,11 +285,13 @@
 "Ergebnisse" = "Ergebnisse";
 "Erhöhe die Ladegrenze in den Einstellungen oder grenze die Suche ein." = "Erhöhe die Ladegrenze in den Einstellungen oder grenze die Suche ein.";
 "Erinnern am" = "Erinnern am";
+"Erlaube Shopdeck Mitteilungen in den macOS Systemeinstellungen." = "Erlaube Shopdeck Mitteilungen in den macOS Systemeinstellungen.";
 "Erledigt" = "Erledigt";
 "Erneut einrichten" = "Erneut einrichten";
 "Erneut laden" = "Erneut laden";
 "Erneut prüfen" = "Erneut prüfen";
 "Erneut zur Prüfung vorlegen" = "Erneut zur Prüfung vorlegen";
+"Erscheint auch bei geschlossener App. Die Mitteilung enthält deine Notiz nicht." = "Erscheint auch bei geschlossener App. Die Mitteilung enthält deine Notiz nicht.";
 "Erscheinungsbild" = "Erscheinungsbild";
 "Erstelle mit Shopdeck für [Shopname] eine Kampagne aus Text, dem lokalen Bild [Dateipfad] und vier vorhandenen Produkten. Nutze propose_campaign, speichere einen Entwurf und zeige mir den Antrag zur Freigabe." = "Erstelle mit Shopdeck für [Shopname] eine Kampagne aus Text, dem lokalen Bild [Dateipfad] und vier vorhandenen Produkten. Nutze propose_campaign, speichere einen Entwurf und zeige mir den Antrag zur Freigabe.";
 "Erstellt am" = "Erstellt am";
@@ -301,6 +325,7 @@
 "Geprüft:" = "Geprüft:";
 "Gerade eingegangen" = "Gerade eingegangen";
 "Gesamt" = "Gesamt";
+"Geschlossenen Tab wieder öffnen" = "Geschlossenen Tab wieder öffnen";
 "Gespeicherte Ansicht" = "Gespeicherte Ansicht";
 "Gewicht" = "Gewicht";
 "Gib der Ansicht einen Namen." = "Gib der Ansicht einen Namen.";
@@ -310,6 +335,7 @@
 "Gruppe" = "Gruppe";
 "Gruppe erstellen" = "Gruppe erstellen";
 "Gruppe löschen" = "Gruppe löschen";
+"Gutschrift" = "Gutschrift";
 "Hauptprodukte" = "Hauptprodukte";
 "Hell" = "Hell";
 "Hersteller" = "Hersteller";
@@ -385,6 +411,7 @@
 "Letzte 30 Kalendertage" = "Letzte 30 Kalendertage";
 "Letzte 7 Kalendertage" = "Letzte 7 Kalendertage";
 "Lieferadresse" = "Lieferadresse";
+"Lieferschein" = "Lieferschein";
 "Lieferstatus" = "Lieferstatus";
 "Lieferung" = "Lieferung";
 "Liste anpassen" = "Liste anpassen";
@@ -409,6 +436,7 @@
 "MCP automatisch einrichten. Skill als ZIP für den Desktop Import." = "MCP automatisch einrichten. Skill als ZIP für den Desktop Import.";
 "Manuelle Konfiguration" = "Manuelle Konfiguration";
 "Maximal geladene Datensätze je Shop" = "Maximal geladene Datensätze je Shop";
+"Mehr als 1.000 Dokumente. Wähle weniger Bestellungen für ein vollständiges Paket." = "Mehr als 1.000 Dokumente. Wähle weniger Bestellungen für ein vollständiges Paket.";
 "Mehrere Shops vergleichen" = "Mehrere Shops vergleichen";
 "Mindestabnahme" = "Mindestabnahme";
 "Mindestens eine Bedingung" = "Mindestens eine Bedingung";
@@ -418,6 +446,7 @@
 "Mit deiner Shopadresse und einer Shopware Integration." = "Mit deiner Shopadresse und einer Shopware Integration.";
 "Mit einem Prompt testen" = "Mit einem Prompt testen";
 "Mit letzter Bestellung testen" = "Mit letzter Bestellung testen";
+"Mit ⌘ oder ⇧ mehrere Dokumente für ein Paket auswählen." = "Mit ⌘ oder ⇧ mehrere Dokumente für ein Paket auswählen.";
 "Mitteilungen auf deinem Mac" = "Mitteilungen auf deinem Mac";
 "Mitteilungen erlauben" = "Mitteilungen erlauben";
 "Mitteilungen erlaubt" = "Mitteilungen erlaubt";
@@ -462,6 +491,7 @@
 "Noch keine Bestellungen vorhanden." = "Noch keine Bestellungen vorhanden.";
 "Noch keine Daten" = "Noch keine Daten";
 "Noch keine Daten in diesem Zeitraum." = "Noch keine Daten in diesem Zeitraum.";
+"Noch keine Dokumente" = "Noch keine Dokumente";
 "Noch keine Änderungen" = "Noch keine Änderungen";
 "Noch nicht geprüft" = "Noch nicht geprüft";
 "Noch nichts erledigt" = "Noch nichts erledigt";
@@ -470,6 +500,7 @@
 "Notiz, Nummer oder Shop suchen" = "Notiz, Nummer oder Shop suchen";
 "Notizen behalten. Termine setzen. Nichts liegen lassen." = "Notizen behalten. Termine setzen. Nichts liegen lassen.";
 "Notizen und Wiedervorlage" = "Notizen und Wiedervorlage";
+"Nummer, Dokumenttyp oder Shop suchen" = "Nummer, Dokumenttyp oder Shop suchen";
 "Nur auf diesem Mac. Nicht im Shop oder für KI sichtbar." = "Nur auf diesem Mac. Nicht im Shop oder für KI sichtbar.";
 "Nur das, was dich interessiert." = "Nur das, was dich interessiert.";
 "Nur im Katalog gemeldet" = "Nur im Katalog gemeldet";
@@ -486,7 +517,9 @@
 "Ohne Gruppe" = "Ohne Gruppe";
 "Ohne diese Freigabe bleiben Namen, E Mail Adressen und Adressen für KI Clients verborgen." = "Ohne diese Freigabe bleiben Namen, E Mail Adressen und Adressen für KI Clients verborgen.";
 "Ohne stornierte Bestellungen" = "Ohne stornierte Bestellungen";
+"Originale bleiben unverändert. Mehrere PDFs werden als ZIP Paket gespeichert." = "Originale bleiben unverändert. Mehrere PDFs werden als ZIP Paket gespeichert.";
 "Ort" = "Ort";
+"PDF speichern" = "PDF speichern";
 "Passe dein Dashboard an, richte Bestellregeln ein und wähle deine Desktop Widgets." = "Passe dein Dashboard an, richte Bestellregeln ein und wähle deine Desktop Widgets.";
 "Passwort" = "Passwort";
 "Passwort kopieren" = "Passwort kopieren";
@@ -521,6 +554,7 @@
 "Prüfen" = "Prüfen";
 "Prüfen und übernehmen" = "Prüfen und übernehmen";
 "Prüfung jede Minute, solange Shopdeck läuft. Beim ersten Start werden bestehende Bestellungen als Ausgangspunkt gespeichert." = "Prüfung jede Minute, solange Shopdeck läuft. Beim ersten Start werden bestehende Bestellungen als Ausgangspunkt gespeichert.";
+"Rechnung" = "Rechnung";
 "Rechnungsadresse" = "Rechnungsadresse";
 "Regel bearbeiten" = "Regel bearbeiten";
 "Regel löschen" = "Regel löschen";
@@ -611,11 +645,16 @@
 "Storefront öffnen" = "Storefront öffnen";
 "Storefronts" = "Storefronts";
 "Stornierte Bestellungen" = "Stornierte Bestellungen";
+"Stornorechnung" = "Stornorechnung";
 "Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor." = "Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor.";
 "Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl." = "Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl.";
 "Suchen …" = "Suchen …";
 "System" = "System";
+"Tab duplizieren" = "Tab duplizieren";
 "Tab schließen" = "Tab schließen";
+"Tabs" = "Tabs";
+"Tabs beim Start wiederherstellen" = "Tabs beim Start wiederherstellen";
+"Tabs, Shopauswahl, Suche, Filter und Sortierung gemeinsam wieder öffnen." = "Tabs, Shopauswahl, Suche, Filter und Sortierung gemeinsam wieder öffnen.";
 "Tag" = "Tag";
 "Technischen Plan anzeigen" = "Technischen Plan anzeigen";
 "Termin setzen" = "Termin setzen";
@@ -666,6 +705,7 @@
 "Vollständig in Shopware bearbeiten" = "Vollständig in Shopware bearbeiten";
 "Von Domain importieren" = "Von Domain importieren";
 "Vorgang ausgeführt und geprüft." = "Vorgang ausgeführt und geprüft.";
+"Vorhandene Rechnungen, Lieferscheine und Gutschriften erscheinen hier. Neue Dokumente erstellst du in Shopware." = "Vorhandene Rechnungen, Lieferscheine und Gutschriften erscheinen hier. Neue Dokumente erstellst du in Shopware.";
 "Vorhandene Testshops werden geprüft …" = "Vorhandene Testshops werden geprüft …";
 "Vorher und Nachher bleiben erhalten. Du kannst bestätigte Änderungen gezielt zurücknehmen." = "Vorher und Nachher bleiben erhalten. Du kannst bestätigte Änderungen gezielt zurücknehmen.";
 "Vorname" = "Vorname";
@@ -692,14 +732,17 @@
 "Widgets zeigen den zuletzt in der App geladenen Stand mit Uhrzeit. Sie enthalten keine API Schlüssel." = "Widgets zeigen den zuletzt in der App geladenen Stand mit Uhrzeit. Sie enthalten keine API Schlüssel.";
 "Wieder öffnen" = "Wieder öffnen";
 "Wiedervorlage" = "Wiedervorlage";
+"Wiedervorlage fällig" = "Wiedervorlage fällig";
 "Wiedervorlage gespeichert" = "Wiedervorlage gespeichert";
 "Wiedervorlage speichern" = "Wiedervorlage speichern";
 "Wiedervorlagen" = "Wiedervorlagen";
 "Willkommen bei Shopdeck" = "Willkommen bei Shopdeck";
 "Wird übernommen" = "Wird übernommen";
 "Wohin möchtest du?" = "Wohin möchtest du?";
+"Wähle ein Dokument aus der Liste." = "Wähle ein Dokument aus der Liste.";
 "Wähle einen Shop oder passe die Suche an." = "Wähle einen Shop oder passe die Suche an.";
 "Wähle einen Shop. Jede Administration behält ihren eigenen Anmeldestatus." = "Wähle einen Shop. Jede Administration behält ihren eigenen Anmeldestatus.";
+"Wähle einen zukünftigen Termin für die Mitteilung." = "Wähle einen zukünftigen Termin für die Mitteilung.";
 "Wähle in Docker einen lokalen Kontext für diesen Testshop." = "Wähle in Docker einen lokalen Kontext für diesen Testshop.";
 "Wähle mit einem Klick. Ziehe ausgewählte Widgets in die gewünschte Reihenfolge." = "Wähle mit einem Klick. Ziehe ausgewählte Widgets in die gewünschte Reihenfolge.";
 "Währung" = "Währung";
@@ -736,6 +779,7 @@
 "in_progress" = "in_progress";
 "ist eingerichtet. Starte den Client neu." = "ist eingerichtet. Starte den Client neu.";
 "leer" = "leer";
+"macOS Mitteilung geplant" = "macOS Mitteilung geplant";
 "maximal" = "maximal";
 "name" = "name";
 "needs_review" = "needs_review";

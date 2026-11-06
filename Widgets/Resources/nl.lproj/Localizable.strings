@@ -50,6 +50,7 @@
 "Alle angezeigten Shopdaten sind fiktiv." = "Alle getoonde shopgegevens zijn fictief.";
 "Alle anzeigen" = "Alles bekijken";
 "Alle ausgewählten Shops" = "Alle geselecteerde shops";
+"Alle auswählen" = "Alles selecteren";
 "Alle deaktivieren" = "Alles deactiveren";
 "Alle neuen Bestellungen" = "Alle nieuwe bestellingen";
 "Alle vom Shop gelieferten Felder einschließlich Zusatzfeldern und geladenen Verknüpfungen. Aufklappen zeigt auch verschachtelte Werte." = "Alle velden van de shop, inclusief aangepaste velden en geladen koppelingen. Klap open voor geneste waarden.";
@@ -60,6 +61,8 @@
 "Allgemeine Admin API Aktionen" = "Algemene Admin API acties";
 "Als Entwurf speichern" = "Als concept opslaan";
 "Als erledigt markieren" = "Markeren als afgerond";
+"Als macOS Mitteilung erinnern" = "Herinner mij met een macOS melding";
+"Andere Tabs schließen" = "Andere tabbladen sluiten";
 "Anfrage anzeigen" = "Verzoek bekijken";
 "Angehalten. Nicht übernommene Vorschläge bleiben offen." = "Gestopt. Niet toegepaste voorstellen blijven open.";
 "Angezeigte Seite exportieren" = "Huidige pagina exporteren";
@@ -72,6 +75,12 @@
 "Anzeigen" = "Tonen";
 "App gefunden" = "App gevonden";
 "Arbeitsbereich öffnen" = "Werkplek openen";
+"Arbeitsplatz entfernen" = "Werkruimte verwijderen";
+"Arbeitsplatz gespeichert" = "Werkruimte opgeslagen";
+"Arbeitsplatz speichern" = "Werkruimte opslaan";
+"Arbeitsplatz speichern …" = "Werkruimte opslaan…";
+"Arbeitsplätze" = "Werkruimtes";
+"Arbeitsplätze und Tabs" = "Werkruimtes en tabbladen";
 "Arbeitsvorrat aktualisieren" = "Werklijst vernieuwen";
 "Arbeitsvorrat konfigurieren" = "Werklijst instellen";
 "Arbeitsvorrat öffnen" = "Werklijst openen";
@@ -109,11 +118,13 @@
 "Bestehende Konfigurationen werden gesichert. Starte den jeweiligen Client nach der Einrichtung neu. In Claude Desktop importierst du den Skill unter Einstellungen → Fähigkeiten → Skills." = "Bestaande configuraties worden geback upt. Start de client na de installatie opnieuw. Importeer de skill in Claude Desktop via Instellingen → Mogelijkheden → Skills.";
 "Bestehenden Shop verbinden" = "Bestaande shop verbinden";
 "Bestelldetails" = "Besteldetails";
+"Bestelldokumente" = "Besteldocumenten";
 "Bestellnummer" = "Bestelnummer";
 "Bestellstatus" = "Bestelstatus";
 "Bestellumsatz inklusive Steuern, ohne stornierte Bestellungen. Keine Währungsumrechnung. Bestellungen und Umsatz nach gewählter Währung." = "Bestelwaarde inclusief btw, zonder geannuleerde bestellingen. Geen valutaomrekening. Bestellingen en omzet in de gekozen valuta.";
 "Bestellung" = "Bestelling";
 "Bestellungen" = "Bestellingen";
+"Bestellungen ausgewählt" = "bestellingen geselecteerd";
 "Bestellungen geprüft." = "Bestellingen gecontroleerd.";
 "Bestellungen heute" = "Bestellingen vandaag";
 "Bestellungen heute am Dock Icon anzeigen" = "Toon bestellingen van vandaag op het Dock pictogram";
@@ -145,6 +156,7 @@
 "Container bleibt für die Diagnose erhalten:" = "Container bewaard voor diagnose:";
 "DEINE SHOPS" = "JOUW SHOPS";
 "Darstellung und Sprache" = "Weergave en taal";
+"Das Paket überschreitet 256 MB. Wähle weniger Dokumente." = "Het pakket is groter dan 256 MB. Selecteer minder documenten.";
 "Das Plugin führt nach Installation Code im Shop aus. Shopware prüft Abhängigkeiten bei der Installation." = "De plugin voert na installatie code uit in je shop. Shopware controleert afhankelijkheden.";
 "Das Produkt wurde seit dem Vorschlag geändert. Bitte einzeln prüfen." = "Dit product is na het voorstel gewijzigd. Controleer het afzonderlijk.";
 "Das hat nicht geklappt" = "Dat is niet gelukt";
@@ -177,15 +189,18 @@
 "Deine umsatzstärksten Shops" = "Je shops met de hoogste omzet";
 "Demo" = "Demo";
 "Demodaten" = "Demogegevens";
+"Demodokument. Keine echte Rechnung." = "Voorbeelddocument. Geen echte factuur.";
 "Demoprofil ohne echte Administration" = "Demoprofiel zonder echt beheer";
 "Demoprofile einbeziehen" = "Demoprofielen meenemen";
 "Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills." = "Importeer de skill in Claude Desktop via Instellingen → Mogelijkheden → Skills.";
+"Der Arbeitsplatz konnte nicht gespeichert werden." = "De werkruimte kon niet worden opgeslagen.";
 "Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund." = "De assistent stelt MCP en skills in. Toegangsgegevens blijven in de sleutelhanger.";
 "Der MCP Server hat nicht korrekt geantwortet." = "De MCP server heeft niet correct geantwoord.";
 "Der Shop dieser Ansicht wurde entfernt." = "De shop van deze weergave is verwijderd.";
 "Der Shop wird aus Shopdeck entfernt. Der Shop selbst und lokale Docker Container bleiben erhalten." = "De shop wordt uit Shopdeck verwijderd. De shop zelf en lokale Docker containers blijven behouden.";
 "Der Shop wird nur aus Shopdeck entfernt. Die Daten im Shop und ein lokaler Container bleiben erhalten." = "De shop wordt uit Shopdeck verwijderd. Shopgegevens en de lokale container blijven bewaard.";
 "Der Shopname braucht 1 bis 80 Zeichen." = "De shopnaam moet 1 tot 80 tekens bevatten.";
+"Der letzte Arbeitsplatz konnte nicht geladen werden. Deine Shops sind weiterhin verfügbar." = "Je laatste werkruimte kon niet worden geladen. Je shops zijn nog beschikbaar.";
 "Desktop Widgets konnten nicht aktualisiert werden." = "Bureaubladwidgets konden niet worden bijgewerkt.";
 "Desktop Widgets sind verbunden." = "Desktopwidgets zijn verbonden.";
 "Desktop Widgets: Auf dem Schreibtisch Widgets bearbeiten öffnen und Shopdeck wählen. Shop, Statistik und Währung lassen sich je Widget festlegen." = "Bureaubladwidgets: open Wijzig widgets op het bureaublad en kies Shopdeck. Kies per widget de shop, statistiek en valuta.";
@@ -199,6 +214,7 @@
 "Die Demo enthält drei fiktive Shops. Es werden keine echten Shops angelegt." = "De demo bevat drie fictieve shops. Er worden geen echte shops aangemaakt.";
 "Die Docker Signatur konnte nicht bestätigt werden." = "De Docker handtekening kon niet worden bevestigd.";
 "Die Einrichtung konnte nicht vollständig bestätigt werden." = "De installatie kon niet volledig worden bevestigd.";
+"Die Erinnerung konnte nicht geplant werden." = "De herinnering kon niet worden gepland.";
 "Die Notiz darf höchstens 4.000 Zeichen enthalten." = "Notities mogen maximaal 4.000 tekens bevatten.";
 "Die Sprache wird sofort übernommen." = "De taal wordt direct toegepast.";
 "Die Vorschauen zeigen den aktuellen Datenstand deiner Shopauswahl." = "Voorbeelden tonen de huidige gegevens van je shopselectie.";
@@ -218,6 +234,7 @@
 "Dieser Verkaufskanal hat keine Storefront Domain." = "Dit verkoopkanaal heeft geen storefrontdomein.";
 "Dieser Vorschlag wurde bereits bearbeitet." = "Dit voorstel is al verwerkt.";
 "Dieses Demoprofil enthält fiktive Daten und keine Shopware Installation. Verbinde einen eigenen Shop oder starte einen lokalen Docker Testshop." = "Dit demoprofiel bevat fictieve gegevens zonder Shopware installatie. Verbind je eigen shop of start een lokale Docker testshop.";
+"Dieses PDF konnte nicht gelesen werden." = "Deze PDF kon niet worden geopend.";
 "Dieses strukturierte Preisfeld bietet keine direkte API Sortierung." = "Dit gestructureerde prijsveld heeft geen directe API sortering.";
 "Direkt mit der Shopware Admin API verbunden." = "Direct verbonden met de Shopware Admin API.";
 "Docker Desktop herunterladen" = "Docker Desktop downloaden";
@@ -231,6 +248,11 @@
 "Docker konnte nicht gefunden werden." = "Docker kon niet worden gevonden.";
 "Docker wird geprüft …" = "Docker controleren …";
 "Docker wird gestartet. Schließe die Ersteinrichtung im Docker Fenster ab." = "Docker wordt gestart. Voltooi de eerste configuratie in het Docker venster.";
+"Dokumente" = "Documenten";
+"Dokumente gespeichert" = "documenten opgeslagen";
+"Dokumente öffnen" = "Documenten openen";
+"Dokumentenpaket speichern" = "Documentenpakket opslaan";
+"Dokumentvorschau" = "Documentvoorbeeld";
 "Doppelklick öffnet Details." = "Dubbelklik om details te openen.";
 "Du gibst Änderungen frei." = "Jij keurt wijzigingen goed.";
 "Du hast das letzte Wort." = "Jij hebt het laatste woord.";
@@ -263,11 +285,13 @@
 "Ergebnisse" = "resultaten";
 "Erhöhe die Ladegrenze in den Einstellungen oder grenze die Suche ein." = "Verhoog de laadlimiet in Instellingen of verfijn je zoekopdracht.";
 "Erinnern am" = "Opvolgen op";
+"Erlaube Shopdeck Mitteilungen in den macOS Systemeinstellungen." = "Sta Shopdeck meldingen toe in macOS Systeeminstellingen.";
 "Erledigt" = "Afgerond";
 "Erneut einrichten" = "Opnieuw instellen";
 "Erneut laden" = "Opnieuw laden";
 "Erneut prüfen" = "Opnieuw controleren";
 "Erneut zur Prüfung vorlegen" = "Opnieuw ter beoordeling indienen";
+"Erscheint auch bei geschlossener App. Die Mitteilung enthält deine Notiz nicht." = "Verschijnt ook als de app gesloten is. Je notitie staat niet in de melding.";
 "Erscheinungsbild" = "Weergave";
 "Erstelle mit Shopdeck für [Shopname] eine Kampagne aus Text, dem lokalen Bild [Dateipfad] und vier vorhandenen Produkten. Nutze propose_campaign, speichere einen Entwurf und zeige mir den Antrag zur Freigabe." = "Maak met Shopdeck een campagne voor [shopnaam] met tekst, de lokale afbeelding [bestandspad] en vier bestaande producten. Gebruik propose_campaign, sla een concept op en toon het verzoek ter goedkeuring.";
 "Erstellt am" = "Aangemaakt op";
@@ -301,6 +325,7 @@
 "Geprüft:" = "Gecontroleerd:";
 "Gerade eingegangen" = "Net binnengekomen";
 "Gesamt" = "Totaal";
+"Geschlossenen Tab wieder öffnen" = "Gesloten tabblad heropenen";
 "Gespeicherte Ansicht" = "Opgeslagen weergave";
 "Gewicht" = "Gewicht";
 "Gib der Ansicht einen Namen." = "Geef deze weergave een naam.";
@@ -310,6 +335,7 @@
 "Gruppe" = "Groep";
 "Gruppe erstellen" = "Groep maken";
 "Gruppe löschen" = "Groep verwijderen";
+"Gutschrift" = "Creditnota";
 "Hauptprodukte" = "Hoofdproducten";
 "Hell" = "Licht";
 "Hersteller" = "Fabrikant";
@@ -385,6 +411,7 @@
 "Letzte 30 Kalendertage" = "Laatste 30 kalenderdagen";
 "Letzte 7 Kalendertage" = "Laatste 7 kalenderdagen";
 "Lieferadresse" = "Verzendadres";
+"Lieferschein" = "Pakbon";
 "Lieferstatus" = "Leverstatus";
 "Lieferung" = "Levering";
 "Liste anpassen" = "Lijst aanpassen";
@@ -409,6 +436,7 @@
 "MCP automatisch einrichten. Skill als ZIP für den Desktop Import." = "MCP automatisch instellen. Skill ZIP voor Desktop import.";
 "Manuelle Konfiguration" = "Handmatige configuratie";
 "Maximal geladene Datensätze je Shop" = "Maximaal geladen rijen per shop";
+"Mehr als 1.000 Dokumente. Wähle weniger Bestellungen für ein vollständiges Paket." = "Meer dan 1.000 documenten. Selecteer minder bestellingen voor een compleet pakket.";
 "Mehrere Shops vergleichen" = "Meerdere shops vergelijken";
 "Mindestabnahme" = "Minimale afname";
 "Mindestens eine Bedingung" = "Minstens één voorwaarde";
@@ -418,6 +446,7 @@
 "Mit deiner Shopadresse und einer Shopware Integration." = "Met je shopadres en een Shopware integratie.";
 "Mit einem Prompt testen" = "Een voorbeeldprompt proberen";
 "Mit letzter Bestellung testen" = "Met laatste bestelling testen";
+"Mit ⌘ oder ⇧ mehrere Dokumente für ein Paket auswählen." = "Gebruik ⌘ of ⇧ om meerdere documenten voor een pakket te selecteren.";
 "Mitteilungen auf deinem Mac" = "Meldingen op je Mac";
 "Mitteilungen erlauben" = "Meldingen toestaan";
 "Mitteilungen erlaubt" = "Meldingen toegestaan";
@@ -462,6 +491,7 @@
 "Noch keine Bestellungen vorhanden." = "Nog geen bestellingen.";
 "Noch keine Daten" = "Nog geen gegevens";
 "Noch keine Daten in diesem Zeitraum." = "Nog geen gegevens voor deze periode.";
+"Noch keine Dokumente" = "Nog geen documenten";
 "Noch keine Änderungen" = "Nog geen wijzigingen";
 "Noch nicht geprüft" = "Nog niet gecontroleerd";
 "Noch nichts erledigt" = "Nog geen afgeronde taken";
@@ -470,6 +500,7 @@
 "Notiz, Nummer oder Shop suchen" = "Zoek notities, nummers of shops";
 "Notizen behalten. Termine setzen. Nichts liegen lassen." = "Bewaar notities. Plan een datum. Rond het af.";
 "Notizen und Wiedervorlage" = "Notities en opvolging";
+"Nummer, Dokumenttyp oder Shop suchen" = "Zoek nummer, documenttype of shop";
 "Nur auf diesem Mac. Nicht im Shop oder für KI sichtbar." = "Alleen op deze Mac. Niet zichtbaar in de shop of voor AI.";
 "Nur das, was dich interessiert." = "Alleen wat jou interesseert.";
 "Nur im Katalog gemeldet" = "Alleen vermeld in catalogus";
@@ -486,7 +517,9 @@
 "Ohne Gruppe" = "Zonder groep";
 "Ohne diese Freigabe bleiben Namen, E Mail Adressen und Adressen für KI Clients verborgen." = "Zonder deze toestemming blijven namen, e mailadressen en adressen verborgen voor AI clients.";
 "Ohne stornierte Bestellungen" = "Zonder geannuleerde bestellingen";
+"Originale bleiben unverändert. Mehrere PDFs werden als ZIP Paket gespeichert." = "Originelen blijven ongewijzigd. Meerdere PDF’s worden als ZIP pakket opgeslagen.";
 "Ort" = "Plaats";
+"PDF speichern" = "PDF opslaan";
 "Passe dein Dashboard an, richte Bestellregeln ein und wähle deine Desktop Widgets." = "Pas je dashboard aan, maak bestelregels en kies je bureaubladwidgets.";
 "Passwort" = "Wachtwoord";
 "Passwort kopieren" = "Wachtwoord kopiëren";
@@ -521,6 +554,7 @@
 "Prüfen" = "Controleren";
 "Prüfen und übernehmen" = "Beoordelen en toepassen";
 "Prüfung jede Minute, solange Shopdeck läuft. Beim ersten Start werden bestehende Bestellungen als Ausgangspunkt gespeichert." = "Controle elke minuut zolang Shopdeck actief is. Bestaande bestellingen worden bij de eerste start als uitgangspunt opgeslagen.";
+"Rechnung" = "Factuur";
 "Rechnungsadresse" = "Factuuradres";
 "Regel bearbeiten" = "Regel bewerken";
 "Regel löschen" = "Regel verwijderen";
@@ -611,11 +645,16 @@
 "Storefront öffnen" = "Storefront openen";
 "Storefronts" = "Storefronts";
 "Stornierte Bestellungen" = "Geannuleerde bestellingen";
+"Stornorechnung" = "Annuleringsfactuur";
 "Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor." = "Zoek met Shopdeck product [productnummer] in shop [shopnaam] en stel een nieuwe beschrijving voor. Dien het voorstel in voor goedkeuring in Shopdeck.";
 "Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl." = "Zoeken, filters en sortering gebeuren in de shop vóór paginering. Gesorteerde resultaten worden samengevoegd. De resultaatlimiet begrenst ook het aantal doorbladerbare resultaten.";
 "Suchen …" = "Zoeken …";
 "System" = "Systeem";
+"Tab duplizieren" = "Tabblad dupliceren";
 "Tab schließen" = "Tabblad sluiten";
+"Tabs" = "Tabbladen";
+"Tabs beim Start wiederherstellen" = "Tabbladen bij opstarten herstellen";
+"Tabs, Shopauswahl, Suche, Filter und Sortierung gemeinsam wieder öffnen." = "Heropen je tabbladen, shops, zoekopdracht, filters en sortering samen.";
 "Tag" = "Dag";
 "Technischen Plan anzeigen" = "Technisch plan tonen";
 "Termin setzen" = "Datum instellen";
@@ -666,6 +705,7 @@
 "Vollständig in Shopware bearbeiten" = "Volledige Shopware editor openen";
 "Von Domain importieren" = "Van domein importeren";
 "Vorgang ausgeführt und geprüft." = "Bewerking uitgevoerd en gecontroleerd.";
+"Vorhandene Rechnungen, Lieferscheine und Gutschriften erscheinen hier. Neue Dokumente erstellst du in Shopware." = "Bestaande facturen, pakbonnen en creditnota’s verschijnen hier. Maak nieuwe documenten in Shopware.";
 "Vorhandene Testshops werden geprüft …" = "Bestaande testshops controleren…";
 "Vorher und Nachher bleiben erhalten. Du kannst bestätigte Änderungen gezielt zurücknehmen." = "Waarden voor en na blijven bewaard. Je kunt bevestigde wijzigingen afzonderlijk terugdraaien.";
 "Vorname" = "Voornaam";
@@ -692,14 +732,17 @@
 "Widgets zeigen den zuletzt in der App geladenen Stand mit Uhrzeit. Sie enthalten keine API Schlüssel." = "Widgets tonen de laatst geladen gegevens met tijdstip. Ze bevatten geen API sleutels.";
 "Wieder öffnen" = "Heropenen";
 "Wiedervorlage" = "Opvolging";
+"Wiedervorlage fällig" = "Opvolging gepland";
 "Wiedervorlage gespeichert" = "Opvolging opgeslagen";
 "Wiedervorlage speichern" = "Opvolging opslaan";
 "Wiedervorlagen" = "Opvolgingen";
 "Willkommen bei Shopdeck" = "Welkom bij Shopdeck";
 "Wird übernommen" = "Wordt toegepast";
 "Wohin möchtest du?" = "Waar wil je naartoe?";
+"Wähle ein Dokument aus der Liste." = "Selecteer een document uit de lijst.";
 "Wähle einen Shop oder passe die Suche an." = "Kies een shop of pas je zoekopdracht aan.";
 "Wähle einen Shop. Jede Administration behält ihren eigenen Anmeldestatus." = "Kies een shop. Elk beheer houdt een eigen aanmeldsessie.";
+"Wähle einen zukünftigen Termin für die Mitteilung." = "Kies een toekomstige datum voor de melding.";
 "Wähle in Docker einen lokalen Kontext für diesen Testshop." = "Selecteer een lokale Docker context voor deze testshop.";
 "Wähle mit einem Klick. Ziehe ausgewählte Widgets in die gewünschte Reihenfolge." = "Klik om te kiezen. Sleep geselecteerde widgets in de gewenste volgorde.";
 "Währung" = "Valuta";
@@ -736,6 +779,7 @@
 "in_progress" = "In behandeling";
 "ist eingerichtet. Starte den Client neu." = "is ingesteld. Start de client opnieuw.";
 "leer" = "leeg";
+"macOS Mitteilung geplant" = "macOS melding gepland";
 "maximal" = "maximaal";
 "name" = "Naam";
 "needs_review" = "Te controleren";

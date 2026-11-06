@@ -50,6 +50,7 @@
 "Alle angezeigten Shopdaten sind fiktiv." = "Toutes les données affichées sont fictives.";
 "Alle anzeigen" = "Tout afficher";
 "Alle ausgewählten Shops" = "Toutes les boutiques sélectionnées";
+"Alle auswählen" = "Tout sélectionner";
 "Alle deaktivieren" = "Tout désactiver";
 "Alle neuen Bestellungen" = "Toutes les nouvelles commandes";
 "Alle vom Shop gelieferten Felder einschließlich Zusatzfeldern und geladenen Verknüpfungen. Aufklappen zeigt auch verschachtelte Werte." = "Tous les champs renvoyés par la boutique, y compris les champs personnalisés et les relations chargées. Dépliez pour voir les valeurs imbriquées.";
@@ -60,6 +61,8 @@
 "Allgemeine Admin API Aktionen" = "Actions générales de l’Admin API";
 "Als Entwurf speichern" = "Enregistrer comme brouillon";
 "Als erledigt markieren" = "Marquer comme terminé";
+"Als macOS Mitteilung erinnern" = "Me rappeler avec une notification macOS";
+"Andere Tabs schließen" = "Fermer les autres onglets";
 "Anfrage anzeigen" = "Afficher la requête";
 "Angehalten. Nicht übernommene Vorschläge bleiben offen." = "Arrêté. Les propositions non appliquées restent en attente.";
 "Angezeigte Seite exportieren" = "Exporter la page actuelle";
@@ -72,6 +75,12 @@
 "Anzeigen" = "Afficher";
 "App gefunden" = "Application trouvée";
 "Arbeitsbereich öffnen" = "Ouvrir l’espace de travail";
+"Arbeitsplatz entfernen" = "Supprimer l’espace de travail";
+"Arbeitsplatz gespeichert" = "Espace de travail enregistré";
+"Arbeitsplatz speichern" = "Enregistrer l’espace de travail";
+"Arbeitsplatz speichern …" = "Enregistrer l’espace de travail…";
+"Arbeitsplätze" = "Espaces de travail";
+"Arbeitsplätze und Tabs" = "Espaces de travail et onglets";
 "Arbeitsvorrat aktualisieren" = "Actualiser la liste de travail";
 "Arbeitsvorrat konfigurieren" = "Configurer la liste de travail";
 "Arbeitsvorrat öffnen" = "Ouvrir la liste de travail";
@@ -109,11 +118,13 @@
 "Bestehende Konfigurationen werden gesichert. Starte den jeweiligen Client nach der Einrichtung neu. In Claude Desktop importierst du den Skill unter Einstellungen → Fähigkeiten → Skills." = "Les configurations existantes sont sauvegardées. Redémarrez le client après la configuration. Dans Claude Desktop, importez le skill via Réglages → Capacités → Skills.";
 "Bestehenden Shop verbinden" = "Connecter une boutique existante";
 "Bestelldetails" = "Détails de la commande";
+"Bestelldokumente" = "Documents de commande";
 "Bestellnummer" = "Numéro de commande";
 "Bestellstatus" = "Statut de la commande";
 "Bestellumsatz inklusive Steuern, ohne stornierte Bestellungen. Keine Währungsumrechnung. Bestellungen und Umsatz nach gewählter Währung." = "Valeur des commandes TTC, hors commandes annulées. Aucune conversion de devise. Commandes et chiffre d’affaires dans la devise choisie.";
 "Bestellung" = "Commande";
 "Bestellungen" = "Commandes";
+"Bestellungen ausgewählt" = "commandes sélectionnées";
 "Bestellungen geprüft." = "Commandes vérifiées.";
 "Bestellungen heute" = "Commandes du jour";
 "Bestellungen heute am Dock Icon anzeigen" = "Afficher les commandes du jour sur l’icône du Dock";
@@ -145,6 +156,7 @@
 "Container bleibt für die Diagnose erhalten:" = "Conteneur conservé pour le diagnostic :";
 "DEINE SHOPS" = "VOS BOUTIQUES";
 "Darstellung und Sprache" = "Apparence et langue";
+"Das Paket überschreitet 256 MB. Wähle weniger Dokumente." = "Le paquet dépasse 256 Mo. Sélectionnez moins de documents.";
 "Das Plugin führt nach Installation Code im Shop aus. Shopware prüft Abhängigkeiten bei der Installation." = "Le plugin exécute du code dans votre boutique. Shopware vérifie les dépendances à l’installation.";
 "Das Produkt wurde seit dem Vorschlag geändert. Bitte einzeln prüfen." = "Ce produit a changé depuis la proposition. Vérifiez le séparément.";
 "Das hat nicht geklappt" = "L’opération a échoué";
@@ -177,15 +189,18 @@
 "Deine umsatzstärksten Shops" = "Vos boutiques au meilleur chiffre d’affaires";
 "Demo" = "Démo";
 "Demodaten" = "Données de démonstration";
+"Demodokument. Keine echte Rechnung." = "Document de démonstration. Ce n’est pas une vraie facture.";
 "Demoprofil ohne echte Administration" = "Profil de démo sans administration réelle";
 "Demoprofile einbeziehen" = "Inclure les profils de démonstration";
 "Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills." = "Importez le skill dans Claude Desktop via Paramètres → Capacités → Skills.";
+"Der Arbeitsplatz konnte nicht gespeichert werden." = "L’espace de travail n’a pas pu être enregistré.";
 "Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund." = "L’assistant configure MCP et les skills. Les identifiants restent dans le trousseau.";
 "Der MCP Server hat nicht korrekt geantwortet." = "Le serveur MCP n’a pas répondu correctement.";
 "Der Shop dieser Ansicht wurde entfernt." = "La boutique de cette vue a été retirée.";
 "Der Shop wird aus Shopdeck entfernt. Der Shop selbst und lokale Docker Container bleiben erhalten." = "La boutique est retirée de Shopdeck. La boutique et les conteneurs Docker locaux sont conservés.";
 "Der Shop wird nur aus Shopdeck entfernt. Die Daten im Shop und ein lokaler Container bleiben erhalten." = "La boutique est retirée de Shopdeck. Les données et le conteneur local sont conservés.";
 "Der Shopname braucht 1 bis 80 Zeichen." = "Le nom doit contenir entre 1 et 80 caractères.";
+"Der letzte Arbeitsplatz konnte nicht geladen werden. Deine Shops sind weiterhin verfügbar." = "Le dernier espace de travail n’a pas pu être chargé. Vos boutiques restent disponibles.";
 "Desktop Widgets konnten nicht aktualisiert werden." = "Impossible de mettre à jour les widgets du bureau.";
 "Desktop Widgets sind verbunden." = "Les widgets de bureau sont connectés.";
 "Desktop Widgets: Auf dem Schreibtisch Widgets bearbeiten öffnen und Shopdeck wählen. Shop, Statistik und Währung lassen sich je Widget festlegen." = "Widgets du bureau : ouvrez Modifier les widgets sur le bureau et choisissez Shopdeck. Choisissez la boutique, la statistique et la devise par widget.";
@@ -199,6 +214,7 @@
 "Die Demo enthält drei fiktive Shops. Es werden keine echten Shops angelegt." = "La démo contient trois boutiques fictives. Aucune boutique réelle n’est créée.";
 "Die Docker Signatur konnte nicht bestätigt werden." = "La signature de Docker n’a pas pu être vérifiée.";
 "Die Einrichtung konnte nicht vollständig bestätigt werden." = "La configuration n’a pas pu être entièrement vérifiée.";
+"Die Erinnerung konnte nicht geplant werden." = "Le rappel n’a pas pu être programmé.";
 "Die Notiz darf höchstens 4.000 Zeichen enthalten." = "Les notes peuvent contenir 4 000 caractères au maximum.";
 "Die Sprache wird sofort übernommen." = "La langue change immédiatement.";
 "Die Vorschauen zeigen den aktuellen Datenstand deiner Shopauswahl." = "Les aperçus affichent les données actuelles des boutiques sélectionnées.";
@@ -218,6 +234,7 @@
 "Dieser Verkaufskanal hat keine Storefront Domain." = "Ce canal de vente n’a pas de domaine de vitrine.";
 "Dieser Vorschlag wurde bereits bearbeitet." = "Cette proposition a déjà été traitée.";
 "Dieses Demoprofil enthält fiktive Daten und keine Shopware Installation. Verbinde einen eigenen Shop oder starte einen lokalen Docker Testshop." = "Ce profil contient des données fictives sans installation Shopware. Connectez votre boutique ou créez une boutique locale avec Docker.";
+"Dieses PDF konnte nicht gelesen werden." = "Ce PDF n’a pas pu être ouvert.";
 "Dieses strukturierte Preisfeld bietet keine direkte API Sortierung." = "Ce champ de prix structuré ne propose pas de tri direct par API.";
 "Direkt mit der Shopware Admin API verbunden." = "Connexion directe à l’Admin API Shopware.";
 "Docker Desktop herunterladen" = "Télécharger Docker Desktop";
@@ -231,6 +248,11 @@
 "Docker konnte nicht gefunden werden." = "Docker est introuvable.";
 "Docker wird geprüft …" = "Vérification de Docker …";
 "Docker wird gestartet. Schließe die Ersteinrichtung im Docker Fenster ab." = "Démarrage de Docker. Terminez la configuration initiale dans la fenêtre Docker.";
+"Dokumente" = "Documents";
+"Dokumente gespeichert" = "documents enregistrés";
+"Dokumente öffnen" = "Ouvrir les documents";
+"Dokumentenpaket speichern" = "Enregistrer le paquet de documents";
+"Dokumentvorschau" = "Aperçu du document";
 "Doppelklick öffnet Details." = "Double cliquez pour ouvrir les détails.";
 "Du gibst Änderungen frei." = "Vous validez les modifications.";
 "Du hast das letzte Wort." = "Vous avez le dernier mot.";
@@ -263,11 +285,13 @@
 "Ergebnisse" = "résultats";
 "Erhöhe die Ladegrenze in den Einstellungen oder grenze die Suche ein." = "Augmentez la limite dans Réglages ou affinez votre recherche.";
 "Erinnern am" = "Suivre le";
+"Erlaube Shopdeck Mitteilungen in den macOS Systemeinstellungen." = "Autorisez les notifications Shopdeck dans les Réglages Système de macOS.";
 "Erledigt" = "Terminé";
 "Erneut einrichten" = "Configurer à nouveau";
 "Erneut laden" = "Recharger";
 "Erneut prüfen" = "Vérifier à nouveau";
 "Erneut zur Prüfung vorlegen" = "Soumettre à nouveau";
+"Erscheint auch bei geschlossener App. Die Mitteilung enthält deine Notiz nicht." = "Apparaît même lorsque l’app est fermée. La notification ne contient pas votre note.";
 "Erscheinungsbild" = "Apparence";
 "Erstelle mit Shopdeck für [Shopname] eine Kampagne aus Text, dem lokalen Bild [Dateipfad] und vier vorhandenen Produkten. Nutze propose_campaign, speichere einen Entwurf und zeige mir den Antrag zur Freigabe." = "Prépare avec Shopdeck une campagne pour [boutique] avec du texte, l’image locale [chemin] et quatre produits existants. Utilise propose_campaign, enregistre un brouillon et montre moi la demande d’approbation.";
 "Erstellt am" = "Créé le";
@@ -301,6 +325,7 @@
 "Geprüft:" = "Vérifié :";
 "Gerade eingegangen" = "Dernières commandes";
 "Gesamt" = "Total";
+"Geschlossenen Tab wieder öffnen" = "Rouvrir l’onglet fermé";
 "Gespeicherte Ansicht" = "Vue enregistrée";
 "Gewicht" = "Poids";
 "Gib der Ansicht einen Namen." = "Donnez un nom à cette vue.";
@@ -310,6 +335,7 @@
 "Gruppe" = "Groupe";
 "Gruppe erstellen" = "Créer un groupe";
 "Gruppe löschen" = "Supprimer le groupe";
+"Gutschrift" = "Avoir";
 "Hauptprodukte" = "Produits parents";
 "Hell" = "Clair";
 "Hersteller" = "Fabricant";
@@ -385,6 +411,7 @@
 "Letzte 30 Kalendertage" = "30 derniers jours calendaires";
 "Letzte 7 Kalendertage" = "7 derniers jours calendaires";
 "Lieferadresse" = "Adresse de livraison";
+"Lieferschein" = "Bon de livraison";
 "Lieferstatus" = "Statut de livraison";
 "Lieferung" = "Livraison";
 "Liste anpassen" = "Personnaliser la liste";
@@ -409,6 +436,7 @@
 "MCP automatisch einrichten. Skill als ZIP für den Desktop Import." = "Configuration automatique de MCP. Skill ZIP à importer dans Desktop.";
 "Manuelle Konfiguration" = "Configuration manuelle";
 "Maximal geladene Datensätze je Shop" = "Nombre maximal de lignes par boutique";
+"Mehr als 1.000 Dokumente. Wähle weniger Bestellungen für ein vollständiges Paket." = "Plus de 1 000 documents. Sélectionnez moins de commandes pour un paquet complet.";
 "Mehrere Shops vergleichen" = "Comparer plusieurs boutiques";
 "Mindestabnahme" = "Quantité minimale";
 "Mindestens eine Bedingung" = "Au moins une condition";
@@ -418,6 +446,7 @@
 "Mit deiner Shopadresse und einer Shopware Integration." = "Avec l’adresse de votre boutique et une intégration Shopware.";
 "Mit einem Prompt testen" = "Tester un exemple de demande";
 "Mit letzter Bestellung testen" = "Tester avec la dernière commande";
+"Mit ⌘ oder ⇧ mehrere Dokumente für ein Paket auswählen." = "Utilisez ⌘ ou ⇧ pour sélectionner plusieurs documents.";
 "Mitteilungen auf deinem Mac" = "Notifications sur votre Mac";
 "Mitteilungen erlauben" = "Autoriser les notifications";
 "Mitteilungen erlaubt" = "Notifications autorisées";
@@ -462,6 +491,7 @@
 "Noch keine Bestellungen vorhanden." = "Aucune commande pour le moment.";
 "Noch keine Daten" = "Aucune donnée";
 "Noch keine Daten in diesem Zeitraum." = "Pas encore de données sur cette période.";
+"Noch keine Dokumente" = "Aucun document pour le moment";
 "Noch keine Änderungen" = "Aucune modification";
 "Noch nicht geprüft" = "Pas encore vérifié";
 "Noch nichts erledigt" = "Aucune tâche terminée";
@@ -470,6 +500,7 @@
 "Notiz, Nummer oder Shop suchen" = "Rechercher notes, numéros ou boutiques";
 "Notizen behalten. Termine setzen. Nichts liegen lassen." = "Gardez vos notes. Fixez une date. Assurez le suivi.";
 "Notizen und Wiedervorlage" = "Notes et suivi";
+"Nummer, Dokumenttyp oder Shop suchen" = "Rechercher un numéro, type de document ou boutique";
 "Nur auf diesem Mac. Nicht im Shop oder für KI sichtbar." = "Sur ce Mac uniquement. Invisible dans la boutique et pour l’IA.";
 "Nur das, was dich interessiert." = "Seulement ce qui vous intéresse.";
 "Nur im Katalog gemeldet" = "Présent dans le catalogue uniquement";
@@ -486,7 +517,9 @@
 "Ohne Gruppe" = "Sans groupe";
 "Ohne diese Freigabe bleiben Namen, E Mail Adressen und Adressen für KI Clients verborgen." = "Sans cette autorisation, les noms, e mails et adresses restent masqués pour les clients IA.";
 "Ohne stornierte Bestellungen" = "Hors commandes annulées";
+"Originale bleiben unverändert. Mehrere PDFs werden als ZIP Paket gespeichert." = "Les originaux restent inchangés. Plusieurs PDF sont enregistrés dans un paquet ZIP.";
 "Ort" = "Ville";
+"PDF speichern" = "Enregistrer le PDF";
 "Passe dein Dashboard an, richte Bestellregeln ein und wähle deine Desktop Widgets." = "Personnalisez le tableau de bord, créez des règles de commande et choisissez vos widgets de bureau.";
 "Passwort" = "Mot de passe";
 "Passwort kopieren" = "Copier le mot de passe";
@@ -521,6 +554,7 @@
 "Prüfen" = "Vérifier";
 "Prüfen und übernehmen" = "Vérifier et appliquer";
 "Prüfung jede Minute, solange Shopdeck läuft. Beim ersten Start werden bestehende Bestellungen als Ausgangspunkt gespeichert." = "Vérification chaque minute tant que Shopdeck est ouvert. Les commandes existantes sont enregistrées comme point de départ.";
+"Rechnung" = "Facture";
 "Rechnungsadresse" = "Adresse de facturation";
 "Regel bearbeiten" = "Modifier la règle";
 "Regel löschen" = "Supprimer la règle";
@@ -611,11 +645,16 @@
 "Storefront öffnen" = "Ouvrir la vitrine";
 "Storefronts" = "Vitrines";
 "Stornierte Bestellungen" = "Commandes annulées";
+"Stornorechnung" = "Facture d’annulation";
 "Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor." = "Avec Shopdeck, trouve le produit [numéro] dans la boutique [nom] et propose une nouvelle description. Soumets la proposition pour validation dans Shopdeck.";
 "Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl." = "La recherche, les filtres et le tri sont appliqués dans chaque boutique avant la pagination. Les résultats triés sont réunis dans une liste. La limite borne aussi les résultats consultables.";
 "Suchen …" = "Rechercher …";
 "System" = "Système";
+"Tab duplizieren" = "Dupliquer l’onglet";
 "Tab schließen" = "Fermer l’onglet";
+"Tabs" = "Onglets";
+"Tabs beim Start wiederherstellen" = "Restaurer les onglets au démarrage";
+"Tabs, Shopauswahl, Suche, Filter und Sortierung gemeinsam wieder öffnen." = "Rouvrez vos onglets, boutiques, recherche, filtres et tri ensemble.";
 "Tag" = "Jour";
 "Technischen Plan anzeigen" = "Afficher le plan technique";
 "Termin setzen" = "Fixer une date";
@@ -666,6 +705,7 @@
 "Vollständig in Shopware bearbeiten" = "Ouvrir l’éditeur complet Shopware";
 "Von Domain importieren" = "Importer depuis le domaine";
 "Vorgang ausgeführt und geprüft." = "Opération terminée et vérifiée.";
+"Vorhandene Rechnungen, Lieferscheine und Gutschriften erscheinen hier. Neue Dokumente erstellst du in Shopware." = "Les factures, bons de livraison et avoirs existants apparaissent ici. Créez de nouveaux documents dans Shopware.";
 "Vorhandene Testshops werden geprüft …" = "Vérification des boutiques de test existantes…";
 "Vorher und Nachher bleiben erhalten. Du kannst bestätigte Änderungen gezielt zurücknehmen." = "Les valeurs avant et après sont conservées. Vous pouvez annuler les modifications confirmées individuellement.";
 "Vorname" = "Prénom";
@@ -692,14 +732,17 @@
 "Widgets zeigen den zuletzt in der App geladenen Stand mit Uhrzeit. Sie enthalten keine API Schlüssel." = "Les widgets affichent les dernières données chargées avec leur heure. Ils ne contiennent aucune clé API.";
 "Wieder öffnen" = "Rouvrir";
 "Wiedervorlage" = "Suivi";
+"Wiedervorlage fällig" = "Suivi à effectuer";
 "Wiedervorlage gespeichert" = "Suivi enregistré";
 "Wiedervorlage speichern" = "Enregistrer le suivi";
 "Wiedervorlagen" = "Suivis";
 "Willkommen bei Shopdeck" = "Bienvenue dans Shopdeck";
 "Wird übernommen" = "Application en cours";
 "Wohin möchtest du?" = "Où souhaitez vous aller ?";
+"Wähle ein Dokument aus der Liste." = "Sélectionnez un document dans la liste.";
 "Wähle einen Shop oder passe die Suche an." = "Choisissez une boutique ou ajustez votre recherche.";
 "Wähle einen Shop. Jede Administration behält ihren eigenen Anmeldestatus." = "Choisissez une boutique. Chaque administration conserve sa propre session.";
+"Wähle einen zukünftigen Termin für die Mitteilung." = "Choisissez une date future pour la notification.";
 "Wähle in Docker einen lokalen Kontext für diesen Testshop." = "Sélectionnez un contexte Docker local pour cette boutique de test.";
 "Wähle mit einem Klick. Ziehe ausgewählte Widgets in die gewünschte Reihenfolge." = "Cliquez pour choisir. Faites glisser les widgets sélectionnés dans l’ordre souhaité.";
 "Währung" = "Devise";
@@ -736,6 +779,7 @@
 "in_progress" = "En cours";
 "ist eingerichtet. Starte den Client neu." = "est configuré. Redémarrez le client.";
 "leer" = "vide";
+"macOS Mitteilung geplant" = "Notification macOS programmée";
 "maximal" = "jusqu’à";
 "name" = "Nom";
 "needs_review" = "À vérifier";
