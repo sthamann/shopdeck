@@ -6,6 +6,8 @@
 
 [![Watch the 30 second Shopdeck tour](docs/screenshots/intro-poster.png)](https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck-Intro-English.mp4)
 
+[Download the LinkedIn feed edition and captions](docs/video.md). The tour includes the new picking lists, bookmarks and saved workspaces in Shopdeck 0.12.
+
 ![Shopdeck dashboard and merchant attention list](docs/screenshots/33-merchant-attention.png)
 
 Shopdeck brings multiple Shopware 6 shops into one native macOS workspace. Move between products, orders, customers, administrations and storefronts, with a local MCP server that makes those same shops available to your AI tools.
