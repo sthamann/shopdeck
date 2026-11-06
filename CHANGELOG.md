@@ -5,7 +5,7 @@
 - Preview existing order PDFs in a native PDFKit view. Download individual originals or ZIP packages from selected orders across shops, with cancellation and explicit size limits.
 - Add optional macOS notifications to private follow ups, including a direct return to the record, rescheduling and completion cleanup.
 - Restore tabs, split views, search, shop selection, filters, sort, page, sales channels and currencies. Save named workspaces, duplicate tabs and reopen a closed tab with ⌘⇧T.
-- Resolve restored channel filters before the channel catalogue arrives, preventing an unfiltered request during startup. Load restored tab data only when visible.
+- Resolve restored channel filters before the channel catalogue arrives, preventing an unfiltered request during startup. Load restored tab data when returning to a tab.
 - Translate the new workflows into all six supported languages and expand the English screenshot tour.
 
 ## 0.10.0
