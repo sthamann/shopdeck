@@ -29,7 +29,7 @@ struct MerchantFocusView: View {
                 Button { Task { await model.loadMerchantFocus(force: true) } } label: { Image(systemName: "arrow.clockwise") }.buttonStyle(.borderless).disabled(model.loadingFocus).help(T("Arbeitsvorrat aktualisieren"))
             }
             if expanded {
-                LazyVGrid(columns: [GridItem(.flexible(), spacing: 32), GridItem(.flexible())], spacing: 0) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 320), spacing: 32)], spacing: 0) {
                     ForEach(MerchantFocus.allCases) { focus in
                         Button { model.openFocus(focus) } label: { focusRow(focus) }
                             .buttonStyle(.plain).help(T("Betroffene Datensätze öffnen"))
