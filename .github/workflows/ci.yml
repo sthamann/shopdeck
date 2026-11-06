@@ -2,6 +2,9 @@ name: macOS checks
 on:
   push:
   pull_request:
+concurrency:
+  group: macos-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:

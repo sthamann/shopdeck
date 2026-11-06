@@ -51,6 +51,10 @@ struct FollowUpsView: View {
     }
     private func row(_ item: RecordFollowUp) -> some View {
         let shop = model.workspace.shops.first { $0.id == item.shopID }
+        let entityLabel: String
+        switch item.entity { case "product": entityLabel = T("Produkt"); case "order": entityLabel = T("Bestellung"); default: entityLabel = T("Kunde") }
+        let shopLabel = shop?.name ?? T("Shop nicht verbunden")
+        let subtitle = [shopLabel, entityLabel, item.reference].filter { !$0.isEmpty }.joined(separator: " · ")
         return HStack(alignment: .center, spacing: 15) {
             Button { model.completeFollowUp(item, completed: item.completedAt == nil) } label: {
                 Image(systemName: item.completedAt == nil ? "circle" : "checkmark.circle.fill").font(.system(size: 21)).foregroundStyle(item.completedAt == nil ? Color.secondary : Theme.blue)
@@ -60,7 +64,7 @@ struct FollowUpsView: View {
                     if let shop { ShopIcon(shop: shop, size: 32) }
                     VStack(alignment: .leading, spacing: 5) {
                         Text(item.title).font(.system(size: 14, weight: .semibold)).lineLimit(1)
-                        Text((shop?.name ?? T("Shop nicht verbunden")) + " · " + T(item.entity == "product" ? "Produkt" : item.entity == "order" ? "Bestellung" : "Kunde") + (item.reference.isEmpty ? "" : " · " + item.reference)).font(.system(size: 11)).foregroundStyle(.secondary).lineLimit(1)
+                        Text(subtitle).font(.system(size: 11)).foregroundStyle(.secondary).lineLimit(1)
                         if !item.note.isEmpty { Text(item.note).font(.system(size: 12)).foregroundStyle(.secondary).lineLimit(2) }
                     }.frame(maxWidth: .infinity, alignment: .leading)
                 }.contentShape(Rectangle())
