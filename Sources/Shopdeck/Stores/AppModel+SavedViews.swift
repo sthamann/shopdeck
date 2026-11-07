@@ -26,7 +26,15 @@ extension AppModel {
         do { try store.updateWorkbench { $0.savedViews.removeAll { $0.id == preset.id } }; reload() } catch { self.error = error.localizedDescription }
     }
     func searchRecords(_ target: Destination, term: String) {
-        destination = target; query = term; page = 1
+        destination = target
+        query = term
+        listShopIDs = nil
+        listChannelKey = nil
+        listCurrency = nil
+        activeFilters = []
+        lowStockOnly = false
+        statusFilter = "all"
+        page = 1
         Task { await loadRecords() }
     }
 }

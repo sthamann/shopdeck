@@ -4,6 +4,7 @@ import ShopdeckCore
 struct ContentView: View {
     @Bindable var model: AppModel
     var showSidebar = true
+    @LocalState<(() -> Void)?> private var pendingCommand = nil
     var body: some View {
         Group {
             if showSidebar { NavigationSplitView { SidebarView(model: model).navigationSplitViewColumnWidth(min: 200, ideal: 220, max: 270) } detail: { detail } }
@@ -29,31 +30,90 @@ struct ContentView: View {
                     case .activity: ActivityView(model: model)
                     }
                 }.frame(maxWidth: .infinity, maxHeight: .infinity)
-                if let notice = model.notice { HStack { Image(systemName: "checkmark.circle.fill").foregroundStyle(.green); Text(notice); Spacer(); Button { model.notice = nil } label: { Image(systemName: "xmark") }.buttonStyle(.plain) }.padding(14).background(.bar) }
+                if let notice = model.notice {
+                    HStack(spacing: 10) {
+                        Image(systemName: "info.circle").foregroundStyle(.secondary)
+                        Text(notice).font(.callout)
+                        Spacer()
+                        Button { model.notice = nil } label: {
+                            Label(T("Schließen"), systemImage: "xmark").labelStyle(.iconOnly)
+                        }.buttonStyle(.borderless)
+                    }.padding(.horizontal, 20).padding(.vertical, 10).background(.bar)
+                }
             }
         .sheet(isPresented: $model.showingAddShop) { ShopFormView(model: model, existing: nil) }
         .sheet(item: $model.editShop) { ShopFormView(model: model, existing: $0) }
         .sheet(item: $model.editingRecord) { RecordDetailView(model: model, record: $0) }
         .sheet(isPresented: $model.showGroupSheet) { GroupFormView(model: model) }
-        .sheet(isPresented: $model.showingCommandPalette) { CommandPaletteView(model: model) }
+        .sheet(isPresented: $model.showingCommandPalette, onDismiss: {
+            let action = pendingCommand
+            pendingCommand = nil
+            action?()
+        }) {
+            CommandPaletteView(model: model) { pendingCommand = $0 }
+        }
         .alert(T("Das hat nicht geklappt"), isPresented: Binding(get: { model.error != nil }, set: { if !$0 { model.error = nil } })) { Button("OK") { model.error = nil } } message: { Text(model.error ?? "") }
         .onChange(of: model.selectedShopID) { _, _ in model.page = 1; Task { if [.products,.orders,.customers].contains(model.destination){await model.loadRecords()}else if model.destination == .overview,model.analytics.loadedAt==nil{await model.loadAnalytics()} } }
         .onChange(of: model.destination) { _, _ in model.page = 1; Task { await model.loadRecords() } }
     }
     private var topBar: some View {
-        HStack(spacing: 12) {
-            if model.selectedShopID != nil {Button{model.selectedShopID=nil}label:{Label(T("Alle Shops anzeigen"),systemImage:"chevron.backward")}.buttonStyle(.borderless).font(.system(size:12,weight:.medium))}
-            Image(systemName: model.destination.icon).foregroundStyle(Theme.blue)
-            Text(model.destination.title).fontWeight(.semibold).lineLimit(1).layoutPriority(1)
-            Image(systemName: "chevron.right").font(.system(size: 9)).foregroundStyle(.tertiary)
-            Menu{Button(T("Alle Shops anzeigen")){model.selectedShopID=nil;model.listShopIDs=nil};Divider();ForEach(model.workspace.shops){shop in Button(shop.name){model.selectedShopID=shop.id}}}label:{Text(model.selectedShop?.name ?? T("Alle Shops")).lineLimit(1)}.menuStyle(.borderlessButton).fixedSize()
-            Spacer()
+        HStack(spacing: 9) {
+            Label(model.destination.title, systemImage: model.destination.icon)
+                .font(.headline)
+                .lineLimit(1)
+                .layoutPriority(1)
+            Image(systemName: "chevron.right").font(.caption2).foregroundStyle(.tertiary)
+            Menu {
+                Button(T("Alle Shops anzeigen")) {
+                    model.selectedShopID = nil
+                    model.listShopIDs = nil
+                }
+                if !model.workspace.shops.isEmpty { Divider() }
+                ForEach(model.workspace.shops) { shop in
+                    Button {
+                        model.selectedShopID = shop.id
+                    } label: {
+                        if model.selectedShopID == shop.id {
+                            Label(shop.name, systemImage: "checkmark")
+                        } else {
+                            Text(shop.name)
+                        }
+                    }
+                }
+            } label: {
+                Text(model.selectedShop?.name ?? T("Alle Shops"))
+                    .lineLimit(1)
+                    .truncationMode(.middle)
+                    .frame(maxWidth: 175)
+            }
+            .menuStyle(.borderlessButton)
+            .fixedSize(horizontal: true, vertical: false)
+            .help(model.selectedShop?.name ?? T("Alle Shops"))
+            if model.selectedShopID != nil {
+                Button { model.selectedShopID = nil } label: {
+                    Label(T("Alle Shops anzeigen"), systemImage: "xmark.circle.fill").labelStyle(.iconOnly)
+                }.buttonStyle(.borderless).foregroundStyle(.secondary).help(T("Alle Shops anzeigen"))
+            }
+            Spacer(minLength: 6)
             if model.isDemo { StatusPill(text: T("Demodaten"), color: .orange) }
-            if let shop = model.selectedShop, model.destination != .admin { Button { model.openAdministration(shop) } label: { Label(T("Administration"), systemImage: "macwindow") }.buttonStyle(.bordered) }
-            Button { model.showingCommandPalette = true } label: { Image(systemName: "magnifyingglass") }.buttonStyle(.borderless).help(T("Schnellsuche") + " · ⌘K")
-            Button { Task { await model.refresh() } } label: { Image(systemName: "arrow.clockwise").symbolEffect(.pulse, options: .repeating, isActive: model.isRefreshing) }.buttonStyle(.borderless).help(T("Aktualisieren")).disabled(model.isRefreshing)
-            Button { model.showingAddShop = true } label: { ViewThatFits(in: .horizontal) { Label(T("Shop hinzufügen"), systemImage: "plus").fixedSize(); Image(systemName: "plus") }.accessibilityLabel(T("Shop hinzufügen")) }.buttonStyle(.borderedProminent).controlSize(.regular)
-        }.padding(.horizontal, 28).frame(height: 62)
+            if let shop = model.selectedShop, model.destination != .admin {
+                Button { model.openAdministration(shop) } label: {
+                    ViewThatFits(in: .horizontal) {
+                        Label(T("Administration"), systemImage: "macwindow").fixedSize()
+                        Label(T("Administration"), systemImage: "macwindow").labelStyle(.iconOnly)
+                    }
+                }.help(T("Administration in Shopdeck öffnen"))
+            }
+            if !showSidebar {
+                Menu {
+                    Button(T("Schnellsuche")) { model.showingCommandPalette = true }
+                    Button(T("Aktualisieren")) { Task { await model.refresh() } }.disabled(model.isRefreshing)
+                    Button(T("Shop hinzufügen")) { model.showingAddShop = true }
+                } label: {
+                    Label(T("Aktionen"), systemImage: "ellipsis.circle").labelStyle(.iconOnly)
+                }.menuStyle(.borderlessButton).fixedSize()
+            }
+        }.padding(.horizontal, 22).frame(height: 43)
     }
 }
 

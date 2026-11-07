@@ -1,16 +1,18 @@
 <p align="center"><img src="Assets/AppIcon.png" width="112" alt="Shopdeck icon"></p>
 <h1 align="center">Shopdeck</h1>
-<p align="center"><strong>Your Shopware command center. Native on Mac.</strong></p>
-<p align="center">Manage your shops, understand your numbers and connect your commerce to Codex and Claude.</p>
-<p align="center"><a href="https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck.dmg">Download for macOS</a> · <a href="docs/screenshots.md">Explore the app</a> · <a href="docs/ai-guide.md">Connect your AI</a> · <a href="https://www.shopware.com/en/community/community-edition/">Shopware Community Edition</a></p>
+<p align="center"><strong>Your Shopware workspace on Mac</strong></p>
+<p align="center">Run your shops, work through orders and give Codex or Claude a connection you control.</p>
+<p align="center"><a href="https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck.dmg">Download for macOS</a> · <a href="docs/screenshots.md">See the app</a> · <a href="docs/ai-guide.md">Connect Codex or Claude</a></p>
 
-[![Watch the 30 second Shopdeck tour](docs/screenshots/intro-poster.png)](https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck-Intro-English.mp4)
+Shopdeck brings your Shopware 6 shops into one native Mac app. Check what needs attention in the morning, search products and orders across shops, pick a batch and open the actual administration or storefront when you need it. A local MCP server connects the shops you choose to your AI tools. Review proposed writes in Shopdeck before applying them.
 
-[Download the LinkedIn feed edition and captions](docs/video.md). The tour includes the new picking lists, bookmarks and saved workspaces in Shopdeck 0.12.
+- **Install** the signed and notarized [stable download](https://github.com/sthamann/shopdeck/releases/latest). It runs on Apple silicon with macOS 14 or later.
+- **Try** the built in demo profiles or let Shopdeck guide you through setting up a real local Shopware test shop with Docker.
+- **Preview** the new workspace on the main branch. It has a compact macOS toolbar, a shop picker in each view and a redesigned **⌘K** search.
 
-![Shopdeck dashboard and merchant attention list](docs/screenshots/33-merchant-attention.png)
+[![Shopdeck workspace preview with shop sidebar, merchant attention list and revenue widgets](docs/screenshots/50-native-workspace.png)](docs/screenshots.md)
 
-Shopdeck brings multiple Shopware 6 shops into one native macOS workspace. Move between products, orders, customers, administrations and storefronts, with a local MCP server that makes those same shops available to your AI tools.
+[Watch the 30 second workspace preview](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Workspace-Preview.mp4) · [Vertical edition, captions and stable release tour](docs/video.md)
 
 ## A workspace for all your shops
 
@@ -29,7 +31,7 @@ Shopdeck brings multiple Shopware 6 shops into one native macOS workspace. Move 
 
 ### Lists that work on the full result set
 
-Search terms, filters and sorting go to Shopware before pagination. The application merges sorted results from the selected shops into one page. It does not just sort the first 50 downloaded rows.
+Search terms, filters and sorting go to Shopware before pagination. The application merges sorted results from the selected shops into one page. You can sort and filter across all matching pages within your configured limits.
 
 Settings provide rows per page and a maximum number of rows to load per shop. The configured result limit also bounds the combined pages you can browse. A visible message explains when the limit is reached. Shop names are local workspace metadata; sorting that column groups the remotely sorted records by shop. Structured JSON price array columns do not offer a misleading local sort button when Shopware has no direct field sort.
 
@@ -44,6 +46,8 @@ Content checks cover active parent products so inherited variant content is not 
 Use **Notes and follow up** in any product, order or customer detail to keep a next step and an optional due date. **Follow ups** collects those tasks across shops, with search, due filters, completion, reopening and postponement. Open tasks are also reachable from the command palette. Notes stay private to this Mac and are not exposed by the MCP server or written to Shopware. Enable a macOS reminder for a future due date to receive a notification even when the app is closed. Clicking it opens the linked record. Your note is excluded from the notification. Completion and postponement update the scheduled reminder. Notification permission is requested only when you choose to enable a reminder.
 
 ### Pick up where you left off
+
+In the workspace preview, **⌘K** opens quick actions, bookmarks and follow ups. Type a shop name to change the scope of your current view, or type an order number and choose **Orders** to search Shopware. The shop menu at the top of the view switches to **All shops**. Use **⌘T** for another tab and **⌘⇧D** to see two tabs side by side.
 
 Tabs reopen with their selected shops, search, filters, sorting, page, sales channel and currency. Save a named workspace for a recurring routine, such as morning order checks beside your replenishment list. Duplicate tabs, close other tabs, or reopen the last closed tab with **⌘⇧T**. Turn automatic restoration off in the **Workspaces** menu if you prefer a fresh start.
 
@@ -147,6 +151,10 @@ Live integration tests are opt in and use the isolated local Dockware verificati
 ## Languages
 
 Deutsch · English · Nederlands · Español · Français · Italiano
+
+## Support
+
+See [Support](docs/support.md) for connection troubleshooting and [Privacy](docs/privacy.md) for how Shopdeck handles your data. [Shopware Community Edition](https://www.shopware.com/en/community/community-edition/) is available from Shopware.
 
 ## License and credits
 

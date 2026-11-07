@@ -330,6 +330,7 @@ Vorher und Nachher bleiben erhalten. Du kannst bestätigte Änderungen gezielt z
 Vorschau laden	Load preview	Voorbeeld laden	Cargar vista previa	Charger l’aperçu	Carica anteprima
 Vorschau wird aus dem Shop geladen …	Loading preview from shop …	Voorbeeld uit shop laden …	Cargando vista previa de la tienda …	Chargement de l’aperçu …	Caricamento anteprima dal negozio …
 Weiter	Forward	Vooruit	Adelante	Suivant	Avanti
+Fortfahren	Continue	Doorgaan	Continuar	Continuer	Continua
 Wird übernommen	Applying	Wordt toegepast	Aplicando	Application en cours	Applicazione in corso
 Wähle einen Shop. Jede Administration behält ihren eigenen Anmeldestatus.	Choose a shop. Each administration keeps its own sign in session.	Kies een shop. Elk beheer houdt een eigen aanmeldsessie.	Elige una tienda. Cada administración conserva su propia sesión.	Choisissez une boutique. Chaque administration conserve sa propre session.	Scegli un negozio. Ogni amministrazione mantiene la propria sessione.
 Zu prüfen	Needs review	Te controleren	Requiere revisión	À vérifier	Da verificare
@@ -851,3 +852,12 @@ Letzte 30 Tage	Last 30 days	Afgelopen 30 dagen	Últimos 30 días	30 derniers jou
 Dieser Monat	This month	Deze maand	Este mes	Ce mois	Questo mese
 Letzter Monat	Last month	Vorige maand	Mes pasado	Mois dernier	Mese scorso
 Dieses Jahr	This year	Dit jaar	Este año	Cette année	Quest’anno
+Aktionen	Actions	Acties	Acciones	Actions	Azioni
+Direkt loslegen	Quick actions	Snelle acties	Acciones rápidas	Actions rapides	Azioni rapide
+Direkte Treffer	Exact matches	Exacte resultaten	Coincidencias exactas	Correspondances exactes	Corrispondenze esatte
+In Shops suchen	Search shop records	Zoeken in shops	Buscar en tiendas	Rechercher dans les boutiques	Cerca negli shop
+Weitere Treffer	More matches	Meer resultaten	Más resultados	Autres résultats	Altri risultati
+Shops, Aktionen oder Datensätze suchen	Search shops, actions or records	Zoek shops, acties of records	Busca tiendas, acciones o registros	Rechercher des boutiques, actions ou fiches	Cerca shop, azioni o record
+Suche löschen	Clear search	Zoekopdracht wissen	Borrar búsqueda	Effacer la recherche	Cancella ricerca
+Noch kein Shop verbunden	No shop connected	Geen shop verbonden	Ninguna tienda conectada	Aucune boutique connectée	Nessuno shop collegato
+Verbinde einen Shop oder erkunde Shopdeck mit Demodaten.	Connect a shop or explore Shopdeck with demo data.	Verbind een shop of verken Shopdeck met demogegevens.	Conecta una tienda o explora Shopdeck con datos de demostración.	Connectez une boutique ou explorez Shopdeck avec des données de démonstration.	Collega uno shop o esplora Shopdeck con dati dimostrativi.

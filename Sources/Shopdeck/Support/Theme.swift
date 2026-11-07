@@ -41,3 +41,28 @@ func dateLabel(_ value: JSONValue) -> String { guard let s = value.string else {
 func copyText(_ value: String) { NSPasteboard.general.clearContents(); NSPasteboard.general.setString(value, forType: .string) }
 
 func localizedDate(_ date:Date,date style:Date.FormatStyle.DateStyle = .abbreviated,time:Date.FormatStyle.TimeStyle = .shortened)->String{date.formatted(Date.FormatStyle(date:style,time:time).locale(Locale(identifier:Language.current)))}
+
+// Keeps custom sidebar and tab hit targets consistent with native controls.
+struct WorkspaceRowStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Row(configuration: configuration)
+    }
+
+    private struct Row: View {
+        let configuration: ButtonStyle.Configuration
+        @Environment(\.accessibilityReduceMotion) private var reduceMotion
+        @Environment(\.isEnabled) private var enabled
+        @LocalState<Bool> private var hovering = false
+
+        var body: some View {
+            configuration.label
+                .background(
+                    Color.primary.opacity(enabled ? (configuration.isPressed ? 0.12 : hovering ? 0.055 : 0) : 0),
+                    in: RoundedRectangle(cornerRadius: 7)
+                )
+                .onHover { hovering = $0 }
+                .animation(reduceMotion ? nil : .easeOut(duration: 0.12), value: hovering)
+                .animation(reduceMotion ? nil : .easeOut(duration: 0.1), value: configuration.isPressed)
+        }
+    }
+}

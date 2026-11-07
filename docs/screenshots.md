@@ -2,6 +2,13 @@
 
 English interface captures from development builds, using built in demo profiles and an isolated local Shopware test fixture. The amounts and customers shown are test data.
 
+## Workspace preview from the main branch
+
+![Compact native toolbar, shop selection and dashboard in dark appearance](screenshots/50-native-workspace.png)
+![Quick actions and keyboard hints in the redesigned command palette](screenshots/51-command-palette.png)
+![Dashboard for all shops beside Nordlicht orders, each with its own shop scope](screenshots/52-split-workspace.png)
+![Light appearance after exploring demo shops from the first launch assistant](screenshots/53-native-workspace-light.png)
+
 ## Picking lists and daily shortcuts in 0.12
 
 ![Picking quantities across three shops with keyboard checks and order allocations](screenshots/44-picking-list.png)

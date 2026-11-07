@@ -20,7 +20,7 @@ struct RecordsView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             ViewThatFits(in: .horizontal) {
-                HStack(alignment: .top, spacing: 20) { recordHeading.fixedSize(); Spacer(minLength: 12); listActions.fixedSize() }.fixedSize(horizontal: true, vertical: false)
+                HStack(alignment: .top, spacing: 20) { recordHeading.fixedSize(); Spacer(minLength: 12); listActions.fixedSize() }
                 VStack(alignment: .leading, spacing: 12) { recordHeading; listActions.labelStyle(.iconOnly).fixedSize() }.frame(maxWidth: .infinity, alignment: .leading)
             }.frame(maxWidth: .infinity, alignment: .leading)
             if exporting {

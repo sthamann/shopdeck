@@ -10,6 +10,7 @@ struct SidebarDragReference:Codable,Transferable {
 }
 struct SidebarView:View {
     @Bindable var model:AppModel
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.openShopWorkspace) private var openWorkspace
     @LocalState<Shop?> private var deleting:Shop? = nil
     @LocalState<UUID?> private var renaming:UUID? = nil
@@ -18,8 +19,8 @@ struct SidebarView:View {
     @FocusState private var renameFocused:Bool
     var body:some View {
         VStack(spacing:0) {
-            HStack(spacing:10) {if let icon=Bundle.main.url(forResource:"AppIcon",withExtension:"icns").flatMap({NSImage(contentsOf:$0)}){Image(nsImage:icon).resizable().scaledToFit().frame(width:36,height:36)};Text("shopdeck").font(.system(size:22,weight:.bold,design:.rounded));Spacer()}.padding(.horizontal,20).padding(.top,10).padding(.bottom,14)
-            Button{model.showingCommandPalette=true}label:{HStack{Image(systemName:"magnifyingglass");Text(T("Schnellsuche"));Spacer();Text("⌘K").font(.system(size:10)).foregroundStyle(.tertiary)}.font(.system(size:12)).foregroundStyle(.secondary).padding(10).background(.quaternary.opacity(0.3),in:RoundedRectangle(cornerRadius:8))}.buttonStyle(.plain).padding(.horizontal,16).padding(.bottom,12)
+            HStack(spacing:10) {if let icon=Bundle.main.url(forResource:"AppIcon",withExtension:"icns").flatMap({NSImage(contentsOf:$0)}){Image(nsImage:icon).resizable().scaledToFit().frame(width:28,height:28)};Text("shopdeck").font(.system(size:18,weight:.bold,design:.rounded));Spacer()}.padding(.horizontal,20).padding(.top,7).padding(.bottom,10)
+            Button{model.showingCommandPalette=true}label:{HStack{Image(systemName:"magnifyingglass");Text(T("Schnellsuche"));Spacer();Text("⌘K").font(.system(size:10)).foregroundStyle(.tertiary)}.font(.system(size:12)).foregroundStyle(.secondary).padding(10).background(.quaternary.opacity(0.3),in:RoundedRectangle(cornerRadius:8))}.buttonStyle(WorkspaceRowStyle()).padding(.horizontal,16).padding(.bottom,9)
             ScrollView {
                 VStack(alignment:.leading,spacing:4) {
                     ForEach([Destination.overview,.admin,.frontends,.products,.orders,.customers,.followups,.changes,.history]){navRow($0)}
@@ -41,14 +42,14 @@ struct SidebarView:View {
                 VStack(alignment:.leading,spacing:10) {
                     Link(destination:URL(string:"https://www.shopware.com/en/community/community-edition/")!){HStack(alignment:.top,spacing:10){Image(systemName:"shippingbox.fill").font(.system(size:21)).foregroundStyle(Theme.blue);VStack(alignment:.leading,spacing:4){Text("Community Edition").font(.system(size:12,weight:.semibold));Text(T("Shopware. Kostenlos und Open Source.")).font(.system(size:10)).foregroundStyle(.secondary)};Spacer(minLength:0);Image(systemName:"arrow.up.right").font(.system(size:9)).foregroundStyle(.secondary)}}.buttonStyle(.plain)
                     Button(T("Lokal ausprobieren")){model.startWithLocalShop=true;model.showingAddShop=true}.font(.system(size:11,weight:.medium)).buttonStyle(.borderless).foregroundStyle(Theme.blue)
-                }.padding(12).frame(maxWidth:.infinity,alignment:.leading).background(Theme.blue.opacity(0.075),in:RoundedRectangle(cornerRadius:10))
+                }.padding(.horizontal,6).frame(maxWidth:.infinity,alignment:.leading)
                 HStack{SettingsLink{Label(T("Einstellungen"),systemImage:"gearshape")}.buttonStyle(.plain);Spacer();Text(AppVersion.current).foregroundStyle(.tertiary)}.font(.system(size:11))
             }.padding(14)
-        }.background(.bar)
+        }
         .alert(T("Shop entfernen?"),isPresented:Binding(get:{deleting != nil},set:{if !$0{deleting=nil}})){Button(T("Abbrechen"),role:.cancel){deleting=nil};Button(T("Entfernen"),role:.destructive){if let deleting{model.removeShop(deleting)};deleting=nil}}message:{Text(T("Der Shop wird nur aus Shopdeck entfernt. Die Daten im Shop und ein lokaler Container bleiben erhalten."))}
     }
     private func navRow(_ destination:Destination)->some View {
-        Button{if [.overview,.admin,.followups,.changes,.notifications,.updates,.ai,.activity].contains(destination){model.selectedShopID=nil};model.destination=destination}label:{HStack(spacing:11){Image(systemName:destination.icon).font(.system(size:15)).frame(width:22);Text(destination.title).font(.system(size:13,weight:model.destination==destination ? .semibold:.regular));Spacer();if destination == .followups,model.dueFollowUpCount>0{Text("\(model.dueFollowUpCount)").font(.system(size:10,weight:.bold)).foregroundStyle(.orange)};if destination == .changes,model.pendingCount>0{Text("\(model.pendingCount)").font(.system(size:10,weight:.bold)).padding(.horizontal,6).padding(.vertical,2).background(Theme.blue,in:Capsule()).foregroundStyle(.white)}}.padding(.horizontal,10).padding(.vertical,9).contentShape(Rectangle())}.buttonStyle(.plain).foregroundStyle(model.destination==destination ? Theme.blue:.primary).background(model.destination==destination ? Theme.blue.opacity(0.13):.clear,in:RoundedRectangle(cornerRadius:7))
+        Button{model.openWorkspaceDestination(destination)}label:{HStack(spacing:11){Image(systemName:destination.icon).font(.system(size:15)).frame(width:22);Text(destination.title).font(.system(size:13,weight:model.destination==destination ? .semibold:.regular));Spacer();if destination == .followups,model.dueFollowUpCount>0{Text("\(model.dueFollowUpCount)").font(.system(size:10,weight:.bold)).foregroundStyle(.orange)};if destination == .changes,model.pendingCount>0{Text("\(model.pendingCount)").font(.system(size:10,weight:.bold)).padding(.horizontal,6).padding(.vertical,2).background(Theme.blue,in:Capsule()).foregroundStyle(.white)}}.padding(.horizontal,10).padding(.vertical,9).contentShape(Rectangle())}.buttonStyle(WorkspaceRowStyle()).foregroundStyle(model.destination==destination ? Theme.blue:.primary).background(model.destination==destination ? Theme.blue.opacity(0.13):.clear,in:RoundedRectangle(cornerRadius:7)).accessibilityAddTraits(model.destination==destination ? .isSelected : []).animation(reduceMotion ? nil : .easeOut(duration: 0.15), value: model.destination==destination)
     }
     @ViewBuilder private func shopRows(_ group:UUID?)->some View {
         ForEach(model.workspace.shops.filter{$0.groupID==group}){shop in
@@ -56,11 +57,11 @@ struct SidebarView:View {
                 if renaming==shop.id {
                     HStack(spacing:10){ShopIcon(shop:shop,size:27);TextField(T("Shopname"),text:$draftName).textFieldStyle(.roundedBorder).focused($renameFocused).onSubmit{commitRename(shop)}.onExitCommand{renaming=nil}.onAppear{renameFocused=true}}.padding(.horizontal,10).padding(.vertical,8)
                 } else {
-                    Button{if [.overview,.admin].contains(model.destination){model.openAdministration(shop)}else{model.selectedShopID=shop.id}}label:{
+                    Button{model.selectedShopID=shop.id}label:{
                         HStack(spacing:10){ShopIcon(shop:shop,size:27);VStack(alignment:.leading,spacing:3){Text(shop.name).font(.system(size:12,weight:.medium)).lineLimit(1);Text(shop.isDemo ? T("Demodaten"):T(shop.environment)).font(.system(size:10)).foregroundStyle(.secondary)};Spacer();if model.connectionErrors[shop.id] != nil{Image(systemName:"exclamationmark.circle.fill").foregroundStyle(.orange).font(.system(size:10))}}.padding(.horizontal,10).padding(.vertical,8).contentShape(Rectangle())
-                    }.buttonStyle(.plain).accessibilityLabel(shop.name)
+                    }.buttonStyle(WorkspaceRowStyle()).accessibilityLabel(shop.name).accessibilityAddTraits(model.selectedShopID==shop.id ? .isSelected : [])
                 }
-            }.background(model.selectedShopID==shop.id ? Theme.blue.opacity(0.13):.clear,in:RoundedRectangle(cornerRadius:7)).overlay(alignment:.top){if dropTarget==shop.id.uuidString{RoundedRectangle(cornerRadius:1).fill(Theme.blue).frame(height:2)}}
+            }.background(model.selectedShopID==shop.id ? Theme.blue.opacity(0.13):.clear,in:RoundedRectangle(cornerRadius:7)).animation(reduceMotion ? nil : .easeOut(duration: 0.15), value: model.selectedShopID==shop.id).overlay(alignment:.top){if dropTarget==shop.id.uuidString{RoundedRectangle(cornerRadius:1).fill(Theme.blue).frame(height:2)}}
                 .onDrag{NSItemProvider(object:("shopdeck:shop:"+shop.id.uuidString) as NSString)}
                 .onDrop(of:[UTType.text],isTargeted:targetBinding(shop.id.uuidString)){providers in acceptDrop(providers,before:shop.id,group:shop.groupID)}
                 .contextMenu {

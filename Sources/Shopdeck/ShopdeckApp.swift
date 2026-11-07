@@ -26,11 +26,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
                 .onChange(of: model.followUps) { _, _ in Task { await model.reconcileReminders() } }
                 .onChange(of: model.workspace.shops) { _, _ in Task { await model.reconcileReminders() } }
                 .task { while !Task.isCancelled { model.reload(); try? await Task.sleep(for: .seconds(3)); if Task.isCancelled { break } } }
-        }.defaultSize(width: 1280, height: 850).windowStyle(.hiddenTitleBar)
+        }.defaultSize(width: 1280, height: 850).windowToolbarStyle(.unifiedCompact)
             .commands {
                 CommandGroup(after:.appInfo){AppUpdateMenuItem()}
                 CommandGroup(replacing: .newItem) { Button(T("Neuer Tab")) { appAction("newTab") }.keyboardShortcut("t"); Button(T("Geschlossenen Tab wieder öffnen")) { appAction("reopenTab") }.keyboardShortcut("t", modifiers: [.command, .shift]); Button(T("Shop hinzufügen")) { appAction("add") }.keyboardShortcut("n") }
-                CommandMenu("Shopdeck") { Button(T("Schnellsuche")) { appAction("search") }.keyboardShortcut("k"); Button(T("Aktualisieren")) { appAction("refresh") }.keyboardShortcut("r"); Button("Codex & Claude") { appAction("ai") }.keyboardShortcut("k", modifiers: [.command, .shift]) }
+                CommandMenu("Shopdeck") { Button(T("Schnellsuche")) { appAction("search") }.keyboardShortcut("k"); Button(T("Aktualisieren")) { appAction("refresh") }.keyboardShortcut("r"); Button(T("Nebeneinander anzeigen")) { appAction("split") }.keyboardShortcut("d", modifiers: [.command, .shift]); Button("Codex & Claude") { appAction("ai") }.keyboardShortcut("k", modifiers: [.command, .shift]) }
             }
         MenuBarExtra("Shopdeck", systemImage:"bag.circle", isInserted:$showMenuBar) { MenuBarCommerceView(model:model).tint(Theme.blue).preferredColorScheme(colorScheme) }.menuBarExtraStyle(.window)
         Settings { AppSettingsView(model: model).tint(Theme.blue).preferredColorScheme(colorScheme) }

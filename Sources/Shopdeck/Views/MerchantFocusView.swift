@@ -3,15 +3,16 @@ import ShopdeckCore
 
 struct MerchantFocusView: View {
     @Bindable var model: AppModel
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @AppStorage("focusStockThreshold") private var stock = 10
     @AppStorage("focusOverdueHours") private var hours = 48
     @LocalState<Bool> private var settings = false
     @LocalState<Bool> private var expanded = true
     private var current: Bool { model.focusSnapshot.key == model.merchantFocusKey }
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 9) {
             HStack(spacing: 10) {
-                Button { expanded.toggle() } label: { Label(T("Jetzt angehen"), systemImage: expanded ? "chevron.down" : "chevron.right").font(.system(size: 17, weight: .semibold)) }.buttonStyle(.plain)
+                Button { withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.18)) { expanded.toggle() } } label: { Label(T("Jetzt angehen"), systemImage: expanded ? "chevron.down" : "chevron.right").font(.system(size: 17, weight: .semibold)) }.buttonStyle(.plain)
                 if model.loadingFocus { ProgressView().controlSize(.small) }
                 Spacer()
                 if model.dueFollowUpCount > 0 {
@@ -32,7 +33,7 @@ struct MerchantFocusView: View {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 320), spacing: 32)], spacing: 0) {
                     ForEach(MerchantFocus.allCases) { focus in
                         Button { model.openFocus(focus) } label: { focusRow(focus) }
-                            .buttonStyle(.plain).help(T("Betroffene Datensätze öffnen"))
+                            .buttonStyle(WorkspaceRowStyle()).help(T("Betroffene Datensätze öffnen"))
                     }
                 }
                 HStack {
@@ -41,7 +42,7 @@ struct MerchantFocusView: View {
                     if let loaded = model.focusSnapshot.loadedAt, current { Text(localizedDate(loaded, date: .omitted, time: .shortened)).font(.system(size: 11)).foregroundStyle(.secondary).monospacedDigit() }
                 }
             }
-        }.padding(20).background(Theme.surface, in: RoundedRectangle(cornerRadius: 14))
+        }.padding(15).background(Theme.surface, in: RoundedRectangle(cornerRadius: 14))
             .task(id: model.merchantFocusKey) { await model.loadMerchantFocus() }
     }
     private func focusRow(_ focus: MerchantFocus) -> some View {
@@ -56,6 +57,6 @@ struct MerchantFocusView: View {
             Spacer(minLength: 6)
             Text(!errors.isEmpty ? "–" : value.map(String.init) ?? "…").font(.system(size: 21, weight: .semibold, design: .rounded)).monospacedDigit().foregroundStyle(value != nil && value! > 0 && errors.isEmpty ? Theme.blue : Color.secondary)
             Image(systemName: "chevron.right").font(.system(size: 10, weight: .semibold)).foregroundStyle(.tertiary)
-        }.padding(.vertical, 11).contentShape(Rectangle()).overlay(alignment: .bottom) { Rectangle().fill(Color.primary.opacity(0.07)).frame(height: 1) }
+        }.padding(.vertical, 7).contentShape(Rectangle()).overlay(alignment: .bottom) { Rectangle().fill(Color.primary.opacity(0.07)).frame(height: 1) }
     }
 }

@@ -6,6 +6,8 @@ import UniformTypeIdentifiers
 struct DashboardView: View {
     @Bindable var model: AppModel
     var tile:DashboardTile? = nil
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @LocalState<Bool> private var loadingDemo = false
     @AppStorage("dashboardIncludeDemo") private var includeDemo = false
     @LocalState<Bool> private var configuring = false
     @LocalState<DashboardTile?> private var editingTile:DashboardTile? = nil
@@ -17,14 +19,33 @@ struct DashboardView: View {
     private var week: [AnalyticsOrder] { analytics.period(days: 7, currency: currency) }
     private var month: [AnalyticsOrder] { analytics.period(days: 30, currency: currency) }
     var body: some View {
+        if model.workspace.shops.isEmpty {
+            ContentUnavailableView {
+                Label(T("Noch kein Shop verbunden"), systemImage: "storefront")
+            } description: {
+                Text(T("Verbinde einen Shop oder erkunde Shopdeck mit Demodaten."))
+            } actions: {
+                Button(T("Shop verbinden")) { model.showingAddShop = true }
+                    .buttonStyle(.borderedProminent)
+                Button(T("Mit Demodaten erkunden")) {
+                    loadingDemo = true
+                    Task { await model.addDemo(); loadingDemo = false }
+                }.disabled(loadingDemo)
+            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        } else {
+            dashboard
+        }
+    }
+
+    private var dashboard: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 16) {
                 ViewThatFits(in: .horizontal) {
-                    HStack(alignment: .top, spacing: 20) { dashboardHeading.fixedSize(); Spacer(minLength: 12); customizeButton.fixedSize() }.fixedSize(horizontal: true, vertical: false)
+                    HStack(alignment: .top, spacing: 20) { dashboardHeading.fixedSize(); Spacer(minLength: 12); customizeButton.fixedSize() }
                     VStack(alignment: .leading, spacing: 12) { dashboardHeading; customizeButton }.frame(maxWidth: .infinity, alignment: .leading)
                 }.frame(maxWidth: .infinity, alignment: .leading)
                 ViewThatFits(in: .horizontal) {
-                    HStack(spacing: 18) { dashboardStatus.fixedSize(); Spacer(minLength: 10); demoToggle; dashboardChannel.frame(width: 220); dashboardCurrencyPicker }.fixedSize(horizontal: true, vertical: false)
+                    HStack(spacing: 18) { dashboardStatus.fixedSize(); Spacer(minLength: 10); demoToggle; dashboardChannel.frame(width: 220); dashboardCurrencyPicker }
                     VStack(alignment: .leading, spacing: 10) { dashboardStatus; demoToggle; HStack { dashboardChannel; dashboardCurrencyPicker } }.frame(maxWidth: .infinity, alignment: .leading)
                 }.frame(maxWidth: .infinity, alignment: .leading)
                 Text(T("Bestellumsatz inklusive Steuern, ohne stornierte Bestellungen. Keine Währungsumrechnung. Bestellungen und Umsatz nach gewählter Währung.")).font(.system(size: 11)).foregroundStyle(.secondary)
@@ -32,10 +53,10 @@ struct DashboardView: View {
                 if !analytics.truncatedShops.isEmpty { Text(T("Unvollständige Statistik: mehr als 10.000 Bestellungen in 30 Tagen.") + " " + analytics.truncatedShops.joined(separator: ", ")).font(.caption).foregroundStyle(.orange) }
                 SecurityStatusView(model:model,compact:true)
                 MerchantFocusView(model: model)
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 285), spacing: 18)], alignment: .leading, spacing: 18) {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 250), spacing: 14)], alignment: .leading, spacing: 14) {
                     ForEach(configuration.effectiveTiles) { item in
                         let widget=item.widget
-                        DashboardView(model:model,tile:item).widgetView(widget).frame(maxWidth: .infinity, minHeight: item.showShops ? 315 : 205, maxHeight: item.showShops ? 315 : 205, alignment: .topLeading).padding(21)
+                        DashboardView(model:model,tile:item).widgetView(widget).frame(maxWidth: .infinity, minHeight: item.showShops ? 294 : 184, maxHeight: item.showShops ? 294 : 184, alignment: .topLeading).padding(17)
                             .background(widget == .revenueToday ? Theme.blue.opacity(0.14) : Theme.surface, in: RoundedRectangle(cornerRadius: 16))
                             .overlay(RoundedRectangle(cornerRadius: 16).strokeBorder(widget == .revenueToday ? Theme.blue.opacity(0.35) : Color.primary.opacity(0.07), lineWidth: 1))
                             .overlay(alignment:.topTrailing){Menu{Button(T("Widget konfigurieren")){editingTile=item};Button(T("Duplizieren")){var next=configuration;var copy=item;copy.id=UUID().uuidString;next.tiles=next.effectiveTiles+[copy];model.saveDashboard(next)};Button(T("Widget entfernen"),role:.destructive){model.removeDashboardTile(item.id)}}label:{Image(systemName:"ellipsis").padding(8)}.menuStyle(.borderlessButton).fixedSize().padding(6)}
@@ -59,7 +80,7 @@ struct DashboardView: View {
         HStack(spacing: 8) {
             Circle().fill(analytics.failures.isEmpty ? .green : .orange).frame(width: 7, height: 7)
             Text("\(model.dashboardShops.count) " + (model.dashboardShops.count == 1 ? T("Shop") : T("Shops"))).lineLimit(1).fixedSize()
-            if model.dashboardShops.allSatisfy(\.isDemo) { Text(T("Demodaten")).foregroundStyle(.orange).fixedSize() }
+            if !model.dashboardShops.isEmpty && model.dashboardShops.allSatisfy(\.isDemo) { Text(T("Demodaten")).foregroundStyle(.orange).fixedSize() }
             if model.loadingAnalytics { ProgressView().controlSize(.small) }
             else if let date = analytics.loadedAt { Text(T("Aktualisiert") + " " + localizedDate(date, date: .omitted, time: .shortened)).font(.caption).foregroundStyle(.secondary).lineLimit(1) }
         }.font(.system(size: 12, weight: .medium))
@@ -136,7 +157,19 @@ struct DashboardView: View {
         }
     }
     private func monthlyBars(height:CGFloat)->some View {Chart(analytics.monthlySeries(currency:currency)){point in BarMark(x:.value(T("Monat"),point.date,unit:.month),y:.value(T("Umsatz"),point.revenue)).foregroundStyle(Theme.blue).cornerRadius(3)}.chartXAxis{AxisMarks(values:.stride(by:.month,count:2)){AxisValueLabel(format:.dateTime.month(.abbreviated))}}.chartYAxis(.hidden).frame(height:height)}
-    private func metric(_ value: String, caption: String) -> some View { VStack(alignment:.leading,spacing:6) { Text(model.loadingAnalytics && analytics.loadedAt == nil ? "–" : value).font(.system(size:30,weight:.bold,design:.rounded)).monospacedDigit().lineLimit(1).minimumScaleFactor(0.6); Text(caption).font(.system(size:11)).foregroundStyle(.secondary) } }
+    private func metric(_ value: String, caption: String) -> some View {
+        let displayed = model.loadingAnalytics && analytics.loadedAt == nil ? "–" : value
+        return VStack(alignment: .leading, spacing: 6) {
+            Text(displayed)
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+                .monospacedDigit()
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
+                .contentTransition(reduceMotion ? .identity : .numericText())
+                .animation(reduceMotion ? nil : .easeOut(duration: 0.2), value: displayed)
+            Text(caption).font(.caption).foregroundStyle(.secondary)
+        }
+    }
     private func revenueBars(height: CGFloat) -> some View { Chart(series) { point in BarMark(x:.value("Date",point.date,unit:.day),y:.value("Revenue",point.revenue)).foregroundStyle(Theme.blue.opacity(0.85)).cornerRadius(3) }.chartXAxis(.hidden).chartYAxis(.hidden).frame(height:height) }
     private func orderBars(height: CGFloat, axes: Bool = false) -> some View { Chart(series) { point in BarMark(x:.value(T("Tag"),point.date,unit:.day),y:.value(T("Bestellungen"),point.count)).foregroundStyle(Theme.blue).cornerRadius(3) }.chartXAxis(axes ? .automatic : .hidden).chartYAxis(axes ? .automatic : .hidden).frame(height:height) }
     @ViewBuilder private func statusRows(association: String) -> some View { let entries = month.flatMap { $0.data[association].array }; let groups = Dictionary(grouping:entries) { $0["stateMachineState"]["technicalName"].string ?? "unknown" }.sorted { $0.value.count > $1.value.count }; ForEach(Array(groups.prefix(4)),id:\.key) { entry in HStack { Text(T(entry.key)); Spacer(); Text("\(entry.value.count)").fontWeight(.semibold) }.font(.system(size:12)); ProgressView(value:Double(entry.value.count),total:Double(max(entries.count,1))).tint(Theme.blue) }; if entries.isEmpty { empty() }; Text(T("Aus den letzten 30 Tagen")).font(.caption).foregroundStyle(.secondary) }

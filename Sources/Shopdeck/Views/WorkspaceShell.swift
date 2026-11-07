@@ -12,9 +12,11 @@ extension EnvironmentValues { var openShopWorkspace: (Shop?, Bool) -> Void { get
 }
 struct WorkspaceShell: View {
     var root: AppModel
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @AppStorage("onboardingCompleted") private var onboardingCompleted = false
     @AppStorage("restoreWorkspaceOnLaunch") private var restoreOnLaunch = true
     @LocalState<Bool> private var onboarding = false
+    @LocalState<Bool> private var exploreDemoAfterOnboarding = false
     @LocalState<[ShopWorkspace]> private var tabs: [ShopWorkspace] = []
     @LocalState<UUID?> private var selected: UUID? = nil
     @LocalState<UUID?> private var secondary: UUID? = nil
@@ -29,20 +31,38 @@ struct WorkspaceShell: View {
     private var session: DesktopSession { .init(tabs: tabs.map { $0.model.desktopTab(id: $0.id) }, selected: active?.id, secondary: secondary) }
     var body: some View {
         VStack(spacing: 0) {
-            HStack(spacing: 9) {
-                ScrollView(.horizontal) { HStack(spacing: 6) { ForEach(tabs) { tab in tabButton(tab) } } }.scrollIndicators(.hidden)
-                if let active { BookmarkMenu(model: active.model) }
-                workspaceMenu
-                Button { open(nil, split: false) } label: { Image(systemName: "plus") }.buttonStyle(.borderless).help(T("Neuer Tab") + " · ⌘T")
-                Button { toggleSplit() } label: { Image(systemName: "rectangle.split.2x1") }.buttonStyle(.borderless).help(T("Nebeneinander anzeigen"))
-            }.padding(.horizontal, 16).padding(.top, 9).padding(.bottom, 8).background(.bar)
-            Divider()
+            if tabs.count > 1 {
+                ScrollViewReader { proxy in
+                    ScrollView(.horizontal) {
+                        HStack(spacing: 4) {
+                            ForEach(tabs) { tab in tabButton(tab).id(tab.id) }
+                        }.padding(.horizontal, 14).padding(.vertical, 5)
+                    }
+                    .scrollIndicators(.hidden)
+                    .onChange(of: selected) { _, id in
+                        if let id { withAnimation(reduceMotion ? nil : .easeOut(duration: 0.18)) { proxy.scrollTo(id) } }
+                    }
+                }
+                Divider()
+            }
             HSplitView {
                 if let active { ContentView(model: active.model).id(active.id.uuidString + presentationID.uuidString).frame(minWidth: secondary == nil ? 900 : 650) }
                 if let split = tabs.first(where: { $0.id == secondary }), split.id != active?.id { ContentView(model: split.model, showSidebar: false).id(split.id.uuidString + presentationID.uuidString).frame(minWidth: 480) }
             }
-        }.environment(\.openShopWorkspace, { shop, split in open(shop, split: split) })
-            .sheet(isPresented: $onboarding) { OnboardingView(model: root) { openAI in onboardingCompleted = true; onboarding = false; if openAI { active?.model.destination = .ai } } }
+        }
+            .toolbar { workspaceToolbar }
+            .environment(\.openShopWorkspace, { shop, split in open(shop, split: split) })
+            .sheet(isPresented: $onboarding, onDismiss: loadOnboardingDemo) {
+                OnboardingView(model: root) { openAI in
+                    onboardingCompleted = true
+                    onboarding = false
+                    if openAI { active?.model.destination = .ai }
+                } exploreDemo: {
+                    exploreDemoAfterOnboarding = true
+                    onboardingCompleted = true
+                    onboarding = false
+                }
+            }
             .sheet(isPresented: $naming) { savePresetSheet }
             .onAppear { initialize() }
             .task(id: session) {
@@ -59,19 +79,81 @@ struct WorkspaceShell: View {
             .background(Button("") { cycle(-1) }.keyboardShortcut("[", modifiers: [.command, .shift]).hidden())
             .background(Button("") { if let active, tabs.count > 1 { close(active.id) } }.keyboardShortcut("w").disabled(tabs.count < 2).hidden())
     }
-    private func tabButton(_ tab: ShopWorkspace) -> some View {
-        HStack(spacing: 9) {
-            Image(systemName: tab.model.destination.icon).foregroundStyle(Theme.blue)
-            Button(tab.title) { selected = tab.id; if secondary == tab.id { secondary = nil } }.buttonStyle(.plain).lineLimit(1)
-            if tabs.count > 1 { Button { close(tab.id) } label: { Image(systemName: "xmark").font(.system(size: 9, weight: .semibold)) }.buttonStyle(.plain).help(T("Tab schließen")) }
-        }.font(.system(size: 12, weight: .medium)).padding(.horizontal, 13).padding(.vertical, 9)
-            .background(active?.id == tab.id ? Theme.blue.opacity(0.13) : Color.primary.opacity(0.04), in: RoundedRectangle(cornerRadius: 8))
-            .contextMenu {
-                Button(T("Tab duplizieren")) { duplicate(tab) }
-                Button(T("Nebeneinander anzeigen")) { if active?.id != tab.id { secondary = tab.id } }
-                Button(T("Andere Tabs schließen")) { tabs = [tab]; selected = tab.id; secondary = nil }
-                Button(T("Tab schließen")) { close(tab.id) }.disabled(tabs.count == 1)
+    @ToolbarContentBuilder
+    private var workspaceToolbar: some ToolbarContent {
+        ToolbarItemGroup(placement: .primaryAction) {
+            if let active {
+                Button { active.model.showingCommandPalette = true } label: {
+                    Label(T("Schnellsuche"), systemImage: "magnifyingglass")
+                }.help(T("Schnellsuche") + " · ⌘K")
+                BookmarkMenu(model: active.model)
             }
+            workspaceMenu
+        }
+        ToolbarItemGroup(placement: .primaryAction) {
+            Button { open(nil, split: false) } label: {
+                Label(T("Neuer Tab"), systemImage: "plus.square")
+            }.help(T("Neuer Tab") + " · ⌘T")
+            Button { toggleSplit() } label: {
+                Label(T("Nebeneinander anzeigen"), systemImage: secondary == nil ? "rectangle.split.2x1" : "rectangle.split.2x1.fill")
+            }
+            .help(T("Nebeneinander anzeigen"))
+            .accessibilityAddTraits(secondary == nil ? [] : .isSelected)
+        }
+        ToolbarItemGroup(placement: .primaryAction) {
+            if let active {
+                Button { Task { await active.model.refresh() } } label: {
+                    if active.model.isRefreshing {
+                        ProgressView().controlSize(.small).frame(width: 18, height: 18)
+                    } else {
+                        Label(T("Aktualisieren"), systemImage: "arrow.clockwise")
+                    }
+                }.help(T("Aktualisieren")).disabled(active.model.isRefreshing)
+                Button { active.model.showingAddShop = true } label: {
+                    Label(T("Shop hinzufügen"), systemImage: "plus")
+                }.help(T("Shop hinzufügen"))
+            }
+        }
+    }
+
+    private func tabButton(_ tab: ShopWorkspace) -> some View {
+        let isActive = active?.id == tab.id
+        return HStack(spacing: 2) {
+            Button {
+                selected = tab.id
+                if secondary == tab.id { secondary = nil }
+            } label: {
+                Label(tab.title, systemImage: tab.model.destination.icon)
+                    .lineLimit(1)
+                    .padding(.leading, 9)
+                    .padding(.trailing, 5)
+                    .frame(minHeight: 29)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(WorkspaceRowStyle())
+            .accessibilityAddTraits(isActive ? .isSelected : [])
+            .help(tab.title)
+            Button { close(tab.id) } label: {
+                Image(systemName: "xmark")
+                    .font(.system(size: 9, weight: .semibold))
+                    .frame(width: 25, height: 26)
+                    .contentShape(Rectangle())
+            }
+            .buttonStyle(WorkspaceRowStyle())
+            .accessibilityLabel(T("Tab schließen") + " · " + tab.title)
+            .help(T("Tab schließen"))
+        }
+        .font(.system(size: 12, weight: isActive ? .semibold : .medium))
+        .foregroundStyle(isActive ? Color.primary : Color.secondary)
+        .padding(2)
+        .background(isActive ? Color.primary.opacity(0.09) : .clear, in: RoundedRectangle(cornerRadius: 8))
+        .animation(reduceMotion ? nil : .easeOut(duration: 0.14), value: isActive)
+        .contextMenu {
+            Button(T("Tab duplizieren")) { duplicate(tab) }
+            Button(T("Nebeneinander anzeigen")) { if !isActive { secondary = tab.id } }.disabled(isActive)
+            Button(T("Andere Tabs schließen")) { tabs = [tab]; selected = tab.id; secondary = nil }
+            Button(T("Tab schließen")) { close(tab.id) }
+        }
     }
     private var workspaceMenu: some View {
         Menu {
@@ -84,7 +166,7 @@ struct WorkspaceShell: View {
             Divider()
             Button(T("Geschlossenen Tab wieder öffnen")) { reopen() }.disabled(closed.isEmpty)
             Toggle(T("Tabs beim Start wiederherstellen"), isOn: $restoreOnLaunch)
-        } label: { Label(T("Arbeitsplätze"), systemImage: "rectangle.3.group") }.fixedSize().menuStyle(.borderlessButton).help(T("Arbeitsplätze und Tabs"))
+        } label: { Label(T("Arbeitsplätze"), systemImage: "rectangle.3.group") }.help(T("Arbeitsplätze und Tabs"))
     }
     private var savePresetSheet: some View {
         VStack(alignment: .leading, spacing: 18) {
@@ -94,6 +176,14 @@ struct WorkspaceShell: View {
             Text("\(tabs.count) " + T("Tabs")).font(.caption).foregroundStyle(.secondary)
             HStack { Button(T("Abbrechen")) { naming = false }.keyboardShortcut(.cancelAction); Spacer(); Button(T("Speichern")) { savePreset() }.buttonStyle(.borderedProminent).keyboardShortcut(.defaultAction).disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty) }
         }.padding(26).frame(width: 460)
+    }
+    private func loadOnboardingDemo() {
+        guard exploreDemoAfterOnboarding else { return }
+        exploreDemoAfterOnboarding = false
+        Task {
+            await root.addDemo()
+            if root.workspace.shops.isEmpty { onboardingCompleted = false }
+        }
     }
     private func initialize() {
         guard !initialized else { return }
@@ -161,6 +251,7 @@ struct WorkspaceShell: View {
         switch action {
         case "newTab": open(nil, split: false)
         case "reopenTab": reopen()
+        case "split": toggleSplit()
         case "search": model.showingCommandPalette = true
         case "add": model.showingAddShop = true
         case "refresh": Task { await model.refresh() }

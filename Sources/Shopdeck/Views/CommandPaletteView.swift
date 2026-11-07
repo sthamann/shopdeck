@@ -8,85 +8,204 @@ private struct PaletteAction: Identifiable {
     let icon: String
     let run: () -> Void
 }
+
+private struct PaletteSection: Identifiable {
+    let id: String
+    let title: String
+    let actions: [PaletteAction]
+}
+
 struct CommandPaletteView: View {
     var model: AppModel
+    var onExecute: (@escaping () -> Void) -> Void
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @LocalState<String> private var query = ""
-    @LocalState<String?> private var selected: String?
+    @LocalState<String?> private var selected: String? = nil
     @FocusState private var focused: Bool
-    private var actions: [PaletteAction] {
-        var all: [PaletteAction] = []
-        let saved = query.isEmpty ? Array(model.bookmarks.prefix(20)) : model.bookmarks
-        for item in saved where model.workspace.shops.contains(where: { $0.id == item.shopID }) {
-            let detail = T("Lesezeichen") + " · " + (model.workspace.shops.first { $0.id == item.shopID }?.name ?? "") + " · " + item.reference
-            all.append(PaletteAction(id: "bookmark-" + item.id, title: item.title, detail: detail, icon: "star", run: { model.openBookmark(item) }))
+
+    private var term: String { query.trimmingCharacters(in: .whitespacesAndNewlines) }
+
+    private var sections: [PaletteSection] {
+        let searchTerm = term
+        let shopNames = Dictionary(model.workspace.shops.map { ($0.id, $0.name) }, uniquingKeysWith: { first, _ in first })
+        let bookmarks = model.bookmarks.compactMap { item -> PaletteAction? in
+            guard let name = shopNames[item.shopID] else { return nil }
+            return .init(id: "bookmark-" + item.id, title: item.title, detail: name + " · " + item.reference, icon: "star") {
+                model.openBookmark(item)
+            }
         }
-        for item in model.followUps.filter({ $0.completedAt == nil }).sorted(by: { ($0.dueAt ?? .distantFuture) < ($1.dueAt ?? .distantFuture) }).prefix(20) {
-            all.append(PaletteAction(id: "followup-\(item.id)", title: item.title, detail: T("Wiedervorlage") + " · " + (model.workspace.shops.first { $0.id == item.shopID }?.name ?? ""), icon: "bookmark", run: { model.openFollowUp(item) }))
+        let followUps = model.followUps.filter { $0.completedAt == nil && shopNames[$0.shopID] != nil }
+            .sorted { ($0.dueAt ?? .distantFuture) < ($1.dueAt ?? .distantFuture) }
+            .map { item in
+                PaletteAction(id: "followup-\(item.id)", title: item.title, detail: shopNames[item.shopID] ?? "", icon: "bookmark") {
+                    model.openFollowUp(item)
+                }
+            }
+        let addShop = PaletteAction(id: "add-shop", title: T("Shop hinzufügen"), detail: T("Verbinden oder lokal mit Docker starten"), icon: "plus.circle") {
+            model.showingAddShop = true
         }
-        for focus in MerchantFocus.allCases {
-            all.append(PaletteAction(id: "focus-" + focus.rawValue, title: T(focus.title), detail: T("Arbeitsvorrat öffnen"), icon: focus.icon, run: { model.openFocus(focus) }))
+        if searchTerm.isEmpty {
+            return [
+                .init(id: "suggested", title: T("Direkt loslegen"), actions: [.overview, .orders, .products, .followups, .ai].map(destinationAction) + [addShop]),
+                .init(id: "bookmarks", title: T("Lesezeichen"), actions: Array(bookmarks.prefix(5))),
+                .init(id: "followups", title: T("Wiedervorlagen"), actions: Array(followUps.prefix(3)))
+            ].filter { !$0.actions.isEmpty }
         }
-        for preset in model.workbench.savedViews {
-            all.append(PaletteAction(id: "view-\(preset.id)", title: preset.name, detail: T("Gespeicherte Ansicht"), icon: "bookmark", run: { model.openSavedView(preset) }))
+
+        var actions = Destination.allCases.map(destinationAction) + [addShop]
+        actions += MerchantFocus.allCases.map { focus in
+            .init(id: "focus-" + focus.rawValue, title: T(focus.title), detail: T("Arbeitsvorrat öffnen"), icon: focus.icon) {
+                model.openFocus(focus)
+            }
         }
-        for shop in model.workspace.shops {
-            all.append(PaletteAction(id: "shop-\(shop.id)", title: shop.name, detail: shop.isDemo ? T("Demodaten") : shop.host, icon: "storefront", run: { model.selectedShopID = shop.id; model.destination = .overview }))
+        actions += model.workbench.savedViews.map { view in
+            .init(id: "view-\(view.id)", title: view.name, detail: T("Gespeicherte Ansicht"), icon: "rectangle.stack") {
+                model.openSavedView(view)
+            }
         }
-        all.append(PaletteAction(id: "all-shops", title: T("Alle Shops"), detail: T("Gemeinsame Übersicht"), icon: "square.stack", run: { model.selectedShopID = nil; model.listShopIDs = nil; model.destination = .overview }))
-        for destination in Destination.allCases {
-            all.append(PaletteAction(id: "destination-\(destination.rawValue)", title: destination.title, detail: T("Arbeitsbereich öffnen"), icon: destination.icon, run: { model.destination = destination }))
+        actions += model.workspace.shops.map { shop in
+            .init(id: "shop-\(shop.id)", title: shop.name, detail: shop.isDemo ? T("Demodaten") : shop.host, icon: "storefront") {
+                model.selectedShopID = shop.id
+            }
         }
-        all.append(PaletteAction(id: "add-shop", title: T("Shop hinzufügen"), detail: T("Verbinden oder lokal mit Docker starten"), icon: "plus.circle", run: { model.showingAddShop = true }))
-        all.append(PaletteAction(id: "low-stock", title: T("Knappe Bestände prüfen"), detail: T("Arbeitsvorrat öffnen"), icon: "shippingbox", run: { model.openFocus(.lowStock) }))
-        all.append(PaletteAction(id: "refresh", title: T("Aktualisieren"), detail: T("Daten der gewählten Shops neu laden"), icon: "arrow.clockwise", run: { Task { await model.refresh() } }))
-        let clean = query.trimmingCharacters(in: .whitespacesAndNewlines)
-        if clean.isEmpty { return all }
-        let matching = all.filter { ($0.title + " " + $0.detail).localizedCaseInsensitiveContains(clean) }
-        let searches = [Destination.products, .orders, .customers].map { destination in
-            PaletteAction(id: "search-\(destination.rawValue)", title: destination.title + ": “\(clean)”", detail: model.selectedShop?.name ?? T("Alle Shops"), icon: "magnifyingglass", run: { model.searchRecords(destination, term: clean) })
+        actions.append(.init(id: "all-shops", title: T("Alle Shops"), detail: T("Gemeinsame Übersicht"), icon: "square.stack") {
+            model.selectedShopID = nil
+            model.listShopIDs = nil
+            model.destination = .overview
+        })
+        actions.append(.init(id: "refresh", title: T("Aktualisieren"), detail: T("Daten der gewählten Shops neu laden"), icon: "arrow.clockwise") {
+            Task { await model.refresh() }
+        })
+
+        let words = searchTerm.split(whereSeparator: \.isWhitespace).map(String.init)
+        let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]
+        let matches = (actions + bookmarks + followUps).filter { action in
+            let searchable = action.title + " " + action.detail
+            return words.allSatisfy { searchable.range(of: $0, options: options) != nil }
         }
-        return matching + searches
+        let exact = matches.filter { $0.title.compare(searchTerm, options: options) == .orderedSame }
+        let exactIDs = Set(exact.map(\.id))
+        let prefixes = matches.filter {
+            !exactIDs.contains($0.id) && $0.title.range(of: searchTerm, options: options.union(.anchored)) != nil
+        }
+        let direct = exact + prefixes
+        let directIDs = Set(direct.map(\.id))
+        let recordDestinations: [Destination] = [.products, .orders, .customers]
+        let orderedSearches = recordDestinations.filter { $0 == model.destination } +
+            recordDestinations.filter { $0 != model.destination }
+        let searches = orderedSearches.map { destination in
+            PaletteAction(id: "search-" + destination.rawValue, title: destination.title + ": “\(searchTerm)”",
+                          detail: model.selectedShop?.name ?? T("Alle Shops"), icon: "magnifyingglass") {
+                model.searchRecords(destination, term: searchTerm)
+            }
+        }
+        return [
+            .init(id: "exact", title: T("Direkte Treffer"), actions: direct),
+            .init(id: "search", title: T("In Shops suchen"), actions: searches),
+            .init(id: "matches", title: T("Weitere Treffer"), actions: matches.filter { !directIDs.contains($0.id) })
+        ].filter { !$0.actions.isEmpty }
     }
+
+    private func destinationAction(_ destination: Destination) -> PaletteAction {
+        .init(id: "destination-" + destination.rawValue, title: destination.title,
+              detail: T("Arbeitsbereich öffnen"), icon: destination.icon) {
+            model.openWorkspaceDestination(destination)
+        }
+    }
+
     var body: some View {
+        let groups = sections
+        let rows = groups.flatMap(\.actions)
         VStack(spacing: 0) {
-            HStack(spacing: 14) {
-                Image(systemName: "magnifyingglass").foregroundStyle(Theme.blue).font(.system(size: 22))
-                TextField(T("Wohin möchtest du?"), text: $query).font(.system(size: 23, weight: .medium)).textFieldStyle(.plain).focused($focused).onSubmit { execute() }
-                Button { dismiss() } label: { Text("esc").font(.system(size: 10, weight: .medium)).padding(5).background(.quaternary, in: RoundedRectangle(cornerRadius: 4)) }.buttonStyle(.plain).help(T("Schließen"))
-            }.padding(24)
+            HStack(spacing: 13) {
+                Image(systemName: "magnifyingglass").font(.title2).foregroundStyle(.secondary)
+                TextField(T("Shops, Aktionen oder Datensätze suchen"), text: $query)
+                    .font(.title3)
+                    .textFieldStyle(.plain)
+                    .focused($focused)
+                    .onSubmit { execute(rows.first { $0.id == selected } ?? rows.first) }
+                    .onKeyPress(.upArrow) { move(-1, in: rows); return .handled }
+                    .onKeyPress(.downArrow) { move(1, in: rows); return .handled }
+                if !query.isEmpty {
+                    Button { query = "" } label: {
+                        Label(T("Suche löschen"), systemImage: "xmark.circle.fill").labelStyle(.iconOnly)
+                    }.buttonStyle(.borderless).foregroundStyle(.secondary)
+                }
+            }.padding(.horizontal, 20).padding(.vertical, 17)
             Divider()
             ScrollViewReader { proxy in
                 ScrollView {
-                    LazyVStack(spacing: 4) {
-                        ForEach(actions) { action in
-                            Button { execute(action) } label: {
-                                HStack(spacing: 14) {
-                                    Image(systemName: action.icon).font(.system(size: 17)).foregroundStyle(Theme.blue).frame(width: 25)
-                                    VStack(alignment: .leading, spacing: 5) { Text(action.title).font(.system(size: 14, weight: .medium)).lineLimit(1); Text(action.detail).font(.system(size: 11)).foregroundStyle(.secondary).lineLimit(1) }
-                                    Spacer()
-                                    if selected == action.id { Image(systemName: "return").font(.system(size: 12)).foregroundStyle(.secondary) }
-                                }.padding(.horizontal, 14).padding(.vertical, 12).contentShape(Rectangle())
-                            }.buttonStyle(.plain).background(selected == action.id ? Theme.blue.opacity(0.15) : .clear, in: RoundedRectangle(cornerRadius: 8)).id(action.id)
+                    LazyVStack(alignment: .leading, spacing: 3) {
+                        ForEach(groups) { section in
+                            Text(section.title)
+                                .font(.caption.weight(.semibold)).foregroundStyle(.secondary)
+                                .accessibilityAddTraits(.isHeader)
+                                .padding(.leading, 11).padding(.top, 9).padding(.bottom, 3)
+                            ForEach(section.actions) { action in actionRow(action).id(action.id) }
                         }
-                    }.padding(10)
-                }.frame(height: 390).onChange(of: selected) { _, value in if let value { proxy.scrollTo(value, anchor: .center) } }
+                    }.padding(.horizontal, 9).padding(.bottom, 9)
+                }
+                .frame(height: 354)
+                .onChange(of: selected) { _, value in
+                    if let value { proxy.scrollTo(value) }
+                }
             }
             Divider()
-            HStack { Text(T("Tippen zum Suchen")); Spacer(); Text("↑ ↓ " + T("Auswählen") + "    ↵ " + T("Öffnen")) }.font(.system(size: 10)).foregroundStyle(.secondary).padding(.horizontal, 24).padding(.vertical, 13)
-        }.frame(width: 650)
-            .onAppear { selected = actions.first?.id; focused = true }
-            .onChange(of: query) { _, _ in selected = actions.first?.id }
-            .onMoveCommand { direction in
-                let index = actions.firstIndex { $0.id == selected } ?? 0
-                if direction == .down, !actions.isEmpty { selected = actions[min(index + 1, actions.count - 1)].id }
-                if direction == .up, !actions.isEmpty { selected = actions[max(index - 1, 0)].id }
-            }.onExitCommand { dismiss() }
+            HStack(spacing: 14) {
+                Text(model.selectedShop?.name ?? T("Alle Shops")).lineLimit(1)
+                Spacer()
+                Text("↑ ↓ " + T("Auswählen"))
+                Text("↵ " + T("Öffnen"))
+                Text("esc " + T("Schließen"))
+            }
+            .font(.caption)
+            .foregroundStyle(.secondary)
+            .padding(.horizontal, 20).padding(.vertical, 11)
+        }
+        .frame(width: 576)
+        .onAppear { selected = rows.first?.id; focused = true }
+        .onChange(of: query) { _, _ in selected = rows.first?.id }
+        .onMoveCommand { direction in
+            if direction == .up { move(-1, in: rows) }
+            if direction == .down { move(1, in: rows) }
+        }
+        .onExitCommand { dismiss() }
     }
-    private func execute(_ action: PaletteAction? = nil) {
-        guard let chosen = action ?? actions.first(where: { $0.id == selected }) ?? actions.first else { return }
+
+    private func actionRow(_ action: PaletteAction) -> some View {
+        let isSelected = selected == action.id
+        return Button { execute(action) } label: {
+            HStack(spacing: 11) {
+                Image(systemName: action.icon)
+                    .font(.system(size: 15))
+                    .foregroundStyle(isSelected ? Theme.blue : Color.secondary)
+                    .frame(width: 25)
+                VStack(alignment: .leading, spacing: 3) {
+                    Text(action.title).font(.callout.weight(.medium)).lineLimit(1)
+                    Text(action.detail).font(.caption).foregroundStyle(.secondary).lineLimit(1)
+                }
+                Spacer()
+                if isSelected { Image(systemName: "return").font(.caption).foregroundStyle(.secondary) }
+            }
+            .padding(.horizontal, 10).padding(.vertical, 7)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(WorkspaceRowStyle())
+        .background(isSelected ? Theme.blue.opacity(0.13) : .clear, in: RoundedRectangle(cornerRadius: 7))
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
+        .animation(reduceMotion ? nil : .easeOut(duration: 0.12), value: isSelected)
+    }
+
+    private func move(_ offset: Int, in rows: [PaletteAction]) {
+        guard !rows.isEmpty else { return }
+        let index = rows.firstIndex { $0.id == selected } ?? 0
+        selected = rows[min(max(0, index + offset), rows.count - 1)].id
+    }
+
+    private func execute(_ action: PaletteAction?) {
+        guard let action else { return }
+        onExecute(action.run)
         dismiss()
-        // Let the palette close before presenting another sheet.
-        Task { @MainActor in await Task.yield(); chosen.run() }
     }
 }
