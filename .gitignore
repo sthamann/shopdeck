@@ -20,3 +20,4 @@ dist/
 xcuserdata/
 Widgets/ShopdeckWidgets.xcodeproj/
 .codebase-memory/
+AppStore/ShopdeckStore.xcodeproj/

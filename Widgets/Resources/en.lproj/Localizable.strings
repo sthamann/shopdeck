@@ -173,6 +173,7 @@
 "Daten der gewählten Shops neu laden" = "Reload selected shops’ data";
 "Daten konnten nicht geladen werden" = "Could not load data";
 "Datensatz öffnen" = "Open record";
+"Datenschutz" = "Privacy";
 "Datensätze exportiert" = "records exported";
 "Datensätze je Shop und Seite" = "Records per shop and page";
 "Datensätze pro Seite" = "Rows per page";
@@ -358,6 +359,7 @@
 "Heute eingegangen" = "Received today";
 "Heute ist nichts fällig" = "Nothing due today";
 "Hier bleibt nichts vergessen" = "Keep the next step in sight";
+"Hilfe und Support" = "Help and support";
 "Hinzufügen" = "Add";
 "ID kopieren" = "Copy ID";
 "ID kopiert" = "ID copied";
@@ -709,6 +711,7 @@
 "Unverändert" = "Unchanged";
 "Unvollständige Statistik: mehr als 10.000 Bestellungen in 30 Tagen." = "Incomplete statistics: more than 10,000 orders in 30 days.";
 "Update verfügbar" = "Update available";
+"Updates kommen über den Mac App Store." = "Updates are provided through the Mac App Store.";
 "Updates prüfen" = "Check for updates";
 "Ursprüngliche Werte wiederherstellen" = "Restore original values";
 "Verbinde Codex und Claude. Stelle Fragen, finde Produkte und prüfe Änderungen direkt hier." = "Connect Codex and Claude. Ask questions, find products and review changes right here.";

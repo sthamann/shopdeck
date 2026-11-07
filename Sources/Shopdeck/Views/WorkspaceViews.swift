@@ -121,6 +121,8 @@ struct AppSettingsView: View {
         Section {
             Button(T("Einrichtungsassistent öffnen")){appAction("onboard");NSApp.keyWindow?.close()}
             LabeledContent(T("Version"), value: "Shopdeck " + AppVersion.current)
+            Link(T("Datenschutz"), destination: URL(string: "https://github.com/sthamann/shopdeck/blob/main/docs/privacy.md")!)
+            Link(T("Hilfe und Support"), destination: URL(string: "https://github.com/sthamann/shopdeck/issues")!)
             Link("Shopware Community Edition", destination: URL(string: "https://www.shopware.com/en/community/community-edition/")!)
         }
     }.formStyle(.grouped).padding(12).frame(width: 680, height: 740).environment(\.locale, Locale(identifier: language)).onChange(of:dockOrderBadge){_,_ in WidgetSnapshotExporter.write(model:model)} }

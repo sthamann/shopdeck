@@ -1,0 +1,11 @@
+{
+  "name": "Shopdeck for Shopware",
+  "subtitle": "Shopware shops op je Mac",
+  "promotional_text": "Beheer je Shopware shops in één native Mac app. Vind bestellingen, maak picklijsten en houd je cijfers in beeld.",
+  "description": "Je Shopware shops samen in één native Mac app.\n\nShopdeck biedt winkeliers en bureaus een gezamenlijk overzicht van producten, bestellingen en klanten uit meerdere Shopware 6 shops. Open de oorspronkelijke administratie en je storefronts rechtstreeks vanuit de app.\n\nWERK IN MEERDERE SHOPS\nGroepeer shops en gebruik tabbladen of weergaven naast elkaar. Zoeken, sorteren en filteren gebeurt via de Shopware API vóór paginering. Bewaar weergaven met relatieve perioden zoals Vandaag of Deze maand en voeg belangrijke records toe aan je bladwijzers.\n\nHOUD BESTELLINGEN IN BEWEGING\nMaak picklijsten van geselecteerde bestellingen, vink aantallen af en exporteer naar PDF of CSV. Open bestaande facturen en leveringsdocumenten. Bewaar privénotities en herinneringen bij het juiste record.\n\nJE CIJFERS, JOUW OVERZICHT\nStel een dashboard samen met 23 statistieken. Filter op shop en verkoopkanaal, houd valuta gescheiden en plaats native macOS widgets op je bureaublad of in het berichtencentrum.\n\nGEMAAKT VOOR DE MAC\nLichte en donkere weergave, toetsenbordbediening, opgeslagen werkruimten en zes talen: Nederlands, Engels, Duits, Spaans, Frans en Italiaans.\n\nVerbind je eigen Shopware 6 shops met een Admin API integratie. Verken de app met fictieve gegevens in de demomodus. Beschikbare functies hangen af van de rechten van elke shopintegratie.\n\nShopware is een handelsmerk van shopware AG.",
+  "keywords": "shopware,shops,bestellingen,producten,klanten,omzet,voorraad,dashboard,widgets",
+  "support_url": "https://github.com/sthamann/shopdeck/issues",
+  "marketing_url": "https://github.com/sthamann/shopdeck",
+  "privacy_policy_url": "https://github.com/sthamann/shopdeck/blob/main/docs/privacy.md",
+  "copyright": "2026 Stefan Hamann"
+}

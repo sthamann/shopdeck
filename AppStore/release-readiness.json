@@ -1,0 +1,36 @@
+{
+  "status": "engineering-preparation",
+  "bundle_id": "app.shopdeck.mac",
+  "team_id": "YXRJR897BM",
+  "app_store_id": "6831736452",
+  "ready_for_review": false,
+  "checks": {
+    "sandbox_runtime": false,
+    "mcp_store_transport": false,
+    "docker_store_scope": false,
+    "security_scoped_files": false,
+    "app_group_profile": false,
+    "privacy_answers_confirmed": false,
+    "store_screenshots": false,
+    "encryption_review": false,
+    "review_demo": false,
+    "brand_rights_documented": false
+  },
+  "note": "A successful archive is not permission to submit. Resolve and verify these items before upload or review.",
+  "app_store_name": "Shopdeck for Shopware",
+  "app_store_url": "https://appstoreconnect.apple.com/apps/6831736452/distribution",
+  "store_version": "0.12.0",
+  "app_group_note": "YXRJR897BM.app.shopdeck is a supported macOS Team ID group. It does not need registration; verify signed Store runtime and distribution profiles.",
+  "release_requires_full_feature_parity": true,
+  "observed": {
+    "app_store_connect_draft_saved": true,
+    "main_app_id_registered": true,
+    "development_archive_signature_verified": true,
+    "store_mcp_stdio_tool_count": 20,
+    "standalone_mcp_stdio_tool_count": 20,
+    "isolated_demo_ui_launched": true,
+    "direct_build_passed": true,
+    "distribution_export": false,
+    "review_submitted": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Shopdeck for Shopware",
+  "subtitle": "Vos boutiques Shopware sur Mac",
+  "promotional_text": "Vos boutiques Shopware dans une app native pour Mac. Retrouvez les commandes, préparez les prélèvements et suivez vos chiffres.",
+  "description": "Vos boutiques Shopware dans une app native pour Mac.\n\nShopdeck propose aux commerçants et aux agences une vue commune des produits, commandes et clients de plusieurs boutiques Shopware 6. Ouvrez leur administration d’origine et leurs vitrines directement depuis l’app.\n\nTRAVAILLEZ AVEC PLUSIEURS BOUTIQUES\nRegroupez vos boutiques et utilisez des onglets ou des vues côte à côte. La recherche, le tri et les filtres passent par l’API Shopware avant la pagination. Enregistrez des vues avec des périodes relatives comme Aujourd’hui ou Ce mois et ajoutez vos fiches importantes aux favoris.\n\nPRÉPAREZ VOS COMMANDES\nCréez une liste de prélèvement à partir des commandes sélectionnées, cochez les quantités et exportez un PDF ou un CSV. Consultez les factures et documents de livraison existants. Gardez des notes privées et des suivis datés liés à la bonne fiche.\n\nVOS CHIFFRES SELON VOS BESOINS\nComposez un tableau de bord avec 23 indicateurs. Filtrez par boutique et canal de vente, séparez les devises et placez des widgets macOS sur le bureau ou dans le centre de notifications.\n\nÀ L’AISE SUR MAC\nApparence claire ou sombre, navigation au clavier, espaces de travail enregistrés et six langues : français, anglais, allemand, néerlandais, espagnol et italien.\n\nConnectez vos boutiques Shopware 6 avec une intégration Admin API. Le mode démonstration permet de découvrir l’app avec des données fictives. Les fonctions disponibles dépendent des autorisations de chaque intégration.\n\nShopware est une marque de shopware AG.",
+  "keywords": "shopware,boutiques,commandes,produits,clients,ventes,stock,tableau de bord,widgets",
+  "support_url": "https://github.com/sthamann/shopdeck/issues",
+  "marketing_url": "https://github.com/sthamann/shopdeck",
+  "privacy_policy_url": "https://github.com/sthamann/shopdeck/blob/main/docs/privacy.md",
+  "copyright": "2026 Stefan Hamann"
+}

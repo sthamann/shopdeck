@@ -1,0 +1,125 @@
+name: ShopdeckStore
+options:
+  deploymentTarget:
+    macOS: '14.0'
+  createIntermediateGroups: true
+packages:
+  MarkdownUI:
+    url: https://github.com/gonzalezreal/swift-markdown-ui
+    exactVersion: 2.4.1
+settings:
+  base:
+    DEVELOPMENT_TEAM: YXRJR897BM
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: '5.0'
+    MACOSX_DEPLOYMENT_TARGET: '14.0'
+    ENABLE_HARDENED_RUNTIME: YES
+    MARKETING_VERSION: '0.12.0'
+    CURRENT_PROJECT_VERSION: '12000'
+    SWIFT_ACTIVE_COMPILATION_CONDITIONS: '$(inherited) APP_STORE'
+    ARCHS: arm64
+    ONLY_ACTIVE_ARCH: NO
+targets:
+  ShopdeckCore:
+    type: framework
+    platform: macOS
+    sources:
+      - ../Sources/ShopdeckCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.shopdeck.core
+        GENERATE_INFOPLIST_FILE: YES
+        SKIP_INSTALL: YES
+        DEFINES_MODULE: YES
+  ShopdeckKeychain:
+    type: tool
+    platform: macOS
+    sources:
+      - ../Sources/ShopdeckKeychain
+    settings:
+      base:
+        PRODUCT_NAME: shopdeck-keychain
+        PRODUCT_BUNDLE_IDENTIFIER: app.shopdeck.keychain
+        CODE_SIGN_ENTITLEMENTS: Entitlements/Helper.entitlements
+        SKIP_INSTALL: YES
+  ShopdeckMCP:
+    type: tool
+    platform: macOS
+    sources:
+      - ../Sources/ShopdeckMCP
+    dependencies:
+      - target: ShopdeckCore
+        embed: false
+    settings:
+      base:
+        PRODUCT_NAME: shopdeck-mcp
+        OTHER_SWIFT_FLAGS: "$(inherited) -parse-as-library"
+        PRODUCT_BUNDLE_IDENTIFIER: app.shopdeck.mcp
+        CODE_SIGN_ENTITLEMENTS: Entitlements/Helper.entitlements
+        LD_RUNPATH_SEARCH_PATHS: '$(inherited) @executable_path/../Frameworks'
+        SKIP_INSTALL: YES
+  ShopdeckWidgets:
+    type: app-extension
+    platform: macOS
+    sources:
+      - ../Widgets/ShopdeckWidgets.swift
+      - path: ../Widgets/Resources
+        buildPhase: resources
+      - ../Sources/ShopdeckCore/WidgetSnapshot.swift
+      - path: WidgetResources/PrivacyInfo.xcprivacy
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.shopdeck.mac.widgets
+        INFOPLIST_FILE: ../Widgets/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Entitlements/Widgets.entitlements
+        SKIP_INSTALL: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+        ENABLE_APP_INTENTS_METADATA_EXTRACTION: YES
+  Shopdeck:
+    type: application
+    platform: macOS
+    sources:
+      - ../Sources/Shopdeck
+      - StoreEntry.swift
+      - path: ../Assets/AppIcon.icns
+        buildPhase: resources
+      - path: ../Assets/ThirdPartyNotices.txt
+        buildPhase: resources
+      - path: PrivacyInfo.xcprivacy
+        buildPhase: resources
+    dependencies:
+      - target: ShopdeckCore
+        embed: true
+      - package: MarkdownUI
+      - target: ShopdeckWidgets
+        embed: true
+      - target: ShopdeckMCP
+        embed: false
+      - target: ShopdeckKeychain
+        embed: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.shopdeck.mac
+        INFOPLIST_FILE: Info.plist
+        CODE_SIGN_ENTITLEMENTS: Entitlements/App.entitlements
+        LD_RUNPATH_SEARCH_PATHS: '$(inherited) @executable_path/../Frameworks'
+        COMBINE_HIDPI_IMAGES: YES
+    postBuildScripts:
+      - name: Embed sandbox inheriting tools
+        basedOnDependencyAnalysis: false
+        script: |
+          set -eu
+          mkdir -p "$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/Helpers"
+          for tool in shopdeck-mcp shopdeck-keychain; do
+            ditto "$BUILT_PRODUCTS_DIR/$tool" "$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/Helpers/$tool"
+          done
+schemes:
+  ShopdeckStore:
+    build:
+      targets:
+        Shopdeck: all
+    run:
+      config: Debug
+    archive:
+      config: Release

@@ -1,0 +1,19 @@
+Vos boutiques Shopware dans une app native pour Mac.
+
+Shopdeck propose aux commerçants et aux agences une vue commune des produits, commandes et clients de plusieurs boutiques Shopware 6. Ouvrez leur administration d’origine et leurs vitrines directement depuis l’app.
+
+TRAVAILLEZ AVEC PLUSIEURS BOUTIQUES
+Regroupez vos boutiques et utilisez des onglets ou des vues côte à côte. La recherche, le tri et les filtres passent par l’API Shopware avant la pagination. Enregistrez des vues avec des périodes relatives comme Aujourd’hui ou Ce mois et ajoutez vos fiches importantes aux favoris.
+
+PRÉPAREZ VOS COMMANDES
+Créez une liste de prélèvement à partir des commandes sélectionnées, cochez les quantités et exportez un PDF ou un CSV. Consultez les factures et documents de livraison existants. Gardez des notes privées et des suivis datés liés à la bonne fiche.
+
+VOS CHIFFRES SELON VOS BESOINS
+Composez un tableau de bord avec 23 indicateurs. Filtrez par boutique et canal de vente, séparez les devises et placez des widgets macOS sur le bureau ou dans le centre de notifications.
+
+À L’AISE SUR MAC
+Apparence claire ou sombre, navigation au clavier, espaces de travail enregistrés et six langues : français, anglais, allemand, néerlandais, espagnol et italien.
+
+Connectez vos boutiques Shopware 6 avec une intégration Admin API. Le mode démonstration permet de découvrir l’app avec des données fictives. Les fonctions disponibles dépendent des autorisations de chaque intégration.
+
+Shopware est une marque de shopware AG.

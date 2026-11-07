@@ -10,7 +10,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
     }
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) { completionHandler([.banner, .sound]) }
 }
-@main struct ShopdeckApp: App {
+#if !APP_STORE
+@main
+#endif
+struct ShopdeckApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @LocalState<AppModel> private var model = AppModel()
     @AppStorage("language") private var language = AppLanguage.initial()

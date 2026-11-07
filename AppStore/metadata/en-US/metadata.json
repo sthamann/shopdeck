@@ -1,0 +1,11 @@
+{
+  "name": "Shopdeck for Shopware",
+  "subtitle": "Shopware shops on your Mac",
+  "promotional_text": "Bring your Shopware shops into one native Mac workspace. Find orders, prepare picking lists and keep your numbers in view.",
+  "description": "Bring your Shopware shops into one native Mac workspace.\n\nShopdeck gives merchants and agencies a shared view of products, orders and customers across multiple Shopware 6 shops. Open the original administration and storefronts when you need the full Shopware experience.\n\nWORK ACROSS SHOPS\nOrganize shops in groups and use tabs or side by side views. Search, sort and filter through the Shopware API before pagination. Save views with relative periods such as Today or This month, and bookmark the records you return to.\n\nKEEP ORDERS MOVING\nCreate picking lists from selected orders, check quantities and export PDF or CSV files. Open existing invoices and delivery documents. Keep private notes and dated follow ups linked to the relevant record.\n\nMAKE YOUR NUMBERS USEFUL\nConfigure a dashboard with 23 metrics. Filter by shop and sales channel, keep currencies separate, and add native macOS widgets to your desktop or Notification Center.\n\nAT HOME ON MAC\nLight and dark appearance, keyboard navigation, saved workspaces and six interface languages: English, German, Dutch, Spanish, French and Italian.\n\nConnect your own Shopware 6 shops with an Admin API integration. A demo mode lets you explore the workspace with fictional data. Available features depend on the permissions of each shop integration.\n\nShopware is a trademark of shopware AG.",
+  "keywords": "shopware,commerce,shop,orders,inventory,dashboard,products,customers,widgets,mac",
+  "support_url": "https://github.com/sthamann/shopdeck/issues",
+  "marketing_url": "https://github.com/sthamann/shopdeck",
+  "privacy_policy_url": "https://github.com/sthamann/shopdeck/blob/main/docs/privacy.md",
+  "copyright": "2026 Stefan Hamann"
+}

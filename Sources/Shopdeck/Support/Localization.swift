@@ -5,7 +5,12 @@ enum Language {
     static let all = [("de", "Deutsch"), ("en", "English"), ("nl", "Nederlands"), ("es", "Español"), ("fr", "Français"), ("it", "Italiano")]
     static var current: String { UserDefaults.standard.string(forKey: "language").flatMap{AppLanguage.supported.contains($0) ? $0:nil} ?? AppLanguage.initial() }
     static let translations: [String: [String]] = {
-        guard let file = Bundle.module.url(forResource: "Localizations", withExtension: "tsv"), let text = try? String(contentsOf: file, encoding: .utf8) else { return [:] }
+        #if SWIFT_PACKAGE
+        let resources = Bundle.module
+        #else
+        let resources = Bundle.main
+        #endif
+        guard let file = resources.url(forResource: "Localizations", withExtension: "tsv"), let text = try? String(contentsOf: file, encoding: .utf8) else { return [:] }
         var result: [String: [String]] = [:]
         for line in text.split(separator: "\n") { let columns = line.components(separatedBy: "\t"); if columns.count == 6 { result[columns[0]] = Array(columns.dropFirst()) } }
         return result

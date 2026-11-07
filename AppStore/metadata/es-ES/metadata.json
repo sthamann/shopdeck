@@ -1,0 +1,11 @@
+{
+  "name": "Shopdeck for Shopware",
+  "subtitle": "Tus tiendas Shopware en Mac",
+  "promotional_text": "Reúne tus tiendas Shopware en una app nativa para Mac. Encuentra pedidos, prepara listas de recogida y consulta tus cifras.",
+  "description": "Tus tiendas Shopware en una app nativa para Mac.\n\nShopdeck ofrece a comerciantes y agencias una vista conjunta de productos, pedidos y clientes de varias tiendas Shopware 6. Abre la administración original y los escaparates directamente desde la app.\n\nTRABAJA CON VARIAS TIENDAS\nOrganiza tiendas en grupos y usa pestañas o vistas en paralelo. La búsqueda, los filtros y la ordenación se aplican mediante la API de Shopware antes de paginar. Guarda vistas con períodos relativos como Hoy o Este mes y añade los registros importantes a favoritos.\n\nPREPARA TUS PEDIDOS\nCrea listas de recogida a partir de pedidos seleccionados, marca cantidades y exporta archivos PDF o CSV. Abre facturas y documentos de entrega existentes. Conserva notas privadas y seguimientos con fecha vinculados al registro correspondiente.\n\nTUS CIFRAS A TU MANERA\nConfigura un panel con 23 métricas. Filtra por tienda y canal de venta, mantén las monedas separadas y añade widgets nativos de macOS al escritorio o al centro de notificaciones.\n\nPENSADA PARA EL MAC\nApariencia clara y oscura, navegación con teclado, espacios de trabajo guardados y seis idiomas: español, inglés, alemán, neerlandés, francés e italiano.\n\nConecta tus propias tiendas Shopware 6 mediante una integración de Admin API. Explora la app con datos ficticios en el modo de demostración. Las funciones disponibles dependen de los permisos de cada integración.\n\nShopware es una marca de shopware AG.",
+  "keywords": "shopware,tiendas,pedidos,productos,clientes,ventas,inventario,panel,widgets",
+  "support_url": "https://github.com/sthamann/shopdeck/issues",
+  "marketing_url": "https://github.com/sthamann/shopdeck",
+  "privacy_policy_url": "https://github.com/sthamann/shopdeck/blob/main/docs/privacy.md",
+  "copyright": "2026 Stefan Hamann"
+}

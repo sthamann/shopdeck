@@ -1,6 +1,7 @@
 import SwiftUI
-import Sparkle
 import Combine
+#if !APP_STORE
+import Sparkle
 
 @MainActor final class AppUpdater:ObservableObject {
     static let shared=AppUpdater()
@@ -19,18 +20,29 @@ import Combine
     var automatic:Bool {get{controller.updater.automaticallyChecksForUpdates}set{controller.updater.automaticallyChecksForUpdates=newValue}}
     func check(){guard configured else{return};controller.checkForUpdates(nil)}
 }
+#endif
 struct AppUpdateSettings:View {
+    #if !APP_STORE
     @ObservedObject private var updater=AppUpdater.shared
+    #endif
     var body:some View {
         Section(T("Shopdeck Updates")) {
+            #if APP_STORE
+            Label(T("Updates kommen über den Mac App Store."), systemImage:"app.badge")
+            #else
             if updater.configured {
                 Toggle(T("Neue App Versionen automatisch suchen"),isOn:Binding(get:{updater.automatic},set:{updater.automatic=$0}))
                 Button(T("Nach Shopdeck Updates suchen …")){updater.check()}.disabled(!updater.canCheck)
             } else {Label(T("Automatische App Updates sind vorbereitet."),systemImage:"checkmark.shield");Text(T("Für die Veröffentlichung wird noch die Adresse des Update Feeds hinterlegt. Diese Version lädt keine App Updates.")).font(.caption).foregroundStyle(.secondary)}
+            #endif
         }
     }
 }
 struct AppUpdateMenuItem:View {
+    #if !APP_STORE
     @ObservedObject private var updater=AppUpdater.shared
     var body:some View {Button(T("Nach Shopdeck Updates suchen …")){updater.check()}.disabled(!updater.configured || !updater.canCheck)}
+    #else
+    var body:some View { EmptyView() }
+    #endif
 }

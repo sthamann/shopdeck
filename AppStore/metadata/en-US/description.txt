@@ -1,0 +1,19 @@
+Bring your Shopware shops into one native Mac workspace.
+
+Shopdeck gives merchants and agencies a shared view of products, orders and customers across multiple Shopware 6 shops. Open the original administration and storefronts when you need the full Shopware experience.
+
+WORK ACROSS SHOPS
+Organize shops in groups and use tabs or side by side views. Search, sort and filter through the Shopware API before pagination. Save views with relative periods such as Today or This month, and bookmark the records you return to.
+
+KEEP ORDERS MOVING
+Create picking lists from selected orders, check quantities and export PDF or CSV files. Open existing invoices and delivery documents. Keep private notes and dated follow ups linked to the relevant record.
+
+MAKE YOUR NUMBERS USEFUL
+Configure a dashboard with 23 metrics. Filter by shop and sales channel, keep currencies separate, and add native macOS widgets to your desktop or Notification Center.
+
+AT HOME ON MAC
+Light and dark appearance, keyboard navigation, saved workspaces and six interface languages: English, German, Dutch, Spanish, French and Italian.
+
+Connect your own Shopware 6 shops with an Admin API integration. A demo mode lets you explore the workspace with fictional data. Available features depend on the permissions of each shop integration.
+
+Shopware is a trademark of shopware AG.
