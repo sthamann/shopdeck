@@ -1,12 +1,14 @@
 # Shopdeck films
 
-## Workspace preview
+## 30 second product tour
 
-The 30 second English preview opens with the new macOS toolbar and quick search, captured from the main branch with built in demo data. It also shows the merchant workflows available in the stable app.
+Start with the dashboard and follow an order from search to picking and documents. The tour also shows Codex and Claude setup, a reviewed campaign proposal and the widget gallery. It uses English narration and captures from the workspace preview on `main` alongside existing picking, document and campaign examples.
 
-- [Watch or download the landscape preview, 1920 × 1080](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Workspace-Preview.mp4)
-- [Download the vertical feed preview, 1080 × 1350](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Workspace-Preview-LinkedIn.mp4)
-- [Download the English preview captions](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Workspace-Preview.srt)
+[![Shopdeck product tour with dashboard and order list side by side](screenshots/tour-poster.png)](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Tour-English.mp4)
+
+- [Landscape film, 1920 × 1080](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Tour-English.mp4)
+- [Vertical film for LinkedIn, 1080 × 1350](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Tour-LinkedIn-English.mp4)
+- [English captions](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Tour-English.srt)
 
 ## Stable release tour
 

@@ -4,10 +4,29 @@ English interface captures from development builds, using built in demo profiles
 
 ## Workspace preview from the main branch
 
-![Compact native toolbar, shop selection and dashboard in dark appearance](screenshots/50-native-workspace.png)
-![Quick actions and keyboard hints in the redesigned command palette](screenshots/51-command-palette.png)
-![Dashboard for all shops beside Nordlicht orders, each with its own shop scope](screenshots/52-split-workspace.png)
-![Light appearance after exploring demo shops from the first launch assistant](screenshots/53-native-workspace-light.png)
+These English screenshots come from the same Shopdeck build using three fictional shops. [Download the stable release](https://github.com/sthamann/shopdeck/releases/latest) · [Watch the tour](video.md)
+
+### Overview and shop tabs
+
+See all shops on the dashboard while keeping a single shop's orders open beside it.
+
+![Dashboard for all shops beside Nordlicht orders with independent shop selection](screenshots/57-shop-and-orders-side-by-side.png)
+
+### Search and order work
+
+Use quick actions to move between tasks, or filter the order list by shop, sales channel, currency and date.
+
+| Quick actions | Orders across shops |
+| --- | --- |
+| [![Keyboard shortcuts and quick actions](screenshots/55-quick-actions.png)](screenshots/55-quick-actions.png) | [![Order grid for all three demo shops](screenshots/56-orders-across-shops.png)](screenshots/56-orders-across-shops.png) |
+
+### Dashboard and AI setup
+
+| Morning dashboard | Widget gallery | Codex and Claude |
+| --- | --- | --- |
+| [![Merchant attention list and revenue metrics](screenshots/54-morning-dashboard.png)](screenshots/54-morning-dashboard.png) | [![Graphical widget gallery showing 23 choices](screenshots/59-dashboard-widget-gallery.png)](screenshots/59-dashboard-widget-gallery.png) | [![MCP connection check, client options and enabled shops](screenshots/58-codex-claude-setup.png)](screenshots/58-codex-claude-setup.png) |
+
+[Dark appearance](screenshots/50-native-workspace.png) · [Split workspace in dark appearance](screenshots/52-split-workspace.png)
 
 ## Picking lists and daily shortcuts in 0.12
 

@@ -1,18 +1,22 @@
-<p align="center"><img src="Assets/AppIcon.png" width="112" alt="Shopdeck icon"></p>
+<p align="center"><img src="Assets/AppIcon.png" width="96" alt="Shopdeck icon"></p>
 <h1 align="center">Shopdeck</h1>
-<p align="center"><strong>Your Shopware workspace on Mac</strong></p>
-<p align="center">Run your shops, work through orders and give Codex or Claude a connection you control.</p>
-<p align="center"><a href="https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck.dmg">Download for macOS</a> · <a href="docs/screenshots.md">See the app</a> · <a href="docs/ai-guide.md">Connect Codex or Claude</a></p>
+<p align="center"><strong>Run your Shopware shops from one Mac.</strong></p>
+<p align="center"><a href="https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck.dmg">Download for macOS</a> · <a href="docs/video.md">Watch the 30 second tour</a> · <a href="docs/screenshots.md">See the app</a> · <a href="docs/ai-guide.md">Connect Codex or Claude</a></p>
 
-Shopdeck brings your Shopware 6 shops into one native Mac app. Check what needs attention in the morning, search products and orders across shops, pick a batch and open the actual administration or storefront when you need it. A local MCP server connects the shops you choose to your AI tools. Review proposed writes in Shopdeck before applying them.
+Shopdeck is a native macOS app for Shopware 6. Open your shops in one place, find orders and products across them, and keep the Shopware administration or storefront a click away. It is free and open source.
 
-- **Install** the signed and notarized [stable download](https://github.com/sthamann/shopdeck/releases/latest). It runs on Apple silicon with macOS 14 or later.
-- **Try** the built in demo profiles or let Shopdeck guide you through setting up a real local Shopware test shop with Docker.
-- **Preview** the new workspace on the main branch. It has a compact macOS toolbar, a shop picker in each view and a redesigned **⌘K** search.
+[![Shopdeck showing the dashboard for all shops beside Nordlicht's order list](docs/screenshots/57-shop-and-orders-side-by-side.png)](docs/screenshots.md#workspace-preview-from-the-main-branch)
 
-[![Shopdeck workspace preview with shop sidebar, merchant attention list and revenue widgets](docs/screenshots/50-native-workspace.png)](docs/screenshots.md)
+**Get started with the signed and notarized 0.12.0 release** on Apple silicon with macOS 14 or later. Connect an existing shop, start a local Shopware shop with Docker, or explore the built in demo. The screenshot above shows the workspace preview from the current source on `main`. [Stable release](https://github.com/sthamann/shopdeck/releases/tag/v0.12.0) · [Build from source](#build-and-run)
 
-[Watch the 30 second workspace preview](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Workspace-Preview.mp4) · [Vertical edition, captions and stable release tour](docs/video.md)
+## A morning with Shopdeck
+
+1. **Check what needs attention.** Start with ageing orders, low stock and missing product content. Click a count to open the matching records across the selected shops.
+2. **Find an order and do the work.** Search by order number, switch shops or reuse a saved view. Select orders to build a printable picking list or download their existing invoices and delivery notes.
+3. **Keep track of the next step.** Bookmark a record, leave a private note or set a follow up with an optional macOS reminder.
+4. **Give your AI a shop connection you control.** Connect Codex or Claude through the local MCP server, choose which shops it can access and review proposed writes before applying them.
+
+[Watch the English product tour](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Tour-English.mp4) · [Vertical edition and captions](docs/video.md)
 
 ## A workspace for all your shops
 
