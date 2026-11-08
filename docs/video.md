@@ -2,7 +2,7 @@
 
 ## 30 second product tour
 
-The 30 second tour uses English text on screen and plays silently. It shows the native Mac workspace, quick search, picking, the local MCP connection for Codex and Claude, approval of proposed changes, and the dashboard widget gallery.
+The 30 second tour uses English text on screen and plays silently. It shows tabs and split views, quick search, the embedded Shopware administration, the order PDF preview, the local MCP connection for Codex and Claude, approval of proposed changes, the configurable attention list, order notification rules, and the widget gallery.
 
 [![Shopdeck product tour with dashboard and order list side by side](screenshots/tour-poster.png)](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Tour-English.mp4)
 
