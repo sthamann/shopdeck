@@ -16,7 +16,7 @@ Shopdeck is a native macOS app for Shopware 6. Open your shops in one place, fin
 3. **Keep track of the next step.** Bookmark a record, leave a private note or set a follow up with an optional macOS reminder.
 4. **Give your AI a shop connection you control.** Connect Codex or Claude through the local MCP server, choose which shops it can access and review proposed writes before applying them.
 
-[Watch the English product tour](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Tour-English.mp4) · [Vertical edition and captions](docs/video.md)
+[Watch the English product tour](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Tour-English.mp4) · [Vertical edition for LinkedIn](docs/video.md)
 
 ## Open the Shopware administration
 
