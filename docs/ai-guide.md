@@ -22,9 +22,13 @@ Inspect the proposal under **Changes** in Shopdeck. Review the current value, pr
 
 ## Explore the Admin API
 
+Use `admin_api_schema` and `admin_api_routes` to discover what the selected shop exposes. Use `admin_api_request` for permitted reads, including entity searches and aggregations. Use `propose_admin_api_request` to prepare a write or action for **Changes**. The same bridge works with custom entities and extension routes when the shop makes them available.
+
 > Use Shopdeck to discover the API entities in shop [shop name], then find the sales channels and storefront domains. Do not modify anything.
 
-The generic bridge supports the integration’s permitted API endpoints and custom entities. Authentication and sensitive access paths remain restricted. Writes and action endpoints use reviewed proposals.
+> In [shop name], find the existing CMS page [name] and the sales channel it belongs to. Show the available routes for updating the page. Prepare a proposal only after identifying the existing record and exact change.
+
+Routes and permissions depend on the shop, and sensitive access paths are restricted. The **Changes** screen shows the target shop, method, path and payload before you apply a general API proposal.
 
 ## Troubleshoot
 

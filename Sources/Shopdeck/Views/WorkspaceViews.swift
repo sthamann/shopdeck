@@ -86,11 +86,15 @@ struct AppSettingsView: View {
     @AppStorage("notificationSound") private var sound = true
     @AppStorage("showMenuBar") private var showMenuBar = false
     @AppStorage("dockOrderBadge") private var dockOrderBadge = false
+    @AppStorage(MerchantFocusPreferences.enabledKey) private var showFocus = true
     var body: some View { Form {
         Section(T("Darstellung und Sprache")) {
             Picker(T("Erscheinungsbild"), selection: $appearance) { Text(T("System")).tag("system"); Text(T("Hell")).tag("light"); Text(T("Dunkel")).tag("dark") }.pickerStyle(.segmented)
             Picker(T("Sprache"), selection: $language) { ForEach(Language.all, id: \.0) { code, name in Text(name).tag(code) } }
             Toggle(T("Kompakte Tabellenzeilen"), isOn: $compact)
+        }
+        Section(T("Dashboard")) {
+            Toggle(T("Arbeitsvorrat anzeigen"), isOn: $showFocus)
         }
         Section(T("Listen und Daten")) {
             Picker(T("Datensätze pro Seite"), selection: $pageSize) { Text("25").tag(25); Text("50").tag(50); Text("100").tag(100) }

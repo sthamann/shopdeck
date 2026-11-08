@@ -9,6 +9,7 @@ struct DashboardView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @LocalState<Bool> private var loadingDemo = false
     @AppStorage("dashboardIncludeDemo") private var includeDemo = false
+    @AppStorage(MerchantFocusPreferences.enabledKey) private var showFocus = true
     @LocalState<Bool> private var configuring = false
     @LocalState<DashboardTile?> private var editingTile:DashboardTile? = nil
     private var configuration: DashboardConfiguration { model.dashboardConfiguration }
@@ -52,7 +53,7 @@ struct DashboardView: View {
                 if !analytics.failures.isEmpty { Text(analytics.failures.joined(separator: "\n")).font(.caption).foregroundStyle(.orange) }
                 if !analytics.truncatedShops.isEmpty { Text(T("Unvollständige Statistik: mehr als 10.000 Bestellungen in 30 Tagen.") + " " + analytics.truncatedShops.joined(separator: ", ")).font(.caption).foregroundStyle(.orange) }
                 SecurityStatusView(model:model,compact:true)
-                MerchantFocusView(model: model)
+                if showFocus { MerchantFocusView(model: model) }
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 250), spacing: 14)], alignment: .leading, spacing: 14) {
                     ForEach(configuration.effectiveTiles) { item in
                         let widget=item.widget

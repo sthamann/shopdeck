@@ -26,7 +26,7 @@ Use quick actions to move between tasks, or filter the order list by shop, sales
 | --- | --- | --- |
 | [![Merchant attention list and revenue metrics](screenshots/54-morning-dashboard.png)](screenshots/54-morning-dashboard.png) | [![Graphical widget gallery showing 23 choices](screenshots/59-dashboard-widget-gallery.png)](screenshots/59-dashboard-widget-gallery.png) | [![MCP connection check, client options and enabled shops](screenshots/58-codex-claude-setup.png)](screenshots/58-codex-claude-setup.png) |
 
-[Dark appearance](screenshots/50-native-workspace.png) · [Split workspace in dark appearance](screenshots/52-split-workspace.png)
+[Attention list settings](screenshots/60-attention-list-settings.png) · [Dark appearance](screenshots/50-native-workspace.png) · [Split workspace in dark appearance](screenshots/52-split-workspace.png)
 
 ## Picking lists and daily shortcuts in 0.12
 

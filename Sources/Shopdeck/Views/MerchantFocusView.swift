@@ -4,34 +4,38 @@ import ShopdeckCore
 struct MerchantFocusView: View {
     @Bindable var model: AppModel
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @AppStorage(MerchantFocusPreferences.enabledKey) private var enabled = true
+    @AppStorage(MerchantFocusPreferences.hiddenChecksKey) private var hiddenChecks = ""
+    @AppStorage("focusShowFollowUps") private var showFollowUps = true
     @AppStorage("focusStockThreshold") private var stock = 10
     @AppStorage("focusOverdueHours") private var hours = 48
     @LocalState<Bool> private var settings = false
     @LocalState<Bool> private var expanded = true
-    private var current: Bool { model.focusSnapshot.key == model.merchantFocusKey }
+    private var checks: [MerchantFocus] { MerchantFocusPreferences.checks(excluding: hiddenChecks) }
+    private var queryKey: String { model.merchantFocusKey(checks: checks, stockThreshold: stock, overdueHours: hours) }
+    private var current: Bool { model.focusSnapshot.key == queryKey }
     var body: some View {
         VStack(alignment: .leading, spacing: 9) {
             HStack(spacing: 10) {
                 Button { withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.18)) { expanded.toggle() } } label: { Label(T("Jetzt angehen"), systemImage: expanded ? "chevron.down" : "chevron.right").font(.system(size: 17, weight: .semibold)) }.buttonStyle(.plain)
                 if model.loadingFocus { ProgressView().controlSize(.small) }
                 Spacer()
-                if model.dueFollowUpCount > 0 {
+                if showFollowUps, model.dueFollowUpCount > 0 {
                     Button { model.selectedShopID = nil; model.destination = .followups } label: { Label("\(model.dueFollowUpCount) " + T("fällige Wiedervorlagen"), systemImage: "bookmark.circle") }.buttonStyle(.borderless)
                 }
-                Button { settings.toggle() } label: { Image(systemName: "slider.horizontal.3") }.buttonStyle(.borderless).help(T("Arbeitsvorrat konfigurieren"))
-                    .popover(isPresented: $settings) {
-                        VStack(alignment: .leading, spacing: 18) {
-                            Text(T("Arbeitsvorrat konfigurieren")).font(.headline)
-                            Stepper(T("Nachbestellen bei Bestand bis") + " \(stock)", value: $stock, in: 1...10000)
-                            Stepper(T("Offen seit mindestens Stunden") + " \(hours)", value: $hours, in: 1...8760, step: 12)
-                            Text(T("Produktinhalte werden nur bei aktiven Hauptprodukten geprüft. Varianten erben Inhalte.")).font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
-                        }.padding(22).frame(width: 355)
-                    }
-                Button { Task { await model.loadMerchantFocus(force: true) } } label: { Image(systemName: "arrow.clockwise") }.buttonStyle(.borderless).disabled(model.loadingFocus).help(T("Arbeitsvorrat aktualisieren"))
+                Button { settings.toggle() } label: {
+                    Label(T("Arbeitsvorrat konfigurieren"), systemImage: "slider.horizontal.3").labelStyle(.iconOnly)
+                }.buttonStyle(.borderless).help(T("Arbeitsvorrat konfigurieren"))
+                    .popover(isPresented: $settings) { preferences }
+                Button { Task { await model.loadMerchantFocus(force: true) } } label: {
+                    Label(T("Arbeitsvorrat aktualisieren"), systemImage: "arrow.clockwise").labelStyle(.iconOnly)
+                }.buttonStyle(.borderless).disabled(model.loadingFocus || checks.isEmpty).help(T("Arbeitsvorrat aktualisieren"))
             }
-            if expanded {
+            if expanded && checks.isEmpty {
+                Text(T("Keine Prüfungen ausgewählt.")).font(.caption).foregroundStyle(.secondary)
+            } else if expanded {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 320), spacing: 32)], spacing: 0) {
-                    ForEach(MerchantFocus.allCases) { focus in
+                    ForEach(checks) { focus in
                         Button { model.openFocus(focus) } label: { focusRow(focus) }
                             .buttonStyle(WorkspaceRowStyle()).help(T("Betroffene Datensätze öffnen"))
                     }
@@ -43,7 +47,43 @@ struct MerchantFocusView: View {
                 }
             }
         }.padding(15).background(Theme.surface, in: RoundedRectangle(cornerRadius: 14))
-            .task(id: model.merchantFocusKey) { await model.loadMerchantFocus() }
+            .task(id: queryKey) { await model.loadMerchantFocus() }
+            .onDisappear { model.stopMerchantFocusLoading() }
+    }
+    private var preferences: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text(T("Arbeitsvorrat konfigurieren")).font(.headline)
+            VStack(alignment: .leading, spacing: 5) {
+                Toggle(T("Arbeitsvorrat anzeigen"), isOn: $enabled)
+                Text(T("Den Bereich kannst du unter Einstellungen → Dashboard wieder einschalten."))
+                    .font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+            }
+            Divider()
+            VStack(alignment: .leading, spacing: 8) {
+                ForEach(MerchantFocus.allCases) { focus in
+                    Toggle(T(focus.title), isOn: checkBinding(focus))
+                    if focus == .overdueOrders && checks.contains(focus) {
+                        Stepper(T("Offen seit mindestens Stunden") + " \(hours)", value: $hours, in: 1...8760, step: 12)
+                            .font(.callout).padding(.leading, 22)
+                    }
+                    if focus == .lowStock && checks.contains(focus) {
+                        Stepper(T("Nachbestellen bei Bestand bis") + " \(stock)", value: $stock, in: 1...10000)
+                            .font(.callout).padding(.leading, 22)
+                    }
+                }
+            }
+            Divider()
+            Toggle(T("Fällige Wiedervorlagen anzeigen"), isOn: $showFollowUps)
+        }.toggleStyle(.checkbox).padding(20).frame(width: 385)
+    }
+    private func checkBinding(_ focus: MerchantFocus) -> Binding<Bool> {
+        Binding {
+            checks.contains(focus)
+        } set: { visible in
+            var hidden = Set(MerchantFocus.allCases.filter { !checks.contains($0) })
+            if visible { hidden.remove(focus) } else { hidden.insert(focus) }
+            hiddenChecks = MerchantFocus.allCases.filter { hidden.contains($0) }.map(\.rawValue).joined(separator: ",")
+        }
     }
     private func focusRow(_ focus: MerchantFocus) -> some View {
         let errors = current ? model.focusSnapshot.failures[focus] ?? [] : []

@@ -1,7 +1,7 @@
 <p align="center"><img src="Assets/AppIcon.png" width="96" alt="Shopdeck icon"></p>
 <h1 align="center">Shopdeck</h1>
 <p align="center"><strong>Run your Shopware shops from one Mac.</strong></p>
-<p align="center"><a href="https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck.dmg">Download for macOS</a> · <a href="docs/video.md">Watch the 30 second tour</a> · <a href="docs/screenshots.md">See the app</a> · <a href="docs/ai-guide.md">Connect Codex or Claude</a></p>
+<p align="center"><a href="https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck.dmg">Download for macOS</a> · <a href="docs/video.md">Watch the 30 second tour</a> · <a href="docs/screenshots.md">See the app</a> · <a href="#open-the-shopware-administration">Shopware administration</a> · <a href="#control-shopware-with-codex-and-claude">AI control</a></p>
 
 Shopdeck is a native macOS app for Shopware 6. Open your shops in one place, find orders and products across them, and keep the Shopware administration or storefront a click away. It is free and open source.
 
@@ -17,6 +17,14 @@ Shopdeck is a native macOS app for Shopware 6. Open your shops in one place, fin
 4. **Give your AI a shop connection you control.** Connect Codex or Claude through the local MCP server, choose which shops it can access and review proposed writes before applying them.
 
 [Watch the English product tour](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Tour-English.mp4) · [Vertical edition and captions](docs/video.md)
+
+## Open the Shopware administration
+
+Choose **Administration** in the sidebar and select a connected shop. Shopdeck opens the real Shopware admin inside the app. Log in as usual to manage variants, promotions, extensions or anything else you use in the admin. Each shop has a separate browser session. Use **Open in browser** to continue on the current page in your browser.
+
+Right click a shop and choose **Open in new tab** or **Open side by side**. Keep two shop administrations open, or put one beside an order list or the dashboard. Each tab keeps its own shop and filters. Use the **Workspaces** menu to save a setup you want to reopen. The **Storefronts** view lists the domains by sales channel with their language and currency, and opens each one in Shopdeck or in your browser.
+
+[![A local Shopware administration open inside Shopdeck](docs/screenshots/27-live-administration.png)](docs/screenshots.md#your-actual-shopware-interfaces)
 
 ## A workspace for all your shops
 
@@ -44,6 +52,8 @@ Select any combination of shops in each list. Saved views retain search, the sel
 ### Know what to work on next
 
 The dashboard attention list counts matching records directly in Shopware before pagination. It covers orders that have remained open too long, orders in progress, active products to replenish, sold out active products and parent products missing an image or description. Configure the stock threshold and the age of open orders. Click a count to open the matching list with the same shops, sales channel and order currency.
+
+In the current source on `main`, use the sliders on **Needs your attention** to pick individual checks, set thresholds and show or hide due follow ups. Turn off **Show attention list** to hide the panel and stop its checks. The same switch is under **Settings → Dashboard**, where you can turn it back on. [See the attention list settings](docs/screenshots/60-attention-list-settings.png)
 
 Content checks cover active parent products so inherited variant content is not mistaken for missing content. Counts respect the integration permissions. An unavailable shop produces an explicit error state rather than an invented zero. Queries run with bounded concurrency and a short cache to avoid unnecessary reloads.
 
@@ -91,29 +101,32 @@ Native macOS widgets offer all 23 metrics. The gallery includes dedicated starti
 
 Version 0.12.0 ships an optimized Developer ID signed app with Apple notarization and a stapled ticket, inside a Developer ID signed disk image. Read the [release notes](docs/releases.md) for the distribution checks.
 
-## Connect Codex and Claude
+## Control Shopware with Codex and Claude
 
-The bundled stdio MCP server exposes 20 tools. It supports explicit shop selection, record searches and details, product proposals, a generic Admin API bridge, reviewed writes and discovery of Shopware’s own MCP tools.
+Open **Codex & Claude**, enable the shops the client should see and use **Check now** to test the bundled local MCP server. Shopdeck can configure Codex, Claude Code and Claude Desktop. Codex and Claude Code get the Shopdeck skill during setup. Claude Desktop users import the exported skill ZIP under **Settings → Skills**. Restart the client and open a new chat.
 
-Reads follow the Shopware integration’s permissions. Writes are proposals until you review and approve them in Shopdeck. Customer data has a separate per shop sharing switch. Credentials are kept in the macOS Keychain and passed to the signed helper through pipes.
+> Use Shopdeck to list my enabled shops with their names and shop IDs. For each shop, show the product count and the number of low stock products. Keep the results separate by shop.
 
-Codex and Claude Code receive their MCP configuration and Shopdeck skill automatically. Claude Desktop receives its MCP configuration; import the exported skill ZIP in Claude Desktop’s Skills settings. Existing configuration is backed up before editing.
+| What you can ask for | What Shopdeck does |
+| --- | --- |
+| Find products, look up orders or compare sales channels | Reads the selected shop and returns the requested fields. Customer access follows a separate per shop setting. |
+| Change a product's description or stock | Prepares a proposal with the current and proposed values. You review it under **Changes**. |
+| Read a different entity or prepare an Admin API action | Discovers the shop's schema and routes, then uses the general bridge for permitted reads or queues the requested write or action. |
+| Upload an image or install a plugin from a local file | Stages the file for review. After approval it can upload the image or upload, install and optionally activate a compatible plugin package. |
+| Prepare a landing page with text, images and products | Stages a campaign plan with its target shop and sales channel. Approval creates the Shopware CMS and landing page. |
+| Use a tool exposed by Shopware itself | Discovers native MCP tools for that shop. Supported reads can run directly. Mutations and configuration access go through Shopdeck review. |
 
-Try this in a new chat after restarting the client:
+The local MCP server exposes 20 tools. Each shop operation names an explicit shop ID. The generic bridge can work with entities and actions exposed by the connected shop, including custom entities. What the client can read or change depends on the integration's permissions, the shop's routes and Shopdeck's access rules. API credentials stay in the macOS Keychain. [Example prompts and setup](docs/ai-guide.md) · [Exact tool schemas](docs/mcp-tools.json)
 
-> Use Shopdeck to list my enabled shops with their names and shop IDs. Do not change any data.
+### Review changes before they reach the shop
 
-See the [AI guide](docs/ai-guide.md) for comparisons, products, orders and reviewed changes. The [tool catalogue](docs/mcp-tools.json) contains the actual server schemas.
+Try a product correction first. Ask the client to find an item by SKU and propose a new description. Open **Changes** and review the target shop, current value and proposed value. **Apply all** lets you review a selection and stops on failure. **Change history** records what was applied and how it was verified. Product batches support guarded undo when the current values still match the applied change.
 
-### From an idea to a reviewed campaign
+### Prepare a campaign as a draft
 
-Prepare text, local artwork and product sliders with `propose_campaign`. Shopdeck displays the sections, files and target shop together. Approval uploads real binary media, creates the CMS page and landing page, then independently reads back the saved slot configuration. Drafts stay inactive. Explicit publication checks the storefront URL, including Shopware SEO redirects, and reports reachability separately.
+For a connected shop, ask the client to use `propose_campaign` with a storefront sales channel, existing product IDs and any local artwork. Set `publish=false` to prepare an inactive landing page. Shopdeck checks the selected channel and products and stages the files. In **Changes** you can inspect the plan and files before approval.
 
-`propose_media_upload` supports local PNG, JPEG, WebP and GIF files. `propose_plugin_install` validates a plugin ZIP, shows its version and required Shopware version, then uploads, installs and optionally activates it after approval. It verifies the resulting plugin record. Existing installed plugins need a separate update operation.
-
-Approve multiple proposals with **Apply all**, inspect current and proposed product values, choose the selection and follow progress. Processing stops on a failure. Product batch changes have guarded undo in reverse order; newer external edits cause a conflict instead of being overwritten. The history also records general API actions, media, plugins, campaigns and native MCP calls, with their actual verification level.
-
-Shopware’s native capability catalogue and current session tool list are shown separately. Use `call_shopware_tool` to invoke native tools when the shop makes them available. A catalogue entry alone does not establish availability.
+Approval uploads the files, creates the CMS page and landing page, and reads back the saved content. The receipt includes the Shopware IDs. Explicit publication also checks whether the storefront URL can be reached. Saved content and storefront reachability are reported separately.
 
 ## Build and run
 

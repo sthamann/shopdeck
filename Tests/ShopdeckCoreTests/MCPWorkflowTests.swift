@@ -64,7 +64,17 @@ final class MCPWorkflowTests:XCTestCase {
             XCTAssertEqual(try store.readAutomationQueue().operations.first?.status,"pending");XCTAssertTrue(try store.readAutomationQueue().operations.first?.checkpoints.isEmpty==true)
             let uploaded=try await service.execute(id,shop:shop);XCTAssertEqual(uploaded.status,"applied");XCTAssertEqual(uploaded.result?["verified"],.bool(true));print("Live workflow: media binary upload and readback verified")
             let campaign=try await call("propose_campaign",["title":.string("Shopdeck isolated workflow test"),"sales_channel_id":.string(channel),"publish":.bool(true),"files":.array([.string(image.path)]),"sections":.array([.object(["type":.string("text"),"text":.string("Shopdeck workflow verification")]),.object(["type":.string("image"),"file_index":.number(0)]),.object(["type":.string("product_slider"),"product_ids":.array(compact["data"].array.prefix(4).map{$0["id"]})])]),"reason":.string("Isolated campaign verification")])
-            let campaignID=try XCTUnwrap(UUID(uuidString:campaign["operation_id"].string ?? "")),created=try await service.execute(campaignID,shop:shop)
+            XCTAssertEqual(campaign["status"].string, "pending_approval")
+            let campaignID = try XCTUnwrap(UUID(uuidString: campaign["operation_id"].string ?? ""))
+            let staged = try XCTUnwrap(store.readAutomationQueue().operations.first { $0.id == campaignID })
+            XCTAssertEqual(staged.status, "pending")
+            XCTAssertTrue(staged.checkpoints.isEmpty)
+            for (entity, id) in [("cms-page", staged.payload["page"]["id"]), ("landing-page", staged.payload["landing_page_id"])] {
+                XCTAssertNotNil(id.string)
+                let rows = try await client.adminRequest(shop, request: .init(method: "POST", path: "search/" + entity, body: .object(["ids": .array([id])])))
+                XCTAssertTrue(rows["data"].array.isEmpty, "\(entity) must wait for approval")
+            }
+            let created = try await service.execute(campaignID, shop: shop)
             XCTAssertEqual(created.result?["stored_content_verified"],.bool(true));XCTAssertEqual(created.result?["storefront_verified"],.bool(true));print("Live workflow: CMS text, image and four products stored and storefront reachable")
             let name="ShopdeckVerify"+UUID().uuidString.replacingOccurrences(of:"-",with:"").prefix(8);pluginName=name
             let package=store.directory.appendingPathComponent(name);try FileManager.default.createDirectory(at:package.appendingPathComponent("src"),withIntermediateDirectories:true)

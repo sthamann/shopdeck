@@ -2,6 +2,16 @@ import SwiftUI
 import ShopdeckCore
 import UserNotifications
 
+enum MerchantFocusPreferences {
+    static let enabledKey = "focusEnabled"
+    static let hiddenChecksKey = "focusHiddenChecks"
+
+    static func checks(excluding hidden: String) -> [MerchantFocus] {
+        let hiddenIDs = Set(hidden.split(separator: ",").map(String.init))
+        return MerchantFocus.allCases.filter { !hiddenIDs.contains($0.rawValue) }
+    }
+}
+
 struct MerchantFocusSnapshot {
     var key: String
     var counts: [MerchantFocus: Int] = [:]
@@ -10,9 +20,9 @@ struct MerchantFocusSnapshot {
 }
 
 extension AppModel {
-    var merchantFocusKey: String {
+    func merchantFocusKey(checks: [MerchantFocus], stockThreshold: Int, overdueHours: Int) -> String {
         [dashboardShops.map { $0.id.uuidString + $0.url }.sorted().joined(separator: ","), dashboardChannelKey ?? "all", dashboardCurrency,
-         String(UserDefaults.standard.integer(forKey: "focusStockThreshold")), String(UserDefaults.standard.integer(forKey: "focusOverdueHours"))].joined(separator: "|")
+         checks.map(\.rawValue).joined(separator: ","), String(stockThreshold), String(overdueHours)].joined(separator: "|")
     }
     var focusStockThreshold: Int { let value = UserDefaults.standard.integer(forKey: "focusStockThreshold"); return value > 0 ? value : 10 }
     var focusOverdueHours: Int { let value = UserDefaults.standard.integer(forKey: "focusOverdueHours"); return value > 0 ? value : 48 }
@@ -33,19 +43,33 @@ extension AppModel {
         activeFilters = focusFilters(focus)
         Task { await loadRecords() }
     }
+    func stopMerchantFocusLoading() {
+        guard let task = focusLoadTask else { return }
+        focusGeneration = UUID()
+        task.cancel()
+        focusLoadTask = nil
+        loadingFocus = false
+    }
     func loadMerchantFocus(force: Bool = false) async {
-        let key = merchantFocusKey
+        let defaults = UserDefaults.standard
+        let checks = MerchantFocusPreferences.checks(excluding: defaults.string(forKey: MerchantFocusPreferences.hiddenChecksKey) ?? "")
+        guard defaults.object(forKey: MerchantFocusPreferences.enabledKey) as? Bool != false, !checks.isEmpty else {
+            stopMerchantFocusLoading()
+            return
+        }
+        let threshold = focusStockThreshold, hours = focusOverdueHours
+        let key = merchantFocusKey(checks: checks, stockThreshold: threshold, overdueHours: hours)
         if !force, focusSnapshot.key == key, let date = focusSnapshot.loadedAt, Date().timeIntervalSince(date) < 60 { return }
         if loadingFocus && focusLoadingKey == key && !force { return }
-        focusLoadTask?.cancel()
+        stopMerchantFocusLoading()
         let generation = UUID(); focusGeneration = generation; focusLoadingKey = key; loadingFocus = true
         focusSnapshot = MerchantFocusSnapshot(key: key)
         let channel: CommerceChannelReference?
         do { channel = try CommerceChannelReference.resolve(dashboardChannelKey) }
-        catch { loadingFocus = false; for focus in MerchantFocus.allCases { focusSnapshot.failures[focus] = [error.localizedDescription] }; return }
+        catch { loadingFocus = false; for focus in checks { focusSnapshot.failures[focus] = [error.localizedDescription] }; return }
         let shops = dashboardShops.filter { channel == nil || channel!.shopID == $0.id }
-        let currency = dashboardCurrency, now = Date(), threshold = focusStockThreshold, hours = focusOverdueHours
-        let work = MerchantFocus.allCases.flatMap { focus in shops.map { (focus, $0) } }
+        let currency = dashboardCurrency, now = Date()
+        let work = checks.flatMap { focus in shops.map { (focus, $0) } }
         let task = Task { [client] in
             var result = MerchantFocusSnapshot(key: key)
             await withTaskGroup(of: (MerchantFocus, String, Int?, String?).self) { group in
@@ -77,7 +101,7 @@ extension AppModel {
         let result = await task.value
         guard generation == focusGeneration else { return }
         loadingFocus = false; focusLoadTask = nil
-        guard key == merchantFocusKey, !task.isCancelled else { return }
+        guard !task.isCancelled else { return }
         focusSnapshot = result
     }
     var listShopSelectionTitle: String {
