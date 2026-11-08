@@ -4,6 +4,20 @@ Open **Codex & Claude** in Shopdeck. The page checks whether each client is inst
 
 Restart the client completely and begin a new chat. In Claude Code, begin a new session. Claude Desktop users also import the exported Shopdeck skill ZIP under Settings → Skills.
 
+## Shopdeck MCP, Shopware Admin MCP and Agentic Commerce
+
+| Connection | Who uses it and what it does |
+| --- | --- |
+| **Local Shopdeck MCP** | Codex and Claude connect to the Mac. Shopdeck calls the Admin API for each enabled shop. It can read catalogues and orders, stage media and campaign work, and queue writes for review in **Changes**. |
+| **Shopware Admin MCP** | Shopware exposes its native administration tools at `/api/_mcp`. Shopdeck can discover and invoke those tools through its own MCP connection when the shop and integration allow it. Native writes forwarded by Shopdeck go through the same approval queue. |
+| **Shopware Agentic Commerce** | The optional `SwagAgenticCommerce` extension serves shopping agents at the storefront. It offers product feeds and sales channel discovery, and can expose catalogue, cart and checkout through UCP. You install and configure it in Shopware. A UCP client uses the sales channel's published profile and advertised transport. |
+
+The two administration paths can be used in parallel and are independent of the storefront extension. Shopdeck's approval queue applies to operations it forwards. Direct storefront traffic follows Shopware's sales channel and UCP settings.
+
+In builds from `main`, **Codex & Claude → Check Shopware integrations** lets you test the selected shop's Admin MCP and separately check whether `SwagAgenticCommerce` is installed and active. The extension check uses the Shopware integration's permission to read plugins. Activation and storefront readiness are separate. Open **Administration** to set up or verify the sales channel profile and product feeds. [Shopware Admin MCP documentation](https://developer.shopware.com/docs/products/tools/mcp-server/intro.html) · [Shopware Agentic Commerce documentation](https://docs.shopware.com/en/shopware-6-en/extensions/agentic-commerce)
+
+[See the connection overview in Shopdeck](screenshots/61-shopware-ai-connections.png)
+
 ## Check the connection
 
 > Use Shopdeck to list my enabled shops with their names and shop IDs. Do not change any data.

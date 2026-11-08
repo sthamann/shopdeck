@@ -103,6 +103,8 @@ Version 0.13.0 ships an optimized Developer ID signed app with Apple notarizatio
 
 ## Control Shopware with Codex and Claude
 
+Shopdeck's local MCP server connects Codex and Claude to the shops you enable and routes writes through review. It can also call Shopware's own Admin MCP tools when the shop exposes them. The separate **Shopware Agentic Commerce** extension is for shopping agents on the storefront, with product feeds and sales channel shopping through UCP. Set that up in the Shopware administration. [Compare all three connections](docs/ai-guide.md#shopdeck-mcp-shopware-admin-mcp-and-agentic-commerce)
+
 Open **Codex & Claude**, enable the shops the client should see and use **Check now** to test the bundled local MCP server. Shopdeck can configure Codex, Claude Code and Claude Desktop. Codex and Claude Code get the Shopdeck skill during setup. Claude Desktop users import the exported skill ZIP under **Settings → Skills**. Restart the client and open a new chat.
 
 > Use Shopdeck to list my enabled shops with their names and shop IDs. For each shop, show the product count and the number of low stock products. Keep the results separate by shop.

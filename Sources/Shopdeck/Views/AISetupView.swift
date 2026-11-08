@@ -18,6 +18,9 @@ struct AISetupView: View {
     @LocalState<[JSONValue]> private var officialTools: [JSONValue] = []
     @LocalState<String> private var officialResult = ""
     @LocalState<Bool> private var checkingOfficial = false
+    @LocalState<String> private var extensionResult = ""
+    @LocalState<Bool> private var checkingExtension = false
+    private var selectedShop: Shop? { model.workspace.shops.first { !$0.isDemo && $0.id == officialShop } }
     private var helper: URL { Bundle.main.bundleURL.appendingPathComponent("Contents/Helpers/shopdeck-mcp") }
     private var installedHelper: URL { model.store.directory.appendingPathComponent("bin/shopdeck-mcp") }
     private var permittedShops:[Shop] {model.workspace.shops.filter(\.mcpEnabled)}
@@ -29,13 +32,14 @@ struct AISetupView: View {
                     Spacer();Label(T("Lokal auf diesem Mac"),systemImage:"lock.shield").font(.caption).foregroundStyle(.secondary)
                 }
                 connectionStatus
+                connectionGuide
                 ViewThatFits(in:.horizontal) {
                     HStack(alignment:.top,spacing:24) {setupPanel.frame(minWidth:440,maxWidth:.infinity);shopPermissions.frame(width:280)}
                     VStack(alignment:.leading,spacing:24) {setupPanel;shopPermissions}
                 }
+                shopwareChecks
                 usageGuide
                 toolCatalogue
-                officialCatalogue
                 DisclosureGroup(T("Manuelle Konfiguration")) { VStack(alignment:.leading,spacing:12) {Text("Codex · ~/.codex/config.toml").font(.caption);codeBlock("[mcp_servers.shopdeck]\ncommand = \"\(installedHelper.path)\"");Text("Claude Desktop · claude_desktop_config.json").font(.caption);codeBlock("{\"mcpServers\":{\"shopdeck\":{\"command\":\"\(installedHelper.path)\",\"args\":[]}}}")}.padding(.top,12) }
             }.frame(maxWidth:1120,alignment:.leading).padding(28).frame(maxWidth:.infinity,alignment:.topLeading)
         }.task {await scanClients()}
@@ -43,7 +47,7 @@ struct AISetupView: View {
     private var connectionStatus:some View {
         HStack(spacing:14) {
             Image(systemName:checked ? "checkmark.circle.fill":"point.3.connected.trianglepath.dotted").font(.system(size:27,weight:.medium)).foregroundStyle(checked ? .green:Theme.blue)
-            VStack(alignment:.leading,spacing:5) {Text(T("MCP Verbindung")).font(.system(size:15,weight:.semibold));Text(testing ? T("Verbindung wird geprüft …"):checked ? "\(tools.count) "+T("Werkzeuge vom Server bestätigt"):T("Prüfe den lokalen Server, bevor du einen Client verbindest.")).font(.system(size:12)).foregroundStyle(.secondary)}
+            VStack(alignment:.leading,spacing:5) {Text(T("Lokaler Shopdeck MCP")).font(.system(size:15,weight:.semibold));Text(testing ? T("Verbindung wird geprüft …"):checked ? "\(tools.count) "+T("Werkzeuge vom Server bestätigt"):T("Prüfe den lokalen Server, bevor du einen Client verbindest.")).font(.system(size:12)).foregroundStyle(.secondary)}
             Spacer();if testing{ProgressView().controlSize(.small)}
             Button{Task{await probe()}}label:{Label(checked ? T("Erneut prüfen"):T("Jetzt prüfen"),systemImage:"arrow.triangle.2.circlepath")}.buttonStyle(.borderedProminent).controlSize(.large).disabled(testing)
         }.padding(18).background(Theme.blue.opacity(0.075),in:RoundedRectangle(cornerRadius:12))
@@ -102,24 +106,150 @@ struct AISetupView: View {
     private var toolCatalogue:some View {
         VStack(alignment:.leading,spacing:15) {
             HStack {Text(T("Verfügbare Werkzeuge")).font(.system(size:18,weight:.semibold));Text("\(tools.count)").font(.caption).foregroundStyle(.secondary);Spacer();TextField(T("Werkzeuge durchsuchen …"),text:$toolSearch).textFieldStyle(.roundedBorder).frame(maxWidth:260)}
-            Text(T("Die allgemeine Admin API erreicht alle Datenarten und Endpunkte des Shops. Schreibaktionen werden unter Änderungen zur Freigabe vorgelegt.")).font(.system(size:12)).foregroundStyle(.secondary).lineSpacing(3)
+            Text(T("Die Admin API nutzt die Routen und Berechtigungen der Shopware Integration. Schreibaktionen erscheinen unter Änderungen zur Freigabe.")).font(.system(size:12)).foregroundStyle(.secondary).lineSpacing(3)
             ForEach(tools.filter{toolSearch.isEmpty || $0.pretty.localizedCaseInsensitiveContains(toolSearch)},id:\.pretty){tool in
                 DisclosureGroup {Text(tool["inputSchema"].pretty).font(.system(size:11,design:.monospaced)).foregroundStyle(.secondary).textSelection(.enabled).padding(12)} label:{HStack(spacing:12){Image(systemName:tool["annotations"]["readOnlyHint"].bool == true ? "magnifyingglass":"checkmark.seal").foregroundStyle(Theme.blue).frame(width:20);VStack(alignment:.leading,spacing:4){Text(tool["name"].string ?? "").font(.system(size:12,weight:.medium));Text(tool["description"].string ?? "").font(.system(size:11)).foregroundStyle(.secondary).lineLimit(2)};Spacer();Text(tool["annotations"]["readOnlyHint"].bool == true ? T("Lesen"):T("Freigabe")).font(.caption).foregroundStyle(.secondary)}}
                 Divider()
             }
         }
     }
-    private var officialCatalogue:some View {
-        VStack(alignment:.leading,spacing:14) {
-            HStack {Text(T("Offizieller Shopware MCP")).font(.system(size:18,weight:.semibold));Spacer();Picker(T("Shop"),selection:$officialShop){Text(T("Shop auswählen")).tag(nil as UUID?);ForEach(model.workspace.shops.filter{!$0.isDemo}){Text($0.name).tag(Optional($0.id))}}.frame(maxWidth:240);Button(T("Shopware prüfen")){Task{await inspectOfficial()}}.disabled(officialShop==nil || checkingOfficial)}
-            Text(T("Shopware lädt Werkzeuge je Sitzung nach. Die sichtbare Auswahl hängt zusätzlich von Version, Integration und Berechtigungen ab.")).font(.caption).foregroundStyle(.secondary)
-            if checkingOfficial{ProgressView().controlSize(.small)}
-            if !officialResult.isEmpty{Text(officialResult).font(.system(size:12)).foregroundStyle(.secondary)}
-            ForEach(officialTools,id:\.pretty){tool in HStack {Text(tool["name"].string ?? "").font(.system(size:12,weight:.medium));Spacer();VStack(alignment:.leading,spacing:5){Text(tool["description"].string ?? "").font(.caption).foregroundStyle(.secondary).lineLimit(2);Label(tool["session_available"].bool==true ? T("In dieser Sitzung verfügbar"):T("Nur im Katalog gemeldet"),systemImage:tool["session_available"].bool==true ? "checkmark.circle":"info.circle").font(.caption).foregroundStyle(tool["session_available"].bool==true ? Color.green:Color.orange)}.frame(maxWidth:600,alignment:.leading)}}
-        }.padding(.top,4)
+    private var connectionGuide: some View {
+        VStack(alignment: .leading, spacing: 13) {
+            connectionGuideRow("macwindow", T("Lokaler Shopdeck MCP"),
+                               T("Codex und Claude verbinden sich mit deinem Mac. Shopdeck verwaltet freigegebene Shops über die Admin API und legt Schreibaktionen zur Freigabe vor."))
+            Divider()
+            connectionGuideRow("point.3.connected.trianglepath.dotted", "Shopware Admin MCP",
+                               T("Shopware stellt eigene Werkzeuge unter /api/_mcp bereit. Shopdeck kann sie über seine Verbindung entdecken und aufrufen. Schreibende Aufrufe gehen ebenfalls zur Freigabe."))
+            Divider()
+            connectionGuideRow("storefront", "Shopware Agentic Commerce",
+                               T("Die optionale Erweiterung stellt Produktdaten und UCP Einkaufsfunktionen für Storefront Agenten bereit. Du richtest sie je Verkaufskanal in Shopware ein."))
+        }.padding(18).background(Theme.surface, in: RoundedRectangle(cornerRadius: 12))
     }
+
+    private func connectionGuideRow(_ icon: String, _ title: String, _ description: String) -> some View {
+        HStack(alignment: .top, spacing: 10) {
+            Image(systemName: icon).foregroundStyle(Theme.blue).frame(width: 22)
+                .accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: 4) {
+                Text(title).font(.callout.weight(.semibold))
+                Text(description).font(.caption).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+        }
+    }
+
+    private var shopwareChecks: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            Text(T("Shopware Integrationen prüfen")).font(.system(size: 18, weight: .semibold))
+            Picker(T("Shop"), selection: $officialShop) {
+                Text(T("Shop auswählen")).tag(nil as UUID?)
+                ForEach(model.workspace.shops.filter { !$0.isDemo }) { Text($0.name).tag(Optional($0.id)) }
+            }.frame(maxWidth: 320)
+            VStack(alignment: .leading, spacing: 7) {
+                Text("Shopware Admin MCP").font(.callout.weight(.semibold))
+                Text(T("Shopware lädt Werkzeuge je Sitzung nach. Die sichtbare Auswahl hängt zusätzlich von Version, Integration und Berechtigungen ab."))
+                    .font(.caption).foregroundStyle(.secondary)
+                HStack {
+                    Button(T("Admin MCP prüfen")) { Task { await inspectOfficial() } }
+                        .disabled(selectedShop == nil || checkingOfficial)
+                    if checkingOfficial { ProgressView().controlSize(.small) }
+                }
+                if !officialResult.isEmpty { Text(officialResult).font(.caption).foregroundStyle(.secondary) }
+                if !officialTools.isEmpty {
+                    DisclosureGroup(T("Offizielle Shopware Werkzeuge")) {
+                        ForEach(officialTools, id: \.pretty) { tool in
+                            let available = tool["session_available"].bool == true
+                            HStack {
+                                Text(tool["name"].string ?? "").font(.callout).textSelection(.enabled)
+                                Spacer()
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(tool["description"].string ?? "").font(.caption).foregroundStyle(.secondary)
+                                        .lineLimit(2)
+                                    Label(available ? T("In dieser Sitzung verfügbar") : T("Nur im Katalog gemeldet"),
+                                          systemImage: available ? "checkmark.circle" : "info.circle")
+                                        .font(.caption).foregroundStyle(available ? Color.green : Color.orange)
+                                }.frame(maxWidth: 440, alignment: .leading)
+                            }
+                        }
+                    }
+                }
+            }
+            Divider()
+            VStack(alignment: .leading, spacing: 7) {
+                Text("Shopware Agentic Commerce").font(.callout.weight(.semibold))
+                Text(T("Shopdeck prüft die Installation. UCP Profil, Produktfeeds und Checkout werden in Shopware konfiguriert. Einkaufsagenten verbinden sich mit der Storefront."))
+                    .font(.caption).foregroundStyle(.secondary)
+                HStack {
+                    Button(T("Erweiterung prüfen")) { Task { await inspectAgenticExtension() } }
+                        .disabled(selectedShop == nil || checkingExtension)
+                    if checkingExtension { ProgressView().controlSize(.small) }
+                }
+                if !extensionResult.isEmpty { Text(extensionResult).font(.caption).foregroundStyle(.secondary) }
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 12) { agenticLinks }.fixedSize(horizontal: true, vertical: false)
+                    VStack(alignment: .leading, spacing: 8) { agenticLinks }
+                }
+            }
+        }.padding(18).background(Theme.surface, in: RoundedRectangle(cornerRadius: 12))
+        .onChange(of: officialShop) { _, _ in
+            officialResult = ""; officialTools = []; extensionResult = ""
+        }
+    }
+
+    @ViewBuilder private var agenticLinks: some View {
+        Button(T("Administration öffnen")) {
+            if let selectedShop { model.openAdministration(selectedShop) }
+        }.disabled(selectedShop == nil)
+        Link(T("Shopware Anleitung zu Agentic Commerce"), destination: URL(string: "https://docs.shopware.com/en/shopware-6-en/extensions/agentic-commerce")!)
+    }
+
     private func scanClients()async {for client in AIClient.allCases{availability[client]=await ClientDiscovery.detect(client);let status=ClientInstaller().status(client,destination:installedHelper);if status.mcpConfigured{installed.insert(client.rawValue)}else{installed.remove(client.rawValue)}}}
-    private func inspectOfficial()async {guard let shop=model.workspace.shops.first(where:{$0.id==officialShop})else{return};checkingOfficial=true;defer{checkingOfficial=false};do{officialTools=try await model.client.officialMCPTools(shop);officialResult="\(officialTools.count) "+T("Werkzeuge direkt vom Shop gemeldet")}catch{officialResult=error.localizedDescription;officialTools=[]}}
+    private func inspectOfficial() async {
+        guard let shop = selectedShop else { return }
+        checkingOfficial = true
+        defer { checkingOfficial = false }
+        do {
+            let result = try await model.client.officialMCPTools(shop)
+            guard selectedShop == shop else { return }
+            officialTools = result
+            officialResult = "\(result.count) " + T("Werkzeuge direkt vom Shop gemeldet")
+        } catch {
+            guard selectedShop == shop else { return }
+            officialResult = error.localizedDescription
+            officialTools = []
+        }
+    }
+
+    private func inspectAgenticExtension() async {
+        guard let shop = selectedShop else { return }
+        checkingExtension = true
+        defer { checkingExtension = false }
+        let body: JSONValue = .object([
+            "limit": .number(1),
+            "filter": .array([.object([
+                "type": .string("equals"), "field": .string("name"), "value": .string("SwagAgenticCommerce")
+            ])])
+        ])
+        do {
+            let response = try await model.client.adminRequest(shop, request: .init(method: "POST", path: "search/plugin", body: body))
+            guard selectedShop == shop else { return }
+            guard case let .array(plugins) = response["data"] else {
+                extensionResult = T("Erweiterungsstatus konnte nicht gelesen werden.")
+                return
+            }
+            let plugin = plugins.first
+            guard let plugin, plugin["installedAt"] != .null else {
+                extensionResult = T("Nicht installiert")
+                return
+            }
+            let status = T(plugin["active"].bool == true ? "Installiert und aktiv" : "Installiert und inaktiv")
+            extensionResult = plugin["version"].string.map { status + " · " + $0 } ?? status
+        } catch {
+            guard selectedShop == shop else { return }
+            extensionResult = T("Erweiterungsstatus konnte nicht gelesen werden.") + " " + error.localizedDescription
+        }
+    }
+
     private func codeBlock(_ text: String) -> some View { HStack(alignment: .top) { Text(text).font(.system(size: 11, design: .monospaced)).textSelection(.enabled).frame(maxWidth: .infinity, alignment: .leading); Button { copyText(text) } label: { Image(systemName: "doc.on.doc") }.buttonStyle(.borderless).help(T("Kopieren")) }.padding(15).background(Theme.surface, in: RoundedRectangle(cornerRadius: 8)) }
     private func install(_ client: AIClient) {
         installing = client
