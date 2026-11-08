@@ -7,7 +7,7 @@ Shopdeck is a native macOS app for Shopware 6. Open your shops in one place, fin
 
 [![Shopdeck showing the dashboard for all shops beside Nordlicht's order list](docs/screenshots/57-shop-and-orders-side-by-side.png)](docs/screenshots.md#workspace-preview-from-the-main-branch)
 
-**Get started with the signed and notarized 0.12.0 release** on Apple silicon with macOS 14 or later. Connect an existing shop, start a local Shopware shop with Docker, or explore the built in demo. The screenshot above shows the workspace preview from the current source on `main`. [Stable release](https://github.com/sthamann/shopdeck/releases/tag/v0.12.0) · [Build from source](#build-and-run)
+**Get started with the signed and notarized 0.13.0 release** on Apple silicon with macOS 14 or later. Connect an existing shop, start a local Shopware shop with Docker, or explore the built in demo. The screenshot above shows the workspace with demo shops. [Stable release](https://github.com/sthamann/shopdeck/releases/tag/v0.13.0) · [Build from source](#build-and-run)
 
 ## A morning with Shopdeck
 
@@ -53,7 +53,7 @@ Select any combination of shops in each list. Saved views retain search, the sel
 
 The dashboard attention list counts matching records directly in Shopware before pagination. It covers orders that have remained open too long, orders in progress, active products to replenish, sold out active products and parent products missing an image or description. Configure the stock threshold and the age of open orders. Click a count to open the matching list with the same shops, sales channel and order currency.
 
-In the current source on `main`, use the sliders on **Needs your attention** to pick individual checks, set thresholds and show or hide due follow ups. Turn off **Show attention list** to hide the panel and stop its checks. The same switch is under **Settings → Dashboard**, where you can turn it back on. [See the attention list settings](docs/screenshots/60-attention-list-settings.png)
+Use the sliders on **Needs your attention** to pick individual checks, set thresholds and show or hide due follow ups. Turn off **Show attention list** to hide the panel and stop its checks. The same switch is under **Settings → Dashboard**, where you can turn it back on. [See the attention list settings](docs/screenshots/60-attention-list-settings.png)
 
 Content checks cover active parent products so inherited variant content is not mistaken for missing content. Counts respect the integration permissions. An unavailable shop produces an explicit error state rather than an invented zero. Queries run with bounded concurrency and a short cache to avoid unnecessary reloads.
 
@@ -67,7 +67,7 @@ Tabs reopen with their selected shops, search, filters, sorting, page, sales cha
 
 ### Keep your order documents together
 
-Select orders in the grid and choose **Open documents**, or open documents from an order detail. Preview existing invoices, delivery notes and credit notes without leaving the app. Search the document list and select several PDFs with **⌘** or **⇧**. Exports preserve the original bytes, including existing signatures, and group files by shop in a ZIP package. Creating or correcting accounting documents remains in the original Shopware administration.
+Select orders in the grid and choose **Open documents**, or open documents from an order detail. Preview existing invoices, delivery notes and credit notes without leaving the app. Search the document list and select several PDFs with **⌘** or **⇧**. Exports preserve the original bytes, including existing signatures, and group files by shop in a ZIP package. To generate a new document, open the order and choose **Open in Administration**. In Shopware, open **Documents** and create the invoice or delivery note there. Then refresh **Order documents** in Shopdeck to preview or save the PDF returned by Shopware.
 
 The integration needs `document:read` and access to the selected orders. Each PDF is limited to 32 MB and an export package to 256 MB. Up to 200 selected orders per shop and 1,000 documents per shop are loaded; incomplete lists are disclosed. Binary downloads stay on the selected shop origin and do not follow redirects.
 
@@ -99,7 +99,7 @@ Native macOS widgets offer all 23 metrics. The gallery includes dedicated starti
 4. Local Docker shops show the default administration login, **admin / shopware**, directly above the embedded login page, with copy buttons. These are the image defaults; a password you change yourself takes precedence.
 5. Open **Codex & Claude** when you want AI access. Enable only the shops you want to share, configure your client and try the included prompts.
 
-Version 0.12.0 ships an optimized Developer ID signed app with Apple notarization and a stapled ticket, inside a Developer ID signed disk image. Read the [release notes](docs/releases.md) for the distribution checks.
+Version 0.13.0 ships an optimized Developer ID signed app with Apple notarization and a stapled ticket, inside a Developer ID signed disk image. Read the [release notes](docs/releases.md) for the distribution checks.
 
 ## Control Shopware with Codex and Claude
 

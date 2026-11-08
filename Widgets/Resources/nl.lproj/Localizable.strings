@@ -18,6 +18,7 @@
 "Adminzugang für den lokalen Testshop: admin / shopware. Die Daten bleiben im Container erhalten." = "Beheerlogin voor de lokale testshop: admin / shopware. Gegevens blijven in de container.";
 "Adressbuch" = "Adresboek";
 "Aktion" = "Actie";
+"Aktionen" = "Acties";
 "Aktiv" = "Actief";
 "Aktiv und ausverkauft" = "Actief maar uitverkocht";
 "Aktivität" = "Activiteit";
@@ -83,6 +84,7 @@
 "Arbeitsplätze" = "Werkruimtes";
 "Arbeitsplätze und Tabs" = "Werkruimtes en tabbladen";
 "Arbeitsvorrat aktualisieren" = "Werklijst vernieuwen";
+"Arbeitsvorrat anzeigen" = "Werklijst tonen";
 "Arbeitsvorrat konfigurieren" = "Werklijst instellen";
 "Arbeitsvorrat öffnen" = "Werklijst openen";
 "Artikel" = "Artikelen";
@@ -199,6 +201,7 @@
 "Demodokument. Keine echte Rechnung." = "Voorbeelddocument. Geen echte factuur.";
 "Demoprofil ohne echte Administration" = "Demoprofiel zonder echt beheer";
 "Demoprofile einbeziehen" = "Demoprofielen meenemen";
+"Den Bereich kannst du unter Einstellungen → Dashboard wieder einschalten." = "Schakel dit weer in via Instellingen → Dashboard.";
 "Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills." = "Importeer de skill in Claude Desktop via Instellingen → Mogelijkheden → Skills.";
 "Der Arbeitsplatz konnte nicht gespeichert werden." = "De werkruimte kon niet worden opgeslagen.";
 "Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund." = "De assistent stelt MCP en skills in. Toegangsgegevens blijven in de sleutelhanger.";
@@ -245,7 +248,9 @@
 "Dieses Jahr" = "Dit jaar";
 "Dieses PDF konnte nicht gelesen werden." = "Deze PDF kon niet worden geopend.";
 "Dieses strukturierte Preisfeld bietet keine direkte API Sortierung." = "Dit gestructureerde prijsveld heeft geen directe API sortering.";
+"Direkt loslegen" = "Snelle acties";
 "Direkt mit der Shopware Admin API verbunden." = "Direct verbonden met de Shopware Admin API.";
+"Direkte Treffer" = "Exacte resultaten";
 "Docker Desktop herunterladen" = "Docker Desktop downloaden";
 "Docker Desktop muss laufen. Das Image wird geladen, ein Container nur auf localhost gestartet und eine eigene API Integration eingerichtet." = "Docker Desktop moet actief zijn. De image wordt geladen, een container alleen op localhost gestart en een eigen API integratie aangemaakt.";
 "Docker Desktop wird im Programme Ordner installiert …" = "Docker Desktop wordt in je map Programma’s geïnstalleerd …";
@@ -320,11 +325,13 @@
 "Filter zurücksetzen" = "Filters wissen";
 "Filtername" = "Filternaam";
 "Firma" = "Bedrijf";
+"Fortfahren" = "Doorgaan";
 "Freien Port automatisch wählen" = "Automatisch een vrije poort kiezen";
 "Freigabe" = "Goedkeuring";
 "Freigegebene Shops" = "Vrijgegeven shops";
 "Frisch aus Shopware laden" = "Opnieuw laden uit Shopware";
 "Fällig am" = "Uiterlijk op";
+"Fällige Wiedervorlagen anzeigen" = "Te behandelen opvolgacties tonen";
 "Für Codex und Claude freigeben" = "Vrijgeven voor Codex en Claude";
 "Für Ja oder Nein true oder false eingeben. Datumswerte im ISO Format verwenden." = "Gebruik true of false voor ja of nee. Voer datums in ISO formaat in.";
 "Für die Veröffentlichung wird noch die Adresse des Update Feeds hinterlegt. Diese Version lädt keine App Updates." = "Voor publicatie is nog een updatefeed nodig. Deze versie downloadt geen app updates.";
@@ -366,6 +373,7 @@
 "Image Version" = "Imageversie";
 "In Administration öffnen" = "Openen in administratie";
 "In Gruppe verschieben" = "Naar groep verplaatsen";
+"In Shops suchen" = "Zoeken in shops";
 "In Shopware öffnen" = "In Shopware openen";
 "In der Pickliste suchen" = "Zoek in deze picklijst";
 "In dieser Sitzung verfügbar" = "Beschikbaar in deze sessie";
@@ -398,6 +406,7 @@
 "Kampagne mit Bild vorbereiten" = "Campagne met afbeelding voorbereiden";
 "Kein freier lokaler Port gefunden." = "Geen vrije lokale poort gevonden.";
 "Kein lesbares Favicon unter /favicon.ico gefunden." = "Geen leesbaar favicon gevonden op /favicon.ico.";
+"Keine Prüfungen ausgewählt." = "Geen controles geselecteerd.";
 "Keine Treffer" = "Geen resultaten";
 "Keine passenden Artikel in dieser Pickliste." = "Geen overeenkomende artikelen in deze picklijst.";
 "Keine stabile Version gefunden." = "Geen stabiele versie gevonden.";
@@ -513,6 +522,7 @@
 "Nicht installiert" = "Niet geïnstalleerd";
 "Nicht verbunden" = "Niet verbonden";
 "Nicht übernommen" = "Niet toegepast";
+"Noch kein Shop verbunden" = "Geen shop verbonden";
 "Noch keine Aktivität" = "Nog geen activiteit";
 "Noch keine Bestellungen vorhanden." = "Nog geen bestellingen.";
 "Noch keine Daten" = "Nog geen gegevens";
@@ -639,6 +649,7 @@
 "Shops hierher ziehen" = "Sleep shops hierheen";
 "Shops und Bestand" = "Shops en voorraad";
 "Shops verbunden" = "Shops verbonden";
+"Shops, Aktionen oder Datensätze suchen" = "Zoek shops, acties of records";
 "Shopware Administration → Einstellungen → System → Integrationen. Zugangsdaten werden im macOS Schlüsselbund gespeichert." = "Shopware beheer → Instellingen → Systeem → Integraties. Toegangsgegevens worden in de macOS sleutelhanger bewaard.";
 "Shopware ID" = "Shopware ID";
 "Shopware Image wird geladen …" = "Shopware image downloaden …";
@@ -679,6 +690,7 @@
 "Stornierte Bestellungen" = "Geannuleerde bestellingen";
 "Stornorechnung" = "Annuleringsfactuur";
 "Stück" = "stuks";
+"Suche löschen" = "Zoekopdracht wissen";
 "Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor." = "Zoek met Shopdeck product [productnummer] in shop [shopnaam] en stel een nieuwe beschrijving voor. Dien het voorstel in voor goedkeuring in Shopdeck.";
 "Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl." = "Zoeken, filters en sortering gebeuren in de shop vóór paginering. Gesorteerde resultaten worden samengevoegd. De resultaatlimiet begrenst ook het aantal doorbladerbare resultaten.";
 "Suchen …" = "Zoeken …";
@@ -714,6 +726,7 @@
 "Verbinde Codex und Claude. Stelle Fragen, finde Produkte und prüfe Änderungen direkt hier." = "Verbind Codex en Claude. Stel vragen, vind producten en beoordeel wijzigingen hier.";
 "Verbinde deine KI mit allen freigegebenen Shops." = "Verbind je AI met alle vrijgegeven shops.";
 "Verbinde deinen Shop oder starte einen lokalen Shop zum Ausprobieren." = "Verbind je shop of start een lokale shop om te testen.";
+"Verbinde einen Shop oder erkunde Shopdeck mit Demodaten." = "Verbind een shop of verken Shopdeck met demogegevens.";
 "Verbinde einen bestehenden Shop oder starte einen lokalen Testshop mit Docker." = "Verbind een bestaande shop of start een lokale testshop met Docker.";
 "Verbinden oder lokal mit Docker starten" = "Verbinden of lokaal met Docker starten";
 "Verbindung" = "Verbinding";
@@ -750,6 +763,7 @@
 "Weiter" = "Vooruit";
 "Weitere" = "Meer";
 "Weitere Einträge laden" = "Meer items laden";
+"Weitere Treffer" = "Meer resultaten";
 "Welche Shops darf die KI sehen?" = "Welke shops mag AI zien?";
 "Werkzeuge direkt vom Shop gemeldet" = "tools rechtstreeks door de shop gemeld";
 "Werkzeuge durchsuchen …" = "Tools zoeken …";

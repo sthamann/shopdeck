@@ -1,6 +1,8 @@
 # Signed releases and updates
 
-Version **0.12.0 (12000)** ships an optimized Apple silicon application signed with Developer ID Application. Apple notarization succeeded; the app carries a stapled ticket and passes Gatekeeper assessment as `Notarized Developer ID`. The disk image is Developer ID signed and contains that notarized app. Sparkle verifies its download with a separate Ed25519 signature. The final mounted DMG app passed signature, staple and Gatekeeper checks. Public download and feed matched the signed originals byte for byte. The actual Sparkle upgrade from 0.11.0 to 0.12.0 was installed and relaunched successfully, preserving the shops, workbench, desktop session and pending approvals. Both local shop credential reads succeeded afterwards.
+Version **0.13.0 (13000)** ships an optimized Apple silicon app signed with Developer ID Application. The app is notarized by Apple and contains a stapled ticket. The Developer ID signed disk image passed integrity and signature checks. Its mounted app passed deep code signature verification, staple validation and Gatekeeper assessment as `Notarized Developer ID`. The Sparkle feed and its enclosure both verify against the app's embedded Ed25519 public key.
+
+The release check used Shopware's document generator in an isolated local shop to create an invoice and a delivery note. Both Shopdeck downloads matched the corresponding original Shopware PDF byte for byte, and both opened in PDFKit. The test removed the generated documents and checked that they were gone.
 
 Official downloads are published in this repository’s GitHub Releases. Shopdeck checks:
 
@@ -19,8 +21,8 @@ The feed points to a versioned release asset. Sparkle verifies the Ed25519 signa
 5. Sign the final download with the private Sparkle key:
 
 ```sh
-python3 script/prepare_appcast.py Shopdeck-0.12.0-arm64.dmg \
-  --download-url https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-0.12.0-arm64.dmg \
+python3 script/prepare_appcast.py Shopdeck-0.13.0-arm64.dmg \
+  --download-url https://github.com/sthamann/shopdeck/releases/download/v0.13.0/Shopdeck-0.13.0-arm64.dmg \
   --key /secure/local/path/sparkle-ed25519.key \
   --output appcast.xml \
   --notes "Release notes for this version"

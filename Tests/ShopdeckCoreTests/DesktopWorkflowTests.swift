@@ -68,44 +68,76 @@ final class DesktopWorkflowTests: XCTestCase {
         XCTAssertThrowsError(try OrderDocument(shop: shop, data: .object(invalid)).downloadPath())
     }
     func testLiveOriginalDocumentDownload() async throws {
-        guard ProcessInfo.processInfo.environment["SHOPDECK_DOCUMENT_LIVE"] == "1" else { throw XCTSkip("Opt in for the isolated local document fixture.") }
-        let shop = try XCTUnwrap(try WorkspaceStore().read().shops.first { $0.url == "http://127.0.0.1:18888" })
-        let helper = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Applications/Shopdeck.app/Contents/Helpers/shopdeck-keychain")
-        let process = Process(), pipe = Pipe(); process.executableURL = helper; process.arguments = ["load", shop.id.uuidString]; process.standardOutput = pipe; process.standardError = FileHandle.nullDevice
-        try process.run(); let data = pipe.fileHandleForReading.readDataToEndOfFile(); process.waitUntilExit()
-        struct Reply: Decodable { let status: Int32; let credentials: Credentials? }
-        let reply = try JSONDecoder().decode(Reply.self, from: data); XCTAssertEqual(reply.status, 0)
-        let credentials = MemoryCredentials(); try credentials.save(XCTUnwrap(reply.credentials), for: shop.id)
+        guard ProcessInfo.processInfo.environment["SHOPDECK_DOCUMENT_LIVE"] == "1" else {
+            throw XCTSkip("Opt in for the isolated 127.0.0.1:18888 document fixture.")
+        }
+        var shop = Shop(name: "Document verification", url: "http://127.0.0.1:18888", environment: "Lokal")
+        shop.containerName = "shopdeck-verification-1106"
         let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         defer { try? FileManager.default.removeItem(at: directory) }
-        let client = ShopwareClient(store: try WorkspaceStore(directory: directory), credentials: credentials)
-        let orderResponse = try await client.search(shop, entity: "order", limit: 1)
-        let order = try XCTUnwrap(orderResponse.rows.first), orderID = try XCTUnwrap(order["id"].string)
-        let types = try await client.adminRequest(shop, request: .init(method: "POST", path: "search/document-type", body: .object(["filter": .array([.object(["type": .string("equals"), "field": .string("technicalName"), "value": .string("invoice")])]), "limit": .number(1)])))
-        let typeID = try XCTUnwrap(types["data"].array.first?["id"].string)
-        let mediaID = UUID().uuidString.replacingOccurrences(of: "-", with: "").lowercased(), docID = UUID().uuidString.replacingOccurrences(of: "-", with: "").lowercased()
-        let pdf = OrderDocument.demoPDF(number: "SHOPDECK-VERIFICATION")
-        var mediaCreated = false, docCreated = false
+        let store = try WorkspaceStore(directory: directory)
+        let credentials = MemoryCredentials()
+        let client = ShopwareClient(store: store, credentials: credentials)
+        let integration = try await client.bootstrapLocal(shop)
+        try credentials.save(integration, for: shop.id)
+
+        let base = try XCTUnwrap(URL(string: shop.url + "/api/"))
+        var auth = URLRequest(url: base.appendingPathComponent("oauth/token"))
+        auth.httpMethod = "POST"
+        auth.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        auth.httpBody = try JSONSerialization.data(withJSONObject: [
+            "grant_type": "client_credentials", "client_id": integration.clientID, "client_secret": integration.clientSecret
+        ])
+        let (authBytes, authResponse) = try await URLSession.shared.data(for: auth)
+        XCTAssertEqual((authResponse as? HTTPURLResponse)?.statusCode, 200)
+        let bearer = try XCTUnwrap(JSONDecoder().decode(JSONValue.self, from: authBytes)["access_token"].string)
+
+        let orders = try await client.search(shop, entity: "order", limit: 20)
+        let orderIDs = orders.rows.compactMap { $0["id"].string }
+        let original = try await client.orderDocuments(shop, orderIDs: orderIDs)
+        let usedOrders = Set(original.documents.map(\.orderID))
+        let orderID = try XCTUnwrap(orderIDs.first { !usedOrders.contains($0) })
+        let expectedTypes = ["invoice", "delivery_note"]
+        var generated: [OrderDocument] = []
+
+        func removeGenerated() async throws {
+            let remaining = try await client.orderDocuments(shop, orderIDs: [orderID])
+            for document in remaining.documents where expectedTypes.contains(document.type) {
+                _ = try await client.adminRequest(shop, request: .init(method: "DELETE", path: "document/" + document.documentID))
+            }
+        }
+
         do {
-            _ = try await client.adminRequest(shop, request: .init(method: "POST", path: "media", body: .object(["id": .string(mediaID)]))); mediaCreated = true
-            _ = try await client.uploadBinary(shop, path: "_action/media/" + mediaID + "/upload", data: pdf, contentType: "application/pdf", query: ["extension": "pdf", "fileName": "shopdeck-document-verification-" + mediaID])
-            var payload: [String: JSONValue] = ["id": .string(docID), "orderId": .string(orderID), "documentTypeId": .string(typeID), "documentMediaFileId": .string(mediaID), "static": .bool(true), "deepLinkCode": .string(mediaID), "config": .object(["documentNumber": .string("SHOPDECK-VERIFICATION")])]
-            if let version = order["versionId"].string { payload["orderVersionId"] = .string(version) }
-            _ = try await client.adminRequest(shop, request: .init(method: "POST", path: "document", body: .object(payload))); docCreated = true
-            let page = try await client.orderDocuments(shop, orderIDs: [orderID])
-            let document = try XCTUnwrap(page.documents.first { $0.documentID == docID })
-            let downloaded = try await client.downloadDocument(document)
-            XCTAssertEqual(downloaded, pdf); XCTAssertEqual(PDFDocument(data: downloaded)?.pageCount, 1)
-            print("Original PDF uploaded as isolated static fixture, listed through document search, downloaded byte for byte, and parsed with PDFKit.")
+            for type in expectedTypes {
+                let operation: JSONValue = .object(["orderId": .string(orderID), "fileType": .string("pdf")])
+                _ = try await client.adminRequest(shop, request: .init(
+                    method: "POST", path: "_action/order/document/" + type + "/create", body: .array([operation])
+                ))
+            }
+            generated = try await client.orderDocuments(shop, orderIDs: [orderID]).documents
+            XCTAssertEqual(Set(generated.map(\.type)), Set(expectedTypes))
+            XCTAssertEqual(generated.count, expectedTypes.count)
+            for document in generated {
+                var request = URLRequest(url: base.appendingPathComponent(try document.downloadPath()))
+                request.setValue("Bearer " + bearer, forHTTPHeaderField: "Authorization")
+                request.setValue("application/pdf", forHTTPHeaderField: "Accept")
+                let (original, response) = try await URLSession.shared.data(for: request)
+                XCTAssertEqual((response as? HTTPURLResponse)?.statusCode, 200)
+                let downloaded = try await client.downloadDocument(document)
+                XCTAssertEqual(downloaded, original)
+                let preview = try XCTUnwrap(PDFDocument(data: downloaded))
+                XCTAssertGreaterThan(preview.pageCount, 0)
+                XCTAssertTrue(try XCTUnwrap(preview.string).contains(document.number))
+                XCTAssertFalse(preview.string?.contains("SAMPLE DOCUMENT") == true)
+                print("Shopware generated \(document.type), verified \(downloaded.count) identical PDF bytes in Shopdeck and a readable PDFKit preview.")
+            }
         } catch {
-            if docCreated { _ = try? await client.adminRequest(shop, request: .init(method: "DELETE", path: "document/" + docID)) }
-            if mediaCreated { _ = try? await client.adminRequest(shop, request: .init(method: "DELETE", path: "media/" + mediaID)) }
+            try? await removeGenerated()
             throw error
         }
-        _ = try await client.adminRequest(shop, request: .init(method: "DELETE", path: "document/" + docID))
-        let remainingMedia = try await client.adminRequest(shop, request: .init(method: "POST", path: "search/media", body: .object(["ids": .array([.string(mediaID)]), "limit": .number(1)])))
-        if !remainingMedia["data"].array.isEmpty { _ = try await client.adminRequest(shop, request: .init(method: "DELETE", path: "media/" + mediaID)) }
-        let after = try await client.orderDocuments(shop, orderIDs: [orderID]); XCTAssertFalse(after.documents.contains { $0.documentID == docID })
+        try await removeGenerated()
+        let after = try await client.orderDocuments(shop, orderIDs: [orderID])
+        XCTAssertTrue(after.documents.isEmpty)
     }
 
 }

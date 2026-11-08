@@ -18,6 +18,7 @@
 "Adminzugang für den lokalen Testshop: admin / shopware. Die Daten bleiben im Container erhalten." = "Acceso de administración local: admin / shopware. Los datos se conservan en el contenedor.";
 "Adressbuch" = "Libreta de direcciones";
 "Aktion" = "Acción";
+"Aktionen" = "Acciones";
 "Aktiv" = "Activo";
 "Aktiv und ausverkauft" = "Activos sin existencias";
 "Aktivität" = "Actividad";
@@ -83,6 +84,7 @@
 "Arbeitsplätze" = "Espacios de trabajo";
 "Arbeitsplätze und Tabs" = "Espacios de trabajo y pestañas";
 "Arbeitsvorrat aktualisieren" = "Actualizar lista de tareas";
+"Arbeitsvorrat anzeigen" = "Mostrar lista de tareas";
 "Arbeitsvorrat konfigurieren" = "Configurar lista de tareas";
 "Arbeitsvorrat öffnen" = "Abrir lista de tareas";
 "Artikel" = "Artículos";
@@ -199,6 +201,7 @@
 "Demodokument. Keine echte Rechnung." = "Documento de ejemplo. No es una factura real.";
 "Demoprofil ohne echte Administration" = "Perfil de demostración sin administración real";
 "Demoprofile einbeziehen" = "Incluir perfiles de demostración";
+"Den Bereich kannst du unter Einstellungen → Dashboard wieder einschalten." = "Puedes volver a activarla en Ajustes → Panel.";
 "Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills." = "Importa la skill en Claude Desktop en Ajustes → Capacidades → Skills.";
 "Der Arbeitsplatz konnte nicht gespeichert werden." = "No se pudo guardar el espacio de trabajo.";
 "Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund." = "El asistente configura MCP y skills. Las credenciales permanecen en el llavero.";
@@ -245,7 +248,9 @@
 "Dieses Jahr" = "Este año";
 "Dieses PDF konnte nicht gelesen werden." = "No se pudo abrir este PDF.";
 "Dieses strukturierte Preisfeld bietet keine direkte API Sortierung." = "Este campo de precio no ofrece ordenación directa por API.";
+"Direkt loslegen" = "Acciones rápidas";
 "Direkt mit der Shopware Admin API verbunden." = "Conexión directa con la Admin API de Shopware.";
+"Direkte Treffer" = "Coincidencias exactas";
 "Docker Desktop herunterladen" = "Descargar Docker Desktop";
 "Docker Desktop muss laufen. Das Image wird geladen, ein Container nur auf localhost gestartet und eine eigene API Integration eingerichtet." = "Docker Desktop debe estar activo. Se descarga la imagen, se inicia un contenedor solo en localhost y se crea una integración API.";
 "Docker Desktop wird im Programme Ordner installiert …" = "Instalando Docker Desktop en Aplicaciones …";
@@ -320,11 +325,13 @@
 "Filter zurücksetzen" = "Restablecer filtros";
 "Filtername" = "Nombre del filtro";
 "Firma" = "Empresa";
+"Fortfahren" = "Continuar";
 "Freien Port automatisch wählen" = "Elegir puerto libre automáticamente";
 "Freigabe" = "Aprobación";
 "Freigegebene Shops" = "Tiendas habilitadas";
 "Frisch aus Shopware laden" = "Recargar desde Shopware";
 "Fällig am" = "Vence el";
+"Fällige Wiedervorlagen anzeigen" = "Mostrar seguimientos pendientes";
 "Für Codex und Claude freigeben" = "Habilitar para Codex y Claude";
 "Für Ja oder Nein true oder false eingeben. Datumswerte im ISO Format verwenden." = "Usa true o false para sí o no. Introduce fechas en formato ISO.";
 "Für die Veröffentlichung wird noch die Adresse des Update Feeds hinterlegt. Diese Version lädt keine App Updates." = "Falta la dirección del feed para publicar. Esta versión no descarga actualizaciones de la aplicación.";
@@ -366,6 +373,7 @@
 "Image Version" = "Versión de la imagen";
 "In Administration öffnen" = "Abrir en administración";
 "In Gruppe verschieben" = "Mover a grupo";
+"In Shops suchen" = "Buscar en tiendas";
 "In Shopware öffnen" = "Abrir en Shopware";
 "In der Pickliste suchen" = "Buscar en esta lista de preparación";
 "In dieser Sitzung verfügbar" = "Disponible en esta sesión";
@@ -398,6 +406,7 @@
 "Kampagne mit Bild vorbereiten" = "Preparar campaña con imagen";
 "Kein freier lokaler Port gefunden." = "No se encontró un puerto local libre.";
 "Kein lesbares Favicon unter /favicon.ico gefunden." = "No se ha encontrado un favicon válido en /favicon.ico.";
+"Keine Prüfungen ausgewählt." = "No hay comprobaciones seleccionadas.";
 "Keine Treffer" = "Sin resultados";
 "Keine passenden Artikel in dieser Pickliste." = "No hay artículos coincidentes en esta lista.";
 "Keine stabile Version gefunden." = "No se ha encontrado una versión estable.";
@@ -513,6 +522,7 @@
 "Nicht installiert" = "No instalado";
 "Nicht verbunden" = "Sin conexión";
 "Nicht übernommen" = "No aplicado";
+"Noch kein Shop verbunden" = "Ninguna tienda conectada";
 "Noch keine Aktivität" = "Aún no hay actividad";
 "Noch keine Bestellungen vorhanden." = "Aún no hay pedidos.";
 "Noch keine Daten" = "Aún no hay datos";
@@ -639,6 +649,7 @@
 "Shops hierher ziehen" = "Arrastra tiendas aquí";
 "Shops und Bestand" = "Tiendas y stock";
 "Shops verbunden" = "Tiendas conectadas";
+"Shops, Aktionen oder Datensätze suchen" = "Busca tiendas, acciones o registros";
 "Shopware Administration → Einstellungen → System → Integrationen. Zugangsdaten werden im macOS Schlüsselbund gespeichert." = "Administración de Shopware → Ajustes → Sistema → Integraciones. Las credenciales se guardan en el llavero de macOS.";
 "Shopware ID" = "ID de Shopware";
 "Shopware Image wird geladen …" = "Descargando imagen de Shopware …";
@@ -679,6 +690,7 @@
 "Stornierte Bestellungen" = "Pedidos cancelados";
 "Stornorechnung" = "Factura de anulación";
 "Stück" = "unidades";
+"Suche löschen" = "Borrar búsqueda";
 "Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor." = "Busca con Shopdeck el producto [número] en la tienda [nombre] y propón una descripción nueva. Envía la propuesta para su aprobación en Shopdeck.";
 "Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl." = "La búsqueda, los filtros y la ordenación se aplican en cada tienda antes de paginar. Los resultados se combinan en una lista. El límite también restringe los resultados navegables.";
 "Suchen …" = "Buscar …";
@@ -714,6 +726,7 @@
 "Verbinde Codex und Claude. Stelle Fragen, finde Produkte und prüfe Änderungen direkt hier." = "Conecta Codex y Claude. Haz preguntas, busca productos y revisa cambios aquí.";
 "Verbinde deine KI mit allen freigegebenen Shops." = "Conecta tu IA a todas las tiendas habilitadas.";
 "Verbinde deinen Shop oder starte einen lokalen Shop zum Ausprobieren." = "Conecta tu tienda o inicia una tienda local para probar.";
+"Verbinde einen Shop oder erkunde Shopdeck mit Demodaten." = "Conecta una tienda o explora Shopdeck con datos de demostración.";
 "Verbinde einen bestehenden Shop oder starte einen lokalen Testshop mit Docker." = "Conecta una tienda existente o crea una tienda local con Docker.";
 "Verbinden oder lokal mit Docker starten" = "Conectar o iniciar localmente con Docker";
 "Verbindung" = "Conexión";
@@ -750,6 +763,7 @@
 "Weiter" = "Adelante";
 "Weitere" = "Más";
 "Weitere Einträge laden" = "Cargar más entradas";
+"Weitere Treffer" = "Más resultados";
 "Welche Shops darf die KI sehen?" = "¿A qué tiendas puede acceder la IA?";
 "Werkzeuge direkt vom Shop gemeldet" = "herramientas comunicadas por la tienda";
 "Werkzeuge durchsuchen …" = "Buscar herramientas …";

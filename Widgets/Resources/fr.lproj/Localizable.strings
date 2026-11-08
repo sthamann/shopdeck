@@ -18,6 +18,7 @@
 "Adminzugang für den lokalen Testshop: admin / shopware. Die Daten bleiben im Container erhalten." = "Accès administrateur local : admin / shopware. Les données restent dans le conteneur.";
 "Adressbuch" = "Carnet d’adresses";
 "Aktion" = "Action";
+"Aktionen" = "Actions";
 "Aktiv" = "Actif";
 "Aktiv und ausverkauft" = "Actifs mais épuisés";
 "Aktivität" = "Activité";
@@ -83,6 +84,7 @@
 "Arbeitsplätze" = "Espaces de travail";
 "Arbeitsplätze und Tabs" = "Espaces de travail et onglets";
 "Arbeitsvorrat aktualisieren" = "Actualiser la liste de travail";
+"Arbeitsvorrat anzeigen" = "Afficher la liste de travail";
 "Arbeitsvorrat konfigurieren" = "Configurer la liste de travail";
 "Arbeitsvorrat öffnen" = "Ouvrir la liste de travail";
 "Artikel" = "Articles";
@@ -199,6 +201,7 @@
 "Demodokument. Keine echte Rechnung." = "Document de démonstration. Ce n’est pas une vraie facture.";
 "Demoprofil ohne echte Administration" = "Profil de démo sans administration réelle";
 "Demoprofile einbeziehen" = "Inclure les profils de démonstration";
+"Den Bereich kannst du unter Einstellungen → Dashboard wieder einschalten." = "Réactivez la liste dans Réglages → Tableau de bord.";
 "Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills." = "Importez le skill dans Claude Desktop via Paramètres → Capacités → Skills.";
 "Der Arbeitsplatz konnte nicht gespeichert werden." = "L’espace de travail n’a pas pu être enregistré.";
 "Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund." = "L’assistant configure MCP et les skills. Les identifiants restent dans le trousseau.";
@@ -245,7 +248,9 @@
 "Dieses Jahr" = "Cette année";
 "Dieses PDF konnte nicht gelesen werden." = "Ce PDF n’a pas pu être ouvert.";
 "Dieses strukturierte Preisfeld bietet keine direkte API Sortierung." = "Ce champ de prix structuré ne propose pas de tri direct par API.";
+"Direkt loslegen" = "Actions rapides";
 "Direkt mit der Shopware Admin API verbunden." = "Connexion directe à l’Admin API Shopware.";
+"Direkte Treffer" = "Correspondances exactes";
 "Docker Desktop herunterladen" = "Télécharger Docker Desktop";
 "Docker Desktop muss laufen. Das Image wird geladen, ein Container nur auf localhost gestartet und eine eigene API Integration eingerichtet." = "Docker Desktop doit être lancé. L’image est téléchargée, un conteneur est démarré sur localhost et une intégration API dédiée est créée.";
 "Docker Desktop wird im Programme Ordner installiert …" = "Installation de Docker Desktop dans Applications …";
@@ -320,11 +325,13 @@
 "Filter zurücksetzen" = "Réinitialiser les filtres";
 "Filtername" = "Nom du filtre";
 "Firma" = "Entreprise";
+"Fortfahren" = "Continuer";
 "Freien Port automatisch wählen" = "Choisir automatiquement un port libre";
 "Freigabe" = "Approbation";
 "Freigegebene Shops" = "Boutiques autorisées";
 "Frisch aus Shopware laden" = "Recharger depuis Shopware";
 "Fällig am" = "Échéance le";
+"Fällige Wiedervorlagen anzeigen" = "Afficher les suivis à échéance";
 "Für Codex und Claude freigeben" = "Autoriser Codex et Claude";
 "Für Ja oder Nein true oder false eingeben. Datumswerte im ISO Format verwenden." = "Utilisez true ou false pour oui ou non. Saisissez les dates au format ISO.";
 "Für die Veröffentlichung wird noch die Adresse des Update Feeds hinterlegt. Diese Version lädt keine App Updates." = "L’adresse du flux reste à définir avant publication. Cette version ne télécharge pas de mises à jour de l’application.";
@@ -366,6 +373,7 @@
 "Image Version" = "Version de l’image";
 "In Administration öffnen" = "Ouvrir dans l’administration";
 "In Gruppe verschieben" = "Déplacer vers un groupe";
+"In Shops suchen" = "Rechercher dans les boutiques";
 "In Shopware öffnen" = "Ouvrir dans Shopware";
 "In der Pickliste suchen" = "Rechercher dans cette liste de préparation";
 "In dieser Sitzung verfügbar" = "Disponible dans cette session";
@@ -398,6 +406,7 @@
 "Kampagne mit Bild vorbereiten" = "Préparer une campagne avec image";
 "Kein freier lokaler Port gefunden." = "Aucun port local libre trouvé.";
 "Kein lesbares Favicon unter /favicon.ico gefunden." = "Aucun favicon lisible trouvé à /favicon.ico.";
+"Keine Prüfungen ausgewählt." = "Aucun contrôle sélectionné.";
 "Keine Treffer" = "Aucun résultat";
 "Keine passenden Artikel in dieser Pickliste." = "Aucun article correspondant dans cette liste.";
 "Keine stabile Version gefunden." = "Aucune version stable trouvée.";
@@ -513,6 +522,7 @@
 "Nicht installiert" = "Non installé";
 "Nicht verbunden" = "Non connecté";
 "Nicht übernommen" = "Non appliqué";
+"Noch kein Shop verbunden" = "Aucune boutique connectée";
 "Noch keine Aktivität" = "Aucune activité";
 "Noch keine Bestellungen vorhanden." = "Aucune commande pour le moment.";
 "Noch keine Daten" = "Aucune donnée";
@@ -639,6 +649,7 @@
 "Shops hierher ziehen" = "Glissez les boutiques ici";
 "Shops und Bestand" = "Boutiques et stock";
 "Shops verbunden" = "Boutiques connectées";
+"Shops, Aktionen oder Datensätze suchen" = "Rechercher des boutiques, actions ou fiches";
 "Shopware Administration → Einstellungen → System → Integrationen. Zugangsdaten werden im macOS Schlüsselbund gespeichert." = "Administration Shopware → Réglages → Système → Intégrations. Les identifiants sont stockés dans le trousseau macOS.";
 "Shopware ID" = "ID Shopware";
 "Shopware Image wird geladen …" = "Téléchargement de l’image Shopware …";
@@ -679,6 +690,7 @@
 "Stornierte Bestellungen" = "Commandes annulées";
 "Stornorechnung" = "Facture d’annulation";
 "Stück" = "unités";
+"Suche löschen" = "Effacer la recherche";
 "Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor." = "Avec Shopdeck, trouve le produit [numéro] dans la boutique [nom] et propose une nouvelle description. Soumets la proposition pour validation dans Shopdeck.";
 "Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl." = "La recherche, les filtres et le tri sont appliqués dans chaque boutique avant la pagination. Les résultats triés sont réunis dans une liste. La limite borne aussi les résultats consultables.";
 "Suchen …" = "Rechercher …";
@@ -714,6 +726,7 @@
 "Verbinde Codex und Claude. Stelle Fragen, finde Produkte und prüfe Änderungen direkt hier." = "Connectez Codex et Claude. Posez vos questions, trouvez des produits et vérifiez les modifications ici.";
 "Verbinde deine KI mit allen freigegebenen Shops." = "Connectez votre IA à toutes les boutiques autorisées.";
 "Verbinde deinen Shop oder starte einen lokalen Shop zum Ausprobieren." = "Connectez votre boutique ou lancez une boutique locale pour essayer.";
+"Verbinde einen Shop oder erkunde Shopdeck mit Demodaten." = "Connectez une boutique ou explorez Shopdeck avec des données de démonstration.";
 "Verbinde einen bestehenden Shop oder starte einen lokalen Testshop mit Docker." = "Connectez une boutique existante ou créez une boutique de test locale avec Docker.";
 "Verbinden oder lokal mit Docker starten" = "Connecter ou démarrer en local avec Docker";
 "Verbindung" = "Connexion";
@@ -750,6 +763,7 @@
 "Weiter" = "Suivant";
 "Weitere" = "Plus";
 "Weitere Einträge laden" = "Charger plus d’entrées";
+"Weitere Treffer" = "Autres résultats";
 "Welche Shops darf die KI sehen?" = "Quelles boutiques l’IA peut elle voir ?";
 "Werkzeuge direkt vom Shop gemeldet" = "outils signalés directement par la boutique";
 "Werkzeuge durchsuchen …" = "Rechercher des outils …";

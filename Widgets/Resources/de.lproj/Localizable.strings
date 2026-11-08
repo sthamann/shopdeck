@@ -18,6 +18,7 @@
 "Adminzugang für den lokalen Testshop: admin / shopware. Die Daten bleiben im Container erhalten." = "Adminzugang für den lokalen Testshop: admin / shopware. Die Daten bleiben im Container erhalten.";
 "Adressbuch" = "Adressbuch";
 "Aktion" = "Aktion";
+"Aktionen" = "Aktionen";
 "Aktiv" = "Aktiv";
 "Aktiv und ausverkauft" = "Aktiv und ausverkauft";
 "Aktivität" = "Aktivität";
@@ -83,6 +84,7 @@
 "Arbeitsplätze" = "Arbeitsplätze";
 "Arbeitsplätze und Tabs" = "Arbeitsplätze und Tabs";
 "Arbeitsvorrat aktualisieren" = "Arbeitsvorrat aktualisieren";
+"Arbeitsvorrat anzeigen" = "Arbeitsvorrat anzeigen";
 "Arbeitsvorrat konfigurieren" = "Arbeitsvorrat konfigurieren";
 "Arbeitsvorrat öffnen" = "Arbeitsvorrat öffnen";
 "Artikel" = "Artikel";
@@ -199,6 +201,7 @@
 "Demodokument. Keine echte Rechnung." = "Demodokument. Keine echte Rechnung.";
 "Demoprofil ohne echte Administration" = "Demoprofil ohne echte Administration";
 "Demoprofile einbeziehen" = "Demoprofile einbeziehen";
+"Den Bereich kannst du unter Einstellungen → Dashboard wieder einschalten." = "Den Bereich kannst du unter Einstellungen → Dashboard wieder einschalten.";
 "Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills." = "Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills.";
 "Der Arbeitsplatz konnte nicht gespeichert werden." = "Der Arbeitsplatz konnte nicht gespeichert werden.";
 "Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund." = "Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund.";
@@ -245,7 +248,9 @@
 "Dieses Jahr" = "Dieses Jahr";
 "Dieses PDF konnte nicht gelesen werden." = "Dieses PDF konnte nicht gelesen werden.";
 "Dieses strukturierte Preisfeld bietet keine direkte API Sortierung." = "Dieses strukturierte Preisfeld bietet keine direkte API Sortierung.";
+"Direkt loslegen" = "Direkt loslegen";
 "Direkt mit der Shopware Admin API verbunden." = "Direkt mit der Shopware Admin API verbunden.";
+"Direkte Treffer" = "Direkte Treffer";
 "Docker Desktop herunterladen" = "Docker Desktop herunterladen";
 "Docker Desktop muss laufen. Das Image wird geladen, ein Container nur auf localhost gestartet und eine eigene API Integration eingerichtet." = "Docker Desktop muss laufen. Das Image wird geladen, ein Container nur auf localhost gestartet und eine eigene API Integration eingerichtet.";
 "Docker Desktop wird im Programme Ordner installiert …" = "Docker Desktop wird im Programme Ordner installiert …";
@@ -320,11 +325,13 @@
 "Filter zurücksetzen" = "Filter zurücksetzen";
 "Filtername" = "Filtername";
 "Firma" = "Firma";
+"Fortfahren" = "Fortfahren";
 "Freien Port automatisch wählen" = "Freien Port automatisch wählen";
 "Freigabe" = "Freigabe";
 "Freigegebene Shops" = "Freigegebene Shops";
 "Frisch aus Shopware laden" = "Frisch aus Shopware laden";
 "Fällig am" = "Fällig am";
+"Fällige Wiedervorlagen anzeigen" = "Fällige Wiedervorlagen anzeigen";
 "Für Codex und Claude freigeben" = "Für Codex und Claude freigeben";
 "Für Ja oder Nein true oder false eingeben. Datumswerte im ISO Format verwenden." = "Für Ja oder Nein true oder false eingeben. Datumswerte im ISO Format verwenden.";
 "Für die Veröffentlichung wird noch die Adresse des Update Feeds hinterlegt. Diese Version lädt keine App Updates." = "Für die Veröffentlichung wird noch die Adresse des Update Feeds hinterlegt. Diese Version lädt keine App Updates.";
@@ -366,6 +373,7 @@
 "Image Version" = "Image Version";
 "In Administration öffnen" = "In Administration öffnen";
 "In Gruppe verschieben" = "In Gruppe verschieben";
+"In Shops suchen" = "In Shops suchen";
 "In Shopware öffnen" = "In Shopware öffnen";
 "In der Pickliste suchen" = "In der Pickliste suchen";
 "In dieser Sitzung verfügbar" = "In dieser Sitzung verfügbar";
@@ -398,6 +406,7 @@
 "Kampagne mit Bild vorbereiten" = "Kampagne mit Bild vorbereiten";
 "Kein freier lokaler Port gefunden." = "Kein freier lokaler Port gefunden.";
 "Kein lesbares Favicon unter /favicon.ico gefunden." = "Kein lesbares Favicon unter /favicon.ico gefunden.";
+"Keine Prüfungen ausgewählt." = "Keine Prüfungen ausgewählt.";
 "Keine Treffer" = "Keine Treffer";
 "Keine passenden Artikel in dieser Pickliste." = "Keine passenden Artikel in dieser Pickliste.";
 "Keine stabile Version gefunden." = "Keine stabile Version gefunden.";
@@ -513,6 +522,7 @@
 "Nicht installiert" = "Nicht installiert";
 "Nicht verbunden" = "Nicht verbunden";
 "Nicht übernommen" = "Nicht übernommen";
+"Noch kein Shop verbunden" = "Noch kein Shop verbunden";
 "Noch keine Aktivität" = "Noch keine Aktivität";
 "Noch keine Bestellungen vorhanden." = "Noch keine Bestellungen vorhanden.";
 "Noch keine Daten" = "Noch keine Daten";
@@ -639,6 +649,7 @@
 "Shops hierher ziehen" = "Shops hierher ziehen";
 "Shops und Bestand" = "Shops und Bestand";
 "Shops verbunden" = "Shops verbunden";
+"Shops, Aktionen oder Datensätze suchen" = "Shops, Aktionen oder Datensätze suchen";
 "Shopware Administration → Einstellungen → System → Integrationen. Zugangsdaten werden im macOS Schlüsselbund gespeichert." = "Shopware Administration → Einstellungen → System → Integrationen. Zugangsdaten werden im macOS Schlüsselbund gespeichert.";
 "Shopware ID" = "Shopware ID";
 "Shopware Image wird geladen …" = "Shopware Image wird geladen …";
@@ -679,6 +690,7 @@
 "Stornierte Bestellungen" = "Stornierte Bestellungen";
 "Stornorechnung" = "Stornorechnung";
 "Stück" = "Stück";
+"Suche löschen" = "Suche löschen";
 "Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor." = "Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor.";
 "Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl." = "Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl.";
 "Suchen …" = "Suchen …";
@@ -714,6 +726,7 @@
 "Verbinde Codex und Claude. Stelle Fragen, finde Produkte und prüfe Änderungen direkt hier." = "Verbinde Codex und Claude. Stelle Fragen, finde Produkte und prüfe Änderungen direkt hier.";
 "Verbinde deine KI mit allen freigegebenen Shops." = "Verbinde deine KI mit allen freigegebenen Shops.";
 "Verbinde deinen Shop oder starte einen lokalen Shop zum Ausprobieren." = "Verbinde deinen Shop oder starte einen lokalen Shop zum Ausprobieren.";
+"Verbinde einen Shop oder erkunde Shopdeck mit Demodaten." = "Verbinde einen Shop oder erkunde Shopdeck mit Demodaten.";
 "Verbinde einen bestehenden Shop oder starte einen lokalen Testshop mit Docker." = "Verbinde einen bestehenden Shop oder starte einen lokalen Testshop mit Docker.";
 "Verbinden oder lokal mit Docker starten" = "Verbinden oder lokal mit Docker starten";
 "Verbindung" = "Verbindung";
@@ -750,6 +763,7 @@
 "Weiter" = "Weiter";
 "Weitere" = "Weitere";
 "Weitere Einträge laden" = "Weitere Einträge laden";
+"Weitere Treffer" = "Weitere Treffer";
 "Welche Shops darf die KI sehen?" = "Welche Shops darf die KI sehen?";
 "Werkzeuge direkt vom Shop gemeldet" = "Werkzeuge direkt vom Shop gemeldet";
 "Werkzeuge durchsuchen …" = "Werkzeuge durchsuchen …";

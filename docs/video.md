@@ -14,9 +14,9 @@ Start with the dashboard and follow an order from search to picking and document
 
 The original 30 second English tour shows Shopdeck 0.12 with demo and local test data.
 
-- [Watch or download the landscape film, 1920 × 1080](https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck-Intro-English.mp4)
-- [Download the LinkedIn feed edition, 1080 × 1350](https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck-LinkedIn-English.mp4)
-- [Download the English captions](https://github.com/sthamann/shopdeck/releases/latest/download/Shopdeck-Intro-English.srt)
+- [Watch or download the landscape film, 1920 × 1080](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Intro-English.mp4)
+- [Download the LinkedIn feed edition, 1080 × 1350](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-LinkedIn-English.mp4)
+- [Download the English captions](https://github.com/sthamann/shopdeck/releases/download/v0.12.0/Shopdeck-Intro-English.srt)
 
 The film covers multi shop search, relative date filters, bookmarks, picking lists and printable exports, order PDFs, follow ups, Codex and Claude with reviewed changes, dashboard metrics, native desktop widgets, saved workspaces and local Docker test shops.
 

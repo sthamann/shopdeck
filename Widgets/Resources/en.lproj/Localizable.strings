@@ -18,6 +18,7 @@
 "Adminzugang für den lokalen Testshop: admin / shopware. Die Daten bleiben im Container erhalten." = "Local test shop admin login: admin / shopware. Data is kept in the container.";
 "Adressbuch" = "Address book";
 "Aktion" = "Action";
+"Aktionen" = "Actions";
 "Aktiv" = "Active";
 "Aktiv und ausverkauft" = "Active but sold out";
 "Aktivität" = "Activity";
@@ -83,6 +84,7 @@
 "Arbeitsplätze" = "Workspaces";
 "Arbeitsplätze und Tabs" = "Workspaces and tabs";
 "Arbeitsvorrat aktualisieren" = "Refresh attention list";
+"Arbeitsvorrat anzeigen" = "Show attention list";
 "Arbeitsvorrat konfigurieren" = "Configure attention list";
 "Arbeitsvorrat öffnen" = "Open attention list";
 "Artikel" = "Items";
@@ -199,6 +201,7 @@
 "Demodokument. Keine echte Rechnung." = "Sample document. Not a real invoice.";
 "Demoprofil ohne echte Administration" = "Demo profile without a real administration";
 "Demoprofile einbeziehen" = "Include demo profiles";
+"Den Bereich kannst du unter Einstellungen → Dashboard wieder einschalten." = "Turn it back on in Settings → Dashboard.";
 "Den Skill importierst du in Claude Desktop unter Einstellungen → Fähigkeiten → Skills." = "Import the skill in Claude Desktop under Settings → Capabilities → Skills.";
 "Der Arbeitsplatz konnte nicht gespeichert werden." = "The workspace could not be saved.";
 "Der Assistent richtet MCP und Skills ein. Zugangsdaten bleiben im Schlüsselbund." = "The assistant sets up MCP and skills. Credentials stay in Keychain.";
@@ -245,7 +248,9 @@
 "Dieses Jahr" = "This year";
 "Dieses PDF konnte nicht gelesen werden." = "This PDF could not be opened.";
 "Dieses strukturierte Preisfeld bietet keine direkte API Sortierung." = "This structured price field has no direct API sorting.";
+"Direkt loslegen" = "Quick actions";
 "Direkt mit der Shopware Admin API verbunden." = "Connected directly to the Shopware Admin API.";
+"Direkte Treffer" = "Exact matches";
 "Docker Desktop herunterladen" = "Download Docker Desktop";
 "Docker Desktop muss laufen. Das Image wird geladen, ein Container nur auf localhost gestartet und eine eigene API Integration eingerichtet." = "Docker Desktop must be running. The image is downloaded, a localhost only container is started and a dedicated API integration is created.";
 "Docker Desktop wird im Programme Ordner installiert …" = "Installing Docker Desktop in your Applications folder …";
@@ -320,11 +325,13 @@
 "Filter zurücksetzen" = "Reset filters";
 "Filtername" = "Filter name";
 "Firma" = "Company";
+"Fortfahren" = "Continue";
 "Freien Port automatisch wählen" = "Choose a free port automatically";
 "Freigabe" = "Approval";
 "Freigegebene Shops" = "Enabled shops";
 "Frisch aus Shopware laden" = "Reload from Shopware";
 "Fällig am" = "Due on";
+"Fällige Wiedervorlagen anzeigen" = "Show due follow ups";
 "Für Codex und Claude freigeben" = "Enable for Codex and Claude";
 "Für Ja oder Nein true oder false eingeben. Datumswerte im ISO Format verwenden." = "Use true or false for yes or no. Enter dates in ISO format.";
 "Für die Veröffentlichung wird noch die Adresse des Update Feeds hinterlegt. Diese Version lädt keine App Updates." = "A release feed address is still needed before publishing. This build does not download app updates.";
@@ -366,6 +373,7 @@
 "Image Version" = "Image version";
 "In Administration öffnen" = "Open in administration";
 "In Gruppe verschieben" = "Move to group";
+"In Shops suchen" = "Search shop records";
 "In Shopware öffnen" = "Open in Shopware";
 "In der Pickliste suchen" = "Search this picking list";
 "In dieser Sitzung verfügbar" = "Available in this session";
@@ -398,6 +406,7 @@
 "Kampagne mit Bild vorbereiten" = "Prepare a campaign with an image";
 "Kein freier lokaler Port gefunden." = "No free local port found.";
 "Kein lesbares Favicon unter /favicon.ico gefunden." = "No readable favicon found at /favicon.ico.";
+"Keine Prüfungen ausgewählt." = "No checks selected.";
 "Keine Treffer" = "No results";
 "Keine passenden Artikel in dieser Pickliste." = "No matching items in this picking list.";
 "Keine stabile Version gefunden." = "No stable release found.";
@@ -513,6 +522,7 @@
 "Nicht installiert" = "Not installed";
 "Nicht verbunden" = "Not connected";
 "Nicht übernommen" = "Not applied";
+"Noch kein Shop verbunden" = "No shop connected";
 "Noch keine Aktivität" = "No activity yet";
 "Noch keine Bestellungen vorhanden." = "No orders yet.";
 "Noch keine Daten" = "No data yet";
@@ -639,6 +649,7 @@
 "Shops hierher ziehen" = "Drag shops here";
 "Shops und Bestand" = "Shops and stock";
 "Shops verbunden" = "Shops connected";
+"Shops, Aktionen oder Datensätze suchen" = "Search shops, actions or records";
 "Shopware Administration → Einstellungen → System → Integrationen. Zugangsdaten werden im macOS Schlüsselbund gespeichert." = "Shopware Administration → Settings → System → Integrations. Credentials are stored in macOS Keychain.";
 "Shopware ID" = "Shopware ID";
 "Shopware Image wird geladen …" = "Downloading Shopware image …";
@@ -679,6 +690,7 @@
 "Stornierte Bestellungen" = "Cancelled orders";
 "Stornorechnung" = "Cancellation invoice";
 "Stück" = "units";
+"Suche löschen" = "Clear search";
 "Suche mit Shopdeck im Shop [Shopname] das Produkt [Produktnummer] und schlage eine neue Beschreibung vor. Lege den Vorschlag zur Freigabe in Shopdeck vor." = "Use Shopdeck to find product [product number] in shop [shop name] and suggest a new description. Submit the proposal for approval in Shopdeck.";
 "Suche, Filter und Sortierung laufen im Shop vor der Seitenauswahl. Über mehrere Shops werden die sortierten Treffer zusammengeführt. Die Ergebnisgrenze begrenzt auch die gemeinsam durchblätterbare Trefferzahl." = "Search, filters and sorting run in each shop before pagination. Sorted results from multiple shops are merged into one list. The result limit also caps the combined pages you can browse.";
 "Suchen …" = "Search …";
@@ -714,6 +726,7 @@
 "Verbinde Codex und Claude. Stelle Fragen, finde Produkte und prüfe Änderungen direkt hier." = "Connect Codex and Claude. Ask questions, find products and review changes right here.";
 "Verbinde deine KI mit allen freigegebenen Shops." = "Connect your AI to all enabled shops.";
 "Verbinde deinen Shop oder starte einen lokalen Shop zum Ausprobieren." = "Connect your shop or launch a local shop to try it out.";
+"Verbinde einen Shop oder erkunde Shopdeck mit Demodaten." = "Connect a shop or explore Shopdeck with demo data.";
 "Verbinde einen bestehenden Shop oder starte einen lokalen Testshop mit Docker." = "Connect an existing shop or create a local test shop with Docker.";
 "Verbinden oder lokal mit Docker starten" = "Connect or run locally with Docker";
 "Verbindung" = "Connection";
@@ -750,6 +763,7 @@
 "Weiter" = "Forward";
 "Weitere" = "More";
 "Weitere Einträge laden" = "Load more entries";
+"Weitere Treffer" = "More matches";
 "Welche Shops darf die KI sehen?" = "Which shops can AI access?";
 "Werkzeuge direkt vom Shop gemeldet" = "tools reported directly by the shop";
 "Werkzeuge durchsuchen …" = "Search tools …";
