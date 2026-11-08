@@ -1,6 +1,6 @@
 # Signed releases and updates
 
-Version **0.13.0 (13000)** ships an optimized Apple silicon app signed with Developer ID Application. The app is notarized by Apple and contains a stapled ticket. The Developer ID signed disk image passed integrity and signature checks. Its mounted app passed deep code signature verification, staple validation and Gatekeeper assessment as `Notarized Developer ID`. The Sparkle feed and its enclosure both verify against the app's embedded Ed25519 public key.
+Version **0.13.0 (13000)** ships an optimized Apple silicon app signed with Developer ID Application. The app is notarized by Apple and contains a stapled ticket. The Developer ID signed disk image passed integrity and signature checks. Its mounted app passed deep code signature verification, staple validation and Gatekeeper assessment as `Notarized Developer ID`. The Sparkle feed and its enclosure both verify against the app's embedded Ed25519 public key. The public download and feed matched the signed local files. A copy of the published 0.12.0 app found 0.13.0 in its normal update dialog, downloaded it from GitHub and installed it on quit. The isolated workspace file kept its checksum, and the updated app passed Gatekeeper and staple validation.
 
 The release check used Shopware's document generator in an isolated local shop to create an invoice and a delivery note. Both Shopdeck downloads matched the corresponding original Shopware PDF byte for byte, and both opened in PDFKit. The test removed the generated documents and checked that they were gone.
 
