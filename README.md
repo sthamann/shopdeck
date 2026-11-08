@@ -7,7 +7,7 @@ Shopdeck is a native macOS app for Shopware 6. Open your shops in one place, fin
 
 [![Shopdeck showing the dashboard for all shops beside Nordlicht's order list](docs/screenshots/57-shop-and-orders-side-by-side.png)](docs/screenshots.md#workspace-preview-from-the-main-branch)
 
-**Get started with the signed and notarized 0.13.0 release** on Apple silicon with macOS 14 or later. Connect an existing shop, start a local Shopware shop with Docker, or explore the built in demo. The screenshot above shows the workspace with demo shops. [Stable release](https://github.com/sthamann/shopdeck/releases/tag/v0.13.0) · [Build from source](#build-and-run)
+**Get started with the signed and notarized 0.13.1 release** on Apple silicon with macOS 14 or later. Connect an existing shop, start a local Shopware shop with Docker, or explore the built in demo. The screenshot above shows the workspace with demo shops. [Stable release](https://github.com/sthamann/shopdeck/releases/tag/v0.13.1) · [Build from source](#build-and-run)
 
 ## A morning with Shopdeck
 
@@ -99,11 +99,11 @@ Native macOS widgets offer all 23 metrics. The gallery includes dedicated starti
 4. Local Docker shops show the default administration login, **admin / shopware**, directly above the embedded login page, with copy buttons. These are the image defaults; a password you change yourself takes precedence.
 5. Open **Codex & Claude** when you want AI access. Enable only the shops you want to share, configure your client and try the included prompts.
 
-Version 0.13.0 ships an optimized Developer ID signed app with Apple notarization and a stapled ticket, inside a Developer ID signed disk image. Read the [release notes](docs/releases.md) for the distribution checks.
+Version 0.13.1 ships an optimized Developer ID signed app with Apple notarization and a stapled ticket, inside a Developer ID signed disk image. Read the [release notes](docs/releases.md) for the distribution checks.
 
 ## Control Shopware with Codex and Claude
 
-Shopdeck's local MCP server connects Codex and Claude to the shops you enable and routes writes through review. It can also call Shopware's own Admin MCP tools when the shop exposes them. The separate **Shopware Agentic Commerce** extension is for shopping agents on the storefront, with product feeds and sales channel shopping through UCP. Set that up in the Shopware administration. [Compare all three connections](docs/ai-guide.md#shopdeck-mcp-shopware-admin-mcp-and-agentic-commerce)
+Shopdeck's local MCP server connects Codex and Claude to the shops you enable and routes writes through review. It can also call Shopware's own Admin MCP tools when the shop exposes them. The separate **Shopware Agentic Commerce** extension is for shopping agents on the storefront, with product feeds and sales channel shopping through UCP. Set that up in the Shopware administration. [Compare all three connections](docs/ai-guide.md#shopdeck-mcp-shopware-admin-mcp-and-agentic-commerce) · [See the AI workspace](docs/screenshots.md#ai-connections-in-0131)
 
 Open **Codex & Claude**, enable the shops the client should see and use **Check now** to test the bundled local MCP server. Shopdeck can configure Codex, Claude Code and Claude Desktop. Codex and Claude Code get the Shopdeck skill during setup. Claude Desktop users import the exported skill ZIP under **Settings → Skills**. Restart the client and open a new chat.
 

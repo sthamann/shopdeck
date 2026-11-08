@@ -11,6 +11,7 @@
 "Abnahmeschritte" = "Aankoopstappen";
 "Abweichende Werte. Bitte prüfe das Produkt." = "Waarden verschillen. Controleer het product.";
 "Admin API Verbindung" = "Admin API verbinding";
+"Admin MCP prüfen" = "Admin MCP controleren";
 "Administration" = "Beheer";
 "Administration in Shopdeck öffnen" = "Beheer in Shopdeck openen";
 "Administration konnte nicht geöffnet werden" = "Beheer kon niet worden geopend";
@@ -161,6 +162,7 @@
 "Client herunterladen" = "Client downloaden";
 "Client neu starten" = "Client opnieuw starten";
 "Codex und Claude können deine freigegebenen Shops lesen und Änderungen zur Prüfung vorschlagen." = "Codex en Claude kunnen toegestane shops lezen en wijzigingen voorstellen.";
+"Codex und Claude verbinden sich mit deinem Mac. Shopdeck verwaltet freigegebene Shops über die Admin API und legt Schreibaktionen zur Freigabe vor." = "Codex en Claude verbinden met je Mac. Shopdeck beheert ingeschakelde shops via de Admin API en vraagt je goedkeuring voor wijzigingen.";
 "Container aktualisiert." = "Container bijgewerkt.";
 "Container bleibt für die Diagnose erhalten:" = "Container bewaard voor diagnose:";
 "DEINE SHOPS" = "JOUW SHOPS";
@@ -217,6 +219,7 @@
 "Details" = "Details";
 "Details anzeigen" = "Details tonen";
 "Details öffnen" = "Details openen";
+"Die Admin API nutzt die Routen und Berechtigungen der Shopware Integration. Schreibaktionen erscheinen unter Änderungen zur Freigabe." = "De Admin API gebruikt de routes en rechten van de Shopware integratie. Wijzigingen verschijnen ter goedkeuring onder Wijzigingen.";
 "Die Beschreibung unterstützt Shopware HTML." = "De beschrijving ondersteunt Shopware HTML.";
 "Die Charge wird in umgekehrter Reihenfolge zurückgenommen. Bei einem Konflikt hält Shopdeck an und schützt neuere Werte." = "Wijzigingen worden in omgekeerde volgorde teruggedraaid. Shopdeck stopt bij conflicten en beschermt nieuwere waarden.";
 "Die Computersprache ist vorausgewählt. Nicht verfügbare Sprachen verwenden Englisch." = "De taal van je computer is automatisch geselecteerd. Niet ondersteunde talen gebruiken Engels.";
@@ -234,6 +237,7 @@
 "Die allgemeine Admin API erreicht alle Datenarten und Endpunkte des Shops. Schreibaktionen werden unter Änderungen zur Freigabe vorgelegt." = "De algemene Admin API bereikt alle gegevenstypen en endpoints. Schrijfacties worden bij Wijzigingen ter goedkeuring ingediend.";
 "Die angezeigte Seite wurde exportiert." = "De getoonde pagina is geëxporteerd.";
 "Die echte Administration gehört zum echten Shop." = "Echt beheer hoort bij een echte shop.";
+"Die optionale Erweiterung stellt Produktdaten und UCP Einkaufsfunktionen für Storefront Agenten bereit. Du richtest sie je Verkaufskanal in Shopware ein." = "De optionele extensie biedt productgegevens en UCP winkelfuncties aan storefrontagenten. Configureer ze per verkoopkanaal in Shopware.";
 "Die Änderung muss im Änderungsverlauf geprüft werden." = "Controleer deze wijziging in de wijzigingsgeschiedenis.";
 "Diese Aktion wird mit den Rechten der Integration im ausgewählten Shop ausgeführt." = "Deze actie gebruikt de integratierechten in de geselecteerde shop.";
 "Diese Ansicht behalten" = "Deze weergave bewaren";
@@ -310,6 +314,8 @@
 "Erstelle mit Shopdeck für [Shopname] eine Kampagne aus Text, dem lokalen Bild [Dateipfad] und vier vorhandenen Produkten. Nutze propose_campaign, speichere einen Entwurf und zeige mir den Antrag zur Freigabe." = "Maak met Shopdeck een campagne voor [shopnaam] met tekst, de lokale afbeelding [bestandspad] en vier bestaande producten. Gebruik propose_campaign, sla een concept op en toon het verzoek ter goedkeuring.";
 "Erstellt am" = "Aangemaakt op";
 "Erstellt im Zeitraum" = "Aangemaakt in";
+"Erweiterung prüfen" = "Extensie controleren";
+"Erweiterungsstatus konnte nicht gelesen werden." = "Kon de extensiestatus niet lezen.";
 "Export wird mit deinen Filtern und Spalten vorbereitet …" = "Export voorbereiden met je filters en kolommen …";
 "Favicon" = "Favicon";
 "Favicon importiert." = "Favicon geïmporteerd.";
@@ -386,6 +392,8 @@
 "Installiere und aktiviere SwagPlatformSecurity in diesem Shop." = "Installeer en activeer SwagPlatformSecurity in deze shop.";
 "Installieren und aktivieren" = "Installeren en activeren";
 "Installiert" = "Geïnstalleerd";
+"Installiert und aktiv" = "Geïnstalleerd en actief";
+"Installiert und inaktiv" = "Geïnstalleerd en inactief";
 "Installierte Clients erneut prüfen" = "Geïnstalleerde clients opnieuw controleren";
 "JSON kopieren" = "JSON kopiëren";
 "Ja" = "Ja";
@@ -459,6 +467,7 @@
 "Lokalen Testshop erstellen" = "Lokale testshop maken";
 "Lokaler Container" = "Lokale container";
 "Lokaler Port" = "Lokale poort";
+"Lokaler Shopdeck MCP" = "Lokale Shopdeck MCP";
 "Lokaler Testshop" = "Lokale testshop";
 "Lädt" = "Laden";
 "MCP Server antwortet." = "MCP server reageert.";
@@ -549,6 +558,7 @@
 "Offen seit mindestens Stunden" = "Minimaal zoveel uur open";
 "Offene Bestellungen" = "Openstaande bestellingen";
 "Offizielle Security Plugin Anleitung" = "Officiële handleiding beveiligingsplugin";
+"Offizielle Shopware Werkzeuge" = "Officiële Shopware tools";
 "Offizieller Shopware MCP" = "Officiële Shopware MCP";
 "Ohne Artikelnummer" = "Geen artikelnummer";
 "Ohne Bedingungen gilt die Regel für alle neuen Bestellungen." = "Zonder voorwaarden geldt de regel voor alle nieuwe bestellingen.";
@@ -636,6 +646,7 @@
 "Shopdeck Updates" = "Shopdeck updates";
 "Shopdeck in der Menüleiste" = "Shopdeck in de menubalk";
 "Shopdeck installiert fehlendes Docker Desktop, startet das Image und richtet Storefront sowie API Zugang automatisch ein." = "Shopdeck installeert zo nodig Docker Desktop, start het image en configureert de storefront en API toegang automatisch.";
+"Shopdeck prüft die Installation. UCP Profil, Produktfeeds und Checkout werden in Shopware konfiguriert. Einkaufsagenten verbinden sich mit der Storefront." = "Shopdeck controleert de installatie. Configureer het UCP profiel, productfeeds en afrekenen in Shopware. Winkelagenten verbinden met de storefront.";
 "Shopdeck prüft zuerst die aktuellen Werte. Neuere Änderungen werden nicht überschrieben." = "Shopdeck controleert eerst de huidige waarden en weigert nieuwere wijzigingen te overschrijven.";
 "Shopdeck zeigt neue Versionen an. Updates installierst du über den vorgesehenen Weg deines Shops." = "Shopdeck toont nieuwe versies. Installeer updates via de gebruikelijke weg van je shop.";
 "Shopdeck öffnen" = "Shopdeck openen";
@@ -651,8 +662,10 @@
 "Shops verbunden" = "Shops verbonden";
 "Shops, Aktionen oder Datensätze suchen" = "Zoek shops, acties of records";
 "Shopware Administration → Einstellungen → System → Integrationen. Zugangsdaten werden im macOS Schlüsselbund gespeichert." = "Shopware beheer → Instellingen → Systeem → Integraties. Toegangsgegevens worden in de macOS sleutelhanger bewaard.";
+"Shopware Anleitung zu Agentic Commerce" = "Shopware handleiding voor Agentic Commerce";
 "Shopware ID" = "Shopware ID";
 "Shopware Image wird geladen …" = "Shopware image downloaden …";
+"Shopware Integrationen prüfen" = "Shopware integraties controleren";
 "Shopware Lokal" = "Shopware Lokaal";
 "Shopware Releases direkt von GitHub. Verglichen mit deinen verbundenen Shops." = "Shopware releases direct van GitHub. Vergeleken met je verbonden shops.";
 "Shopware Security Plugin" = "Shopware Security Plugin";
@@ -663,6 +676,7 @@
 "Shopware lädt Werkzeuge je Sitzung nach. Die sichtbare Auswahl hängt zusätzlich von Version, Integration und Berechtigungen ab." = "Shopware laadt tools per sessie. De zichtbare selectie hangt ook af van versie, integratie en rechten.";
 "Shopware prüfen" = "Shopware controleren";
 "Shopware startet. Das kann einige Minuten dauern …" = "Shopware start. Dit kan enkele minuten duren …";
+"Shopware stellt eigene Werkzeuge unter /api/_mcp bereit. Shopdeck kann sie über seine Verbindung entdecken und aufrufen. Schreibende Aufrufe gehen ebenfalls zur Freigabe." = "Shopware biedt eigen tools via /api/_mcp. Shopdeck kan ze via de verbinding vinden en aanroepen. Wijzigingen vereisen ook goedkeuring.";
 "Shopware. Kostenlos und Open Source." = "Shopware. Gratis en open source.";
 "Shopübergreifend suchen. Direkt weiterarbeiten." = "Zoek in alle shops. Werk direct verder.";
 "Sicherheit prüfen" = "Beveiliging controleren";

@@ -11,6 +11,7 @@
 "Abnahmeschritte" = "Incremento de compra";
 "Abweichende Werte. Bitte prüfe das Produkt." = "Los valores son distintos. Revisa el producto.";
 "Admin API Verbindung" = "Conexión Admin API";
+"Admin MCP prüfen" = "Comprobar MCP de administración";
 "Administration" = "Administración";
 "Administration in Shopdeck öffnen" = "Abrir administración en Shopdeck";
 "Administration konnte nicht geöffnet werden" = "No se pudo abrir la administración";
@@ -161,6 +162,7 @@
 "Client herunterladen" = "Descargar cliente";
 "Client neu starten" = "Reiniciar el cliente";
 "Codex und Claude können deine freigegebenen Shops lesen und Änderungen zur Prüfung vorschlagen." = "Codex y Claude pueden leer las tiendas autorizadas y proponer cambios.";
+"Codex und Claude verbinden sich mit deinem Mac. Shopdeck verwaltet freigegebene Shops über die Admin API und legt Schreibaktionen zur Freigabe vor." = "Codex y Claude se conectan a tu Mac. Shopdeck gestiona las tiendas habilitadas mediante la Admin API y solicita tu aprobación para los cambios.";
 "Container aktualisiert." = "Contenedor actualizado.";
 "Container bleibt für die Diagnose erhalten:" = "Contenedor conservado para diagnóstico:";
 "DEINE SHOPS" = "TUS TIENDAS";
@@ -217,6 +219,7 @@
 "Details" = "Detalles";
 "Details anzeigen" = "Mostrar detalles";
 "Details öffnen" = "Abrir detalles";
+"Die Admin API nutzt die Routen und Berechtigungen der Shopware Integration. Schreibaktionen erscheinen unter Änderungen zur Freigabe." = "La Admin API usa las rutas y los permisos de la integración de Shopware. Las operaciones de escritura aparecen en Cambios para su aprobación.";
 "Die Beschreibung unterstützt Shopware HTML." = "La descripción admite HTML de Shopware.";
 "Die Charge wird in umgekehrter Reihenfolge zurückgenommen. Bei einem Konflikt hält Shopdeck an und schützt neuere Werte." = "Los cambios se deshacen en orden inverso. Shopdeck se detiene ante conflictos y protege los valores recientes.";
 "Die Computersprache ist vorausgewählt. Nicht verfügbare Sprachen verwenden Englisch." = "El idioma del equipo se selecciona automáticamente. Los idiomas no disponibles usan inglés.";
@@ -234,6 +237,7 @@
 "Die allgemeine Admin API erreicht alle Datenarten und Endpunkte des Shops. Schreibaktionen werden unter Änderungen zur Freigabe vorgelegt." = "La Admin API general accede a todas las entidades y endpoints. Las escrituras se envían a Cambios para su aprobación.";
 "Die angezeigte Seite wurde exportiert." = "Se ha exportado la página visible.";
 "Die echte Administration gehört zum echten Shop." = "La administración real necesita una tienda real.";
+"Die optionale Erweiterung stellt Produktdaten und UCP Einkaufsfunktionen für Storefront Agenten bereit. Du richtest sie je Verkaufskanal in Shopware ein." = "La extensión opcional ofrece datos de productos y funciones de compra UCP a los agentes de la tienda. Configúrala por canal de venta en Shopware.";
 "Die Änderung muss im Änderungsverlauf geprüft werden." = "Revisa este cambio en el historial.";
 "Diese Aktion wird mit den Rechten der Integration im ausgewählten Shop ausgeführt." = "Esta acción usa los permisos de la integración en la tienda seleccionada.";
 "Diese Ansicht behalten" = "Guardar esta vista";
@@ -310,6 +314,8 @@
 "Erstelle mit Shopdeck für [Shopname] eine Kampagne aus Text, dem lokalen Bild [Dateipfad] und vier vorhandenen Produkten. Nutze propose_campaign, speichere einen Entwurf und zeige mir den Antrag zur Freigabe." = "Prepara con Shopdeck una campaña para [tienda] con texto, la imagen local [ruta] y cuatro productos existentes. Usa propose_campaign, guarda un borrador y muéstrame la solicitud de aprobación.";
 "Erstellt am" = "Creado el";
 "Erstellt im Zeitraum" = "Creado durante";
+"Erweiterung prüfen" = "Comprobar extensión";
+"Erweiterungsstatus konnte nicht gelesen werden." = "No se pudo consultar el estado de la extensión.";
 "Export wird mit deinen Filtern und Spalten vorbereitet …" = "Preparando la exportación con tus filtros y columnas …";
 "Favicon" = "Favicon";
 "Favicon importiert." = "Favicon importado.";
@@ -386,6 +392,8 @@
 "Installiere und aktiviere SwagPlatformSecurity in diesem Shop." = "Instala y activa SwagPlatformSecurity en esta tienda.";
 "Installieren und aktivieren" = "Instalar y activar";
 "Installiert" = "Instalado";
+"Installiert und aktiv" = "Instalada y activa";
+"Installiert und inaktiv" = "Instalada e inactiva";
 "Installierte Clients erneut prüfen" = "Volver a comprobar los clientes instalados";
 "JSON kopieren" = "Copiar JSON";
 "Ja" = "Sí";
@@ -459,6 +467,7 @@
 "Lokalen Testshop erstellen" = "Crear tienda de prueba local";
 "Lokaler Container" = "Contenedor local";
 "Lokaler Port" = "Puerto local";
+"Lokaler Shopdeck MCP" = "MCP local de Shopdeck";
 "Lokaler Testshop" = "Tienda de prueba local";
 "Lädt" = "Cargando";
 "MCP Server antwortet." = "El servidor MCP responde.";
@@ -549,6 +558,7 @@
 "Offen seit mindestens Stunden" = "Abierto durante al menos horas";
 "Offene Bestellungen" = "Pedidos abiertos";
 "Offizielle Security Plugin Anleitung" = "Guía oficial del plugin de seguridad";
+"Offizielle Shopware Werkzeuge" = "Herramientas oficiales de Shopware";
 "Offizieller Shopware MCP" = "MCP oficial de Shopware";
 "Ohne Artikelnummer" = "Sin referencia";
 "Ohne Bedingungen gilt die Regel für alle neuen Bestellungen." = "Sin condiciones, la regla se aplica a todos los pedidos nuevos.";
@@ -636,6 +646,7 @@
 "Shopdeck Updates" = "Actualizaciones de Shopdeck";
 "Shopdeck in der Menüleiste" = "Shopdeck en la barra de menús";
 "Shopdeck installiert fehlendes Docker Desktop, startet das Image und richtet Storefront sowie API Zugang automatisch ein." = "Shopdeck instala Docker Desktop si hace falta, inicia la imagen y configura automáticamente la tienda y el acceso API.";
+"Shopdeck prüft die Installation. UCP Profil, Produktfeeds und Checkout werden in Shopware konfiguriert. Einkaufsagenten verbinden sich mit der Storefront." = "Shopdeck comprueba la instalación. Configura el perfil UCP, los feeds de productos y el pago en Shopware. Los agentes de compra se conectan a la tienda.";
 "Shopdeck prüft zuerst die aktuellen Werte. Neuere Änderungen werden nicht überschrieben." = "Shopdeck comprueba los valores actuales y rechaza sobrescribir valores modificados después.";
 "Shopdeck zeigt neue Versionen an. Updates installierst du über den vorgesehenen Weg deines Shops." = "Shopdeck muestra las nuevas versiones. Instala actualizaciones mediante el proceso habitual de tu tienda.";
 "Shopdeck öffnen" = "Abrir Shopdeck";
@@ -651,8 +662,10 @@
 "Shops verbunden" = "Tiendas conectadas";
 "Shops, Aktionen oder Datensätze suchen" = "Busca tiendas, acciones o registros";
 "Shopware Administration → Einstellungen → System → Integrationen. Zugangsdaten werden im macOS Schlüsselbund gespeichert." = "Administración de Shopware → Ajustes → Sistema → Integraciones. Las credenciales se guardan en el llavero de macOS.";
+"Shopware Anleitung zu Agentic Commerce" = "Guía de Shopware sobre Agentic Commerce";
 "Shopware ID" = "ID de Shopware";
 "Shopware Image wird geladen …" = "Descargando imagen de Shopware …";
+"Shopware Integrationen prüfen" = "Comprobar integraciones de Shopware";
 "Shopware Lokal" = "Shopware Local";
 "Shopware Releases direkt von GitHub. Verglichen mit deinen verbundenen Shops." = "Versiones de Shopware desde GitHub. Comparadas con tus tiendas conectadas.";
 "Shopware Security Plugin" = "Plugin de seguridad Shopware";
@@ -663,6 +676,7 @@
 "Shopware lädt Werkzeuge je Sitzung nach. Die sichtbare Auswahl hängt zusätzlich von Version, Integration und Berechtigungen ab." = "Shopware descubre herramientas por sesión. La selección depende también de la versión, integración y permisos.";
 "Shopware prüfen" = "Comprobar Shopware";
 "Shopware startet. Das kann einige Minuten dauern …" = "Shopware se está iniciando. Puede tardar unos minutos …";
+"Shopware stellt eigene Werkzeuge unter /api/_mcp bereit. Shopdeck kann sie über seine Verbindung entdecken und aufrufen. Schreibende Aufrufe gehen ebenfalls zur Freigabe." = "Shopware ofrece sus propias herramientas en /api/_mcp. Shopdeck puede detectarlas y llamarlas mediante su conexión. Los cambios también requieren aprobación.";
 "Shopware. Kostenlos und Open Source." = "Shopware. Gratis y de código abierto.";
 "Shopübergreifend suchen. Direkt weiterarbeiten." = "Busca en todas las tiendas. Sigue trabajando.";
 "Sicherheit prüfen" = "Comprobar seguridad";

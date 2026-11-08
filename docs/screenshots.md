@@ -2,6 +2,12 @@
 
 English interface captures from development builds, using built in demo profiles and an isolated local Shopware test fixture. The amounts and customers shown are test data.
 
+## AI connections in 0.13.1
+
+![Local MCP check and the three Shopware connections](screenshots/62-ai-mcp-overview.png)
+
+![Separate Admin MCP and Agentic Commerce checks against a local Shopware test shop](screenshots/63-shopware-integration-checks.png)
+
 ## Workspace preview from the main branch
 
 These English screenshots come from the same Shopdeck build using three fictional shops. [Download the stable release](https://github.com/sthamann/shopdeck/releases/latest) · [Watch the tour](video.md)

@@ -14,9 +14,9 @@ Restart the client completely and begin a new chat. In Claude Code, begin a new 
 
 The two administration paths can be used in parallel and are independent of the storefront extension. Shopdeck's approval queue applies to operations it forwards. Direct storefront traffic follows Shopware's sales channel and UCP settings.
 
-In builds from `main`, **Codex & Claude → Check Shopware integrations** lets you test the selected shop's Admin MCP and separately check whether `SwagAgenticCommerce` is installed and active. The extension check uses the Shopware integration's permission to read plugins. Activation and storefront readiness are separate. Open **Administration** to set up or verify the sales channel profile and product feeds. [Shopware Admin MCP documentation](https://developer.shopware.com/docs/products/tools/mcp-server/intro.html) · [Shopware Agentic Commerce documentation](https://docs.shopware.com/en/shopware-6-en/extensions/agentic-commerce)
+In Shopdeck 0.13.1, **Codex & Claude → Check Shopware integrations** lets you test the selected shop's Admin MCP and separately check whether `SwagAgenticCommerce` is installed and active. The extension check uses the Shopware integration's permission to read plugins. Activation and storefront readiness are separate. Open **Administration** to set up or verify the sales channel profile and product feeds. [Shopware Admin MCP documentation](https://developer.shopware.com/docs/products/tools/mcp-server/intro.html) · [Shopware Agentic Commerce documentation](https://docs.shopware.com/en/shopware-6-en/extensions/agentic-commerce)
 
-[See the connection overview in Shopdeck](screenshots/61-shopware-ai-connections.png)
+[See the connection overview](screenshots/62-ai-mcp-overview.png) · [See both checks on a local test shop](screenshots/63-shopware-integration-checks.png)
 
 ## Check the connection
 

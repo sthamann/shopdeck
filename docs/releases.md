@@ -1,5 +1,7 @@
 # Signed releases and updates
 
+Version **0.13.1 (13001)** adds separate Admin MCP and Agentic Commerce checks to the [AI workspace](ai-guide.md). The Apple silicon app is signed with Developer ID and has a stapled Apple notarization ticket. The signed disk image passed its integrity and signature checks. Its mounted app passed deep code signature verification, staple validation and Gatekeeper assessment. Both the Sparkle feed and its enclosure verify against the app's embedded Ed25519 key.
+
 Version **0.13.0 (13000)** ships an optimized Apple silicon app signed with Developer ID Application. The app is notarized by Apple and contains a stapled ticket. The Developer ID signed disk image passed integrity and signature checks. Its mounted app passed deep code signature verification, staple validation and Gatekeeper assessment as `Notarized Developer ID`. The Sparkle feed and its enclosure both verify against the app's embedded Ed25519 public key. The public download and feed matched the signed local files. A copy of the published 0.12.0 app found 0.13.0 in its normal update dialog, downloaded it from GitHub and installed it on quit. The isolated workspace file kept its checksum, and the updated app passed Gatekeeper and staple validation.
 
 The release check used Shopware's document generator in an isolated local shop to create an invoice and a delivery note. Both Shopdeck downloads matched the corresponding original Shopware PDF byte for byte, and both opened in PDFKit. The test removed the generated documents and checked that they were gone.
@@ -21,8 +23,8 @@ The feed points to a versioned release asset. Sparkle verifies the Ed25519 signa
 5. Sign the final download with the private Sparkle key:
 
 ```sh
-python3 script/prepare_appcast.py Shopdeck-0.13.0-arm64.dmg \
-  --download-url https://github.com/sthamann/shopdeck/releases/download/v0.13.0/Shopdeck-0.13.0-arm64.dmg \
+python3 script/prepare_appcast.py Shopdeck-0.13.1-arm64.dmg \
+  --download-url https://github.com/sthamann/shopdeck/releases/download/v0.13.1/Shopdeck-0.13.1-arm64.dmg \
   --key /secure/local/path/sparkle-ed25519.key \
   --output appcast.xml \
   --notes "Release notes for this version"
